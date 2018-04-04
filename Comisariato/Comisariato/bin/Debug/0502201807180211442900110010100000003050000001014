@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<comprobanteRetencion id="comprobante" version="1.0.0">
+  <infoTributaria>
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>VEGA SOLIS SONNA JUDITH</razonSocial>
+    <nombreComercial>COMISARIATO SUPER 2</nombreComercial>
+    <ruc>1802114429001</ruc>
+    <claveAcceso>0502201807180211442900110010100000003050000001014</claveAcceso>
+    <codDoc>07</codDoc>
+    <estab>001</estab>
+    <ptoEmi>010</ptoEmi>
+    <secuencial>000000305</secuencial>
+    <dirMatriz>VIA GUAYAS Y ABDON CALDERON 207</dirMatriz>
+  </infoTributaria>
+  <infoCompRetencion>
+    <fechaEmision>05/02/2018</fechaEmision>
+    <dirEstablecimiento>VIA GUAYAS Y ABDON CALDERON 207</dirEstablecimiento>
+    <obligadoContabilidad>SI</obligadoContabilidad>
+    <tipoIdentificacionSujetoRetenido>04</tipoIdentificacionSujetoRetenido>
+    <razonSocialSujetoRetenido>FABRICA JURIS CIA. LTDA.</razonSocialSujetoRetenido>
+    <identificacionSujetoRetenido>1790032442001</identificacionSujetoRetenido>
+    <periodoFiscal>02/2018</periodoFiscal>
+  </infoCompRetencion>
+  <impuestos>
+    <impuesto>
+      <codigo>1</codigo>
+      <codigoRetencion>312</codigoRetencion>
+      <baseImponible>222.68</baseImponible>
+      <porcentajeRetener>1</porcentajeRetener>
+      <valorRetenido>2.23</valorRetenido>
+      <codDocSustento>01</codDocSustento>
+      <numDocSustento>001002023012030</numDocSustento>
+      <fechaEmisionDocSustento>05/02/2018</fechaEmisionDocSustento>
+    </impuesto>
+  </impuestos>
+</comprobanteRetencion>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RetencionDetalle" targetNamespace="http://tempuri.org/RetencionDetalle.xsd" xmlns:mstns="http://tempuri.org/RetencionDetalle.xsd" xmlns="http://tempuri.org/RetencionDetalle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RetencionDetalle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RetencionDetalle" msprop:Generator_UserDSName="RetencionDetalle">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DetalleOrdenGiro" msprop:Generator_TableClassName="DetalleOrdenGiroDataTable" msprop:Generator_TableVarName="tableDetalleOrdenGiro" msprop:Generator_TablePropName="DetalleOrdenGiro" msprop:Generator_RowDeletingName="DetalleOrdenGiroRowDeleting" msprop:Generator_RowChangingName="DetalleOrdenGiroRowChanging" msprop:Generator_RowEvHandlerName="DetalleOrdenGiroRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleOrdenGiroRowDeleted" msprop:Generator_UserTableName="DetalleOrdenGiro" msprop:Generator_RowChangedName="DetalleOrdenGiroRowChanged" msprop:Generator_RowEvArgName="DetalleOrdenGiroRowChangeEvent" msprop:Generator_RowClassName="DetalleOrdenGiroRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOMBREDOCUMENTO" msprop:Generator_ColumnVarNameInTable="columnNOMBREDOCUMENTO" msprop:Generator_ColumnPropNameInRow="NOMBREDOCUMENTO" msprop:Generator_ColumnPropNameInTable="NOMBREDOCUMENTOColumn" msprop:Generator_UserColumnName="NOMBREDOCUMENTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroDocProveedor" msprop:Generator_ColumnVarNameInTable="columnNumeroDocProveedor" msprop:Generator_ColumnPropNameInRow="NumeroDocProveedor" msprop:Generator_ColumnPropNameInTable="NumeroDocProveedorColumn" msprop:Generator_UserColumnName="NumeroDocProveedor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHADOCUMENTO" msprop:Generator_ColumnVarNameInTable="columnFECHADOCUMENTO" msprop:Generator_ColumnPropNameInRow="FECHADOCUMENTO" msprop:Generator_ColumnPropNameInTable="FECHADOCUMENTOColumn" msprop:Generator_UserColumnName="FECHADOCUMENTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaContaPeriodoFiscal" msprop:Generator_ColumnVarNameInTable="columnFechaContaPeriodoFiscal" msprop:Generator_ColumnPropNameInRow="FechaContaPeriodoFiscal" msprop:Generator_ColumnPropNameInTable="FechaContaPeriodoFiscalColumn" msprop:Generator_UserColumnName="FechaContaPeriodoFiscal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorRetenido" msprop:Generator_ColumnVarNameInTable="columnValorRetenido" msprop:Generator_ColumnPropNameInRow="ValorRetenido" msprop:Generator_ColumnPropNameInTable="ValorRetenidoColumn" msprop:Generator_UserColumnName="ValorRetenido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoCodigoImpuesto" msprop:Generator_ColumnVarNameInTable="columnTipoCodigoImpuesto" msprop:Generator_ColumnPropNameInRow="TipoCodigoImpuesto" msprop:Generator_ColumnPropNameInTable="TipoCodigoImpuestoColumn" msprop:Generator_UserColumnName="TipoCodigoImpuesto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PorcentajeRetencion" msprop:Generator_ColumnVarNameInTable="columnPorcentajeRetencion" msprop:Generator_ColumnPropNameInRow="PorcentajeRetencion" msprop:Generator_ColumnPropNameInTable="PorcentajeRetencionColumn" msprop:Generator_UserColumnName="PorcentajeRetencion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BaseImponible" msprop:Generator_ColumnVarNameInTable="columnBaseImponible" msprop:Generator_ColumnPropNameInRow="BaseImponible" msprop:Generator_ColumnPropNameInTable="BaseImponibleColumn" msprop:Generator_UserColumnName="BaseImponible" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

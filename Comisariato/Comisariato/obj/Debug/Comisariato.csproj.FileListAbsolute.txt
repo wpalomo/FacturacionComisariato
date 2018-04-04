@@ -1,0 +1,974 @@
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\MaxDJ\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Galito\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Galito\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Galito\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.Producto.FrmNuevoProducto.resources
+F:\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.Producto.FrmNuevoProducto.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+F:\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+F:\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+F:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmSesion.resources
+G:\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+G:\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.Producto.FrmNuevoProducto.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+G:\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\bin\Debug\InputKey.dll
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Galito\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.Producto.FrmNuevoProducto.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Galito\Desktop\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\MaxDJ\Desktop\Unir proyectos\COMI\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\MaxDJ\Desktop\Unir proyectos\Comisariato Completo\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Byron\Documents\Visual Studio 2015\Projects\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Programacion\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Desktop\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\Comisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+<<<<<<< HEAD
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+=======
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+>>>>>>> 6074c57589413c76fc146a3a4b700da6b9730c44
+>>>>>>> 146721c2cd50dec15dc1bde86da94dcdaf509124
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Chikitik Sandra\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+>>>>>>> 5836bef86986d80f2ffacdf1a456dd49b2a6b912
+C:\Users\Galito\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+>>>>>>> 019ac5d27e49cedb01b7a986914f3ddbe00b517c
+C:\Users\Andres\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\Programacion\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\MaxDJ\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+>>>>>>> 6861468ad3a021b190e31acfd031f8946b028851
+C:\Users\Byron\Documents\GitHub\ProyectoComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDevolucionCompra.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDevolucionCompra.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDevolucionCompra.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDevolucionCompra.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+>>>>>>> 98d5c06059eb17e9641fd9fc28fac2beb4dcf69a
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmDeclaracionSRI.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDevolucionCompra.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+>>>>>>> 0abfc33c37cf66cfa7d2fa00cb4184730152700c
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmDeclaracionSRI.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmDeclaracionSRI.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmDeclaracionSRI.resources
+>>>>>>> 63cc4859d34e0536cd7adeda9ec7b05c42ef56f5
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCompras.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesOrdenGiro.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesVentas.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesRentenciones.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmCambioClave.resources
+>>>>>>> d04fa57b4792852a741d83c1d88a38603b96c72a
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmCambioClave.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCompras.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesRentenciones.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmCambioClave.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCompras.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesRentenciones.resources
+>>>>>>> 1596aae378fe107d358588dfca5b25d882395c44
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmCambioClave.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCompras.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesRentenciones.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmDeclaracionSRI.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmCambioClave.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCompras.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesRentenciones.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmCierreCaja.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCajas.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCajas.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmCierreCaja.resources
+>>>>>>> 22aed8d8d4952e2dc0d91d4fdaf5348715e58a18
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCajas.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmCierreCaja.resources
+>>>>>>> d817d8458287dde32d24834e54a98c96a678b01c
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCajas.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmCierreCaja.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmComprobantesSri.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmComprobantesSri.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCajas.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmComprobantesSri.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmCierreCaja.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+>>>>>>> b967e236fd03e2e87cb64c775bc544f1560e4ab9
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormEnviarArchivos.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormEnviarArchivos.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormEnviarArchivos.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmConsultarPrecios.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmConsultarPrecios.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmConsultarPrecios.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormEnviarArchivos.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmComprobantesSri.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmConsultarPrecios.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.pdb
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.xml
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.pdb
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.xml
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.pdb
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.xml
+>>>>>>> 914e06e9333fdbf3368c45cd2e7247a6f6b9d25e
+>>>>>>> de2f7c66489174aa1d6aae2937b35556cef7d8ce
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormEnviarArchivos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmComprobantesSri.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmConsultarPrecios.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.pdb
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.xml
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.pdb
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\FactLinkFirma.xml
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Retencion.ReporteRetencion.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Retencion.ReporteRetencion.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Retencion.ReporteRetencion.resources
+>>>>>>> a8e4181226f9fc977f831a2f0243e1d7dda0d3a2
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Retencion.ReporteRetencion.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Retencion.ReporteRetencion.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+>>>>>>> b7c7e87266bbeff43a9709bbb538426e151825be
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFacturaGastos.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFacturaGastos.resources
+>>>>>>> 0dda43c2063eefe8a4b65c209873d02de315beb4
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.xml
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFacturaGastos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFacturaGastos.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormAts.resources
+C:\Users\Andres\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormAts.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormAts.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormAts.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormAts.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFacturaGastos.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmReimprimirComprobante.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmReimprimirComprobante.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeNotaCredito.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmReimprimirComprobante.resources
+>>>>>>> 3a639844ade12bca70ba0f4c62f05054df7d46dd
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeNotaCredito.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeNotaCredito.resources
+>>>>>>> f4f7a0c15664f86ff08956907adb5555a0a89363
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmAdministrarPromociones.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmAdministrarPromociones.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmAdministrarPromociones.resources
+>>>>>>> 0badd9e5ad6a3aa87cabe91a54437cf48a169fcd
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmDatosCertificado.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Factura.ReporteFacturaRide.resources
+C:\Users\Byron\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\bin\Debug\BarcodeLib.dll
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmDatosCertificado.resources
+C:\Users\MaxDJ\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Factura.ReporteFacturaRide.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeNotaCredito.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmDatosCertificado.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmReimprimirComprobante.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmAdministrarPromociones.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Factura.ReporteFacturaRide.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmDatosCertificado.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Factura.ReporteFacturaRide.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Cartera.FrmCuentasPorPagar.resources
+C:\Users\Programacion\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Cartera.FrmDetalleCP.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Cartera.FrmCuentasPorPagar.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Cartera.FrmDetalleCP.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\FactLinkFirma.pdb
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\FactLinkFirma.xml
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.csprojResolveAssemblyReference.cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Cartera.FrmCuentasPorPagar.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Cartera.FrmDetalleCP.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmCambioClave.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeNotaCredito.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCajas.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesCompras.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformesRentenciones.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmInformeVentas.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Informes.FrmKardex.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmCajasTalonario.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmDatosCertificado.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmEmpresa.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmParametrosFactura.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmRegistrarIVA.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Empresa.FrmSucursal.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmPrincipal.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.FrmLogin.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmAsignarMenu.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmClientes.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmDescuento.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.FrmEmpleado.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmProveedores.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.FrmUsuarios.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmAsignacionProductoBodega.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCategoriaProductos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmComboProductos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCreacionBodega.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmProductos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FormAts.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmComprobantesSri.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmDeclaracionSRI.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.SRI.FrmReimprimirComprobante.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDevolucionCompra.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Devolucion_Venta.FrmDevolucionVenta.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFacturaGastos.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmAdministrarPromociones.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmAvanse.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmCierreCaja.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveSupervisor.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmClaveUsuario.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmCobrar.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Mantenimiento.Inventario.FrmCompra.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.Venta.FrmConsultarPrecios.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmConsultarProducto.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmDatosClientes.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmFactura.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmOrdenDeGiro.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Formularios.Transacciones.FrmReimprimirFact.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Properties.Resources.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Factura.ReporteFacturaRide.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.Ride.Retencion.ReporteRetencion.resources
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
+C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86E136BA-A86C-481C-B055-F1124BA401CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModuloFacturacionElectronica</RootNamespace>
+    <AssemblyName>ModuloFacturacionElectronica</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib, Version=1.0.0.23, Culture=neutral, PublicKeyToken=5f09bda868cc39e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.1.0.0.23\lib\net20\BarcodeLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="bcmail-jdk15-1.43">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\bcmail-jdk15-1.43.dll</HintPath>
+    </Reference>
+    <Reference Include="bcprov-jdk15-1.43">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\bcprov-jdk15-1.43.dll</HintPath>
+    </Reference>
+    <Reference Include="bctsp-jdk15-1.43">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\bctsp-jdk15-1.43.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-codec-1.2">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\commons-codec-1.2.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-httpclient-3.0.1">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\commons-httpclient-3.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-lang-2.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\commons-lang-2.4.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-logging-1.1">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\commons-logging-1.1.dll</HintPath>
+    </Reference>
+    <Reference Include="FactLinkFirma">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\FactLinkFirma.dll</HintPath>
+    </Reference>
+    <Reference Include="facturaE_additional">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\facturaE_additional.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\ikvm\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="jss-4.2.5">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\jss-4.2.5.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MITyCLibAPI-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\MITyCLibAPI-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibCert-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\MITyCLibCert-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibOCSP-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\core\MITyCLibOCSP-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibPolicy-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\MITyCLibPolicy-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibTrust-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\MITyCLibTrust-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibTSA-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\MITyCLibTSA-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MITyCLibXADES-1.0.4">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\MITyCLibXADES-1.0.4.dll</HintPath>
+    </Reference>
+    <Reference Include="serializer-2.7.1">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\serializer-2.7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xalan-2.7.1">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\xalan-2.7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="xml-apis-1.3.04">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\deps\xml-apis-1.3.04.dll</HintPath>
+    </Reference>
+    <Reference Include="xmlsec-1.4.2-ADSI-1.0">
+      <HintPath>C:\Users\Byron\Desktop\FackLink\FackLink\FactLinkFirma\bin\Debug\xmlsec-1.4.2-ADSI-1.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Certificado.cs" />
+    <Compile Include="Class\ClaveAcceso.cs" />
+    <Compile Include="Class\ConexionBD.cs" />
+    <Compile Include="Class\Consultas.cs" />
+    <Compile Include="Class\DatosTributarios.cs" />
+    <Compile Include="Class\DetalleFactura.cs" />
+    <Compile Include="Class\EnviarCorreo.cs" />
+    <Compile Include="Class\EnvioArchivos.cs" />
+    <Compile Include="Class\Factura.cs" />
+    <Compile Include="Class\Firma.cs" />
+    <Compile Include="Class\Funcion.cs" />
+    <Compile Include="Class\InfoFactura.cs" />
+    <Compile Include="Class\InfoTributaria.cs" />
+    <Compile Include="Class\PieFactura.cs" />
+    <Compile Include="Class\Producto.cs" />
+    <Compile Include="Class\RestaurarXml.cs" />
+    <Compile Include="Class\SRIAutorizacionComprobante.cs" />
+    <Compile Include="Class\SRIRecepcionComprobante.cs" />
+    <Compile Include="Class\Xml.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Ride.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ModuloFacturacionElectronica.Class.DetalleFactura.datasource" />
+    <None Include="Properties\DataSources\ModuloFacturacionElectronica.Class.Factura.datasource" />
+    <None Include="Properties\DataSources\ModuloFacturacionElectronica.Class.PieFactura.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargando.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
