@@ -1045,6 +1045,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)
         {
+
             if (dgvDatosProducto.Rows.Count > 0)
             {
                 if (Funcion.ExportarDataGridViewExcel(dgvDatosProducto,2))
