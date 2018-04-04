@@ -972,3 +972,7 @@ C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comis
 C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
 C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
 C:\Users\Galito\Documents\GitHub\SistemaComisariatoFacturacion\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
+C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
