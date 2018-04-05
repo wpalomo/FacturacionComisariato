@@ -185,9 +185,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                                         IVA = cbImpuesto.Text;
                                         string condicion = "where SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " AND SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " AND NUMERO = " + Convert.ToInt32(txtNumero.Text) + " AND IDPROVEEDOR = " + Convert.ToInt32(cbProveedor.SelectedValue);
                                         IDEncabezadoCompraOG = Convert.ToInt32(consultas.ObtenerValorCampo("IDEMCABEZADOCOMPRA", "TbEncabezadoyPieCompra", condicion));
-                                        //select * from TbCajasTalonario WHERE IPESTACION = '' AND TIPODOCUMENTO = 'RET' AND ESTADO = 1
-                                        if (objConsulta.Existe("IPESTACION", "" + ip.LocalIPAddress() + "' AND TIPODOCUMENTO = 'RET' AND ESTADO = '1", "TbCajasTalonario"))
-                                        {
+                                        ////select * from TbCajasTalonario WHERE IPESTACION = '' AND TIPODOCUMENTO = 'RET' AND ESTADO = 1
+                                        //if (objConsulta.Existe("IPESTACION", "" + ip.LocalIPAddress() + "' AND TIPODOCUMENTO = 'RET' AND ESTADO = '1", "TbCajasTalonario"))
+                                        //{
                                             if (FrmPrincipal.FrmOrdenDeGiro == null || FrmPrincipal.FrmOrdenDeGiro.IsDisposed)
                                             {
                                                 FrmPrincipal.FrmOrdenDeGiro = new FrmOrdenDeGiro();
@@ -206,9 +206,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                                                     FrmPrincipal.FrmOrdenDeGiro.Show();
                                                 }
                                             }
-                                        }
-                                        else
-                                            MessageBox.Show("Caja no registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        //}
+                                        //else
+                                        //    MessageBox.Show("Caja no registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         string ordenNumero = txtOrdenCompra.Text;
                                         Funcion.Limpiarobjetos(gbEncabezadoCompra);
                                         incializar();

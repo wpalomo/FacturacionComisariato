@@ -74,6 +74,10 @@ namespace Comisariato.Formularios.Transacciones
                 int NordenGiro = 1 + ObjConsul.ObtenerID("NUMEROORDENGIRO", "TbEncabezadoOrdenGiro", " where IDORDENGIRO =" + idOrdenGiro + "");
                 txtOrdenGiro.Text = NordenGiro.ToString();
                 ver = true;
+                txtAutorizacionRetencion.Text = "";
+                txtSerie1Retencion.Text = "";
+                txtSerie2Retencion.Text = "";
+                txtNumeroRetencion.Text = "";
                 
             }
             Funcion.Limpiarobjetos(gbDatosFactura);
