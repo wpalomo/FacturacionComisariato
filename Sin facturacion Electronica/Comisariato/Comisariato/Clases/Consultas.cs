@@ -501,7 +501,7 @@ namespace Comisariato.Clases
                 nfilas = nfilas + inicioContador;
                 int contador = 0;
                 string codigoprocutoerror = "";
-                if (!Existe("NFACTURA", Convert.ToInt32(enca[2]).ToString(), "TbEncabezadoFactura"))
+                if (!Existe("NFACTURA", Convert.ToInt32(enca[2]).ToString() + "' and CAJA = '"+ Convert.ToInt32(enca[1]), "TbEncabezadoFactura"))
                 {
                     for (int i = inicioContador; i < nfilas; i++)
                     {

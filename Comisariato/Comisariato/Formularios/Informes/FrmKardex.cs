@@ -41,12 +41,12 @@ namespace Comisariato.Formularios.Informes
              
             if (txtProducto.Text != "")
             {
-                float cantProducto = Convert.ToSingle(objConsulta.ObtenerValorCampo("CANTIDAD", "TbProducto", " where CODIGOBARRA = '" + txtProducto.Text + "'"));
+                float cantProducto = Convert.ToSingle(objConsulta.ObtenerValorCampo("CANTIDAD", "TbProducto", " where CODIGOBARRA = '" + txtProducto.Text + "' OR NOMBREPRODUCTO = '" + txtProducto.Text + "'"));
                 float existencia = 0;
                 DataTable cantCompra = objConsulta.BoolDataTable("select sum(CANTIDAD) from TbDetalleCompra c, TbEncabezadoyPieCompra e " +
-                            " where c.IDENCABEZADOCOMPRA = e.IDEMCABEZADOCOMPRA and  CODIGOBARRAPRODUCTO = '" + txtProducto.Text + "' and e.FECHAORDENCOMPRA < '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "'");
+                            " where c.IDENCABEZADOCOMPRA = e.IDEMCABEZADOCOMPRA and  (CODIGOBARRAPRODUCTO = '" + txtProducto.Text + "' OR NOMBREPRODUCTO = '" + txtProducto.Text + "' )and e.FECHAORDENCOMPRA < '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "'");
                 DataTable cantVenta = objConsulta.BoolDataTable("select sum(CANTIDAD) from TbDetalleFactura d, TbEncabezadoFactura e " +
-                            " where d.NFACTURA = e.IDFACTURA and CODIGOBARRAPRODUCTO = '" + txtProducto.Text + "' and e.FECHA < '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "'");
+                            " where d.NFACTURA = e.IDFACTURA and (CODIGOBARRAPRODUCTO = '" + txtProducto.Text + "' OR NOMBREPRODUCTO = '" + txtProducto.Text + "' ) and e.FECHA < '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "'");
                 if (cantCompra != null && cantVenta != null)
                 {
                     DataRow compra = cantCompra.Rows[0];
@@ -69,11 +69,11 @@ namespace Comisariato.Formularios.Informes
                 //---- desde aqui esta bien
                 DataTable datosCompra = objConsulta.BoolDataTable("select e.SERIE1+''+e.SERIE2+''+e.NUMERO as NFactura, d.PRECIOCOMRPA, e.FECHAORDENCOMPRA, d.CANTIDAD" +
                 " from TbEncabezadoyPieCompra e, TbDetalleCompra d, TbProducto p  where e.IDEMCABEZADOCOMPRA = d.IDENCABEZADOCOMPRA and" +
-                " d.CODIGOBARRAPRODUCTO = p.CODIGOBARRA and p.CODIGOBARRA = '" + txtProducto.Text + "' and e.FECHAORDENCOMPRA between  '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' and '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "' order by e.FECHAORDENCOMPRA");
+                " d.CODIGOBARRAPRODUCTO = p.CODIGOBARRA and (p.CODIGOBARRA = '" + txtProducto.Text + "' OR p.NOMBREPRODUCTO = '" + txtProducto.Text + "') and e.FECHAORDENCOMPRA between  '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' and '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "' order by e.FECHAORDENCOMPRA");
 
                 DataTable datosVenta = objConsulta.BoolDataTable("select e.SUCURSAL, e.CAJA, e.NFACTURA, d.PRECIO, d.CANTIDAD, e.FECHA" +
                 " from TbEncabezadoFactura e, TbDetalleFactura d, TbProducto p where e.IDFACTURA = d.NFACTURA and" +
-                " d.CODIGOBARRAPRODUCTO = p.CODIGOBARRA and p.CODIGOBARRA = '" + txtProducto.Text + "' and e.FECHA between  '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' and '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "' order by e.FECHA");
+                " d.CODIGOBARRAPRODUCTO = p.CODIGOBARRA and (p.CODIGOBARRA = '" + txtProducto.Text + "' OR p.NOMBREPRODUCTO = '" + txtProducto.Text + "') and e.FECHA between  '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' and '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "' order by e.FECHA");
 
                 DataTable datosNotaCredito = objConsulta.BoolDataTable("select enc.SERIE1, enc.SERIE2, enc.NUMERO, dc.PRECIOCOMRPA, dnc.CANTIDAD, enc.FECHA, dnc.PORCENTAJE, dc.CANTIDAD as CANTCOMPRA " +
     " from TbEncabezadoNotaCredito enc, TbDetalleNotaCredito dnc, TbEncabezadoyPieCompra ec, TbDetalleCompra dc " +
