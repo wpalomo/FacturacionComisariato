@@ -1045,6 +1045,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)
         {
+
             if (dgvDatosProducto.Rows.Count > 0)
             {
                 if (Funcion.ExportarDataGridViewExcel(dgvDatosProducto,2))
@@ -1085,29 +1086,21 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 if (txtConsultarCodigoBarra.Text != "")
                 {
                     codigobarra = txtConsultarCodigoBarra.Text + "%";
-                    //auxiliarcont += 1;
-                    //if (auxiliarcont > 1)
                     condicioncodigobarra = "and P.[CODIGO BARRA] like '" + codigobarra + "'";
                 }
                 if (txtConsultarNombreProducto.Text != "")
                 {
                     nombreproducto = txtConsultarNombreProducto.Text + "%";
-                    //auxiliarcont += 1;
-                    //if (auxiliarcont > 1)
                     condicionnombreproducto = "and P.PRODUCTO like '%" + nombreproducto + "%'";
                 }
                 if (txtConsultarProveedor.Text != "")
                 {
                     proveedor = txtConsultarProveedor.Text + "%";
-                    //auxiliarcont += 1;
-                    //if (auxiliarcont > 1)
                     condicionproveedor = "and P.PROVEEDOR like '" + proveedor + "'";
                 }
                 if (CmbConsultarCategoria.Text != "TODOS")
                 {
                     categoriaconsult = CmbConsultarCategoria.Text + "%";
-                    //auxiliarcont += 1;
-                    //if (auxiliarcont > 1)
                     condicioncategoriaconsult = "and P.CATEGORIA like '" + categoriaconsult + "'";
                 }
 
@@ -1115,20 +1108,11 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 {
                     if ((txtConsultarCodigoBarra.Text != "" || txtConsultarNombreProducto.Text != "" || txtConsultarProveedor.Text != "" || CmbConsultarCategoria.Text != ""))
                         dtProductos = Objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 1 " + condicioncodigobarra + " " + condicionnombreproducto + " " + condicioncategoriaconsult + " " + condicionproveedor + " ; ");
-                    //else if (auxiliarcont > 1)
-                    //Objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 1 and P.[CODIGO BARRA] like '" + codigobarra + "' and P.PRODUCTO like '" + nombreproducto + "' and P.CATEGORIA like '" + categoriaconsult + "' and P.PROVEEDOR like '" + proveedor + "' ; ");
-                    //dgvDatosProducto.Columns["ID"].Visible = false;
-                    //dgvDatosProducto.Columns["ACTIVO"].Visible = false;
                 }
                 else if (rbtInactivos.Checked)
                 {
                     if ((txtConsultarCodigoBarra.Text != "" || txtConsultarNombreProducto.Text != "" || txtConsultarProveedor.Text != "" || CmbConsultarCategoria.Text != ""))
-                        //Objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select * from View_VistaFinalProducto P where P.ACTIVO = 0 and (P.[CODIGO BARRA] like '" + codigobarra + "' and P.PRODUCTO  like '" + nombreproducto + "' and P.CATEGORIA like '" + categoriaconsult + "' and P.PROVEEDOR like '" + proveedor + "' );");
                         dtProductos = Objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 0 " + condicioncodigobarra + " " + condicionnombreproducto + " " + condicioncategoriaconsult + " " + condicionproveedor + " ; ");
-                    //else if (auxiliarcont > 1)
-                    //objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select * from View_VistaFinalProducto P where P.ACTIVO = 0 and (P.[CODIGO BARRA] like '" + codigobarra + "' and P.PRODUCTO  like '" + nombreproducto + "' and P.CATEGORIA like '" + categoriaconsult + "' and P.PROVEEDOR like '" + proveedor + "' );");
-                    //dgvDatosProducto.Columns["ID"].Visible = false;
-                    //dgvDatosProducto.Columns["ACTIVO"].Visible = false;
                 }
 
                 if (dgvDatosProducto.Rows.Count > 2)
@@ -1192,10 +1176,13 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     condicion += " and " + PCaja + "='" + TxtPCajaMicrobusca.Text + "'";
                 }
                 int longitudcondicion = condicion.Length;
+                if(longitudcondicion>0)
+                { 
                 condicion = condicion.Substring(4, (longitudcondicion-4));
-
+                
                 view.RowFilter = condicion;
                 dgvDatosProducto.DataSource = view;
+                }
             }
         }
 
