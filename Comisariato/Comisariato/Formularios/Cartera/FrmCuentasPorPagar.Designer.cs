@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
@@ -43,13 +43,14 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtConsultar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnAnular = new System.Windows.Forms.Button();
+            this.BtnPagar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgvCuentasPorPagar = new System.Windows.Forms.DataGridView();
             this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentasPorPagar)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +126,7 @@
             this.rbAnulados.TabStop = true;
             this.rbAnulados.Text = "Anulados";
             this.rbAnulados.UseVisualStyleBackColor = true;
+            this.rbAnulados.Visible = false;
             // 
             // rbActivos
             // 
@@ -139,6 +141,7 @@
             this.rbActivos.TabStop = true;
             this.rbActivos.Text = "Activos";
             this.rbActivos.UseVisualStyleBackColor = true;
+            this.rbActivos.Visible = false;
             // 
             // btnConsultar
             // 
@@ -173,17 +176,17 @@
             this.label8.TabIndex = 33;
             this.label8.Text = "Consultar:";
             // 
-            // btnAnular
+            // BtnPagar
             // 
-            this.btnAnular.Enabled = false;
-            this.btnAnular.Font = new System.Drawing.Font("Arial", 10F);
-            this.btnAnular.Location = new System.Drawing.Point(800, 114);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(86, 29);
-            this.btnAnular.TabIndex = 39;
-            this.btnAnular.Text = "Pagar";
-            this.btnAnular.UseVisualStyleBackColor = true;
+            this.BtnPagar.Enabled = false;
+            this.BtnPagar.Font = new System.Drawing.Font("Arial", 10F);
+            this.BtnPagar.Location = new System.Drawing.Point(800, 114);
+            this.BtnPagar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnPagar.Name = "BtnPagar";
+            this.BtnPagar.Size = new System.Drawing.Size(86, 29);
+            this.BtnPagar.TabIndex = 39;
+            this.BtnPagar.Text = "Pagar";
+            this.BtnPagar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
@@ -199,49 +202,53 @@
             // 
             // dgvCuentasPorPagar
             // 
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.dgvCuentasPorPagar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCuentasPorPagar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dgvCuentasPorPagar.AllowUserToResizeColumns = false;
+            this.dgvCuentasPorPagar.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.dgvCuentasPorPagar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCuentasPorPagar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCuentasPorPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuentasPorPagar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.proveedor,
             this.totalPagar,
             this.plazo,
-            this.dias});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCuentasPorPagar.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dias,
+            this.IDProveedor});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCuentasPorPagar.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCuentasPorPagar.Location = new System.Drawing.Point(14, 152);
             this.dgvCuentasPorPagar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvCuentasPorPagar.Name = "dgvCuentasPorPagar";
             this.dgvCuentasPorPagar.ReadOnly = true;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCuentasPorPagar.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCuentasPorPagar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCuentasPorPagar.RowHeadersVisible = false;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Teal;
-            this.dgvCuentasPorPagar.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Teal;
+            this.dgvCuentasPorPagar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCuentasPorPagar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCuentasPorPagar.Size = new System.Drawing.Size(873, 517);
             this.dgvCuentasPorPagar.TabIndex = 40;
+            this.dgvCuentasPorPagar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentasPorPagar_CellEnter);
             // 
             // proveedor
             // 
@@ -275,6 +282,13 @@
             this.dias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dias.Width = 75;
             // 
+            // IDProveedor
+            // 
+            this.IDProveedor.HeaderText = "IDProveedor";
+            this.IDProveedor.Name = "IDProveedor";
+            this.IDProveedor.ReadOnly = true;
+            this.IDProveedor.Visible = false;
+            // 
             // FrmCuentasPorPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -282,7 +296,7 @@
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(902, 682);
             this.Controls.Add(this.dgvCuentasPorPagar);
-            this.Controls.Add(this.btnAnular);
+            this.Controls.Add(this.BtnPagar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.rbAnulados);
             this.Controls.Add(this.rbActivos);
@@ -317,12 +331,13 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox txtConsultar;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Button BtnPagar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dgvCuentasPorPagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn plazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDProveedor;
     }
 }

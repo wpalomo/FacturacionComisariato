@@ -34,22 +34,25 @@
             this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LblNombreProveedor = new System.Windows.Forms.Label();
+            this.TxtTotalPagar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TxtTotalHaber = new System.Windows.Forms.TextBox();
+            this.TxtTotalDebe = new System.Windows.Forms.TextBox();
+            this.BtnPagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCP)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDetalleCP
             // 
+            this.dgvDetalleCP.AllowUserToResizeColumns = false;
+            this.dgvDetalleCP.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -59,10 +62,11 @@
             this.dgvDetalleCP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.detalle,
             this.debe,
-            this.haber});
+            this.haber,
+            this.Fecha});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -76,6 +80,7 @@
             this.dgvDetalleCP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleCP.Size = new System.Drawing.Size(475, 442);
             this.dgvDetalleCP.TabIndex = 0;
+            this.dgvDetalleCP.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetalleCP_RowsAdded);
             // 
             // detalle
             // 
@@ -101,27 +106,36 @@
             this.haber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.haber.Width = 125;
             // 
-            // label1
+            // Fecha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 14F);
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(147, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre del Proveedor";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Visible = false;
             // 
-            // textBox1
+            // LblNombreProveedor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 20F);
-            this.textBox1.ForeColor = System.Drawing.Color.Teal;
-            this.textBox1.Location = new System.Drawing.Point(326, 576);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 38);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "0.00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.LblNombreProveedor.AutoSize = true;
+            this.LblNombreProveedor.Font = new System.Drawing.Font("Arial", 14F);
+            this.LblNombreProveedor.ForeColor = System.Drawing.Color.Teal;
+            this.LblNombreProveedor.Location = new System.Drawing.Point(147, 22);
+            this.LblNombreProveedor.Name = "LblNombreProveedor";
+            this.LblNombreProveedor.Size = new System.Drawing.Size(203, 22);
+            this.LblNombreProveedor.TabIndex = 1;
+            this.LblNombreProveedor.Text = "Nombre del Proveedor";
+            this.LblNombreProveedor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // TxtTotalPagar
+            // 
+            this.TxtTotalPagar.Font = new System.Drawing.Font("Arial", 20F);
+            this.TxtTotalPagar.ForeColor = System.Drawing.Color.Teal;
+            this.TxtTotalPagar.Location = new System.Drawing.Point(326, 576);
+            this.TxtTotalPagar.Name = "TxtTotalPagar";
+            this.TxtTotalPagar.ReadOnly = true;
+            this.TxtTotalPagar.Size = new System.Drawing.Size(160, 38);
+            this.TxtTotalPagar.TabIndex = 2;
+            this.TxtTotalPagar.Text = "0.00";
+            this.TxtTotalPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -156,39 +170,41 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Total Debe:";
             // 
-            // textBox2
+            // TxtTotalHaber
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 10F);
-            this.textBox2.ForeColor = System.Drawing.Color.Teal;
-            this.textBox2.Location = new System.Drawing.Point(385, 547);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "0.00";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtTotalHaber.Font = new System.Drawing.Font("Arial", 10F);
+            this.TxtTotalHaber.ForeColor = System.Drawing.Color.Teal;
+            this.TxtTotalHaber.Location = new System.Drawing.Point(385, 547);
+            this.TxtTotalHaber.Name = "TxtTotalHaber";
+            this.TxtTotalHaber.ReadOnly = true;
+            this.TxtTotalHaber.Size = new System.Drawing.Size(100, 23);
+            this.TxtTotalHaber.TabIndex = 5;
+            this.TxtTotalHaber.Text = "0.00";
+            this.TxtTotalHaber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox3
+            // TxtTotalDebe
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 10F);
-            this.textBox3.ForeColor = System.Drawing.Color.Teal;
-            this.textBox3.Location = new System.Drawing.Point(385, 518);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "0.00";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtTotalDebe.Font = new System.Drawing.Font("Arial", 10F);
+            this.TxtTotalDebe.ForeColor = System.Drawing.Color.Teal;
+            this.TxtTotalDebe.Location = new System.Drawing.Point(385, 518);
+            this.TxtTotalDebe.Name = "TxtTotalDebe";
+            this.TxtTotalDebe.ReadOnly = true;
+            this.TxtTotalDebe.Size = new System.Drawing.Size(100, 23);
+            this.TxtTotalDebe.TabIndex = 5;
+            this.TxtTotalDebe.Text = "0.00";
+            this.TxtTotalDebe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button1
+            // BtnPagar
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 12F);
-            this.button1.ForeColor = System.Drawing.Color.Teal;
-            this.button1.Location = new System.Drawing.Point(31, 523);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 75);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Pagar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnPagar.Font = new System.Drawing.Font("Arial", 12F);
+            this.BtnPagar.ForeColor = System.Drawing.Color.Teal;
+            this.BtnPagar.Location = new System.Drawing.Point(31, 523);
+            this.BtnPagar.Name = "BtnPagar";
+            this.BtnPagar.Size = new System.Drawing.Size(131, 75);
+            this.BtnPagar.TabIndex = 6;
+            this.BtnPagar.Text = "Pagar";
+            this.BtnPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnPagar.UseVisualStyleBackColor = true;
             // 
             // FrmDetalleCP
             // 
@@ -196,22 +212,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(497, 631);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.BtnPagar);
+            this.Controls.Add(this.TxtTotalDebe);
+            this.Controls.Add(this.TxtTotalHaber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TxtTotalPagar);
+            this.Controls.Add(this.LblNombreProveedor);
             this.Controls.Add(this.dgvDetalleCP);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(513, 670);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(513, 670);
             this.Name = "FrmDetalleCP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de Cuenta por Pagar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDetalleCP_FormClosing);
             this.Load += new System.EventHandler(this.FrmDetalleCP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCP)).EndInit();
             this.ResumeLayout(false);
@@ -222,16 +241,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDetalleCP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn debe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn haber;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label LblNombreProveedor;
+        private System.Windows.Forms.TextBox TxtTotalPagar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TxtTotalHaber;
+        private System.Windows.Forms.TextBox TxtTotalDebe;
+        private System.Windows.Forms.Button BtnPagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn debe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn haber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }
