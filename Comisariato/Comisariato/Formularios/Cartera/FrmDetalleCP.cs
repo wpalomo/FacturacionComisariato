@@ -19,6 +19,8 @@ namespace Comisariato.Formularios.Cartera
         string FechaDesde = "";
         Consultas objConsulta = new Consultas();
 
+        int FilaDESCUENTOSADICIONALES = 0;
+
         public FrmDetalleCP(string IDProveedor, string NombreProveedor, string FechaHasta, string FechaDesde)
         {
             InitializeComponent();
@@ -145,10 +147,30 @@ namespace Comisariato.Formularios.Cartera
                 {
                     if (i == dgvDetalleCP.RowCount - 1)
                         dgvDetalleCP.Rows.Add();
-                    dgvDetalleCP.CurrentRow.Cells[2].Selected = true;
-                    dgvDetalleCP.BeginEdit(true);
                     dgvDetalleCP.Rows[i].Cells[0].Value = "DESCUENTOS ADICIONALES"; //Detalle
-                    dgvDetalleCP.Rows[i].Cells[2].Value = "0,00"; // Haber
+                    //dgvDetalleCP.Rows[i].Cells[2].Value = "0,00"; // Haber
+                    FilaDESCUENTOSADICIONALES = i;
+                    foreach (DataGridViewRow row in dgvDetalleCP.Rows)
+                    {
+
+                        if (((row.Index == i)))
+                        {
+                            // La fila será de sólo lectura.
+                            foreach (DataGridViewCell cell in dgvDetalleCP.CurrentRow.Cells)
+                            {
+                                if (((cell.ColumnIndex == 2)))
+                                {
+                                    cell.ReadOnly = false;
+                                }
+                                else
+                                    cell.ReadOnly = true;
+                            }
+                            //row.ReadOnly = true;
+                        }
+                        else
+                            row.ReadOnly = true;
+
+                    }
                     break;
                 }
             }
@@ -159,12 +181,39 @@ namespace Comisariato.Formularios.Cartera
             dgvDetalleCP.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
+            CalcularDEBE_HABER_TOTAL(false);
+
+
+        }
+
+        bool estadoValorAUX = true;
+
+        public void CalcularDEBE_HABER_TOTAL(bool estadoValor)
+        {
+            estadoValorAUX = false;
             ///SUMAR DEBE,HABER y TOTAL
             Double totalDEBE = 0;
             Double totalHABER = 0;
 
+
+            if (estadoValor)
+            {
+                for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
+                {
+                    if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
+                        dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracterViceversa(dgvDetalleCP.Rows[i].Cells[1].Value.ToString());
+                    else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
+                        dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracterViceversa(dgvDetalleCP.Rows[i].Cells[2].Value.ToString());
+                    else
+                        break;
+                }
+            }
+
+
+
             for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
             {
+                
                 if (dgvDetalleCP.Rows[i].Cells[0].Value != System.DBNull.Value)
                 {
                     if (dgvDetalleCP.Rows[i].Cells[1].Value != System.DBNull.Value)
@@ -175,7 +224,6 @@ namespace Comisariato.Formularios.Cartera
                     {
                         totalHABER += Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[2].Value);
                     }
-
                 }
                 else
                     break;
@@ -190,36 +238,24 @@ namespace Comisariato.Formularios.Cartera
             {
                 if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
                     dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter(dgvDetalleCP.Rows[i].Cells[1].Value.ToString());
-                else if(Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
+                else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
                     dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter(dgvDetalleCP.Rows[i].Cells[2].Value.ToString());
                 else
                     break;
             }
 
-
+            estadoValorAUX = true;
         }
 
-        private void FrmDetalleCP_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //this.Close();
-        }
 
-        private void dgvDetalleCP_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+
+        private void dgvDetalleCP_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
-            //{
-            //    if (dgvDetalleCP.Rows[e.RowIndex].Cells[2].Value != System.DBNull.Value)
-            //    {
-            //        if (dgvDetalleCP.Rows[e.RowIndex].Cells[2].Value.ToString() == "DESCUENTOS ADICIONALES")
-            //        {
-            //            dgvDetalleCP.CurrentCell = dgvDetalleCP.Rows[e.RowIndex].Cells[2];
-            //            dgvDetalleCP.BeginEdit(true);
-            //            break;
-            //        }
-            //    }
-            //    else
-            //        break;
-            //}
+            if (e.RowIndex == FilaDESCUENTOSADICIONALES && FilaDESCUENTOSADICIONALES != 0 && e.ColumnIndex == 2 && estadoValorAUX)
+            {
+                //dgvDetalleCP.Rows[FilaDESCUENTOSADICIONALES].Cells[1].Value = "";
+                CalcularDEBE_HABER_TOTAL(true);
+            }
         }
     }
 }

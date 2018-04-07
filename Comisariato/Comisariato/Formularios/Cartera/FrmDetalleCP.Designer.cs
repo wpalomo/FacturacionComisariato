@@ -75,18 +75,16 @@
             this.dgvDetalleCP.Location = new System.Drawing.Point(11, 59);
             this.dgvDetalleCP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDetalleCP.Name = "dgvDetalleCP";
-            this.dgvDetalleCP.ReadOnly = true;
             this.dgvDetalleCP.RowHeadersVisible = false;
             this.dgvDetalleCP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleCP.Size = new System.Drawing.Size(475, 442);
             this.dgvDetalleCP.TabIndex = 0;
-            this.dgvDetalleCP.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetalleCP_RowsAdded);
+            this.dgvDetalleCP.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleCP_CellValueChanged);
             // 
             // detalle
             // 
             this.detalle.HeaderText = "Detalle";
             this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
             this.detalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.detalle.Width = 200;
             // 
@@ -94,7 +92,6 @@
             // 
             this.debe.HeaderText = "Debe";
             this.debe.Name = "debe";
-            this.debe.ReadOnly = true;
             this.debe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.debe.Width = 125;
             // 
@@ -102,7 +99,6 @@
             // 
             this.haber.HeaderText = "Haber";
             this.haber.Name = "haber";
-            this.haber.ReadOnly = true;
             this.haber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.haber.Width = 125;
             // 
@@ -110,7 +106,6 @@
             // 
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
             this.Fecha.Visible = false;
             // 
             // LblNombreProveedor
@@ -230,7 +225,6 @@
             this.Name = "FrmDetalleCP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de Cuenta por Pagar";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDetalleCP_FormClosing);
             this.Load += new System.EventHandler(this.FrmDetalleCP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCP)).EndInit();
             this.ResumeLayout(false);
