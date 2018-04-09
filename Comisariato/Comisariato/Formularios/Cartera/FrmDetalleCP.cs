@@ -39,8 +39,8 @@ namespace Comisariato.Formularios.Cartera
             }
 
             string sentenciaCompra = "Select * from Vista_EncabezadoCompra_Cartera where FECHAORDENCOMPRA between '" + FechaDesde + "' and '" + FechaHasta + "' AND IDPROVEEDOR = '" + IDProveedor + "'";
-            string sentenciaRetencion = "Select * from Vista_EncabezadoOrdenGiro_Cartera where FECHAORDENGIRO between '" + FechaDesde + "' and '" + FechaHasta + "' AND IDPROVEEDOR = '" + IDProveedor + "'";
-            string sentenciaNotaCredito = "Select * from Vista_EncabezadoNotaCredito_Cartera where FECHA   between '" + FechaDesde + "' and '" + FechaHasta + "' AND IDPROVEEDOR = '" + IDProveedor + "'";
+            string sentenciaRetencion = "Select * from Vista_EncabezadoOrdenGiro_Cartera where FECHAORDENGIRO between '" + FechaDesde + "' and '" + FechaHasta + "' AND IDPROVEEDOR = '" + IDProveedor + "' AND ESTADO = '1'";
+            string sentenciaNotaCredito = "Select * from Vista_EncabezadoNotaCredito_Cartera where FECHA   between '" + FechaDesde + "' and '" + FechaHasta + "' AND IDPROVEEDOR = '" + IDProveedor + "'  AND ESTADO = '1'";
 
 
 

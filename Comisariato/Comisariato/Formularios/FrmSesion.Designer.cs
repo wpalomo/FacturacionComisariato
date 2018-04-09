@@ -33,12 +33,12 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
+            this.BtnIniciar = new iTalk.iTalk_Button_1();
             this.lblError = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PboxSalir = new System.Windows.Forms.PictureBox();
-            this.BtnIniciar = new iTalk.iTalk_Button_1();
             this.PanelSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PboxSalir)).BeginInit();
             this.SuspendLayout();
@@ -88,10 +88,25 @@
             this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmpresa.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbEmpresa.FormattingEnabled = true;
+            this.cbEmpresa.IntegralHeight = false;
             this.cbEmpresa.Location = new System.Drawing.Point(42, 78);
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(232, 25);
             this.cbEmpresa.TabIndex = 13;
+            // 
+            // BtnIniciar
+            // 
+            this.BtnIniciar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnIniciar.Image = null;
+            this.BtnIniciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnIniciar.Location = new System.Drawing.Point(93, 257);
+            this.BtnIniciar.Name = "BtnIniciar";
+            this.BtnIniciar.Size = new System.Drawing.Size(136, 30);
+            this.BtnIniciar.TabIndex = 12;
+            this.BtnIniciar.Text = "INICIAR";
+            this.BtnIniciar.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click_2);
             // 
             // lblError
             // 
@@ -146,20 +161,6 @@
             this.PboxSalir.TabIndex = 2;
             this.PboxSalir.TabStop = false;
             this.PboxSalir.Click += new System.EventHandler(this.PboxSalir_Click);
-            // 
-            // BtnIniciar
-            // 
-            this.BtnIniciar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.BtnIniciar.Image = null;
-            this.BtnIniciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnIniciar.Location = new System.Drawing.Point(93, 257);
-            this.BtnIniciar.Name = "BtnIniciar";
-            this.BtnIniciar.Size = new System.Drawing.Size(136, 30);
-            this.BtnIniciar.TabIndex = 12;
-            this.BtnIniciar.Text = "INICIAR";
-            this.BtnIniciar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click_2);
             // 
             // FrmLogin
             // 
