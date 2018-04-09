@@ -542,6 +542,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RetencionEncabezado.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Theme_c#.cs" />
     <EmbeddedResource Include="Formularios\Cartera\FrmCuentasPorPagar.resx">
       <DependentUpon>FrmCuentasPorPagar.cs</DependentUpon>
     </EmbeddedResource>

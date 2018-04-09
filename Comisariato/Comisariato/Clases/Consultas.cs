@@ -104,14 +104,16 @@ namespace Comisariato.Clases
 
                     }
 
-
-                    //Comprobrar Certificado
-                    DataTable DtCertificado = BoolDataTableFactElect("Select * from TbCertificado;");
-                    if (DtCertificado.Rows.Count > 0)
+                    if (Program.BoolAutorizadoImprimir)
                     {
-                        DataRow myRows = DtCertificado.Rows[0];
-                        Program.RutaCertificado = myRows["RutaCertificado"].ToString();
-                        Program.passwordCertificado = myRows["Certificado"].ToString();
+                        //Comprobrar Certificado
+                        DataTable DtCertificado = BoolDataTableFactElect("Select * from TbCertificado;");
+                        if (DtCertificado.Rows.Count > 0)
+                        {
+                            DataRow myRows = DtCertificado.Rows[0];
+                            Program.RutaCertificado = myRows["RutaCertificado"].ToString();
+                            Program.passwordCertificado = myRows["Certificado"].ToString();
+                        }
                     }
 
 

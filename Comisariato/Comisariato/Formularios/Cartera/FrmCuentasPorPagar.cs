@@ -21,7 +21,7 @@ namespace Comisariato.Formularios.Cartera
         Consultas objConsulta = new Consultas();
         private void FrmCuentasPorPagar_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i <25; i++)
+            for (int i = 0; i < 25; i++)
             {
                 dgvCuentasPorPagar.Rows.Add();
             }
@@ -30,12 +30,20 @@ namespace Comisariato.Formularios.Cartera
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (FrmDetalleCP == null || FrmDetalleCP.IsDisposed)
+            FrmDetalleCP = null;
+            if (Convert.ToString(dgvCuentasPorPagar.CurrentRow.Cells[0].Value) != "")
             {
-                FrmDetalleCP = new FrmDetalleCP();
-                FrmDetalleCP.ShowDialog();
+                if (FrmDetalleCP == null || FrmDetalleCP.IsDisposed)
+                {
+                    FrmDetalleCP = new FrmDetalleCP(dgvCuentasPorPagar.CurrentRow.Cells[4].Value.ToString(), dgvCuentasPorPagar.CurrentRow.Cells[0].Value.ToString(), FechaHasta, FechaDesde);
+                    FrmDetalleCP.ShowDialog();
+
+                }
             }
         }
+
+        string FechaHasta = "";
+        string FechaDesde = "";
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -43,10 +51,15 @@ namespace Comisariato.Formularios.Cartera
                                 " DATEADD(MM, 1, FECHAORDENCOMPRA) as Fecha_Vence, DATEDIFF(dd, FECHAORDENCOMPRA, DATEADD(MM, 1, FECHAORDENCOMPRA)) as Dias " +
                                 " from TbEncabezadoyPieCompra ec, TbProveedor p " +
                                 " where ec.IDPROVEEDOR = p.IDPROVEEDOR and ec.PAGADO = 'False' and ec.FECHAORDENCOMPRA between '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' and '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "'" +
-                                " order by ec.FECHAORDENCOMPRA ASC";
+                                " and (p.NOMBRES like '%" + txtConsultar.Text + "%' OR p.IDENTIFICACION like '%" + txtConsultar.Text +"%') order by ec.FECHAORDENCOMPRA ASC";
+
+            FechaHasta = dtpHasta.Value.ToShortDateString();
+            FechaDesde = dtpDesde.Value.ToShortDateString();
+
             DataTable dtCompra = objConsulta.BoolDataTable(sqlCompras);
             if (dtCompra.Rows.Count > 0)
             {
+                
                 dgvCuentasPorPagar.Rows.Clear();
                 for (int i = 0; i < 25; i++)
                 {
@@ -63,6 +76,7 @@ namespace Comisariato.Formularios.Cartera
                         dgvCuentasPorPagar.Rows[0].Cells[1].Value = rowCompra[2];
                         dgvCuentasPorPagar.Rows[0].Cells[2].Value = Convert.ToDateTime(rowCompra[3]).ToShortDateString();
                         dgvCuentasPorPagar.Rows[0].Cells[3].Value = rowCompra[4];
+                        dgvCuentasPorPagar.Rows[0].Cells[4].Value = rowCompra[0];
                     }
                     else
                     {
@@ -73,20 +87,45 @@ namespace Comisariato.Formularios.Cartera
                                 dgvCuentasPorPagar.Rows[j].Cells[1].Value = Convert.ToSingle(dgvCuentasPorPagar.Rows[j].Cells[1].Value) + Convert.ToSingle(rowCompra[2]);
                                 break;
                             }
-                            else
+                            else if (Convert.ToString(dgvCuentasPorPagar.Rows[j].Cells[0].Value) == "")
                             {
                                 dgvCuentasPorPagar.Rows[j].Cells[0].Value = rowCompra[1];
                                 dgvCuentasPorPagar.Rows[j].Cells[1].Value = rowCompra[2];
                                 dgvCuentasPorPagar.Rows[j].Cells[2].Value = Convert.ToDateTime(rowCompra[3]).ToShortDateString();
                                 dgvCuentasPorPagar.Rows[j].Cells[3].Value = rowCompra[4];
+                                dgvCuentasPorPagar.Rows[j].Cells[4].Value = rowCompra[0];
                                 break;
-                            }                                
-                            if (Convert.ToString(dgvCuentasPorPagar.Rows[j].Cells[0].Value) == "")
-                                break;
+                            }
+                            //if (Convert.ToString(dgvCuentasPorPagar.Rows[j].Cells[0].Value) == "")
+                            //    break;
                         }
                     }
                 }
-            }                            
+            }
+
+
+            for (int i = 0; i < dgvCuentasPorPagar.RowCount - 1; i++)
+            {
+                if (Convert.ToString(dgvCuentasPorPagar.Rows[i].Cells[0].Value) != "")
+                    dgvCuentasPorPagar.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter(dgvCuentasPorPagar.Rows[i].Cells[1].Value.ToString());
+                else
+                    break;
+            }
+
+        }
+
+        private void dgvCuentasPorPagar_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Convert.ToString(dgvCuentasPorPagar.CurrentRow.Cells[0].Value) != "")
+            {
+                btnModificar.Enabled = true;
+                BtnPagar.Enabled = true;
+            }
+            else
+            {
+                btnModificar.Enabled = false;
+                BtnPagar.Enabled = false;
+            }
         }
     }
 }
