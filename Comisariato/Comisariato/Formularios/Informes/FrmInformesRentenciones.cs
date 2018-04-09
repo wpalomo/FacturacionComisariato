@@ -22,6 +22,7 @@ namespace Comisariato.Formularios.Informes
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             llenarDgv();
+            Funcion.dosDecimales(ref dgvInformeRetenciones, 5, 7);
         }
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)

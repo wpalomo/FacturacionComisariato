@@ -1026,6 +1026,7 @@ namespace Comisariato.Formularios.Transacciones
                         break;
                 }
             }
+            Funcion.dosDecimales(ref dgvDatosOG, 5, 9);
         }
         public void consultaOG()
         {

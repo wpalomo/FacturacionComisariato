@@ -416,6 +416,7 @@ namespace Comisariato.Formularios.Transacciones
                 {
                     txtModificarVer.Enabled = false;
                 }
+                Funcion.dosDecimales(ref dgvDatosProducto, 4, 6);
             }
             catch
             {}

@@ -21,6 +21,7 @@ namespace Comisariato.Formularios.Informes
         string cadenaGeneral = "select SERIE1 +''+ SERIE2 +''+ NUMERO AS SERIES , FECHAORDENCOMPRA, IDENTIFICACION, NOMBRES, TOTALIVA," +
 " TOTALICE, TOTALIRBP, SUBTOTAL0, SUBTOTALIVA, TOTAL " +
 " from Vista_InformeCompras", añoDesde = "", fechaDesde = "", añoHasta = "", fechaHasta = "", mesDesde = "", diaDesde = "", mesHasta = "", diaHasta = "";
+        
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -36,6 +37,7 @@ namespace Comisariato.Formularios.Informes
                         break;
                 }
             }
+            Funcion.dosDecimales(ref dgvInformeCompras, 4, 10);
         }
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)
