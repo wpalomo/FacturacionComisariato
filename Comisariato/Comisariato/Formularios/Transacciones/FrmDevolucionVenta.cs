@@ -204,10 +204,7 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
             return b;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -226,6 +223,7 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
                             if (Convert.ToString(DgvDetalleFact.Rows[i].Cells[0].Value) != "")
                             {
                                 DgvDetalleFact.Rows[i].Cells[7].Value = true;
+                                DgvDetalleFact.Rows[i].Cells[6].Value = DgvDetalleFact.Rows[i].Cells[2].Value;
                                 //indezp.Add(i);
                             }
                             else
@@ -244,7 +242,8 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
                     {
                         if (Convert.ToString(DgvDetalleFact.Rows[i].Cells[0].Value) != "")
                         {
-                            DgvDetalleFact.Rows[i].Cells[6].Value = false;
+                            DgvDetalleFact.Rows[i].Cells[7].Value = false;
+                            DgvDetalleFact.Rows[i].Cells[6].Value = null;
                         }
                         else
                         {
