@@ -1043,7 +1043,6 @@ C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\
 C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
 C:\Users\Galito\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
 >>>>>>> 4dd13729c0c603877bebc402e9edfc69c17137ec
-<<<<<<< HEAD
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
@@ -1118,7 +1117,6 @@ C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisa
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
-=======
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
