@@ -761,6 +761,16 @@ namespace Comisariato.Clases
             }
 
         }
-
+        public static void dosDecimales(ref DataGridView dgv, int inicio, int fin)
+        {
+            //desde el 4
+            for (int i = 0; i < dgv.RowCount - 1; i++)
+            {
+                if (Convert.ToString(dgv.Rows[i].Cells[0].Value) == "")
+                    break;
+                for (int j = inicio; j < fin; j++)
+                    dgv.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgv.Rows[i].Cells[j].Value.ToString())).ToString("#####0.00"));
+            }
+        }
     }
 }

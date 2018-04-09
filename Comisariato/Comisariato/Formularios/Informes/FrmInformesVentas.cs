@@ -31,12 +31,13 @@ namespace Comisariato.Formularios.Informes
                 if (Convert.ToString(dgvInformeVentas.Rows[i].Cells[0].Value) != "")
                 {
                     for (int j = 7; j < 11; j++)
-                    dgvInformeVentas.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvInformeVentas.Rows[i].Cells[j].Value.ToString())), 2).ToString());
-            if (Convert.ToString(dgvInformeVentas.Rows[i + 1].Cells[0].Value) == "")
-                break;
+                        dgvInformeVentas.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvInformeVentas.Rows[i].Cells[j].Value.ToString())), 2).ToString());
+                    if (Convert.ToString(dgvInformeVentas.Rows[i + 1].Cells[0].Value) == "")
+                        break;
+                }
+            }
+            Funcion.dosDecimales(ref dgvInformeVentas, 7, 11);
         }
-    }
-}
         public void consultaVentas()
         {
             string sql = cadenaGeneral + " where (FECHA between '" + fechaDesde + "' and '" + fechaHasta + "') and (NombreCliente like'%" + txtConsultar.Text + "%' or SUCURSAL like '%" + txtConsultar.Text + "%' or CAJA like '%" + txtConsultar.Text + "%' or NFACTURA like '%" + txtConsultar.Text +"%') and USUARIO != 'admin'";

@@ -55,13 +55,13 @@ namespace Comisariato.Formularios
         public static FrmInformesCajas FrmInformesCajas;
         public static FrmComprobantesSri FrmComprobantesSri;
         public static FrmFacturaGastos FrmFacturaGastos;
-        public static FormAts Formats ;
+        public static FormAts Formats;
         public static FrmInformeNotaCredito FrmInformeNotaCredito;
         public static FrmAdministrarPromociones FrmAdministrarPromocion;
         public static FrmCuentasPorPagar FrmCuentasPorPagar;
         public bool primerIngresoSistema;
 
-        Bitacora  bitacora = new Bitacora();
+        Bitacora bitacora = new Bitacora();
         //public static void Panel
         public FrmPrincipal()
         {
@@ -464,18 +464,18 @@ namespace Comisariato.Formularios
             }
             else if (nombre == "ATS")
             {
-                
+
                 if (Formats == null || Formats.IsDisposed)
                 {
-                    Formats =  new FormAts();
+                    Formats = new FormAts();
                     Formats.MdiParent = this;
                     //FrmDevolucionVenta.BringToFront();
                     Formats.Show();
                 }
                 else { Formats.BringToFront(); }
             }
-            
-                else if (nombre == "Informe Nota de Crédito")
+
+            else if (nombre == "Informe Nota de Crédito")
             {
 
                 if (FrmInformeNotaCredito == null || FrmInformeNotaCredito.IsDisposed)
@@ -547,7 +547,7 @@ namespace Comisariato.Formularios
         {
             if (primerIngresoSistema)
             {
-                MessageBox.Show("Actualize los datos de la Empresa", "Bienvenido",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Actualize los datos de la Empresa", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             menuMostrar = msPrincipal1;
@@ -580,7 +580,7 @@ namespace Comisariato.Formularios
             Program.tamañoVentanaPrincipal = ClientSize.Height;
             Program.tamañoVentanaPrincipalWith = ClientSize.Width;
 
-        }        
+        }
 
         public void llenarTreeViewPrincipal()
         {
@@ -639,6 +639,447 @@ namespace Comisariato.Formularios
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = "calc";
             proc.Start();
+        }
+
+        private void tvPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void tvPrincipal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (tvPrincipal.SelectedNode.Text == "Administrar Clientes")
+                {
+                    if (FrmCliente == null || FrmCliente.IsDisposed)
+                    {
+                        FrmCliente = new FrmClientes();
+                        FrmCliente.MdiParent = this;
+                        FrmCliente.Show();
+                    }
+                    else
+                        FrmCliente.BringToFront();
+                }
+                //---------------------Empleado --------------------------------------//
+                else if (tvPrincipal.SelectedNode.Text == "Administrar Empleados")
+                {
+                    if (FrmEmpleado == null || FrmEmpleado.IsDisposed)
+                    {
+                        FrmEmpleado = new FrmEmpleado();
+                        FrmEmpleado.MdiParent = this;
+                        FrmEmpleado.Show();
+                    }
+                    else { FrmEmpleado.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Administrar Menu")
+                {
+                    if (FrmAsignarMenu == null || FrmAsignarMenu.IsDisposed)
+                    {
+                        FrmAsignarMenu = new FrmAsignarMenu();
+                        FrmAsignarMenu.MdiParent = this;
+                        FrmAsignarMenu.Show();
+
+                    }
+                    else { FrmAsignarMenu.BringToFront(); }
+                }
+                //--------------------Empresa---------------------------------------//
+                else if (tvPrincipal.SelectedNode.Text == "Cajas/Talonarios")
+                {
+                    if (FrmCajasTalonario == null || FrmCajasTalonario.IsDisposed)
+                    {
+                        FrmCajasTalonario = new FrmCajasTalonario();
+                        FrmCajasTalonario.MdiParent = this;
+                        FrmCajasTalonario.Show();
+                    }
+                    else { FrmCajasTalonario.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Informe Ventas")
+                {
+                    if (FrmInformeVentas == null || FrmInformeVentas.IsDisposed)
+                    {
+                        FrmInformeVentas = new FrmInformeVentas();
+                        FrmInformeVentas.MdiParent = this;
+                        FrmInformeVentas.Show();
+                    }
+                    else { FrmInformeVentas.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Factura de Servicios o Gastos")
+                {
+                    if (FrmFacturaGastos == null || FrmFacturaGastos.IsDisposed)
+                    {
+                        FrmFacturaGastos = new FrmFacturaGastos();
+                        FrmFacturaGastos.MdiParent = this;
+                        FrmFacturaGastos.Show();
+                    }
+                    else { FrmFacturaGastos.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Informe Compras")
+                {
+                    //        FrmInformesCompras;
+                    //public static FrmInformesOrdenGiro FrmInformesOrdenGiro;
+                    if (FrmInformesCompras == null || FrmInformesCompras.IsDisposed)
+                    {
+                        FrmInformesCompras = new FrmInformesCompras();
+                        FrmInformesCompras.MdiParent = this;
+                        FrmInformesCompras.Show();
+                    }
+                    else { FrmInformesCompras.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Informe Retención")
+                {
+                    //hillbsasvdb
+                    if (FrmInformesRentenciones == null || FrmInformesRentenciones.IsDisposed)
+                    {
+                        FrmInformesRentenciones = new FrmInformesRentenciones();
+                        FrmInformesRentenciones.MdiParent = this;
+                        FrmInformesRentenciones.Show();
+                    }
+                    else { FrmInformesRentenciones.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Empresa")
+                {
+                    if (FrmEmpresa == null || FrmEmpresa.IsDisposed)
+                    {
+                        FrmEmpresa = new FrmEmpresa();
+                        FrmEmpresa.MdiParent = this;
+                        FrmEmpresa.Show();
+                    }
+                    else { FrmEmpresa.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Impresion de Factura")
+                {
+                    if (FrmParametrosFactura == null || FrmParametrosFactura.IsDisposed)
+                    {
+                        FrmParametrosFactura = new FrmParametrosFactura();
+                        FrmParametrosFactura.MdiParent = this;
+                        FrmParametrosFactura.Show();
+                    }
+                    else { FrmParametrosFactura.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Sucursales")
+                {
+                    if (FrmSucursal == null || FrmSucursal.IsDisposed)
+                    {
+                        FrmSucursal = new FrmSucursal();
+                        FrmSucursal.MdiParent = this;
+                        FrmSucursal.Show();
+                        //FrmSucursal.BringToFront();
+                    }
+                    else { FrmSucursal.BringToFront(); }
+                }
+                //--------------------Proveedores---------------------------------------//
+                else if (tvPrincipal.SelectedNode.Text == "Administrar Proveedores")
+                {
+                    if (FrmProveedor == null || FrmProveedor.IsDisposed)
+                    {
+                        FrmProveedor = new FrmProveedores();
+                        FrmProveedor.MdiParent = this;
+                        FrmProveedor.Show();
+
+                        //FrmProveedor.BringToFront();
+                    }
+                    else { FrmProveedor.BringToFront(); }
+                }
+                //--------------------Usuarios---------------------------------------//
+                else if (tvPrincipal.SelectedNode.Text == "Administrar Usuarios")
+                {
+                    if (FrmUsuario == null || FrmUsuario.IsDisposed)
+                    {
+                        FrmUsuario = new FrmUsuarios();
+                        FrmUsuario.MdiParent = this;
+                        FrmUsuario.Show();
+                        //FrmUsuario.BringToFront();
+                    }
+                    else { FrmUsuario.BringToFront(); }
+                }
+                //--------------------Inventario---------------------------------------//
+                else if (tvPrincipal.SelectedNode.Text == "Productos")
+                {
+                    if (FrmProducto == null || FrmProducto.IsDisposed)
+                    {
+                        FrmProducto = new FrmProductos();
+                        FrmProducto.MdiParent = this;
+                        ////FrmProducto.BringToFront();
+                        FrmProducto.Show();
+                    }
+                    else { FrmProducto.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Categoria Producto")
+                {
+                    if (FrmCategoriaProducto == null || FrmCategoriaProducto.IsDisposed)
+                    {
+                        FrmCategoriaProducto = new FrmCategoriaProductos();
+                        FrmCategoriaProducto.MdiParent = this;
+                        //FrmCategoriaProducto.BringToFront();
+                        FrmCategoriaProducto.Show();
+                    }
+                    else { FrmCategoriaProducto.BringToFront(); }
+
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Creacion de Bodega")
+                {
+                    if (FrmCreacionBodega == null || FrmCreacionBodega.IsDisposed)
+                    {
+                        FrmCreacionBodega = new FrmCreacionBodega();
+                        FrmCreacionBodega.MdiParent = this;
+                        //FrmCreacionBodega.BringToFront();
+                        FrmCreacionBodega.Show();
+                    }
+                    else { FrmCreacionBodega.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Combo de Productos")
+                {
+                    if (FrmComboProducto == null || FrmComboProducto.IsDisposed)
+                    {
+                        FrmComboProducto = new FrmComboProductos();
+                        FrmComboProducto.MdiParent = this;
+                        //FrmComboProducto.BringToFront();
+                        FrmComboProducto.Show();
+                    }
+                    else { FrmCreacionBodega.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Asignacion de Producto por Bodega")
+                {
+                    if (FrmAsignacionProductoBodega == null || FrmAsignacionProductoBodega.IsDisposed)
+                    {
+                        FrmAsignacionProductoBodega = new FrmAsignacionProductoBodega();
+                        FrmAsignacionProductoBodega.MdiParent = this;
+                        //FrmAsignacionProductoBodega.BringToFront();
+                        FrmAsignacionProductoBodega.Show();
+                    }
+                    else { FrmAsignacionProductoBodega.BringToFront(); }
+                }
+                //-------------------------------------------------Transacciones---------------------------------------//
+                else if (tvPrincipal.SelectedNode.Text == "Ventas")
+                {
+                    if (!Program.FormularioVentaAbierto)
+                    {
+                        if (FrmClaveUsuario == null || FrmClaveUsuario.IsDisposed)
+                        {
+                            FrmClaveUsuario = new FrmClaveUsuario();
+                            FrmClaveUsuario.verificarMetodo = 1;
+                            FrmClaveUsuario.MdiParent = this;
+                            //FrmClaveUsuario.BringToFront();
+                            FrmClaveUsuario.Show();
+                        }
+                        else { FrmClaveUsuario.BringToFront(); }
+                    }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Compras")
+                {
+                    if (objConsulta.ObtenerValorCampo("IDPROVEEDOR", "TbProveedor", "") != "" && objConsulta.ObtenerValorCampo("IDSUCURSAL", "TbSucursal", "") != "" && objConsulta.ObtenerValorCampo("IDPARAMETROSFACTURA", "TbParametrosFactura", "") != "")
+                    {
+                        if (FrmCompra == null || FrmCompra.IsDisposed)
+                        {
+                            FrmCompra = new FrmCompra();
+                            FrmCompra.MdiParent = this;
+                            //FrmCompra.BringToFront();
+                            FrmCompra.Show();
+                        }
+                        else { FrmCompra.BringToFront(); }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Para realizar un registro de compra debe de tener registrado lo siguiente:\n*Al menos un proveedor.\n*Al menos una sucursal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Devolución en Compras")
+                {
+                    //string IpMaquina = bitacora.LocalIPAddress();
+                    //DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
+                    //bool banderaCaja = false;
+                    //if (Dt.Rows.Count > 0)
+                    //{
+                    //    for (int i = 0; i < Dt.Rows.Count; i++)
+                    //    {
+                    //        banderaCaja = true;
+                    //        DataRow myRows = Dt.Rows[i];
+                    //        if (myRows["TIPODOCUMENTO"].ToString() == "NCRE")
+                    //        {
+                    //            banderaCaja = false;
+                    if (FrmDevolucionCompra == null || FrmDevolucionCompra.IsDisposed)
+                    {
+                        FrmDevolucionCompra = new FrmDevolucionCompra();
+                        FrmDevolucionCompra.MdiParent = this;
+                        //FrmDevolucionVenta.BringToFront();
+                        FrmDevolucionCompra.Show();
+                        //break;
+                    }
+                    else { FrmDevolucionCompra.BringToFront(); }
+                    //        }
+                    //    }
+                    //    if (banderaCaja)
+                    //    {
+                    //        MessageBox.Show("Caja no registrada");
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Caja no registrada");
+                    //}
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Orden de Giro")
+                {
+                    string IpMaquina = bitacora.LocalIPAddress();
+                    DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
+                    bool banderaCaja = false;
+                    if (Dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < Dt.Rows.Count; i++)
+                        {
+                            banderaCaja = true;
+                            DataRow myRows = Dt.Rows[i];
+                            if (myRows["TIPODOCUMENTO"].ToString() == "RET")
+                            {
+                                banderaCaja = false;
+                                if (FrmOrdenDeGiro == null || FrmOrdenDeGiro.IsDisposed)
+                                {
+                                    FrmOrdenDeGiro = new FrmOrdenDeGiro();
+                                    FrmOrdenDeGiro.MdiParent = this;
+                                    //FrmOrdenDeGiro.BringToFront();
+                                    FrmOrdenDeGiro.Show();
+                                    break;
+                                }
+                                else { FrmOrdenDeGiro.BringToFront(); }
+                            }
+                        }
+                        if (banderaCaja)
+                        {
+                            MessageBox.Show("Caja no registrada");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Caja no registrada");
+                    }
+
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Devolución en Venta")
+                {
+                    string IpMaquina = bitacora.LocalIPAddress();
+                    //IPESTACION = '" + IpMaquina + "' and
+                    DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
+                    bool banderaCaja = false;
+                    if (Dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < Dt.Rows.Count; i++)
+                        {
+                            banderaCaja = true;
+                            DataRow myRows = Dt.Rows[i];
+                            if (myRows["TIPODOCUMENTO"].ToString() == "NDEB")
+                            {
+                                banderaCaja = false;
+                                if (FrmDevolucionVenta == null || FrmDevolucionVenta.IsDisposed)
+                                {
+                                    FrmDevolucionVenta = new FrmDevolucionVenta();
+                                    FrmDevolucionVenta.MdiParent = this;
+                                    //FrmOrdenDeGiro.BringToFront();
+                                    FrmDevolucionVenta.Show();
+                                    break;
+                                }
+                                else { FrmDevolucionVenta.BringToFront(); }
+                            }
+                        }
+                        if (banderaCaja)
+                        {
+                            MessageBox.Show("Caja no registrada");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Caja no registrada");
+                    }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Kardex")
+                {
+                    if (FrmKardex == null || FrmKardex.IsDisposed)
+                    {
+                        FrmKardex = new FrmKardex();
+                        FrmKardex.MdiParent = this;
+                        FrmKardex.Show();
+                    }
+                    else { FrmKardex.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Declaración SRI")
+                {
+                    if (FrmDeclaracionSRI == null || FrmDeclaracionSRI.IsDisposed)
+                    {
+                        FrmDeclaracionSRI = new FrmDeclaracionSRI();
+                        FrmDeclaracionSRI.MdiParent = this;
+                        //FrmDevolucionVenta.BringToFront();
+                        FrmDeclaracionSRI.Show();
+                    }
+                    else { FrmDeclaracionSRI.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Comprobantes")
+                {
+                    if (FrmComprobantesSri == null || FrmComprobantesSri.IsDisposed)
+                    {
+                        FrmComprobantesSri = new FrmComprobantesSri();
+                        FrmComprobantesSri.MdiParent = this;
+                        //FrmDevolucionVenta.BringToFront();
+                        FrmComprobantesSri.Show();
+                    }
+                    else { FrmComprobantesSri.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Informe Caja")
+                {
+                    if (FrmInformesCajas == null || FrmInformesCajas.IsDisposed)
+                    {
+                        FrmInformesCajas = new FrmInformesCajas();
+                        FrmInformesCajas.MdiParent = this;
+                        //FrmDevolucionVenta.BringToFront();
+                        FrmInformesCajas.Show();
+                    }
+                    else { FrmInformesCajas.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "ATS")
+                {
+
+                    if (Formats == null || Formats.IsDisposed)
+                    {
+                        Formats = new FormAts();
+                        Formats.MdiParent = this;
+                        //FrmDevolucionVenta.BringToFront();
+                        Formats.Show();
+                    }
+                    else { Formats.BringToFront(); }
+                }
+
+                else if (tvPrincipal.SelectedNode.Text == "Informe Nota de Crédito")
+                {
+
+                    if (FrmInformeNotaCredito == null || FrmInformeNotaCredito.IsDisposed)
+                    {
+                        FrmInformeNotaCredito = new FrmInformeNotaCredito();
+                        FrmInformeNotaCredito.MdiParent = this;
+                        //FrmDevolucionVenta.BringToFront();
+                        FrmInformeNotaCredito.Show();
+                    }
+                    else { FrmInformeNotaCredito.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Administrar Promociones")
+                {
+                    if (FrmAdministrarPromocion == null || FrmAdministrarPromocion.IsDisposed)
+                    {
+                        FrmAdministrarPromocion = new FrmAdministrarPromociones();
+                        FrmAdministrarPromocion.MdiParent = this;
+                        FrmAdministrarPromocion.Show();
+                    }
+                    else { FrmAdministrarPromocion.BringToFront(); }
+                }
+                else if (tvPrincipal.SelectedNode.Text == "Cuentas por Pagar")
+                {
+                    if (FrmCuentasPorPagar == null || FrmCuentasPorPagar.IsDisposed)
+                    {
+                        FrmCuentasPorPagar = new FrmCuentasPorPagar();
+                        FrmCuentasPorPagar.MdiParent = this;
+                        FrmCuentasPorPagar.Show();
+                    }
+                    else { FrmCuentasPorPagar.BringToFront(); }
+                }
+            }
         }
     }
 }

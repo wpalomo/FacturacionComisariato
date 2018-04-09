@@ -93,16 +93,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gbInformeCompra = new System.Windows.Forms.GroupBox();
             this.dgvInformeCompras = new System.Windows.Forms.DataGridView();
-            this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Irbp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -113,6 +103,16 @@
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Irbp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.pcOrdenCompra.SuspendLayout();
             this.gbDetalleProducto.SuspendLayout();
@@ -843,11 +843,11 @@
             this.Factura,
             this.Fecha,
             this.Proveedor,
-            this.dataGridViewTextBoxColumn1,
-            this.Ice,
-            this.Irbp,
             this.Subtotal0,
             this.Subtotal12,
+            this.Ice,
+            this.dataGridViewTextBoxColumn1,
+            this.Irbp,
             this.dataGridViewTextBoxColumn3,
             this.idProveedor});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -876,83 +876,6 @@
             this.dgvInformeCompras.Size = new System.Drawing.Size(1039, 404);
             this.dgvInformeCompras.TabIndex = 22;
             this.dgvInformeCompras.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformeCompras_CellEnter);
-            // 
-            // Factura
-            // 
-            this.Factura.FillWeight = 160.7917F;
-            this.Factura.HeaderText = "Factura";
-            this.Factura.Name = "Factura";
-            this.Factura.ReadOnly = true;
-            this.Factura.Width = 135;
-            // 
-            // Fecha
-            // 
-            this.Fecha.FillWeight = 82.69291F;
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 85;
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.FillWeight = 82.69291F;
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            this.Proveedor.ReadOnly = true;
-            this.Proveedor.Width = 265;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 82.69291F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Iva";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // Ice
-            // 
-            this.Ice.HeaderText = "ICE";
-            this.Ice.Name = "Ice";
-            this.Ice.ReadOnly = true;
-            this.Ice.Width = 75;
-            // 
-            // Irbp
-            // 
-            this.Irbp.HeaderText = "IRBP";
-            this.Irbp.Name = "Irbp";
-            this.Irbp.ReadOnly = true;
-            this.Irbp.Width = 75;
-            // 
-            // Subtotal0
-            // 
-            this.Subtotal0.FillWeight = 82.69291F;
-            this.Subtotal0.HeaderText = "Sub 0%";
-            this.Subtotal0.Name = "Subtotal0";
-            this.Subtotal0.ReadOnly = true;
-            this.Subtotal0.Width = 90;
-            // 
-            // Subtotal12
-            // 
-            this.Subtotal12.FillWeight = 82.69291F;
-            this.Subtotal12.HeaderText = "Sub12%";
-            this.Subtotal12.Name = "Subtotal12";
-            this.Subtotal12.ReadOnly = true;
-            this.Subtotal12.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 82.69291F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 115;
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.HeaderText = "IDProveedor";
-            this.idProveedor.Name = "idProveedor";
-            this.idProveedor.ReadOnly = true;
-            this.idProveedor.Visible = false;
             // 
             // btnAnular
             // 
@@ -1061,6 +984,83 @@
             this.label16.TabIndex = 17;
             this.label16.Text = "Desde:";
             // 
+            // Factura
+            // 
+            this.Factura.FillWeight = 160.7917F;
+            this.Factura.HeaderText = "Factura";
+            this.Factura.Name = "Factura";
+            this.Factura.ReadOnly = true;
+            this.Factura.Width = 135;
+            // 
+            // Fecha
+            // 
+            this.Fecha.FillWeight = 82.69291F;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 85;
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.FillWeight = 82.69291F;
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.ReadOnly = true;
+            this.Proveedor.Width = 265;
+            // 
+            // Subtotal0
+            // 
+            this.Subtotal0.FillWeight = 82.69291F;
+            this.Subtotal0.HeaderText = "Sub 0%";
+            this.Subtotal0.Name = "Subtotal0";
+            this.Subtotal0.ReadOnly = true;
+            this.Subtotal0.Width = 90;
+            // 
+            // Subtotal12
+            // 
+            this.Subtotal12.FillWeight = 82.69291F;
+            this.Subtotal12.HeaderText = "Sub12%";
+            this.Subtotal12.Name = "Subtotal12";
+            this.Subtotal12.ReadOnly = true;
+            this.Subtotal12.Width = 90;
+            // 
+            // Ice
+            // 
+            this.Ice.HeaderText = "ICE";
+            this.Ice.Name = "Ice";
+            this.Ice.ReadOnly = true;
+            this.Ice.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 82.69291F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Iva";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // Irbp
+            // 
+            this.Irbp.HeaderText = "IRBP";
+            this.Irbp.Name = "Irbp";
+            this.Irbp.ReadOnly = true;
+            this.Irbp.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 82.69291F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 115;
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.HeaderText = "IDProveedor";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            this.idProveedor.Visible = false;
+            // 
             // FrmCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1166,16 +1166,16 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.GroupBox gbInformeCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Factura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Irbp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal0;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Irbp;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
-        private System.Windows.Forms.GroupBox gbInformeCompra;
     }
 }

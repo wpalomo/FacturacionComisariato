@@ -56,6 +56,11 @@
             this.txtTotalDebe = new System.Windows.Forms.TextBox();
             this.txtTotalHaber = new System.Windows.Forms.TextBox();
             this.dgvDatosLibroDiario = new System.Windows.Forms.DataGridView();
+            this.planCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.centroCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDatosFactura = new System.Windows.Forms.GroupBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.txtICE = new System.Windows.Forms.TextBox();
@@ -140,16 +145,6 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.gbInformeOG = new System.Windows.Forms.GroupBox();
             this.dgvDatosOG = new System.Windows.Forms.DataGridView();
-            this.numeroOrdenGiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoOG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaOG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotalIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubtotalSinIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseImponibleConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtConsultar = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -161,11 +156,16 @@
             this.ElegirImpresero = new System.Windows.Forms.PrintDialog();
             this.ImpresionRide = new System.Drawing.Printing.PrintDocument();
             this.ImprimirRetencionRide = new System.Windows.Forms.PrintDialog();
-            this.planCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.centroCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroOrdenGiro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoOG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaOG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubtotalSinIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotalIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseImponibleConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -450,6 +450,45 @@
             this.dgvDatosLibroDiario.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDatosLibroDiario.Size = new System.Drawing.Size(996, 172);
             this.dgvDatosLibroDiario.TabIndex = 37;
+            // 
+            // planCuenta
+            // 
+            this.planCuenta.HeaderText = "Plan Cuenta";
+            this.planCuenta.Name = "planCuenta";
+            this.planCuenta.ReadOnly = true;
+            this.planCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.planCuenta.Width = 435;
+            // 
+            // centroCosto
+            // 
+            this.centroCosto.HeaderText = "Centro Costo";
+            this.centroCosto.Name = "centroCosto";
+            this.centroCosto.ReadOnly = true;
+            this.centroCosto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.centroCosto.Visible = false;
+            this.centroCosto.Width = 190;
+            // 
+            // debe
+            // 
+            this.debe.HeaderText = "Debe";
+            this.debe.Name = "debe";
+            this.debe.ReadOnly = true;
+            this.debe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // haber
+            // 
+            this.haber.HeaderText = "Haber";
+            this.haber.Name = "haber";
+            this.haber.ReadOnly = true;
+            this.haber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // concepto
+            // 
+            this.concepto.HeaderText = "Concepto";
+            this.concepto.Name = "concepto";
+            this.concepto.ReadOnly = true;
+            this.concepto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.concepto.Width = 295;
             // 
             // gbDatosFactura
             // 
@@ -1413,8 +1452,8 @@
             this.numeroDocumento,
             this.fechaDocumento,
             this.proveedor,
-            this.subtotalIVA,
             this.SubtotalSinIVA,
+            this.subtotalIVA,
             this.baseImponibleConsulta,
             this.idOG});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1444,76 +1483,6 @@
             this.dgvDatosOG.TabIndex = 21;
             this.dgvDatosOG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosOG_CellContentClick);
             this.dgvDatosOG.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosOG_CellEnter);
-            // 
-            // numeroOrdenGiro
-            // 
-            this.numeroOrdenGiro.HeaderText = "#O.G.";
-            this.numeroOrdenGiro.Name = "numeroOrdenGiro";
-            this.numeroOrdenGiro.ReadOnly = true;
-            this.numeroOrdenGiro.Width = 50;
-            // 
-            // tipoOG
-            // 
-            this.tipoOG.HeaderText = "Tipo Doc.";
-            this.tipoOG.Name = "tipoOG";
-            this.tipoOG.ReadOnly = true;
-            this.tipoOG.Width = 95;
-            // 
-            // fechaOG
-            // 
-            this.fechaOG.HeaderText = "Fecha O.G.";
-            this.fechaOG.Name = "fechaOG";
-            this.fechaOG.ReadOnly = true;
-            this.fechaOG.Width = 110;
-            // 
-            // numeroDocumento
-            // 
-            this.numeroDocumento.HeaderText = "# Doc.";
-            this.numeroDocumento.Name = "numeroDocumento";
-            this.numeroDocumento.ReadOnly = true;
-            this.numeroDocumento.Width = 150;
-            // 
-            // fechaDocumento
-            // 
-            this.fechaDocumento.HeaderText = "Fecha Doc.";
-            this.fechaDocumento.Name = "fechaDocumento";
-            this.fechaDocumento.ReadOnly = true;
-            this.fechaDocumento.Width = 110;
-            // 
-            // proveedor
-            // 
-            this.proveedor.HeaderText = "Proveedor";
-            this.proveedor.Name = "proveedor";
-            this.proveedor.ReadOnly = true;
-            this.proveedor.Width = 175;
-            // 
-            // subtotalIVA
-            // 
-            this.subtotalIVA.HeaderText = "Subt. IVA";
-            this.subtotalIVA.Name = "subtotalIVA";
-            this.subtotalIVA.ReadOnly = true;
-            this.subtotalIVA.Width = 90;
-            // 
-            // SubtotalSinIVA
-            // 
-            this.SubtotalSinIVA.HeaderText = "Subt sin IVA";
-            this.SubtotalSinIVA.Name = "SubtotalSinIVA";
-            this.SubtotalSinIVA.ReadOnly = true;
-            this.SubtotalSinIVA.Width = 110;
-            // 
-            // baseImponibleConsulta
-            // 
-            this.baseImponibleConsulta.HeaderText = "B. Imponible";
-            this.baseImponibleConsulta.Name = "baseImponibleConsulta";
-            this.baseImponibleConsulta.ReadOnly = true;
-            this.baseImponibleConsulta.Width = 110;
-            // 
-            // idOG
-            // 
-            this.idOG.HeaderText = "IDORDENGIRO";
-            this.idOG.Name = "idOG";
-            this.idOG.ReadOnly = true;
-            this.idOG.Visible = false;
             // 
             // txtConsultar
             // 
@@ -1602,44 +1571,75 @@
             // 
             this.ImprimirRetencionRide.UseEXDialog = true;
             // 
-            // planCuenta
+            // numeroOrdenGiro
             // 
-            this.planCuenta.HeaderText = "Plan Cuenta";
-            this.planCuenta.Name = "planCuenta";
-            this.planCuenta.ReadOnly = true;
-            this.planCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.planCuenta.Width = 435;
+            this.numeroOrdenGiro.HeaderText = "#O.G.";
+            this.numeroOrdenGiro.Name = "numeroOrdenGiro";
+            this.numeroOrdenGiro.ReadOnly = true;
+            this.numeroOrdenGiro.Width = 50;
             // 
-            // centroCosto
+            // tipoOG
             // 
-            this.centroCosto.HeaderText = "Centro Costo";
-            this.centroCosto.Name = "centroCosto";
-            this.centroCosto.ReadOnly = true;
-            this.centroCosto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.centroCosto.Visible = false;
-            this.centroCosto.Width = 190;
+            this.tipoOG.HeaderText = "Tipo Doc.";
+            this.tipoOG.Name = "tipoOG";
+            this.tipoOG.ReadOnly = true;
+            this.tipoOG.Width = 95;
             // 
-            // debe
+            // fechaOG
             // 
-            this.debe.HeaderText = "Debe";
-            this.debe.Name = "debe";
-            this.debe.ReadOnly = true;
-            this.debe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fechaOG.HeaderText = "Fecha O.G.";
+            this.fechaOG.Name = "fechaOG";
+            this.fechaOG.ReadOnly = true;
+            this.fechaOG.Width = 110;
             // 
-            // haber
+            // numeroDocumento
             // 
-            this.haber.HeaderText = "Haber";
-            this.haber.Name = "haber";
-            this.haber.ReadOnly = true;
-            this.haber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.numeroDocumento.HeaderText = "# Doc.";
+            this.numeroDocumento.Name = "numeroDocumento";
+            this.numeroDocumento.ReadOnly = true;
+            this.numeroDocumento.Width = 150;
             // 
-            // concepto
+            // fechaDocumento
             // 
-            this.concepto.HeaderText = "Concepto";
-            this.concepto.Name = "concepto";
-            this.concepto.ReadOnly = true;
-            this.concepto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.concepto.Width = 295;
+            this.fechaDocumento.HeaderText = "Fecha Doc.";
+            this.fechaDocumento.Name = "fechaDocumento";
+            this.fechaDocumento.ReadOnly = true;
+            this.fechaDocumento.Width = 110;
+            // 
+            // proveedor
+            // 
+            this.proveedor.HeaderText = "Proveedor";
+            this.proveedor.Name = "proveedor";
+            this.proveedor.ReadOnly = true;
+            this.proveedor.Width = 175;
+            // 
+            // SubtotalSinIVA
+            // 
+            this.SubtotalSinIVA.HeaderText = "Sub 0%";
+            this.SubtotalSinIVA.Name = "SubtotalSinIVA";
+            this.SubtotalSinIVA.ReadOnly = true;
+            this.SubtotalSinIVA.Width = 110;
+            // 
+            // subtotalIVA
+            // 
+            this.subtotalIVA.HeaderText = "Sub 12%";
+            this.subtotalIVA.Name = "subtotalIVA";
+            this.subtotalIVA.ReadOnly = true;
+            this.subtotalIVA.Width = 90;
+            // 
+            // baseImponibleConsulta
+            // 
+            this.baseImponibleConsulta.HeaderText = "B. Imponible";
+            this.baseImponibleConsulta.Name = "baseImponibleConsulta";
+            this.baseImponibleConsulta.ReadOnly = true;
+            this.baseImponibleConsulta.Width = 110;
+            // 
+            // idOG
+            // 
+            this.idOG.HeaderText = "IDORDENGIRO";
+            this.idOG.Name = "idOG";
+            this.idOG.ReadOnly = true;
+            this.idOG.Visible = false;
             // 
             // FrmOrdenDeGiro
             // 
@@ -1647,7 +1647,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(1085, 636);
+            this.ClientSize = new System.Drawing.Size(1085, 637);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
@@ -1784,16 +1784,6 @@
         private System.Windows.Forms.PrintDialog ImprimirRetencionRide;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroOrdenGiro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoOG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaOG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalIVA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubtotalSinIVA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn baseImponibleConsulta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOG;
         private System.Windows.Forms.DataGridViewTextBoxColumn retencionSRI;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn porcentaje;
@@ -1813,5 +1803,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn debe;
         private System.Windows.Forms.DataGridViewTextBoxColumn haber;
         private System.Windows.Forms.DataGridViewTextBoxColumn concepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroOrdenGiro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoOG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaOG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubtotalSinIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn baseImponibleConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOG;
     }
 }

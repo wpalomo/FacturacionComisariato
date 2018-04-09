@@ -48,9 +48,9 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformeVentas)).BeginInit();
@@ -146,9 +146,9 @@
             this.Usuario,
             this.identificacion,
             this.Cliente,
-            this.Iva,
             this.Subtotal0,
             this.Subtotal12,
+            this.Iva,
             this.Total});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -251,14 +251,6 @@
             this.Cliente.ReadOnly = true;
             this.Cliente.Width = 225;
             // 
-            // Iva
-            // 
-            this.Iva.FillWeight = 82.69291F;
-            this.Iva.HeaderText = "Iva";
-            this.Iva.Name = "Iva";
-            this.Iva.ReadOnly = true;
-            this.Iva.Width = 80;
-            // 
             // Subtotal0
             // 
             this.Subtotal0.FillWeight = 82.69291F;
@@ -274,6 +266,14 @@
             this.Subtotal12.Name = "Subtotal12";
             this.Subtotal12.ReadOnly = true;
             this.Subtotal12.Width = 90;
+            // 
+            // Iva
+            // 
+            this.Iva.FillWeight = 82.69291F;
+            this.Iva.HeaderText = "Iva";
+            this.Iva.Name = "Iva";
+            this.Iva.ReadOnly = true;
+            this.Iva.Width = 80;
             // 
             // Total
             // 
@@ -328,9 +328,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Iva;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal0;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Iva;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

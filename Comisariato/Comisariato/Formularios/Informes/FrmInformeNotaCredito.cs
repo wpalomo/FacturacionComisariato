@@ -33,6 +33,7 @@ namespace Comisariato.Formularios.Informes
                             break;
                     }
                 }
+                Funcion.dosDecimales(ref dgvDatosProducto, 4, 6);
             }
             catch
             { }
