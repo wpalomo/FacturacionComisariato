@@ -77,7 +77,7 @@
             this.dgvDetalleCP.Name = "dgvDetalleCP";
             this.dgvDetalleCP.RowHeadersVisible = false;
             this.dgvDetalleCP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleCP.Size = new System.Drawing.Size(475, 442);
+            this.dgvDetalleCP.Size = new System.Drawing.Size(475, 435);
             this.dgvDetalleCP.TabIndex = 0;
             this.dgvDetalleCP.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleCP_CellValueChanged);
             // 
@@ -193,9 +193,11 @@
             // 
             this.BtnPagar.Font = new System.Drawing.Font("Arial", 12F);
             this.BtnPagar.ForeColor = System.Drawing.Color.Teal;
-            this.BtnPagar.Location = new System.Drawing.Point(31, 523);
+            this.BtnPagar.Image = global::Comisariato.Properties.Resources.dinero;
+            this.BtnPagar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnPagar.Location = new System.Drawing.Point(11, 496);
             this.BtnPagar.Name = "BtnPagar";
-            this.BtnPagar.Size = new System.Drawing.Size(131, 75);
+            this.BtnPagar.Size = new System.Drawing.Size(119, 135);
             this.BtnPagar.TabIndex = 6;
             this.BtnPagar.Text = "Pagar";
             this.BtnPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -206,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(497, 631);
+            this.ClientSize = new System.Drawing.Size(497, 637);
             this.Controls.Add(this.BtnPagar);
             this.Controls.Add(this.TxtTotalDebe);
             this.Controls.Add(this.TxtTotalHaber);
@@ -219,9 +221,9 @@
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(513, 670);
+            this.MaximumSize = new System.Drawing.Size(513, 676);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(513, 670);
+            this.MinimumSize = new System.Drawing.Size(513, 676);
             this.Name = "FrmDetalleCP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de Cuenta por Pagar";
