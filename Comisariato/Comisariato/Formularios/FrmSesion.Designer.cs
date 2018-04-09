@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.PanelSesion = new System.Windows.Forms.Panel();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.lblError = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PboxSalir = new System.Windows.Forms.PictureBox();
-            this.cbEmpresa = new iTalk.iTalk_ComboBox();
-            this.txtUsuario = new iTalk.iTalk_TextBox_Small();
-            this.txtContraseña = new iTalk.iTalk_TextBox_Small();
-            this.BtnIniciar = new iTalk.iTalk_Button_2();
+            this.BtnIniciar = new iTalk.iTalk_Button_1();
             this.PanelSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PboxSalir)).BeginInit();
             this.SuspendLayout();
@@ -46,9 +46,9 @@
             // PanelSesion
             // 
             this.PanelSesion.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PanelSesion.Controls.Add(this.cbEmpresa);
-            this.PanelSesion.Controls.Add(this.txtUsuario);
             this.PanelSesion.Controls.Add(this.txtContraseña);
+            this.PanelSesion.Controls.Add(this.txtUsuario);
+            this.PanelSesion.Controls.Add(this.cbEmpresa);
             this.PanelSesion.Controls.Add(this.BtnIniciar);
             this.PanelSesion.Controls.Add(this.lblError);
             this.PanelSesion.Controls.Add(this.label2);
@@ -58,6 +58,40 @@
             this.PanelSesion.Name = "PanelSesion";
             this.PanelSesion.Size = new System.Drawing.Size(313, 329);
             this.PanelSesion.TabIndex = 1;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
+            this.txtContraseña.Location = new System.Drawing.Point(45, 183);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(232, 25);
+            this.txtContraseña.TabIndex = 15;
+            this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUsuario.Location = new System.Drawing.Point(42, 129);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(232, 25);
+            this.txtUsuario.TabIndex = 14;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
+            // 
+            // cbEmpresa
+            // 
+            this.cbEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.cbEmpresa.DropDownHeight = 100;
+            this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmpresa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbEmpresa.FormattingEnabled = true;
+            this.cbEmpresa.Location = new System.Drawing.Point(42, 78);
+            this.cbEmpresa.Name = "cbEmpresa";
+            this.cbEmpresa.Size = new System.Drawing.Size(232, 25);
+            this.cbEmpresa.TabIndex = 13;
             // 
             // lblError
             // 
@@ -113,71 +147,19 @@
             this.PboxSalir.TabStop = false;
             this.PboxSalir.Click += new System.EventHandler(this.PboxSalir_Click);
             // 
-            // cbEmpresa
-            // 
-            this.cbEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.cbEmpresa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbEmpresa.DropDownHeight = 100;
-            this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEmpresa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbEmpresa.ForeColor = System.Drawing.Color.White;
-            this.cbEmpresa.FormattingEnabled = true;
-            this.cbEmpresa.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.cbEmpresa.IntegralHeight = false;
-            this.cbEmpresa.ItemHeight = 20;
-            this.cbEmpresa.Location = new System.Drawing.Point(42, 78);
-            this.cbEmpresa.Name = "cbEmpresa";
-            this.cbEmpresa.Size = new System.Drawing.Size(232, 26);
-            this.cbEmpresa.StartIndex = 0;
-            this.cbEmpresa.TabIndex = 11;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.txtUsuario.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(42, 129);
-            this.txtUsuario.MaxLength = 32767;
-            this.txtUsuario.Multiline = false;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ReadOnly = false;
-            this.txtUsuario.Size = new System.Drawing.Size(232, 28);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUsuario.UseSystemPasswordChar = false;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged_1);
-            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.Transparent;
-            this.txtContraseña.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.txtContraseña.Location = new System.Drawing.Point(45, 183);
-            this.txtContraseña.MaxLength = 32767;
-            this.txtContraseña.Multiline = false;
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.ReadOnly = false;
-            this.txtContraseña.Size = new System.Drawing.Size(229, 28);
-            this.txtContraseña.TabIndex = 1;
-            this.txtContraseña.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtContraseña.UseSystemPasswordChar = true;
-            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
-            // 
             // BtnIniciar
             // 
             this.BtnIniciar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIniciar.ForeColor = System.Drawing.Color.White;
+            this.BtnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.BtnIniciar.Image = null;
             this.BtnIniciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnIniciar.Location = new System.Drawing.Point(93, 257);
             this.BtnIniciar.Name = "BtnIniciar";
             this.BtnIniciar.Size = new System.Drawing.Size(136, 30);
-            this.BtnIniciar.TabIndex = 2;
+            this.BtnIniciar.TabIndex = 12;
             this.BtnIniciar.Text = "INICIAR";
             this.BtnIniciar.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click_1);
+            this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click_2);
             // 
             // FrmLogin
             // 
@@ -210,10 +192,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label label3;
-        private iTalk.iTalk_Button_2 BtnIniciar;
-        private iTalk.iTalk_TextBox_Small txtContraseña;
-        private iTalk.iTalk_TextBox_Small txtUsuario;
-        private iTalk.iTalk_ComboBox cbEmpresa;
+        private iTalk.iTalk_Button_1 BtnIniciar;
+        private System.Windows.Forms.ComboBox cbEmpresa;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }
 
