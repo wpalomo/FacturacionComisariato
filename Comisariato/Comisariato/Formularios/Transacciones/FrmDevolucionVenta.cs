@@ -516,5 +516,78 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
         {
             this.Close();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                consultaNC();
+                for (int i = 0; i < dgvDatosProducto.RowCount - 1; i++)
+                {
+                    if (Convert.ToString(dgvDatosProducto.Rows[i].Cells[0].Value) != "")
+                    {
+                        for (int j = 4; j < 6; j++)
+                            dgvDatosProducto.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvDatosProducto.Rows[i].Cells[j].Value.ToString())), 2).ToString());
+                        if (Convert.ToString(dgvDatosProducto.Rows[i + 1].Cells[0].Value) == "")
+                            break;
+                    }
+                }
+                //if (rbActivos.Checked)
+                //{
+                //    txtModificarVer.Enabled = true;
+                //}
+                //else if (rbAnulados.Checked)
+                //{
+                //    txtModificarVer.Enabled = false;
+                //}
+                Funcion.dosDecimales(ref dgvDatosProducto, 4, 6);
+            }
+            catch
+            { }
+        }
+
+        public void consultaNC()
+        {
+            //bool ver = false;
+            //if (rbActivos.Checked)
+            //{
+            //    ver = true;
+            //    btnAnular.Text = "Anular";
+            //}
+            //else if (rbAnulados.Checked)
+            //{
+            //    ver = false;
+            //    btnAnular.Text = "Activar";
+            //}
+            string sql = "SELECT * FROM Vista_DevolucionVenta where NUMEROFACTURA LIKE '" + txtConsultar.Text + "%' AND FECHA BETWEEN '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' AND '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "'";
+            c.boolLlenarDataGrid(dgvDatosProducto, sql, 20, 7, 0);
+            if (Convert.ToString(dgvDatosProducto.Rows[0].Cells[0].Value) != "")
+            {
+                dgvDatosProducto.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvDatosProducto.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                for (int i = 0; i < dgvDatosProducto.RowCount - 1; i++)
+                {
+                    if (Convert.ToString(dgvDatosProducto.Rows[i].Cells[0].Value) != "")
+                    {
+                        for (int j = 4; j < 6; j++)
+                            dgvDatosProducto.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(dgvDatosProducto.Rows[i].Cells[j].Value.ToString());
+                        if (Convert.ToString(dgvDatosProducto.Rows[i + 1].Cells[0].Value) == "")
+                            break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                for (int i = 0; i < dgvDatosProducto.RowCount - 1; i++)
+                {
+                    dgvDatosProducto.Rows[i].Cells[0].Value = Convert.ToDateTime(dgvDatosProducto.Rows[i].Cells[0].Value).ToShortDateString();
+                    if (Convert.ToString(dgvDatosProducto.Rows[i + 1].Cells[0].Value) == "")
+                        break;
+                }
+            }
+            dgvDatosProducto.Focus();
+        }
     }
 }

@@ -107,10 +107,14 @@ namespace Comisariato.Formularios.Cartera
             for (int i = 0; i < dgvCuentasPorPagar.RowCount - 1; i++)
             {
                 if (Convert.ToString(dgvCuentasPorPagar.Rows[i].Cells[0].Value) != "")
-                    dgvCuentasPorPagar.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter(dgvCuentasPorPagar.Rows[i].Cells[1].Value.ToString());
+                {
+                    dgvCuentasPorPagar.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvCuentasPorPagar.Rows[i].Cells[1].Value), 4)).ToString("N4"));
+                }
+
                 else
                     break;
             }
+            dgvCuentasPorPagar.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
         }
 

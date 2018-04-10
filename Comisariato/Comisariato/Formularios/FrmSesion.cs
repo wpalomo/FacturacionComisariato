@@ -68,6 +68,7 @@ namespace Comisariato
             c.BoolLlenarComboBox(cbEmpresa, "select IDEMPRESA as ID, NOMBRE as Texto from TbEmpresa");
             PanelSesion.BackColor = Color.FromArgb(100, 0xFF, 0xFF, 0XFF);
             BtnIniciar.BackColor = Color.FromArgb(224, 224, 224);
+            txtUsuario.Focus();
 
         }
 

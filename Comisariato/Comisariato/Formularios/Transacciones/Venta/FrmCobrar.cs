@@ -1130,7 +1130,7 @@ namespace Comisariato.Formularios.Transacciones
                     objcif.DirEstablecimiento = Program.direccionempresa;
                     //objcif.ContribuyenteEspecial = Program.direccionempresa;
                     objcif.GuiaRemision = sucursal.ToString("D3") + "-" + caja.ToString("D3") + "-" + numfactbd.ToString("D9");
-                    xml.infoFactura("infoFactura", objcif, dgvCheque, dgvTarjeta, ckbEfectivo, txtTotalPagar.Text, dg);
+                    xml.infoFactura("infoFactura", objcif, dgvCheque, dgvTarjeta, ckbEfectivo.Checked,ckbCheque.Checked,ckbTarjeta.Checked ,txtTotalPagar.Text, dg);
                     xml.detalleFactura("detalles", dg);
 
                     var PathServer = ConfigurationManager.AppSettings["XmlServidor"] + @"\Generados\";

@@ -48,7 +48,8 @@ namespace Comisariato.Formularios.Informes
         public void saldos() {
             for (int i = 0; i < dgvInformeCajas.RowCount - 1; i++)
             {
-                dgvInformeCajas.Rows[i].Cells[4].Value = Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[2].Value) - Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[3].Value), 2);
+                if(dgvInformeCajas.Rows[i].Cells[0].Value != null)
+                    dgvInformeCajas.Rows[i].Cells[4].Value = Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[2].Value) - Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[3].Value), 2);
             }
         }
         public void cierreCaja()
@@ -189,11 +190,14 @@ namespace Comisariato.Formularios.Informes
                 cierreCaja();
                 for (int i = 0; i < dgvInformeCajas.RowCount - 1; i++)
                 {
-                    dgvInformeCajas.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[2].Value),2)));
-                    dgvInformeCajas.Rows[i].Cells[3].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[3].Value), 2)));
-                    dgvInformeCajas.Rows[i].Cells[4].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[4].Value), 2)));
-                    dgvInformeCajas.Rows[i].Cells[5].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[5].Value), 2)));
-                    dgvInformeCajas.Rows[i].Cells[6].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[6].Value), 2)));
+                    if (Convert.ToString(dgvInformeCajas.Rows[0].Cells[0].Value) != "")
+                    {
+                        dgvInformeCajas.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[2].Value), 2)));
+                        dgvInformeCajas.Rows[i].Cells[3].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[3].Value), 2)));
+                        dgvInformeCajas.Rows[i].Cells[4].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[4].Value), 2)));
+                        dgvInformeCajas.Rows[i].Cells[5].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[5].Value), 2)));
+                        dgvInformeCajas.Rows[i].Cells[6].Value = Funcion.reemplazarcaracter(Convert.ToString(Math.Round(Convert.ToSingle(dgvInformeCajas.Rows[i].Cells[6].Value), 2)));
+                    }
                     if (Convert.ToString(dgvInformeCajas.Rows[i + 1].Cells[0].Value) == "")
                     {
                         break;

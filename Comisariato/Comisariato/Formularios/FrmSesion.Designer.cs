@@ -57,7 +57,7 @@
             this.PanelSesion.Location = new System.Drawing.Point(168, 125);
             this.PanelSesion.Name = "PanelSesion";
             this.PanelSesion.Size = new System.Drawing.Size(313, 329);
-            this.PanelSesion.TabIndex = 1;
+            this.PanelSesion.TabIndex = 4;
             // 
             // txtContraseña
             // 
@@ -66,7 +66,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(45, 183);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(232, 25);
-            this.txtContraseña.TabIndex = 15;
+            this.txtContraseña.TabIndex = 1;
             this.txtContraseña.UseSystemPasswordChar = true;
             this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
@@ -77,7 +77,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(42, 129);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(232, 25);
-            this.txtUsuario.TabIndex = 14;
+            this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
@@ -92,7 +92,7 @@
             this.cbEmpresa.Location = new System.Drawing.Point(42, 78);
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(232, 25);
-            this.cbEmpresa.TabIndex = 13;
+            this.cbEmpresa.TabIndex = 2;
             // 
             // BtnIniciar
             // 
@@ -103,7 +103,7 @@
             this.BtnIniciar.Location = new System.Drawing.Point(93, 257);
             this.BtnIniciar.Name = "BtnIniciar";
             this.BtnIniciar.Size = new System.Drawing.Size(136, 30);
-            this.BtnIniciar.TabIndex = 12;
+            this.BtnIniciar.TabIndex = 3;
             this.BtnIniciar.Text = "INICIAR";
             this.BtnIniciar.TextAlignment = System.Drawing.StringAlignment.Center;
             this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click_2);
