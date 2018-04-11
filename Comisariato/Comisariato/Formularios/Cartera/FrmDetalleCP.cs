@@ -228,8 +228,8 @@ namespace Comisariato.Formularios.Cartera
                 else
                     break;
             }
-            TxtTotalDebe.Text = Funcion.reemplazarcaracter(totalDEBE.ToString());
-            TxtTotalHaber.Text = Funcion.reemplazarcaracter(totalHABER.ToString());
+            TxtTotalDebe.Text = Funcion.reemplazarcaracter(totalDEBE.ToString("N4"));
+            TxtTotalHaber.Text = Funcion.reemplazarcaracter(totalHABER.ToString("N4"));
             TxtTotalPagar.Text = Funcion.reemplazarcaracter((totalDEBE - totalHABER).ToString());
             ///FIN SUMAR DEBE,HABER y TOTAL
 
@@ -237,9 +237,9 @@ namespace Comisariato.Formularios.Cartera
             for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
             {
                 if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
-                    dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter(dgvDetalleCP.Rows[i].Cells[1].Value.ToString());
+                    dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[1].Value), 4)).ToString("N4"));
                 else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
-                    dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter(dgvDetalleCP.Rows[i].Cells[2].Value.ToString());
+                    dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[2].Value), 4)).ToString("N4"));
                 else
                     break;
             }

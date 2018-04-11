@@ -22,6 +22,17 @@ namespace Comisariato.Formularios.Informes
             fechaDesde = "", añoHasta = "", fechaHasta = "", mesDesde = "", diaDesde = "", mesHasta = "", diaHasta = "", 
             cadenaConsultar = "";
 
+        private void txtConsultar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtConsultar.Text != "")
+            {
+                if (e.KeyChar == (char)Keys.Return)
+                {
+                    btnConsultar_Click(null, null);
+                }
+            }
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             obtenerFechas();
@@ -69,7 +80,10 @@ namespace Comisariato.Formularios.Informes
                 }
                 for (int i = 0; i < dgvInformeVentas.RowCount - 1; i++)
                 {
-                    dgvInformeVentas.Rows[i].Cells[3].Value = Convert.ToDateTime(dgvInformeVentas.Rows[i].Cells[3].Value).ToShortDateString();
+                    if (dgvInformeVentas.Rows[i].Cells[0].Value != null)
+                    {
+                        dgvInformeVentas.Rows[i].Cells[3].Value = Convert.ToDateTime(dgvInformeVentas.Rows[i].Cells[3].Value).ToShortDateString();
+                    }
                 }
             }
             dgvInformeVentas.Focus();

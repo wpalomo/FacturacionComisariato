@@ -39,8 +39,6 @@
             this.txtConsultar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvInformeVentas = new System.Windows.Forms.DataGridView();
-            this.BtnExportarExcel = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +50,8 @@
             this.Subtotal12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnExportarExcel = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformeVentas)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +115,7 @@
             this.txtConsultar.Name = "txtConsultar";
             this.txtConsultar.Size = new System.Drawing.Size(340, 23);
             this.txtConsultar.TabIndex = 22;
+            this.txtConsultar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultar_KeyPress);
             // 
             // label8
             // 
@@ -173,28 +174,6 @@
             this.dgvInformeVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInformeVentas.Size = new System.Drawing.Size(1039, 442);
             this.dgvInformeVentas.TabIndex = 21;
-            // 
-            // BtnExportarExcel
-            // 
-            this.BtnExportarExcel.Image = global::Comisariato.Properties.Resources.Excel_2013_24px_1180012_easyicon_net;
-            this.BtnExportarExcel.Location = new System.Drawing.Point(1017, 91);
-            this.BtnExportarExcel.Name = "BtnExportarExcel";
-            this.BtnExportarExcel.Size = new System.Drawing.Size(36, 29);
-            this.BtnExportarExcel.TabIndex = 23;
-            this.BtnExportarExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnExportarExcel.UseVisualStyleBackColor = true;
-            this.BtnExportarExcel.Click += new System.EventHandler(this.BtnExportarExcel_Click_1);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Font = new System.Drawing.Font("Arial", 10F);
-            this.btnConsultar.Location = new System.Drawing.Point(924, 49);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(114, 25);
-            this.btnConsultar.TabIndex = 26;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // Sucursal
             // 
@@ -282,6 +261,28 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             this.Total.Width = 85;
+            // 
+            // BtnExportarExcel
+            // 
+            this.BtnExportarExcel.Image = global::Comisariato.Properties.Resources.Excel_2013_24px_1180012_easyicon_net;
+            this.BtnExportarExcel.Location = new System.Drawing.Point(1017, 91);
+            this.BtnExportarExcel.Name = "BtnExportarExcel";
+            this.BtnExportarExcel.Size = new System.Drawing.Size(36, 29);
+            this.BtnExportarExcel.TabIndex = 23;
+            this.BtnExportarExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnExportarExcel.UseVisualStyleBackColor = true;
+            this.BtnExportarExcel.Click += new System.EventHandler(this.BtnExportarExcel_Click_1);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Font = new System.Drawing.Font("Arial", 10F);
+            this.btnConsultar.Location = new System.Drawing.Point(924, 49);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(114, 25);
+            this.btnConsultar.TabIndex = 26;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // FrmInformeVentas
             // 

@@ -50,11 +50,11 @@ namespace Comisariato.Clases
             doc.Save(rutaXml);
         }
 
-        public void infoFactura(string nodoraiz,InfoFactura objc, DataGridView dgvcheque,DataGridView dgvcredito, CheckBox chkefectivo, string valorefectivo, DataGridView dgvDetalleProductos)
+        public void infoFactura(string nodoraiz,InfoFactura objc, DataGridView dgvcheque,DataGridView dgvcredito, bool chkefectivo, bool chkcheque, bool chktarjeta, string valorefectivo, DataGridView dgvDetalleProductos)
         {
             doc.Load(rutaXml);
 
-            XmlNode NodoInfoTributarios = CrearNodoInfoFactura(objc.FechaEmision,objc.DirEstablecimiento,objc.ContribuyenteEspecial,objc.ObligadoContabilidad,objc.TipoIdentificacionComprador,objc.RazonSocialComprador,objc.IdentificacionComprador,objc.TotalSinImpuestos,objc.TotalDescuento,objc.Codigo,objc.CodigoPorcentaje,objc.DescuentoAdicional,objc.BaseImponible,objc.Valor,objc.Propina,objc.ImporteTotal,objc.Moneda, objc.GuiaRemision, objc.DireccionComprador, dgvcheque, dgvcredito, chkefectivo,valorefectivo,dgvDetalleProductos);
+            XmlNode NodoInfoTributarios = CrearNodoInfoFactura(objc.FechaEmision,objc.DirEstablecimiento,objc.ContribuyenteEspecial,objc.ObligadoContabilidad,objc.TipoIdentificacionComprador,objc.RazonSocialComprador,objc.IdentificacionComprador,objc.TotalSinImpuestos,objc.TotalDescuento,objc.Codigo,objc.CodigoPorcentaje,objc.DescuentoAdicional,objc.BaseImponible,objc.Valor,objc.Propina,objc.ImporteTotal,objc.Moneda, objc.GuiaRemision, objc.DireccionComprador, dgvcheque, dgvcredito, chkefectivo, chkcheque,chktarjeta,valorefectivo, dgvDetalleProductos);
 
             XmlNode nodoRaiz = doc.DocumentElement;
 
@@ -193,7 +193,7 @@ namespace Comisariato.Clases
             return detalle;
         }
 
-        private XmlNode CrearNodoInfoFactura(string fechaEmision, string dirEstablecimiento, string contribuyenteEspecial, string obligadoContabilidad, string tipoIdentificacionComprador, string razonSocialComprador, string identificacionComprador, string totalSinImpuestos, string totalDescuento, string codigo, string codigoPorcentaje, string descuentoAdicional, string baseImponible, string valor, string propina, string importeTotal, string moneda,string guiaRemision,string direccionComprador,DataGridView dgvcheque,DataGridView dgvcredito,CheckBox chkefectivo,string valorefectivo,DataGridView dgvDetalle)
+        private XmlNode CrearNodoInfoFactura(string fechaEmision, string dirEstablecimiento, string contribuyenteEspecial, string obligadoContabilidad, string tipoIdentificacionComprador, string razonSocialComprador, string identificacionComprador, string totalSinImpuestos, string totalDescuento, string codigo, string codigoPorcentaje, string descuentoAdicional, string baseImponible, string valor, string propina, string importeTotal, string moneda,string guiaRemision,string direccionComprador,DataGridView dgvcheque,DataGridView dgvcredito,bool chkefectivo, bool chkcheque, bool chktarjeta, string valorefectivo,DataGridView dgvDetalle)
         {
             XmlNode Nodoraiz = doc.CreateElement("infoFactura");
 
@@ -267,10 +267,18 @@ namespace Comisariato.Clases
             XmlNode SubNodopagos = doc.CreateElement("pagos");
             Nodoraiz.AppendChild(SubNodopagos);
 
-            //if (chkefectivo.Checked)
-            //{
+            //if (chkefectivo)
                 SubNodopagos.AppendChild(agregarformapago("01", importeTotal, "", "", 1));
+            //else if (chkcheque)
+                //SubNodopagos.AppendChild(agregarformapago("20", importeTotal, "", "", 1));
+            //else if (chktarjeta)
+            //{
+                //if(tarjetadebito)
+                    //SubNodopagos.AppendChild(agregarformapago("16", importeTotal, "", "", 1));
+                //if (tarjetacrebito)
+                    //SubNodopagos.AppendChild(agregarformapago("19", importeTotal, "", "", 1));
             //}
+                
 
 
             //for (int i = 0; i < dgvcheque.RowCount; i++)
@@ -285,7 +293,7 @@ namespace Comisariato.Clases
             //    {
             //        break;
             //    }
-               
+
             //}
 
             //for (int i = 0; i < dgvcredito.RowCount; i++)
@@ -297,7 +305,7 @@ namespace Comisariato.Clases
             //}
 
 
-            
+
 
             return Nodoraiz;
         }
