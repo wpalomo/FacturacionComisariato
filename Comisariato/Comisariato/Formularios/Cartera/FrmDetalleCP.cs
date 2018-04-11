@@ -131,6 +131,7 @@ namespace Comisariato.Formularios.Cartera
                             //dgvDetalleCP.Rows[j].Cells[1].Value = rowNotaCredito[2]; //Debe
                             dgvDetalleCP.Rows[j].Cells[2].Value = rowNotaCredito[2]; // Haber
                             dgvDetalleCP.Rows[j].Cells[3].Value = rowNotaCredito[1]; // Fecha
+                            break;
                         }
                     }
                 }
