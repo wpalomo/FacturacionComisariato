@@ -2736,5 +2736,15 @@ namespace Comisariato.Clases
 
 
         }
+        public AutoCompleteStringCollection LoadAutoComplete(DataTable dt)
+        {
+            
+            AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
+            foreach (DataRow row in dt.Rows)
+            {
+                stringCol.Add(Convert.ToString(row["Texto"]));
+            }
+            return stringCol;
+        }
     }
 }

@@ -68,6 +68,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         }
         private void FrmCompra_Load(object sender, EventArgs e)
         {
+            
             for (int i = 2; i < 13; i++)
                 dgvProductosIngresos.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             SendKeys.Send("{TAB}");
@@ -96,6 +97,14 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             for (int i = 0; i < 20; i++)
                 dgvInformeCompras.Rows.Add();
             cadenaConsultar = cadenaGeneral;
+            DataTable dt = (DataTable)cbProveedor.DataSource;
+            cbProveedor.AutoCompleteCustomSource = consultas.LoadAutoComplete(dt);
+            cbProveedor.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbProveedor.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            dt = (DataTable)cbSucursal.DataSource;
+            cbSucursal.AutoCompleteCustomSource = consultas.LoadAutoComplete(dt);
+            cbSucursal.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbSucursal.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
         //FrmOrdenDeGiro frmOrdenDeGiro = new FrmOrdenDeGiro();
         private void BtnGuardar_Click(object sender, EventArgs e)
