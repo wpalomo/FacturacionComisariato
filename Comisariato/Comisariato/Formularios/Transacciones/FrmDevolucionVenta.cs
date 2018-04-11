@@ -317,6 +317,7 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
             }
             txtSucursal.Focus();
             BtnGuardar.Text = "&Guardar";
+            modificar = false;
         }
 
         private void limpiarDGV()
@@ -405,62 +406,78 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
                     //{
                     if (!verificarLimites())
                     {
-                        if (MessageBox.Show("¿Estas seguro de darle de baja a estos Items?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (!modificar)
                         {
-
-                            bool b = c.DevolucionVenta(pedidos, Convert.ToInt32(txtNumFact.Text));
-                            if (b)
+                            if (MessageBox.Show("¿Estas seguro de darle de baja a estos Items?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
 
-                                string idEncabezado = c.ObtenerValorCampo("IDFACTURA", "TbEncabezadoFactura", "where SUCURSAL = " + Convert.ToInt32(txtSucursal.Text) + " AND CAJA = " + Convert.ToInt32(txtCaja.Text) + " and NFACTURA =" + Convert.ToInt32(txtNumFact.Text) + "");
-                                objEND = new EncabezadoNotaDebito(txtSerie1ND.Text, txtSerie2ND.Text, txtNumeroND.Text, Convert.ToInt32(idEncabezado), Convert.ToSingle(txtTotalDevolucion.Text));
-                                string resultado = objEND.InsertarEncabezadoND(objEND);
-                                if (resultado == "Datos Guardados")
+                                bool b = c.DevolucionVenta(pedidos, Convert.ToInt32(txtNumFact.Text));
+                                if (b)
                                 {
-                                    string encabezadoND = c.ObtenerValorCampo("IDENCABEZADONOTADEBITO", "TbEncabezadoNotaDebito", "WHERE IDENCABEZADOVENTA =" + idEncabezado);
-                                    bool banderaCorrecto = false;
-                                    for (int i = 0; i < DgvDetalleFact.RowCount - 1; i++)
+
+                                    string idEncabezado = c.ObtenerValorCampo("IDFACTURA", "TbEncabezadoFactura", "where SUCURSAL = " + Convert.ToInt32(txtSucursal.Text) + " AND CAJA = " + Convert.ToInt32(txtCaja.Text) + " and NFACTURA =" + Convert.ToInt32(txtNumFact.Text) + "");
+                                    objEND = new EncabezadoNotaDebito(txtSerie1ND.Text, txtSerie2ND.Text, txtNumeroND.Text, Convert.ToInt32(idEncabezado), Convert.ToSingle(txtTotalDevolucion.Text));
+                                    string resultado = objEND.InsertarEncabezadoND(objEND);
+                                    if (resultado == "Datos Guardados")
                                     {
-                                        if (Convert.ToString(DgvDetalleFact.Rows[i].Cells[6].Value) != "")
+                                        string encabezadoND = c.ObtenerValorCampo("IDENCABEZADONOTADEBITO", "TbEncabezadoNotaDebito", "WHERE IDENCABEZADOVENTA =" + idEncabezado);
+                                        bool banderaCorrecto = false;
+                                        for (int i = 0; i < DgvDetalleFact.RowCount - 1; i++)
                                         {
-                                            objDND = new DetalleNotaDebito(Convert.ToInt32(encabezadoND), Convert.ToInt32(DgvDetalleFact.Rows[i].Cells[6].Value), Convert.ToString(DgvDetalleFact.Rows[i].Cells[0].Value));
-                                            string resultado2 = objDND.InsertarDetalleND(objDND);
-                                            if (resultado == "Datos Guardados")
-                                                banderaCorrecto = true;
-                                            else
-                                                banderaCorrecto = false;
+                                            if (Convert.ToString(DgvDetalleFact.Rows[i].Cells[6].Value) != "")
+                                            {
+                                                objDND = new DetalleNotaDebito(Convert.ToInt32(encabezadoND), Convert.ToInt32(DgvDetalleFact.Rows[i].Cells[6].Value), Convert.ToString(DgvDetalleFact.Rows[i].Cells[0].Value));
+                                                string resultado2 = objDND.InsertarDetalleND(objDND);
+                                                if (resultado == "Datos Guardados")
+                                                    banderaCorrecto = true;
+                                                else
+                                                    banderaCorrecto = false;
+                                            }
+                                            if (Convert.ToString(DgvDetalleFact.Rows[i + 1].Cells[0].Value) == "")
+                                                break;
+
                                         }
-                                        if (Convert.ToString(DgvDetalleFact.Rows[i + 1].Cells[0].Value) == "")
-                                            break;
+                                        if (banderaCorrecto)
+                                        {
+                                            MessageBox.Show("Cambios realizados con exito.");
+                                            string numeroND = (Convert.ToInt32(txtNumeroND.Text) + 1).ToString("D9");
+                                            c.EjecutarSQL("UPDATE [dbo].[TbCajasTalonario] SET [DOCUMENTOACTUAL] = '" + numeroND + "' WHERE SERIE1 = '" + txtSerie1ND.Text + "' and SERIE2 = '" + txtSerie2ND.Text + "' and IPESTACION = '" + bitacora.LocalIPAddress() + "' and TIPODOCUMENTO = 'NDEB'");
+                                            c.seriesDocumentoRetencion(txtNumeroND, txtSerie1ND, txtSerie2ND, txtAutorizacionND, "NDEB", bitacora.LocalIPAddress());
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Error al guardar la Nota de Crédito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                            c.EjecutarSQL("DELETE FROM [dbo].[TbDetalleNotaDebito] WHERE IDENCABEZADONOTADEBITO = " + encabezadoND + "");
+                                            c.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoNotaDebito] WHERE IDENCABEZADOVENTA = " + idEncabezado + "");
+                                        }
 
                                     }
-                                    if (banderaCorrecto)
-                                    {
-                                        MessageBox.Show("Cambios realizados con exito.");
-                                        string numeroND = (Convert.ToInt32(txtNumeroND.Text) + 1).ToString("D9");
-                                        c.EjecutarSQL("UPDATE [dbo].[TbCajasTalonario] SET [DOCUMENTOACTUAL] = '" + numeroND + "' WHERE SERIE1 = '" + txtSerie1ND.Text + "' and SERIE2 = '" + txtSerie2ND.Text + "' and IPESTACION = '" + bitacora.LocalIPAddress() + "' and TIPODOCUMENTO = 'NDEB'");
-                                        c.seriesDocumentoRetencion(txtNumeroND, txtSerie1ND, txtSerie2ND, txtAutorizacionND, "NDEB", bitacora.LocalIPAddress());
-                                    }
-                                    else
+                                    else if (resultado == "Error al Registrar")
                                     {
                                         MessageBox.Show("Error al guardar la Nota de Crédito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        c.EjecutarSQL("DELETE FROM [dbo].[TbDetalleNotaDebito] WHERE IDENCABEZADONOTADEBITO = " + encabezadoND + "");
                                         c.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoNotaDebito] WHERE IDENCABEZADOVENTA = " + idEncabezado + "");
                                     }
-
+                                    else if (resultado == "Existe")
+                                        MessageBox.Show("Ya existe la Nota de Crédito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    LimpiarTodo();
                                 }
-                                else if (resultado == "Error al Registrar")
+                                else
                                 {
-                                    MessageBox.Show("Error al guardar la Nota de Crédito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    c.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoNotaDebito] WHERE IDENCABEZADOVENTA = " + idEncabezado + "");
+                                    MessageBox.Show("Error al realizar devolucion.");
                                 }
-                                else if (resultado == "Existe")
-                                    MessageBox.Show("Ya existe la Nota de Crédito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                LimpiarTodo();
                             }
-                            else
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("¿Estas seguro de modificar?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                MessageBox.Show("Error al realizar devolucion.");
+                                bool resultado = c.modificarNotadeDebito(DgvDetalleFact, encabezadoNotaCreditoVenta);
+                                if (resultado)
+                                {
+                                    MessageBox.Show("Cambios realizados con exito.");
+                                }
+                                else
+                                    MessageBox.Show("Error al realizar el cambio.");
                             }
                         }
                     }
@@ -599,7 +616,7 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
 
         private void txtModificarVer_Click(object sender, EventArgs e)
         {
-            if (dgvDatosProducto.RowCount > 0)
+            if (dgvDatosProducto.RowCount > 0 && dgvDatosProducto.CurrentRow.Cells[1].Value != null)
             {
                 modificar = true;
                 BtnGuardar.Text = "Modificar";
@@ -621,40 +638,47 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
                     txtCliente.Text = dgvDatosProducto.CurrentRow.Cells[3].Value.ToString();
                     txtTotalDevolucion.Text = dgvDatosProducto.CurrentRow.Cells[4].Value.ToString();
                     txtTotalFactura.Text = dgvDatosProducto.CurrentRow.Cells[5].Value.ToString();
+                    DataTable detalleNotaCreditoVentas = c.BoolDataTable("select * from TbDetalleNotaDebito where IDENCABEZADONOTADEBITO = " + dgvDatosProducto.CurrentRow.Cells[6].Value);
+                    if (detalleNotaCreditoVentas.Rows.Count > 0)
+                    {
+                        em = c.ConsutarFactura(int.Parse(txtSucursal.Text), int.Parse(txtCaja.Text), int.Parse(txtNumFact.Text), 2);
+                        if (em != null)
+                        {
+                            product = c.detalleFact;
+                            if (product.Count > 0)
+                            {
+                                limpiarDGV();
+                                llenarDgV();
+                                lblUsuario.Text = "Usuario: " + em.NombreUsuario;
+                                txtCliente.Text = em.NombresCliente;
+                                DgvDetalleFact.CurrentCell = DgvDetalleFact.Rows[0].Cells[0];
+                                DgvDetalleFact.BeginEdit(true);
 
-                    //txtAutorizacionNC.Text = Convert.ToString(rowEncabezado["AUTORIZACION"]);
-                    //dtpFechaEmision.Value = Convert.ToDateTime(rowEncabezado["FECHA"]);
-                    //txtSerie1NC.Text = rowEncabezado["SERIE1"].ToString();
-                    //txtSerie2NC.Text = rowEncabezado["SERIE2"].ToString();
-                    //txtNumeroNC.Text = rowEncabezado["NUMERO"].ToString();
-                    //DataTable detalleNotaCredito = c.BoolDataTable("select * from TbDetalleNotaCredito where IDENCABEZADONOTACREDITO = " + encabezadoNotaCredito);
-                    //if (detalleNotaCredito.Rows.Count > 0)
-                    //{
-                    //    for (int i = 0; i < detalleNotaCredito.Rows.Count; i++)
-                    //    {
-                    //        DataRow rowDetalleCredito = detalleNotaCredito.Rows[i];
-                    //        if (Convert.ToString(rowDetalleCredito["CANTIDAD"]) != "0" && Convert.ToString(rowDetalleCredito["PORCENTAJE"]) == "0")
-                    //        {
-                    //            dgvProductosDevolucion.Rows[i].Cells[9].Value = rowDetalleCredito["CANTIDAD"];
-                    //            dgvProductosDevolucion.Rows[i].Cells[11].Value = rowDetalleCredito["CANTIDAD"];
-                    //            Calcular(11);
-                    //        }
-                    //        else if (Convert.ToString(rowDetalleCredito["CANTIDAD"]) == "0" && Convert.ToString(rowDetalleCredito["PORCENTAJE"]) != "0")
-                    //        {
-                    //            dgvProductosDevolucion.Rows[i].Cells[10].Value = rowDetalleCredito["PORCENTAJE"] + "%";
-                    //            string[] porcentaje = dgvProductosDevolucion.Rows[i].Cells[10].Value.ToString().Split('%');
-                    //            dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(porcentaje[0]) / 100)).ToString());
-                    //            Calcular(11);
-                    //        }
-                    //        else if (Convert.ToString(rowDetalleCredito["CANTIDAD"]) == "0" && Convert.ToString(rowDetalleCredito["PORCENTAJE"]) == "0")
-                    //        {
-                    //            dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
-                    //            dgvProductosDevolucion.Rows[i].Cells[10].Value = "0";
-                    //            dgvProductosDevolucion.Rows[i].Cells[11].Value = "0";
-                    //            Calcular(11);
-                    //        }
-                    //    }
-                    //}
+                            }
+                            else
+                            {
+                                MessageBox.Show("Todos los Items de esta factura ya Fueron dados de baja.");
+                                LimpiarTodo();
+                            }
+                        }
+
+                        for (int i = 0; i < detalleNotaCreditoVentas.Rows.Count; i++)
+                        {
+                            DataRow rowDetalleCredito = detalleNotaCreditoVentas.Rows[i];
+                            if (DgvDetalleFact.Rows[i].Cells[0].Value != null)
+                            {
+                                
+                                if (DgvDetalleFact.Rows[i].Cells[0].Value.ToString() == rowDetalleCredito["CODIGOBARRA"].ToString())
+                                {
+                                    DgvDetalleFact.Rows[i].Cells[6].Value = rowDetalleCredito["CANTIDAD"].ToString();
+                                }
+                                if (DgvDetalleFact.Rows[i].Cells[6].Value.ToString() != "0")
+                                {
+                                    DgvDetalleFact.Rows[i].Cells[7].Value = true;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

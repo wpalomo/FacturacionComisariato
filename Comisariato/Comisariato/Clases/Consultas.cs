@@ -584,6 +584,33 @@ namespace Comisariato.Clases
                 return false;
             }
         }
+
+        public bool modificarNotadeDebito(DataGridView dgv, int idnotadebito)
+        {
+            try
+            {
+                if (dgv.RowCount > 0)
+                {
+                    for (int i = 0; i < dgv.RowCount - 1; i++)
+                    {
+                        if (Existe("IDENCABEZADONOTADEBITO", idnotadebito.ToString() , "TbDetalleNotaDebito"))
+                        {
+                            EjecutarSQL("UPDATE [BDComiSuper2].[dbo].[TbDetalleNotaDebito] SET [CANTIDAD] = "+ dgv.Rows[i].Cells["CanDevolver"].Value.ToString() + " WHERE [CODIGOBARRA] = '"+ dgv.Rows[i].Cells["CODIGO"].Value.ToString() + "' and [IDENCABEZADONOTADEBITO]  = " + idnotadebito + " ");
+                        }
+                    }
+                    
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
         public int ObtenerID(String campoID, String tabla, String condicion)
         {
             try
