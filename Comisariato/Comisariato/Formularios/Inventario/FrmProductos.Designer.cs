@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcProducto = new System.Windows.Forms.TabControl();
             this.tpNuevoProducto = new System.Windows.Forms.TabPage();
             this.txtIDProducto = new System.Windows.Forms.TextBox();
@@ -91,6 +91,12 @@
             this.cbUnidadMedidaProducto = new System.Windows.Forms.ComboBox();
             this.tpConsultarModificarProducto = new System.Windows.Forms.TabPage();
             this.GrbMicrobusqueda = new System.Windows.Forms.GroupBox();
+            this.TxtPCajaMicrobusca = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.TxtPMayorMicrobusca = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.TxtPVPMicrobusca = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.TxtNombreMicrobusca = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.BtnBuscarMicroBusqueda = new System.Windows.Forms.Button();
@@ -114,12 +120,6 @@
             this.dgvDatosProducto = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Deshabilitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TxtPVPMicrobusca = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.TxtPCajaMicrobusca = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.TxtPMayorMicrobusca = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.tcProducto.SuspendLayout();
             this.tpNuevoProducto.SuspendLayout();
             this.gbDescripcionProducto.SuspendLayout();
@@ -941,6 +941,72 @@
             this.GrbMicrobusqueda.TabStop = false;
             this.GrbMicrobusqueda.Text = "Microbusqueda";
             // 
+            // TxtPCajaMicrobusca
+            // 
+            this.TxtPCajaMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TxtPCajaMicrobusca.Location = new System.Drawing.Point(802, 19);
+            this.TxtPCajaMicrobusca.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtPCajaMicrobusca.Name = "TxtPCajaMicrobusca";
+            this.TxtPCajaMicrobusca.Size = new System.Drawing.Size(44, 22);
+            this.TxtPCajaMicrobusca.TabIndex = 26;
+            this.TxtPCajaMicrobusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoBarraMicrobusca_KeyPress);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label27.ForeColor = System.Drawing.Color.Teal;
+            this.label27.Location = new System.Drawing.Point(748, 22);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 16);
+            this.label27.TabIndex = 27;
+            this.label27.Text = "P. Caja:";
+            // 
+            // TxtPMayorMicrobusca
+            // 
+            this.TxtPMayorMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TxtPMayorMicrobusca.Location = new System.Drawing.Point(701, 19);
+            this.TxtPMayorMicrobusca.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtPMayorMicrobusca.Name = "TxtPMayorMicrobusca";
+            this.TxtPMayorMicrobusca.Size = new System.Drawing.Size(44, 22);
+            this.TxtPMayorMicrobusca.TabIndex = 24;
+            this.TxtPMayorMicrobusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoBarraMicrobusca_KeyPress);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label28.ForeColor = System.Drawing.Color.Teal;
+            this.label28.Location = new System.Drawing.Point(632, 22);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 16);
+            this.label28.TabIndex = 25;
+            this.label28.Text = "P. Mayor. :";
+            // 
+            // TxtPVPMicrobusca
+            // 
+            this.TxtPVPMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TxtPVPMicrobusca.Location = new System.Drawing.Point(585, 19);
+            this.TxtPVPMicrobusca.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtPVPMicrobusca.Name = "TxtPVPMicrobusca";
+            this.TxtPVPMicrobusca.Size = new System.Drawing.Size(44, 22);
+            this.TxtPVPMicrobusca.TabIndex = 22;
+            this.TxtPVPMicrobusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoBarraMicrobusca_KeyPress);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.label24.ForeColor = System.Drawing.Color.Teal;
+            this.label24.Location = new System.Drawing.Point(535, 22);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(50, 16);
+            this.label24.TabIndex = 23;
+            this.label24.Text = "P.V.P. :";
+            // 
             // TxtNombreMicrobusca
             // 
             this.TxtNombreMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
@@ -1182,39 +1248,39 @@
             this.dgvDatosProducto.AllowUserToOrderColumns = true;
             this.dgvDatosProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDatosProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatosProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Modificar,
             this.Deshabilitar});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosProducto.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatosProducto.Location = new System.Drawing.Point(21, 168);
             this.dgvDatosProducto.Name = "dgvDatosProducto";
             this.dgvDatosProducto.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Teal;
-            this.dgvDatosProducto.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Teal;
+            this.dgvDatosProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDatosProducto.Size = new System.Drawing.Size(985, 409);
             this.dgvDatosProducto.TabIndex = 9;
             this.dgvDatosProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosProducto_CellClick);
@@ -1236,72 +1302,6 @@
             this.Deshabilitar.Name = "Deshabilitar";
             this.Deshabilitar.ReadOnly = true;
             this.Deshabilitar.Width = 5;
-            // 
-            // TxtPVPMicrobusca
-            // 
-            this.TxtPVPMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.TxtPVPMicrobusca.Location = new System.Drawing.Point(585, 19);
-            this.TxtPVPMicrobusca.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPVPMicrobusca.Name = "TxtPVPMicrobusca";
-            this.TxtPVPMicrobusca.Size = new System.Drawing.Size(44, 22);
-            this.TxtPVPMicrobusca.TabIndex = 22;
-            this.TxtPVPMicrobusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoBarraMicrobusca_KeyPress);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label24.ForeColor = System.Drawing.Color.Teal;
-            this.label24.Location = new System.Drawing.Point(535, 22);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(50, 16);
-            this.label24.TabIndex = 23;
-            this.label24.Text = "P.V.P. :";
-            // 
-            // TxtPCajaMicrobusca
-            // 
-            this.TxtPCajaMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.TxtPCajaMicrobusca.Location = new System.Drawing.Point(802, 19);
-            this.TxtPCajaMicrobusca.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPCajaMicrobusca.Name = "TxtPCajaMicrobusca";
-            this.TxtPCajaMicrobusca.Size = new System.Drawing.Size(44, 22);
-            this.TxtPCajaMicrobusca.TabIndex = 26;
-            this.TxtPCajaMicrobusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoBarraMicrobusca_KeyPress);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label27.ForeColor = System.Drawing.Color.Teal;
-            this.label27.Location = new System.Drawing.Point(748, 22);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(53, 16);
-            this.label27.TabIndex = 27;
-            this.label27.Text = "P. Caja:";
-            // 
-            // TxtPMayorMicrobusca
-            // 
-            this.TxtPMayorMicrobusca.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.TxtPMayorMicrobusca.Location = new System.Drawing.Point(701, 19);
-            this.TxtPMayorMicrobusca.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtPMayorMicrobusca.Name = "TxtPMayorMicrobusca";
-            this.TxtPMayorMicrobusca.Size = new System.Drawing.Size(44, 22);
-            this.TxtPMayorMicrobusca.TabIndex = 24;
-            this.TxtPMayorMicrobusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoBarraMicrobusca_KeyPress);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.label28.ForeColor = System.Drawing.Color.Teal;
-            this.label28.Location = new System.Drawing.Point(632, 22);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(70, 16);
-            this.label28.TabIndex = 25;
-            this.label28.Text = "P. Mayor. :";
             // 
             // FrmProductos
             // 
