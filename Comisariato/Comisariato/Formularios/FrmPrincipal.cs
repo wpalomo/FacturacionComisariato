@@ -9,22 +9,15 @@ using Comisariato.Formularios.Transacciones;
 using Comisariato.Formularios.Transacciones.Devolucion_Venta;
 using Comisariato.Formularios.Transacciones.Venta;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Comisariato.Formularios
 {
     public partial class FrmPrincipal : Form
     {
-
-
         public static FrmClientes FrmCliente;
         public static FrmProveedores FrmProveedor;
         public static FrmUsuarios FrmUsuario;
@@ -60,21 +53,18 @@ namespace Comisariato.Formularios
         public static FrmAdministrarPromociones FrmAdministrarPromocion;
         public static FrmCuentasPorPagar FrmCuentasPorPagar;
         public bool primerIngresoSistema;
-
+        bool banderaMenuPrincipal = false;
         Bitacora bitacora = new Bitacora();
-        //public static void Panel
+        Funcion objFuncion = new Funcion();
+        Consultas objConsulta = new Consultas();
+
         public FrmPrincipal()
         {
             InitializeComponent();
         }
-        Funcion objFuncion = new Funcion();
-        Consultas objConsulta = new Consultas();
-
-
         private void tvPrincipal_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             Program.panelPrincipalVariable = this;
-
             string nombre = e.Node.Text;
             //-------------------------------------------------Mantenimiento---------------------------------------//
             //---------------------Cliente --------------------------------------//
@@ -86,8 +76,7 @@ namespace Comisariato.Formularios
                     FrmCliente.MdiParent = this;
                     FrmCliente.Show();
                 }
-                else
-                    FrmCliente.BringToFront();
+                else { FrmCliente.BringToFront(); }
             }
             //---------------------Empleado --------------------------------------//
             else if (nombre == "Administrar Empleados")
@@ -97,6 +86,7 @@ namespace Comisariato.Formularios
                     FrmEmpleado = new FrmEmpleado();
                     FrmEmpleado.MdiParent = this;
                     FrmEmpleado.Show();
+                    FrmEmpleado.BringToFront();
                 }
                 else { FrmEmpleado.BringToFront(); }
             }
@@ -144,8 +134,6 @@ namespace Comisariato.Formularios
             }
             else if (nombre == "Informe Compras")
             {
-                //        FrmInformesCompras;
-                //public static FrmInformesOrdenGiro FrmInformesOrdenGiro;
                 if (FrmInformesCompras == null || FrmInformesCompras.IsDisposed)
                 {
                     FrmInformesCompras = new FrmInformesCompras();
@@ -156,7 +144,6 @@ namespace Comisariato.Formularios
             }
             else if (nombre == "Informe Retención")
             {
-                //hillbsasvdb
                 if (FrmInformesRentenciones == null || FrmInformesRentenciones.IsDisposed)
                 {
                     FrmInformesRentenciones = new FrmInformesRentenciones();
@@ -192,7 +179,6 @@ namespace Comisariato.Formularios
                     FrmSucursal = new FrmSucursal();
                     FrmSucursal.MdiParent = this;
                     FrmSucursal.Show();
-                    //FrmSucursal.BringToFront();
                 }
                 else { FrmSucursal.BringToFront(); }
             }
@@ -204,8 +190,6 @@ namespace Comisariato.Formularios
                     FrmProveedor = new FrmProveedores();
                     FrmProveedor.MdiParent = this;
                     FrmProveedor.Show();
-
-                    //FrmProveedor.BringToFront();
                 }
                 else { FrmProveedor.BringToFront(); }
             }
@@ -217,7 +201,6 @@ namespace Comisariato.Formularios
                     FrmUsuario = new FrmUsuarios();
                     FrmUsuario.MdiParent = this;
                     FrmUsuario.Show();
-                    //FrmUsuario.BringToFront();
                 }
                 else { FrmUsuario.BringToFront(); }
             }
@@ -228,7 +211,6 @@ namespace Comisariato.Formularios
                 {
                     FrmProducto = new FrmProductos();
                     FrmProducto.MdiParent = this;
-                    ////FrmProducto.BringToFront();
                     FrmProducto.Show();
                 }
                 else { FrmProducto.BringToFront(); }
@@ -239,7 +221,6 @@ namespace Comisariato.Formularios
                 {
                     FrmCategoriaProducto = new FrmCategoriaProductos();
                     FrmCategoriaProducto.MdiParent = this;
-                    //FrmCategoriaProducto.BringToFront();
                     FrmCategoriaProducto.Show();
                 }
                 else { FrmCategoriaProducto.BringToFront(); }
@@ -251,7 +232,6 @@ namespace Comisariato.Formularios
                 {
                     FrmCreacionBodega = new FrmCreacionBodega();
                     FrmCreacionBodega.MdiParent = this;
-                    //FrmCreacionBodega.BringToFront();
                     FrmCreacionBodega.Show();
                 }
                 else { FrmCreacionBodega.BringToFront(); }
@@ -262,7 +242,6 @@ namespace Comisariato.Formularios
                 {
                     FrmComboProducto = new FrmComboProductos();
                     FrmComboProducto.MdiParent = this;
-                    //FrmComboProducto.BringToFront();
                     FrmComboProducto.Show();
                 }
                 else { FrmCreacionBodega.BringToFront(); }
@@ -273,7 +252,6 @@ namespace Comisariato.Formularios
                 {
                     FrmAsignacionProductoBodega = new FrmAsignacionProductoBodega();
                     FrmAsignacionProductoBodega.MdiParent = this;
-                    //FrmAsignacionProductoBodega.BringToFront();
                     FrmAsignacionProductoBodega.Show();
                 }
                 else { FrmAsignacionProductoBodega.BringToFront(); }
@@ -288,7 +266,6 @@ namespace Comisariato.Formularios
                         FrmClaveUsuario = new FrmClaveUsuario();
                         FrmClaveUsuario.verificarMetodo = 1;
                         FrmClaveUsuario.MdiParent = this;
-                        //FrmClaveUsuario.BringToFront();
                         FrmClaveUsuario.Show();
                     }
                     else { FrmClaveUsuario.BringToFront(); }
@@ -302,50 +279,22 @@ namespace Comisariato.Formularios
                     {
                         FrmCompra = new FrmCompra();
                         FrmCompra.MdiParent = this;
-                        //FrmCompra.BringToFront();
                         FrmCompra.Show();
                     }
                     else { FrmCompra.BringToFront(); }
                 }
                 else
-                {
-                    MessageBox.Show("Para realizar un registro de compra debe de tener registrado lo siguiente:\n*Al menos un proveedor.\n*Al menos una sucursal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                { MessageBox.Show("Para realizar un registro de compra debe de tener registrado lo siguiente:\n*Al menos un proveedor.\n*Al menos una sucursal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             }
             else if (nombre == "Devolución en Compras")
             {
-                //string IpMaquina = bitacora.LocalIPAddress();
-                //DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
-                //bool banderaCaja = false;
-                //if (Dt.Rows.Count > 0)
-                //{
-                //    for (int i = 0; i < Dt.Rows.Count; i++)
-                //    {
-                //        banderaCaja = true;
-                //        DataRow myRows = Dt.Rows[i];
-                //        if (myRows["TIPODOCUMENTO"].ToString() == "NCRE")
-                //        {
-                //            banderaCaja = false;
                 if (FrmDevolucionCompra == null || FrmDevolucionCompra.IsDisposed)
                 {
                     FrmDevolucionCompra = new FrmDevolucionCompra();
                     FrmDevolucionCompra.MdiParent = this;
-                    //FrmDevolucionVenta.BringToFront();
                     FrmDevolucionCompra.Show();
-                    //break;
                 }
                 else { FrmDevolucionCompra.BringToFront(); }
-                //        }
-                //    }
-                //    if (banderaCaja)
-                //    {
-                //        MessageBox.Show("Caja no registrada");
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Caja no registrada");
-                //}
             }
             else if (nombre == "Orden de Giro")
             {
@@ -365,7 +314,6 @@ namespace Comisariato.Formularios
                             {
                                 FrmOrdenDeGiro = new FrmOrdenDeGiro();
                                 FrmOrdenDeGiro.MdiParent = this;
-                                //FrmOrdenDeGiro.BringToFront();
                                 FrmOrdenDeGiro.Show();
                                 break;
                             }
@@ -373,20 +321,15 @@ namespace Comisariato.Formularios
                         }
                     }
                     if (banderaCaja)
-                    {
-                        MessageBox.Show("Caja no registrada");
-                    }
+                    { MessageBox.Show("Caja no registrada");}
                 }
                 else
-                {
-                    MessageBox.Show("Caja no registrada");
-                }
+                {MessageBox.Show("Caja no registrada");}
 
             }
             else if (nombre == "Devolución en Venta")
             {
                 string IpMaquina = bitacora.LocalIPAddress();
-                //IPESTACION = '" + IpMaquina + "' and
                 DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
                 bool banderaCaja = false;
                 if (Dt.Rows.Count > 0)
@@ -402,7 +345,6 @@ namespace Comisariato.Formularios
                             {
                                 FrmDevolucionVenta = new FrmDevolucionVenta();
                                 FrmDevolucionVenta.MdiParent = this;
-                                //FrmOrdenDeGiro.BringToFront();
                                 FrmDevolucionVenta.Show();
                                 break;
                             }
@@ -410,14 +352,10 @@ namespace Comisariato.Formularios
                         }
                     }
                     if (banderaCaja)
-                    {
-                        MessageBox.Show("Caja no registrada");
-                    }
+                    {MessageBox.Show("Caja no registrada");}
                 }
                 else
-                {
-                    MessageBox.Show("Caja no registrada");
-                }
+                {MessageBox.Show("Caja no registrada");}
             }
             else if (nombre == "Kardex")
             {
@@ -435,7 +373,6 @@ namespace Comisariato.Formularios
                 {
                     FrmDeclaracionSRI = new FrmDeclaracionSRI();
                     FrmDeclaracionSRI.MdiParent = this;
-                    //FrmDevolucionVenta.BringToFront();
                     FrmDeclaracionSRI.Show();
                 }
                 else { FrmDeclaracionSRI.BringToFront(); }
@@ -446,7 +383,6 @@ namespace Comisariato.Formularios
                 {
                     FrmComprobantesSri = new FrmComprobantesSri();
                     FrmComprobantesSri.MdiParent = this;
-                    //FrmDevolucionVenta.BringToFront();
                     FrmComprobantesSri.Show();
                 }
                 else { FrmComprobantesSri.BringToFront(); }
@@ -457,19 +393,16 @@ namespace Comisariato.Formularios
                 {
                     FrmInformesCajas = new FrmInformesCajas();
                     FrmInformesCajas.MdiParent = this;
-                    //FrmDevolucionVenta.BringToFront();
                     FrmInformesCajas.Show();
                 }
                 else { FrmInformesCajas.BringToFront(); }
             }
             else if (nombre == "ATS")
             {
-
                 if (Formats == null || Formats.IsDisposed)
                 {
                     Formats = new FormAts();
                     Formats.MdiParent = this;
-                    //FrmDevolucionVenta.BringToFront();
                     Formats.Show();
                 }
                 else { Formats.BringToFront(); }
@@ -477,12 +410,10 @@ namespace Comisariato.Formularios
 
             else if (nombre == "Informe Nota de Crédito")
             {
-
                 if (FrmInformeNotaCredito == null || FrmInformeNotaCredito.IsDisposed)
                 {
                     FrmInformeNotaCredito = new FrmInformeNotaCredito();
                     FrmInformeNotaCredito.MdiParent = this;
-                    //FrmDevolucionVenta.BringToFront();
                     FrmInformeNotaCredito.Show();
                 }
                 else { FrmInformeNotaCredito.BringToFront(); }
@@ -508,9 +439,6 @@ namespace Comisariato.Formularios
                 else { FrmCuentasPorPagar.BringToFront(); }
             }
         }
-
-
-
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             String HoraSalida = DateTime.Now.TimeOfDay.ToString();
@@ -518,12 +446,10 @@ namespace Comisariato.Formularios
             ObjBitacora.insertarBitacora();
             Application.Exit();
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy - hh:mm:ss");
         }
-
         private void tsmCerrarSesion_Click_1(object sender, EventArgs e)
         {
             try
@@ -537,19 +463,12 @@ namespace Comisariato.Formularios
                     Application.Restart();
                 }
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            catch (Exception) {}
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             if (primerIngresoSistema)
-            {
                 MessageBox.Show("Actualize los datos de la Empresa", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
             menuMostrar = msPrincipal1;
             DataTable dt = objConsulta.BoolDataTable("Select FONDOPANTALLA from TbEmpresa where IDEMPRESA = 1");
             byte[] MyData = new byte[0];
@@ -570,32 +489,18 @@ namespace Comisariato.Formularios
             try
             {
                 if (Program.IDTIPOUSUARIO != "1")
-                {
                     llenarTreeViewPrincipal();
-                }
             }
-            catch (Exception ex)
-            {
-            }
+            catch (Exception ex)  { }
             Program.tamañoVentanaPrincipal = ClientSize.Height;
             Program.tamañoVentanaPrincipalWith = ClientSize.Width;
-
         }
-
         public void llenarTreeViewPrincipal()
         {
             for (int i = 0; i < tvPrincipal.Nodes.Count;)
-            {
                 tvPrincipal.Nodes.Remove(tvPrincipal.Nodes[0]);
-            }
             objConsulta.BoolLlenarTreeViewMenu(tvPrincipal, "SELECT DISTINCT M.IDMENU, M.DESCRIPCION, M.NODOPADRE from TbMenu M, TbAsignacionMenu AM where M.IDMENU = AM.IDMENU AND AM.IDUSUARIO = " + Program.IDUsuarioMenu + " ORDER BY M.IDMENU;");
         }
-
-        private void msPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-        bool banderaMenuPrincipal = false;
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (!banderaMenuPrincipal)
@@ -611,18 +516,14 @@ namespace Comisariato.Formularios
                 banderaMenuPrincipal = false;
             }
         }
-
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild != null)
                 ActiveMdiChild.Close();
             int a = ventanaToolStripMenuItem.DropDownItems.Count;
             if (a > 2)
-            {
                 ventanaToolStripMenuItem.DropDownItems.RemoveAt(a - 1);
-            }
         }
-
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (FrmCambioClave == null || FrmCambioClave.IsDisposed)
@@ -632,7 +533,6 @@ namespace Comisariato.Formularios
                 FrmCambioClave.MdiParent = this;
             }
         }
-
         private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
@@ -640,12 +540,6 @@ namespace Comisariato.Formularios
             proc.StartInfo.FileName = "calc";
             proc.Start();
         }
-
-        private void tvPrincipal_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void tvPrincipal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -716,8 +610,6 @@ namespace Comisariato.Formularios
                 }
                 else if (tvPrincipal.SelectedNode.Text == "Informe Compras")
                 {
-                    //        FrmInformesCompras;
-                    //public static FrmInformesOrdenGiro FrmInformesOrdenGiro;
                     if (FrmInformesCompras == null || FrmInformesCompras.IsDisposed)
                     {
                         FrmInformesCompras = new FrmInformesCompras();
@@ -728,7 +620,6 @@ namespace Comisariato.Formularios
                 }
                 else if (tvPrincipal.SelectedNode.Text == "Informe Retención")
                 {
-                    //hillbsasvdb
                     if (FrmInformesRentenciones == null || FrmInformesRentenciones.IsDisposed)
                     {
                         FrmInformesRentenciones = new FrmInformesRentenciones();
@@ -764,7 +655,6 @@ namespace Comisariato.Formularios
                         FrmSucursal = new FrmSucursal();
                         FrmSucursal.MdiParent = this;
                         FrmSucursal.Show();
-                        //FrmSucursal.BringToFront();
                     }
                     else { FrmSucursal.BringToFront(); }
                 }
@@ -776,8 +666,6 @@ namespace Comisariato.Formularios
                         FrmProveedor = new FrmProveedores();
                         FrmProveedor.MdiParent = this;
                         FrmProveedor.Show();
-
-                        //FrmProveedor.BringToFront();
                     }
                     else { FrmProveedor.BringToFront(); }
                 }
@@ -789,7 +677,6 @@ namespace Comisariato.Formularios
                         FrmUsuario = new FrmUsuarios();
                         FrmUsuario.MdiParent = this;
                         FrmUsuario.Show();
-                        //FrmUsuario.BringToFront();
                     }
                     else { FrmUsuario.BringToFront(); }
                 }
@@ -800,7 +687,6 @@ namespace Comisariato.Formularios
                     {
                         FrmProducto = new FrmProductos();
                         FrmProducto.MdiParent = this;
-                        ////FrmProducto.BringToFront();
                         FrmProducto.Show();
                     }
                     else { FrmProducto.BringToFront(); }
@@ -811,7 +697,6 @@ namespace Comisariato.Formularios
                     {
                         FrmCategoriaProducto = new FrmCategoriaProductos();
                         FrmCategoriaProducto.MdiParent = this;
-                        //FrmCategoriaProducto.BringToFront();
                         FrmCategoriaProducto.Show();
                     }
                     else { FrmCategoriaProducto.BringToFront(); }
@@ -823,7 +708,6 @@ namespace Comisariato.Formularios
                     {
                         FrmCreacionBodega = new FrmCreacionBodega();
                         FrmCreacionBodega.MdiParent = this;
-                        //FrmCreacionBodega.BringToFront();
                         FrmCreacionBodega.Show();
                     }
                     else { FrmCreacionBodega.BringToFront(); }
@@ -834,7 +718,6 @@ namespace Comisariato.Formularios
                     {
                         FrmComboProducto = new FrmComboProductos();
                         FrmComboProducto.MdiParent = this;
-                        //FrmComboProducto.BringToFront();
                         FrmComboProducto.Show();
                     }
                     else { FrmCreacionBodega.BringToFront(); }
@@ -845,7 +728,6 @@ namespace Comisariato.Formularios
                     {
                         FrmAsignacionProductoBodega = new FrmAsignacionProductoBodega();
                         FrmAsignacionProductoBodega.MdiParent = this;
-                        //FrmAsignacionProductoBodega.BringToFront();
                         FrmAsignacionProductoBodega.Show();
                     }
                     else { FrmAsignacionProductoBodega.BringToFront(); }
@@ -860,7 +742,6 @@ namespace Comisariato.Formularios
                             FrmClaveUsuario = new FrmClaveUsuario();
                             FrmClaveUsuario.verificarMetodo = 1;
                             FrmClaveUsuario.MdiParent = this;
-                            //FrmClaveUsuario.BringToFront();
                             FrmClaveUsuario.Show();
                         }
                         else { FrmClaveUsuario.BringToFront(); }
@@ -874,50 +755,22 @@ namespace Comisariato.Formularios
                         {
                             FrmCompra = new FrmCompra();
                             FrmCompra.MdiParent = this;
-                            //FrmCompra.BringToFront();
                             FrmCompra.Show();
                         }
                         else { FrmCompra.BringToFront(); }
                     }
                     else
-                    {
-                        MessageBox.Show("Para realizar un registro de compra debe de tener registrado lo siguiente:\n*Al menos un proveedor.\n*Al menos una sucursal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    { MessageBox.Show("Para realizar un registro de compra debe de tener registrado lo siguiente:\n*Al menos un proveedor.\n*Al menos una sucursal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                 }
                 else if (tvPrincipal.SelectedNode.Text == "Devolución en Compras")
                 {
-                    //string IpMaquina = bitacora.LocalIPAddress();
-                    //DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
-                    //bool banderaCaja = false;
-                    //if (Dt.Rows.Count > 0)
-                    //{
-                    //    for (int i = 0; i < Dt.Rows.Count; i++)
-                    //    {
-                    //        banderaCaja = true;
-                    //        DataRow myRows = Dt.Rows[i];
-                    //        if (myRows["TIPODOCUMENTO"].ToString() == "NCRE")
-                    //        {
-                    //            banderaCaja = false;
                     if (FrmDevolucionCompra == null || FrmDevolucionCompra.IsDisposed)
                     {
                         FrmDevolucionCompra = new FrmDevolucionCompra();
                         FrmDevolucionCompra.MdiParent = this;
-                        //FrmDevolucionVenta.BringToFront();
                         FrmDevolucionCompra.Show();
-                        //break;
                     }
                     else { FrmDevolucionCompra.BringToFront(); }
-                    //        }
-                    //    }
-                    //    if (banderaCaja)
-                    //    {
-                    //        MessageBox.Show("Caja no registrada");
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Caja no registrada");
-                    //}
                 }
                 else if (tvPrincipal.SelectedNode.Text == "Orden de Giro")
                 {
@@ -937,7 +790,6 @@ namespace Comisariato.Formularios
                                 {
                                     FrmOrdenDeGiro = new FrmOrdenDeGiro();
                                     FrmOrdenDeGiro.MdiParent = this;
-                                    //FrmOrdenDeGiro.BringToFront();
                                     FrmOrdenDeGiro.Show();
                                     break;
                                 }
@@ -945,20 +797,15 @@ namespace Comisariato.Formularios
                             }
                         }
                         if (banderaCaja)
-                        {
-                            MessageBox.Show("Caja no registrada");
-                        }
+                        { MessageBox.Show("Caja no registrada"); }
                     }
                     else
-                    {
-                        MessageBox.Show("Caja no registrada");
-                    }
+                    { MessageBox.Show("Caja no registrada"); }
 
                 }
                 else if (tvPrincipal.SelectedNode.Text == "Devolución en Venta")
                 {
                     string IpMaquina = bitacora.LocalIPAddress();
-                    //IPESTACION = '" + IpMaquina + "' and
                     DataTable Dt = objConsulta.BoolDataTable("Select TIPODOCUMENTO, SERIE1,SERIE2,DOCUMENTOACTUAL,DOCUMENTOINICIAL,DOCUMENTOFINAL,AUTORIZACION,ESTACION,IPESTACION from TbCajasTalonario where IPESTACION = '" + IpMaquina + "' and ESTADO=1;");
                     bool banderaCaja = false;
                     if (Dt.Rows.Count > 0)
@@ -974,7 +821,6 @@ namespace Comisariato.Formularios
                                 {
                                     FrmDevolucionVenta = new FrmDevolucionVenta();
                                     FrmDevolucionVenta.MdiParent = this;
-                                    //FrmOrdenDeGiro.BringToFront();
                                     FrmDevolucionVenta.Show();
                                     break;
                                 }
@@ -982,14 +828,10 @@ namespace Comisariato.Formularios
                             }
                         }
                         if (banderaCaja)
-                        {
-                            MessageBox.Show("Caja no registrada");
-                        }
+                        { MessageBox.Show("Caja no registrada"); }
                     }
                     else
-                    {
-                        MessageBox.Show("Caja no registrada");
-                    }
+                    { MessageBox.Show("Caja no registrada"); }
                 }
                 else if (tvPrincipal.SelectedNode.Text == "Kardex")
                 {
@@ -1007,7 +849,6 @@ namespace Comisariato.Formularios
                     {
                         FrmDeclaracionSRI = new FrmDeclaracionSRI();
                         FrmDeclaracionSRI.MdiParent = this;
-                        //FrmDevolucionVenta.BringToFront();
                         FrmDeclaracionSRI.Show();
                     }
                     else { FrmDeclaracionSRI.BringToFront(); }
@@ -1018,7 +859,6 @@ namespace Comisariato.Formularios
                     {
                         FrmComprobantesSri = new FrmComprobantesSri();
                         FrmComprobantesSri.MdiParent = this;
-                        //FrmDevolucionVenta.BringToFront();
                         FrmComprobantesSri.Show();
                     }
                     else { FrmComprobantesSri.BringToFront(); }
@@ -1029,19 +869,16 @@ namespace Comisariato.Formularios
                     {
                         FrmInformesCajas = new FrmInformesCajas();
                         FrmInformesCajas.MdiParent = this;
-                        //FrmDevolucionVenta.BringToFront();
                         FrmInformesCajas.Show();
                     }
                     else { FrmInformesCajas.BringToFront(); }
                 }
                 else if (tvPrincipal.SelectedNode.Text == "ATS")
                 {
-
                     if (Formats == null || Formats.IsDisposed)
                     {
                         Formats = new FormAts();
                         Formats.MdiParent = this;
-                        //FrmDevolucionVenta.BringToFront();
                         Formats.Show();
                     }
                     else { Formats.BringToFront(); }
@@ -1049,12 +886,10 @@ namespace Comisariato.Formularios
 
                 else if (tvPrincipal.SelectedNode.Text == "Informe Nota de Crédito")
                 {
-
                     if (FrmInformeNotaCredito == null || FrmInformeNotaCredito.IsDisposed)
                     {
                         FrmInformeNotaCredito = new FrmInformeNotaCredito();
                         FrmInformeNotaCredito.MdiParent = this;
-                        //FrmDevolucionVenta.BringToFront();
                         FrmInformeNotaCredito.Show();
                     }
                     else { FrmInformeNotaCredito.BringToFront(); }

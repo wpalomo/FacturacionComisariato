@@ -229,7 +229,6 @@
             this.tvPrincipal.Size = new System.Drawing.Size(239, 592);
             this.tvPrincipal.TabIndex = 0;
             this.tvPrincipal.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvPrincipal_NodeMouseClick);
-            this.tvPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tvPrincipal_KeyDown);
             this.tvPrincipal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tvPrincipal_KeyPress);
             // 
             // statusStrip1
@@ -331,7 +330,6 @@
             this.msPrincipal2.Size = new System.Drawing.Size(1342, 24);
             this.msPrincipal2.TabIndex = 2;
             this.msPrincipal2.Text = "menuStrip1";
-            this.msPrincipal2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.msPrincipal_ItemClicked);
             // 
             // calculadoraToolStripMenuItem
             // 

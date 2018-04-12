@@ -712,8 +712,6 @@ namespace Comisariato.Clases
 
             return arregloFecha[0] + "/" + arregloFecha[1];
         }
-
-
         public static DataTable llenarDataTable_Datagriview(DataGridView datagrid)
         {
             try
@@ -761,16 +759,26 @@ namespace Comisariato.Clases
             }
 
         }
-        public static void dosDecimales(ref DataGridView dgv, int inicio, int fin)
+        public static void dosDecimales(ref DataGridView dgv, int inicio, int fin, int celdaInicial)
         {
-            //desde el 4
             for (int i = 0; i < dgv.RowCount - 1; i++)
             {
-                if (Convert.ToString(dgv.Rows[i].Cells[0].Value) == "")
-                    break;
-                for (int j = inicio; j < fin; j++)
-                    dgv.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgv.Rows[i].Cells[j].Value.ToString())).ToString("#####0.00"));
+                if (Convert.ToString(dgv.Rows[i].Cells[celdaInicial].Value) != "")
+                {
+                    for (int j = inicio; j < fin; j++)
+                    {
+                        dgv.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgv.Rows[i].Cells[j].Value.ToString())), 2).ToString("#####0.00"));
+                        dgv.Columns[j].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    }
+                    if (Convert.ToString(dgv.Rows[i + 1].Cells[celdaInicial].Value) == "")
+                        break;
+                }
             }
+        }
+        public static void llenarDGV(ref DataGridView dgv, int cantidad)
+        {
+            for (int i = 0; i < cantidad; i++)
+                dgv.Rows.Add();
         }
     }
 }

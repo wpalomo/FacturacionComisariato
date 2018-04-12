@@ -565,7 +565,7 @@ namespace Comisariato.Formularios.Transacciones.Devolucion_Venta
                 //{
                 //    txtModificarVer.Enabled = false;
                 //}
-                Funcion.dosDecimales(ref dgvDatosProducto, 4, 6);
+                Funcion.dosDecimales(ref dgvDatosProducto, 4, 6, 0);
             }
             catch
             { }

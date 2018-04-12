@@ -13,10 +13,6 @@ namespace Comisariato.Formularios.Transacciones
 {
     public partial class FrmDevolucionCompra : Form
     {
-        public FrmDevolucionCompra()
-        {
-            InitializeComponent();
-        }
         Consultas objConsultas = new Consultas();
         Bitacora bitacora = new Bitacora();
         EncabezadoNotaCredito objENC;
@@ -27,10 +23,13 @@ namespace Comisariato.Formularios.Transacciones
         bool modificar = false;
         float sumasubiva = 0.0f, sumasubcero = 0.0f, totalpagar = 0.0f, ivatotal = 0.0f, sumaice = 0.0f, sumairbp = 0.0f, subtotalPie = 0.0f;
 
+        public FrmDevolucionCompra()
+        {
+            InitializeComponent();
+        }
         public void inicializar()
         {
             modificar = false;
-            int i = 0;
             txtTotal.Text = "";
             txtTotalDevolucion.Text = "";
             txtICE.Text = "";
@@ -49,20 +48,15 @@ namespace Comisariato.Formularios.Transacciones
             txtPorcetajeDevolucion.Text = "0";
             Funcion.Limpiarobjetos(gbEncabezadoNC);
             dgvProductosDevolucion.Rows.Clear();
-            for (i = 0; i < 20; i++)
-            {
-                dgvProductosDevolucion.Rows.Add();
-                dgvDatosProducto.Rows.Add();
-            }
-            dgvProductosDevolucion.Rows[i].ReadOnly = true;
+            Funcion.llenarDGV(ref dgvProductosDevolucion, 20);
+            Funcion.llenarDGV(ref dgvDatosProducto, 20);
+            dgvProductosDevolucion.Rows[dgvProductosDevolucion.RowCount].ReadOnly = true;
             dgvProductosDevolucion.Columns[9].ReadOnly = true;
             dgvProductosDevolucion.Columns[10].ReadOnly = true;
             BtnGuardar.Text = "&Guardar";
         }
         private void FrmDevolucionCompra_Load(object sender, EventArgs e)
         {
-            dgvProductosDevolucion.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvProductosDevolucion.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             for (int i = 2; i < 11; i++)
                 dgvProductosDevolucion.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             objConsultas.BoolLlenarComboBox(cbProveedor, "select IDPROVEEDOR AS ID, NOMBRES AS Texto from TbProveedor");
@@ -88,17 +82,13 @@ namespace Comisariato.Formularios.Transacciones
                     {
                         DataRow row = dt.Rows[i];
                         if (i == dgvProductosDevolucion.RowCount -1)
-                        {
                             dgvProductosDevolucion.Rows.Add();
-                        }
                         dgvProductosDevolucion.Rows[i].Cells[0].Value = row["CODIGOBARRAPRODUCTO"];//codigo
                         dgvProductosDevolucion.Rows[i].Cells[1].Value = row["NOMBREPRODUCTO"];//producto
                         dgvProductosDevolucion.Rows[i].Cells[2].Value = row["CANTIDAD"];//cantidad
                         dgvProductosDevolucion.Rows[i].Cells[3].Value = Funcion.reemplazarcaracter(row["PRECIOCOMRPA"].ToString());//precio
-                        //dgvProductosDevolucion.Rows[i].Cells[4].Value = Funcion.reemplazarcaracter(row["DESCUENTO"].ToString());//descuento
                         dgvProductosDevolucion.Rows[i].Cells[4].Value = Funcion.reemplazarcaracter(row["ICE"].ToString());//ice
                         dgvProductosDevolucion.Rows[i].Cells[5].Value = Funcion.reemplazarcaracter(row["IRBP"].ToString());//irbp
-                        //if (!ckbDevolver.Checked)
                         if (!ckbDevolver.Checked)
                         {
                             dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = false;
@@ -125,13 +115,9 @@ namespace Comisariato.Formularios.Transacciones
                         int tipoIva = Convert.ToInt32(separadorPorcentaje[0]);
                         float ivaP = 0.0f;
                         if (ivaEstado)
-                        {
                             ivaP = (((precioCompra + precioICE) * cantidad) * tipoIva) / 100;
-                        }
                         else
-                        {
                             ivaP = 0;
-                        }
                         subtotalP = ((precioCompra + precioICE + precioIRBP) * cantidad);
                         totalP = subtotalP + ivaP;
                         dgvProductosDevolucion.Rows[i].Cells[7].Value = Funcion.reemplazarcaracter(Math.Round(ivaP, 2).ToString("#####0.00"));
@@ -160,30 +146,16 @@ namespace Comisariato.Formularios.Transacciones
                     }
                     Calcular(11);
                 }
-
-            }
-            
-        }
-
-        private void dgvProductosDevolucion_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            if (e.Control is TextBox)
-            {
-                TextBox txt = e.Control as TextBox;
-                txt.KeyPress += OnlyNumbersdgvcheque_KeyPress;
             }
         }
-
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             inicializar();
         }
-
         private void btnSalirCompra_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void ckbDevolver_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbDevolver.Checked)
@@ -198,7 +170,6 @@ namespace Comisariato.Formularios.Transacciones
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
                         break;
                 }
-                //Calcular(2);
             }
             else
             {
@@ -214,7 +185,6 @@ namespace Comisariato.Formularios.Transacciones
                 cbProveedor_Leave(null, null);
             }
         }
-
         private void txtSerie1NC_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -223,7 +193,6 @@ namespace Comisariato.Formularios.Transacciones
                 SendKeys.Send("{TAB}");
             }
         }
-
         private void txtPorcetajeDevolucion_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -233,7 +202,6 @@ namespace Comisariato.Formularios.Transacciones
                 dgvProductosDevolucion.CurrentCell = dgvProductosDevolucion.Rows[0].Cells[10];
             }
         }
-
         private void txtPorcetajeDevolucion_Leave(object sender, EventArgs e)
         {
             if (!ckbDevolver.Checked && txtPorcetajeDevolucion.Text != "")
@@ -244,9 +212,7 @@ namespace Comisariato.Formularios.Transacciones
                     dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txtPorcetajeDevolucion.Text) / 100)).ToString());
                     dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
                     dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
-                    //Calcular(9);
                     Calcular(11);
-
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
                         break;
                 }
@@ -260,21 +226,11 @@ namespace Comisariato.Formularios.Transacciones
                         break;
                 }
             }
-            
         }
-
-        private void cbProveedor_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                SendKeys.Send("{TAB}");
-            }
-        }
-
         private void dgvProductosDevolucion_Enter(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
                 {
                     string[] porcentaje = dgvProductosDevolucion.Rows[i].Cells[10].Value.ToString().Split('%');
@@ -285,54 +241,27 @@ namespace Comisariato.Formularios.Transacciones
             }
             catch { }
         }
-
-        private void pcOrdenCompra_Click(object sender, EventArgs e)
-        {
-        }
-
         private void txt0_Leave(object sender, EventArgs e)
         {
-            if (txt0.Text != "")
-            {
-                for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
-                {
-                    if (Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[7].Value) == "0.00")
-                    {
-                        dgvProductosDevolucion.Rows[i].Cells[10].Value = txt0.Text + "%";
-                        dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txt0.Text) / 100)).ToString());
-                        dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
-                        dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
-                        //Calcular(9);
-                        Calcular(11);
-                    }
-                    if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
-                {
-                    dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = false;
-                    if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-            }
+            CalcularIvas(txt0);
         }
 
         private void txt12_Leave(object sender, EventArgs e)
         {
-            if (txt12.Text != "")
+            CalcularIvas(txt12);
+        }
+        public void CalcularIvas(TextBox txt)
+        {
+            if (txt.Text != "")
             {
                 for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
                 {
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[7].Value) != "0.00")
                     {
-                        dgvProductosDevolucion.Rows[i].Cells[10].Value = txt12.Text + "%";
-                        dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txt12.Text) / 100)).ToString());
+                        dgvProductosDevolucion.Rows[i].Cells[10].Value = txt.Text + "%";
+                        dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txt.Text) / 100)).ToString());
                         dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
                         dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
-                        //Calcular(9);
                         Calcular(11);
                     }
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
@@ -362,65 +291,20 @@ namespace Comisariato.Formularios.Transacciones
                 ver = false;
                 btnAnular.Text = "Activar";
             }
-            string sql = "select FECHA, SERIE1+''+SERIE2+''+NUMERO AS NOTACREDITO, SERIE1COMPRA+''+SERIE2COMPRA+''+NUMEROCOMPRA AS COMPRA, NOMBRES, TOTALDEVOLUCION, TOTAL, IDENCABEZADONOTACREDITO, IDEMCABEZADOCOMPRA from VistaNotaCredito where NOMBRES LIKE '%" + txtConsultar.Text + "%' AND FECHA BETWEEN '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' AND '" + Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "' and ESTADO = '"+ver+"'";
+            string sql = "select FECHA, SERIE1+''+SERIE2+''+NUMERO AS NOTACREDITO, SERIE1COMPRA+''+SERIE2COMPRA+''+NUMEROCOMPRA AS COMPRA, NOMBRES, TOTALDEVOLUCION, TOTAL, IDENCABEZADONOTACREDITO, IDEMCABEZADOCOMPRA "+
+                "from VistaNotaCredito where NOMBRES LIKE '%" + txtConsultar.Text + "%' AND FECHA BETWEEN '" + Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString()) + "' AND '" + 
+                Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString()) + "' and ESTADO = '"+ver+"'";
             objConsultas.boolLlenarDataGrid(dgvDatosProducto, sql, 20, 7, 0);
-            if (Convert.ToString(dgvDatosProducto.Rows[0].Cells[0].Value) != "")
-            {
-                dgvDatosProducto.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvDatosProducto.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                for (int i = 0; i < dgvDatosProducto.RowCount - 1; i++)
-                {
-                    if (Convert.ToString(dgvDatosProducto.Rows[i].Cells[0].Value) != "")
-                    {
-                        for (int j = 4; j < 6; j++)
-                            dgvDatosProducto.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(dgvDatosProducto.Rows[i].Cells[j].Value.ToString());
-                        if (Convert.ToString(dgvDatosProducto.Rows[i + 1].Cells[0].Value) == "")
-                            break;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                for (int i = 0; i < dgvDatosProducto.RowCount - 1; i++)
-                {
-                    dgvDatosProducto.Rows[i].Cells[0].Value = Convert.ToDateTime(dgvDatosProducto.Rows[i].Cells[0].Value).ToShortDateString();
-                    if (Convert.ToString(dgvDatosProducto.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-            }
             dgvDatosProducto.Focus();
         }
-
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                
-                consultaNC();
-                for (int i = 0; i < dgvDatosProducto.RowCount - 1; i++)
-                {
-                    if (Convert.ToString(dgvDatosProducto.Rows[i].Cells[0].Value) != "")
-                    {
-                        for (int j = 4; j < 6; j++)
-                            dgvDatosProducto.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvDatosProducto.Rows[i].Cells[j].Value.ToString())), 2).ToString());
-                        if (Convert.ToString(dgvDatosProducto.Rows[i + 1].Cells[0].Value) == "")
-                            break;
-                    }
-                }
-                if (rbActivos.Checked)
-                {
-                    txtModificarVer.Enabled = true;
-                }
-                else if (rbAnulados.Checked)
-                {
-                    txtModificarVer.Enabled = false;
-                }
-                Funcion.dosDecimales(ref dgvDatosProducto, 4, 6);
-            }
-            catch
-            {}
-            
+            consultaNC();
+            if (rbActivos.Checked)
+                txtModificarVer.Enabled = true;
+            else if (rbAnulados.Checked)
+                txtModificarVer.Enabled = false;
+            Funcion.dosDecimales(ref dgvDatosProducto, 4, 6, 0);
         }
 
         private void txtModificarVer_Click(object sender, EventArgs e)
@@ -844,14 +728,6 @@ namespace Comisariato.Formularios.Transacciones
             catch (Exception EX)
             {
             }
-        }
-
-        private void OnlyNumbersdgvcheque_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (dgvProductosDevolucion.CurrentCell == dgvProductosDevolucion.CurrentRow.Cells[10])
-            //{
-            //    Funcion.Validar_Numeros(e);
-            //}
         }
     }
 }

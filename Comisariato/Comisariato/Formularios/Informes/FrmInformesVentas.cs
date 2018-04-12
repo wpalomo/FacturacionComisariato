@@ -47,7 +47,7 @@ namespace Comisariato.Formularios.Informes
                         break;
                 }
             }
-            Funcion.dosDecimales(ref dgvInformeVentas, 7, 11);
+            Funcion.dosDecimales(ref dgvInformeVentas, 7, 11, 0);
         }
         public void consultaVentas()
         {
