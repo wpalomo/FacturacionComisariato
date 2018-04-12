@@ -1,12 +1,5 @@
 ﻿using Comisariato.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Comisariato.Formularios.Transacciones
@@ -17,10 +10,10 @@ namespace Comisariato.Formularios.Transacciones
         int ordenCompra = 0, idOrdenGasto;
         FacturaGastos objFactura;
         EmcabezadoCompra objEncabezado;
-
         public static int IDEncabezadoGasto = 0;
         public static string IVA = "";
         public static bool gasto = false;
+
         public FrmFacturaGastos()
         {
             InitializeComponent();
@@ -33,7 +26,6 @@ namespace Comisariato.Formularios.Transacciones
             txtSubtutalIVA.Text = "0.00";
             txtTotal.Text = "0.00";
             txtDesceunto.Text = "0.00";
-            //Funcion.Limpiarobjetos(gbDetalleProducto);
             consultas.BoolLlenarComboBox(cbCuentaContableProveedor, "Select IDPLANCUENTA as ID ,'[' +CUENTA +']' + ' - ' + DESCRIPCIONCUENTA AS Texto FROM dbo.TbPlanCuenta ");
             consultas.BoolLlenarComboBox(cbSucursal, "select IDSUCURSAL AS Id, NOMBRESUCURSAL as Texto from TbSucursal");
             consultas.BoolLlenarComboBox(cbProveedor, "select IDPROVEEDOR AS Id, NOMBRES AS Texto from TbProveedor");
@@ -46,16 +38,10 @@ namespace Comisariato.Formularios.Transacciones
         {
             inicializar();
         }
-        private void BtnLimpiar_Click(object sender, EventArgs e)
-        {
-            inicializar();
-        }
-
         private void btnSalirCompra_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if (txtSerie1.Text != "" && txtSerie2.Text != "" && txtNumero.Text != "")
@@ -114,69 +100,40 @@ namespace Comisariato.Formularios.Transacciones
             else
                 MessageBox.Show("Ingrese todos los datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
         private void txtSubtutalIVA_Leave(object sender, EventArgs e)
         {
             txtIVA.Text = Funcion.reemplazarcaracter((Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtSubtutalIVA.Text)) * 0.12).ToString("#0.######"));
             txtTotal.Text = Funcion.reemplazarcaracter(Convert.ToString((Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtSubtotal0.Text)) + Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtSubtutalIVA.Text)) + 
                 Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtIVA.Text))) - Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtDesceunto.Text))));            
         }
-
         private void txtSubtutalIVA_Enter(object sender, EventArgs e)
         {
             txtSubtutalIVA.SelectAll();
         }
-
-        private void txtSubtutalIVA_Click(object sender, EventArgs e)
-        {
-            txtSubtutalIVA.SelectAll();
-        }
-
         private void txtSubtotal0_Enter(object sender, EventArgs e)
         {
             txtSubtotal0.SelectAll();
         }
-
-        private void txtSubtotal0_Click(object sender, EventArgs e)
-        {
-            txtSubtotal0.SelectAll();
-        }
-
-        private void txtDesceunto_Click(object sender, EventArgs e)
-        {
-            txtDesceunto.SelectAll();
-        }
-
         private void txtDesceunto_Enter(object sender, EventArgs e)
         {
             txtDesceunto.SelectAll();
         }
-
-        private void txtIVA_Click(object sender, EventArgs e)
-        {
-            txtIVA.SelectAll();
-        }
-
         private void txtIVA_Enter(object sender, EventArgs e)
         {
             txtIVA.SelectAll();
         }
-
         private void txtSubtutalIVA_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtSubtutalIVA.Text);
         }
-
         private void txtDesceunto_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtDesceunto.Text);
         }
-
         private void txtSubtotal0_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtSubtotal0.Text);
         }
-
         private void txtSerie1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -185,7 +142,6 @@ namespace Comisariato.Formularios.Transacciones
                 SendKeys.Send("{TAB}");
             }
         }
-
         private void txtObservacion_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -194,7 +150,6 @@ namespace Comisariato.Formularios.Transacciones
                 txtSubtutalIVA.Focus();
             }
         }
-
         private void txtDesceunto_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -203,10 +158,8 @@ namespace Comisariato.Formularios.Transacciones
                 BtnGuardar.Focus();
             }
         }
-
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-
             consultas.BoolLlenarComboBox(cbProveedor, "select IDPROVEEDOR AS Id, NOMBRES AS Texto from TbProveedor");
             Program.FormularioLlamado = true;
             if (FrmPrincipal.FrmProveedor == null || FrmPrincipal.FrmProveedor.IsDisposed)

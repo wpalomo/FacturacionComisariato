@@ -37,7 +37,7 @@ namespace Comisariato.Formularios.Informes
                         break;
                 }
             }
-            Funcion.dosDecimales(ref dgvInformeCompras, 4, 10);
+            Funcion.dosDecimales(ref dgvInformeCompras, 4, 10, 0);
         }
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)

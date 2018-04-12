@@ -195,7 +195,6 @@
             this.pcOrdenCompra.Size = new System.Drawing.Size(918, 649);
             this.pcOrdenCompra.TabIndex = 0;
             this.pcOrdenCompra.Text = "Nota de Crédito";
-            this.pcOrdenCompra.Click += new System.EventHandler(this.pcOrdenCompra_Click);
             // 
             // txtIrbpDevolucion
             // 
@@ -553,7 +552,6 @@
             this.dgvProductosDevolucion.Size = new System.Drawing.Size(871, 282);
             this.dgvProductosDevolucion.TabIndex = 1;
             this.dgvProductosDevolucion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductosDevolucion_CellEndEdit);
-            this.dgvProductosDevolucion.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvProductosDevolucion_EditingControlShowing);
             this.dgvProductosDevolucion.Enter += new System.EventHandler(this.dgvProductosDevolucion_Enter);
             // 
             // codigo
@@ -984,7 +982,7 @@
             this.cbProveedor.Name = "cbProveedor";
             this.cbProveedor.Size = new System.Drawing.Size(277, 24);
             this.cbProveedor.TabIndex = 7;
-            this.cbProveedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbProveedor_KeyDown);
+            this.cbProveedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1NC_KeyDown);
             this.cbProveedor.Leave += new System.EventHandler(this.cbProveedor_Leave);
             // 
             // label3
@@ -1084,7 +1082,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1102,7 +1100,7 @@
             this.idCompra});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1114,7 +1112,7 @@
             this.dgvDatosProducto.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Teal;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

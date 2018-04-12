@@ -2,14 +2,9 @@
 using Comisariato.Formularios.Mantenimiento.Inventario;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
@@ -20,25 +15,28 @@ namespace Comisariato.Formularios.Transacciones
 {
     public partial class FrmOrdenDeGiro : Form
     {
-
         string PathLocal = @"C:\Users\Public\Documents\ArchivosXml\Generados\";
         int numeroOrden = 0;
-        String RutaXML = "";
-        String NombreXML = "";
-        String FechaEmision = "";
+        String RutaXML = "", NombreXML = "", FechaEmision = "", CbTipoAutorizacionVariable = "", cmbAñoRetencionHechaVariable = "", ProveedorVariable = "", fechaAutorizacion = "", claveacceso = "";
         DataTable DtDocuemtosXML;
-        delegate void CambiarProgresoDelegado(string nombreXml, string fecha, string contadordevuelta, string contadorRecivida, string contadorautorizado, string contadornoautorizado, string contadorenviados, string contador, string archivosTotales);
+        bool ver = false;
+        Consultas ObjConsul = new Consultas();
+        Bitacora bitacora = new Bitacora();
+        List<string> parametrosFactu = new List<string>();
+        delegate void CambiarProgresoDelegado(string nombreXml, string fecha, string contadordevuelta, string contadorRecivida, string contadorautorizado, string contadornoautorizado, string contadorenviados, string contador, 
+            string archivosTotales);
         bool radioB = true;
+        Pen blackPen;
+        Point puntoInicio, puntoFinal;
+        string cadenaGeneral = "select NUMEROORDENGIRO, NOMBREDOCUMENTO, FECHAORDENGIRO, right('000' + Ltrim(Rtrim(SERIE1PROVEEDOR)),3)+''+right('000' + Ltrim(Rtrim(SERIE2PROVEEDOR)),3)+''+NUMERODOCUMENTOPROVEEDOR AS DOCUMENTO, "+
+            " FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, TOTALICE, TOTALIVA, TOTALIRBP SUBTOTAL, TOTAL, IDORDENGIRO from Vista_InformeOG", serie1 = "", serie2 = "", numeroDocumentoProveedor = "";
+        DateTime fechaEmisionRetencion, fechaEmisionFActura;
+        DataGridView dtpTemporalRetencion = new DataGridView();
 
         public FrmOrdenDeGiro()
         {
             InitializeComponent();
         }
-        bool ver = false;
-        Consultas ObjConsul = new Consultas();
-        Bitacora bitacora = new Bitacora();
-        List<string> parametrosFactu =  new List<string>();
-        string claveacceso="";
         public void inicializar()
         {
             if (ver)
@@ -74,7 +72,6 @@ namespace Comisariato.Formularios.Transacciones
                 int NordenGiro = 1 + ObjConsul.ObtenerID("NUMEROORDENGIRO", "TbEncabezadoOrdenGiro", " where IDORDENGIRO =" + idOrdenGiro + "");
                 txtOrdenGiro.Text = NordenGiro.ToString();
                 ver = true;
-                
             }
             Funcion.Limpiarobjetos(gbDatosFactura);
             txtSerie1.Text = "";
@@ -92,40 +89,22 @@ namespace Comisariato.Formularios.Transacciones
             Funcion.Limpiarobjetos(gbDatosAutorizacion);
             dgvDatosLibroDiario.Rows.Clear();
             dgvDatosRetencion.Rows.Clear();
-            for (int i = 0; i < 7; i++)
-            {
-                dgvDatosLibroDiario.Rows.Add();
-            }
-            for (int i = 0; i < 14; i++)
-            {
-                dgvDatosRetencion.Rows.Add();
-            }
-            for (int i = 0; i < 25; i++)
-            {
-                dgvDatosOG.Rows.Add();
-            }
+            Funcion.llenarDGV(ref dgvDatosLibroDiario, 7);
+            Funcion.llenarDGV(ref dgvDatosRetencion, 14);
+            Funcion.llenarDGV(ref dgvDatosOG, 25);
         }
         public string agregra0Decimal(string valor)
         {
-            
             int i;
             int ocurrencias = valor.Split('.').Length - 1;
             if (ocurrencias == 0)
-            {
                 valor += ".0";
-            }
             string[] s = valor.Split('.');
             for (i = 0; i < s[1].Length;)
-            {
                 i++;
-            }
             if (i < 4)
-            {
                 for (int j = i; j < 4; j++)
-                {
                     s[1] += "0"; 
-                }
-            }
             return s[0] + "." + s[1];
         }
         public void llenarDatosOG(int ecnabezadoCompra)
@@ -155,12 +134,8 @@ namespace Comisariato.Formularios.Transacciones
                 txtIVA.Text = agregra0Decimal(txtIVA.Text);
                 datos = ObjConsul.obtenerDatos("select PROVEEDORRISE from TbProveedor where IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
                 ckbRISE.Checked = Convert.ToBoolean(datos["PROVEEDORRISE"]);
-
-                //objData = ObjConsul.BoolDataTable("select * from TbEncabezadoyPieCompra where IDEMCABEZADOCOMPRA = " + idEncabezadoOG + "");
-                //txtNumero.Text = objData.["NUMERO"].ToString();
                 DataTable datosRetencion = new DataTable();
                 datosRetencion = ObjConsul.BoolDataTable("select * from VistaRetencion where IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
-                //DataRow myRow = datosRetencion.Rows[0];
                 for (int i = 0; i < datosRetencion.Rows.Count; i++)
                 {
                     DataRow myRow = datosRetencion.Rows[i];
@@ -192,13 +167,8 @@ namespace Comisariato.Formularios.Transacciones
                 float valorPagar = Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtTotal.Text)) - sumaRetencion;
                 txtValorPagar.Text = Funcion.reemplazarcaracter(valorPagar.ToString("##.0000"));
             }
-            catch (Exception ex)
-            {
-
-            }
-            
+            catch (Exception ex)  { }
         }
-
         private void FrmOrdenDeGiro_Load(object sender, EventArgs e)
         {
             Program.FormularioOrdenGiro = true;
@@ -226,11 +196,9 @@ namespace Comisariato.Formularios.Transacciones
                     idEncabezadoOG = FrmFacturaGastos.IDEncabezadoGasto;
                 else
                     idEncabezadoOG = FrmCompra.IDEncabezadoCompraOG;
-                //FrmCompra.IDEncabezadoCompraOG;
                 ObjConsul.BoolLlenarComboBox(CmbProveedor, "Select P.IDPROVEEDOR as ID,  P.NOMBRES as Texto from TbProveedor P , TbEncabezadoyPieCompra E where E.IDPROVEEDOR = P.IDPROVEEDOR and E.IDEMCABEZADOCOMPRA = " + idEncabezadoOG + "");
                 CmbProveedor.Enabled = false;
                 ObjConsul.BoolLlenarComboBox(cbSustentoTributario, "Select C.IDCODIGOSRI as ID,  C.DESCRIPCION as Texto from TbProveedor P, TbCodigoSRI C  where  P.CREDITO = C.IDCODIGOSRI and  P.IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
-                //cbSustentoTributario.Enabled = false;
                 txtNumero.ReadOnly = true;
                 txtSerie1.ReadOnly = true;
                 txtSerie2.ReadOnly = true;
@@ -243,8 +211,7 @@ namespace Comisariato.Formularios.Transacciones
                 ObjConsul.BoolLlenarComboBox(cbSustentoTributario, "Select C.IDCODIGOSRI as ID,  C.DESCRIPCION as Texto from TbProveedor P, TbCodigoSRI C  where  P.CREDITO = C.IDCODIGOSRI and  P.IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
                 cbSustentoTributario.Enabled = false;            
             }
-           ObjConsul.seriesDocumentoRetencion(txtNumeroRetencion, txtSerie1Retencion, txtSerie2Retencion, txtAutorizacionRetencion, "RET", bitacora.LocalIPAddress());
-
+            ObjConsul.seriesDocumentoRetencion(txtNumeroRetencion, txtSerie1Retencion, txtSerie2Retencion, txtAutorizacionRetencion, "RET", bitacora.LocalIPAddress());
             DataTable dt = ObjConsul.BoolDataTable("Select CONTRIBUYENTEESPECIAL, NUMERORESOLUCION from TbParametrosFactura;");
             //Verificar si tiene Datos
             if (dt.Rows.Count > 0)
@@ -262,9 +229,7 @@ namespace Comisariato.Formularios.Transacciones
                 }
             }
             rbActivos.Checked = true;
-
         }
-
         private void txtNumero_Leave(object sender, EventArgs e)
         {
             try
@@ -279,88 +244,54 @@ namespace Comisariato.Formularios.Transacciones
                         int IDEncabezadoCompraOG = Convert.ToInt32(valor);
                         llenarDatosOG(IDEncabezadoCompraOG);
                     }
-                    else
-                    {
-                        //MessageBox.Show("No existe registro para este #factura del proveedor seleccionado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        inicializar();
-                    }
+                    else { inicializar(); }
                 }
-                
             }
-            catch (Exception ex)
-            {
-            }
+            catch (Exception ex) {}
         }
-
         private void CmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
             inicializar();
             ObjConsul.BoolLlenarComboBox(cbSustentoTributario, "Select C.IDCODIGOSRI as ID,  C.DESCRIPCION as Texto from TbProveedor P, TbCodigoSRI C  where  P.CREDITO = C.IDCODIGOSRI and  P.IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
         }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.Validar_Numeros(e);
         }
-
         private void txtNAutorizacion_Enter(object sender, EventArgs e)
         {
             if (cbAutorizacionSRI.SelectedIndex == 0)
-            {
                 txtNAutorizacion.MaxLength = 49;
-            }
             else if (cbAutorizacionSRI.SelectedIndex == 1)
-            {
                 txtNAutorizacion.MaxLength = 10;
-            }
         }
-
         private void txtPlazo_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.Validar_Numeros(e);
-            
         }
-
-        private void txtPlazo_TextChanged(object sender, EventArgs e)
-        {
-           // txtPlazo.Text += "Días";
-        }
-
         private void cbAutorizacionSRI_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtNAutorizacion.Text = "";
         }
-
         private void txtValorPagar_TextChanged(object sender, EventArgs e)
         {
             float saldo = 0.0f;
             try
             {
-
                 saldo = Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtTotal.Text)) - Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtValorPagar.Text));
                 if (saldo < 0)
-                {
                     txtSaldo.Text = "";
-                }
                 else
-                {
                     txtSaldo.Text = Funcion.reemplazarcaracter(saldo.ToString("0.0000"));
-                }
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
             if (txtValorPagar.Text == "")
-            {
                 txtSaldo.Text = "";
-            }
         }
-
         private void txtValorPagar_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtValorPagar.Text);
         }
-
         private void btnContabilizar_Click(object sender, EventArgs e)
         {
             if(txtValorPagar.Text != "" && cbFormaPago.Text != "")
@@ -376,9 +307,7 @@ namespace Comisariato.Formularios.Transacciones
                 txtValorPagar.Text = Funcion.reemplazarcaracter(valorPagar.ToString("##.0000"));
                 dgvDatosLibroDiario.Rows.Clear();
                 for (int i = 0; i < 5; i++)
-                {
                     dgvDatosLibroDiario.Rows.Add();
-                }
                 //fila 0 para inventario 0%
                 dgvDatosLibroDiario.Rows[0].Cells[2].Value = txtSubtotal0.Text;
                 dgvDatosLibroDiario.Rows[0].Cells[0].Value = "101.03.03.01 - Inventario 0%";
@@ -409,42 +338,28 @@ namespace Comisariato.Formularios.Transacciones
                     {
                         dgvDatosLibroDiario.Rows.Add();
                         i--;
-                        //contadorFilaLibroDiario--;
                     }
                     if (dgvDatosRetencion.Rows[i + 1].Cells[4].Value == null)
-                    {
                         break;
-                    }
                 }
                 dgvDatosLibroDiario.Rows.Add();
                 dgvDatosLibroDiario.Rows[contadorFilaLibroDiario].Cells[3].Value = txtValorPagar.Text;
                 if (txtPlazo.Text == "0")
                 {
-                    //dgvDatosLibroDiario.Rows.Add();
                     if (cbFormaPago.SelectedIndex == 0)
-                    {
                         dgvDatosLibroDiario.Rows[contadorFilaLibroDiario].Cells[0].Value = "101.01.01 - CAJA";
-                    }
                     else
-                    {
                         dgvDatosLibroDiario.Rows[contadorFilaLibroDiario].Cells[0].Value = "101.01.02 - BANCO";
-                    }                    
                 }
                 else
-                {
                     dgvDatosLibroDiario.Rows[contadorFilaLibroDiario].Cells[0].Value = "CTA X PAGAR";
-                }
                 for (int i = 0; i < dgvDatosLibroDiario.RowCount - 1 ; i++)
-                {
                     dgvDatosLibroDiario.Rows[i].Cells[4].Value = txtConcepto.Text;
-                }
                 quitarValores0DGVLD();
                 calcularLibroDiario();
             }
             else
-            {
                 MessageBox.Show("Debe ingresar los datos necesarios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
         private void quitarValores0DGVLD()
         {
@@ -452,14 +367,11 @@ namespace Comisariato.Formularios.Transacciones
             for (int i = 0; i < dgvDatosLibroDiario.RowCount -1; i++)
             {
                 if (Convert.ToString(dgvDatosLibroDiario.Rows[i].Cells[2].Value) != "")
-                {
                     columna = 2;
-                }
                 else
                     columna = 3;
                 if (Convert.ToString(dgvDatosLibroDiario.Rows[i].Cells[columna].Value) == "0.0000")
                 {
-                    //dgvDatosLibroDiario.Rows.Remove(dgvDatosLibroDiario.Rows[i]);
                     dgvDatosLibroDiario.Rows.RemoveAt(i);
                     i--;
                 }
@@ -471,18 +383,13 @@ namespace Comisariato.Formularios.Transacciones
             for (int i = 0; i < dgvDatosLibroDiario.RowCount - 1; i++)
             {
                 if (dgvDatosLibroDiario.Rows[i].Cells[2].Value != null)
-                {
                     sumaDebe = sumaDebe + Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvDatosLibroDiario.Rows[i].Cells[2].Value.ToString()));
-                }
                 else
                     sumaHaber = sumaHaber + Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvDatosLibroDiario.Rows[i].Cells[3].Value.ToString()));
             }
             txtTotalDebe.Text = Funcion.reemplazarcaracter(Math.Round(sumaDebe,4).ToString());
             txtTotalHaber.Text = Funcion.reemplazarcaracter(Math.Round(sumaHaber,4).ToString());
-        }
-        string serie1 = "", serie2 = "", numeroDocumentoProveedor = "";
-        DateTime fechaEmisionRetencion, fechaEmisionFActura;
-        DataGridView dtpTemporalRetencion = new DataGridView();
+        }        
         private void btnGuardarProveedor_Click(object sender, EventArgs e)
         {
             if (txtValorPagar.Text != "" && cbFormaPago.Text != "" && txtNAutorizacion.Text != "" && cbTipo.Text != "" && txtTotalDebe.Text != "" && txtTotalHaber.Text != "" )
@@ -511,11 +418,8 @@ namespace Comisariato.Formularios.Transacciones
                                 objDetalleOG.InsertarDetalledoOrden(objDetalleOG);
                                 objEncabezadoOG.InsertarAutorizacionProveedor(txtSerie1.Text, txtSerie2.Text, txtNAutorizacion.Text, Convert.ToInt32(CmbProveedor.SelectedValue));
                                 if (Convert.ToString(dgvDatosRetencion.Rows[i+1].Cells[0].Value) == "")
-                                {
                                     break;
-                                }
                             }
-                            
                         }                        
                     }
                     //Fin Crear XML
@@ -526,78 +430,49 @@ namespace Comisariato.Formularios.Transacciones
                     fechaEmisionFActura = dtpFechaDocumentacion.Value;
                     dtpTemporalRetencion = new DataGridView();
                     for (int i = 0; i < dgvDatosRetencion.ColumnCount; i++)
-                    {
                         dtpTemporalRetencion.Columns.Add("1","1");
-                    }
                     for (int i = 0; i < dgvDatosRetencion.RowCount -1; i++)
                     {
                         dtpTemporalRetencion.Rows.Add();
                         for (int j = 0; j < dgvDatosRetencion.ColumnCount; j++)
-                        {
                             dtpTemporalRetencion.Rows[i].Cells[j].Value = dgvDatosRetencion.Rows[i].Cells[j].Value;
-                        }
                     }
-                    
                     string numeroRetencion = (Convert.ToInt32(txtNumeroRetencion.Text) + 1).ToString("D9");                    
                     ObjConsul.EjecutarSQL("UPDATE [dbo].[TbCajasTalonario] SET [DOCUMENTOACTUAL] = '"+ numeroRetencion +"' WHERE SERIE1 = '"+ txtSerie1Retencion.Text + "' and SERIE2 = '" + txtSerie2Retencion.Text + "' and IPESTACION = '" + bitacora.LocalIPAddress() + "' and TIPODOCUMENTO = 'RET'");
                     MessageBox.Show("Registrado Correctamente ", "Exito", MessageBoxButtons.OK);
-                    
-                    
-
                     ObjConsul.seriesDocumentoRetencion(txtNumeroRetencion, txtSerie1Retencion, txtSerie2Retencion, txtAutorizacionRetencion, "RET", bitacora.LocalIPAddress());
                     txtOrdenGiro.Text = (Convert.ToInt32(ObjConsul.ObtenerID("NUMEROORDENGIRO", "TbEncabezadoOrdenGiro", "")) + 1).ToString();
-
                     CbTipoAutorizacionVariable = cbAutorizacionSRI.SelectedItem.ToString().ToUpper();
                     cmbAñoRetencionHechaVariable = dtpFechaRetencion.Value.Date.Year.ToString();
                     ProveedorVariable = CmbProveedor.SelectedValue.ToString();
-
                     //Crear XML
                     //imprimir();
                     //
                     CrearXMLRetencion();
-
-
-                    
-
                     inicializar();
                 }
                 else if (resultado == "Error al Registrar")
-                {
                     MessageBox.Show("Error al guardar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
                 else if (resultado == "Existe") { MessageBox.Show("Ya Existe la orden de giro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
             else
-            {
                 MessageBox.Show("Ingrese todos los datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
-
-
         public void CrearXMLRetencion()
         {
-
             ///Crear el XML
             ////XmlRetencion xmlRetencion = new XmlRetencion();
             //InfoTributaria infotribu = new InfoTributaria(1, 1, Program.razonsocialempresa, Program.nombreempresa, Program.rucempresa, "07", txtSerie1.Text, txtSerie2.Text, txtNumero.Text, Program.direccionempresa);
             if (!Directory.Exists(PathLocal))
-            {
                 Directory.CreateDirectory(PathLocal);
-            }
             string serie = txtSerie1Retencion.Text + txtSerie2Retencion.Text;
-            //string fecha = DateTime.Now.Date.ToShortDateString();
             string fecha = dtpFechaRetencion.Value.Date.ToShortDateString();
             string hora = DateTime.Now.ToLongTimeString();
-
             //Si la fecha Obtenida no tienen los ceros en dias y meses
-
             fecha = Funcion.FormarFecha(fecha);
-
-
             XmlRetencion xmlRetencion = new XmlRetencion();
             ////var ruta = ConfigurationManager.AppSettings["XmlRetencion"];
             //xml._crearXml(PathLocal + @"\" + claveacceso + ".xml", "factura");
-
             string Tipocomprobante = CmbTipoDocumento.SelectedValue.ToString();
             switch (CmbTipoDocumento.SelectedValue.ToString())
             {
@@ -616,39 +491,22 @@ namespace Comisariato.Formularios.Transacciones
                 default:
                     break;
             }
-
-            
             string numeroRetencion = (Convert.ToInt32(txtNumeroRetencion.Text) - 1).ToString("D9");
-
             InfoTributaria infotribu = new InfoTributaria(Program.Ambiente, 1, Program.razonsocialempresa, Program.nombreempresa, Program.rucempresa, "07", txtSerie1Retencion.Text, txtSerie2Retencion.Text, numeroRetencion, Program.direccionempresa); // 07 porque es retencion
-                                                                                                                                                                                                                        //string serie = txtSerie1.Text + txtSerie2.Text;
-                                                                                                                                                                                                                        //xmlRetencion.InfoTributaria("infoTributaria", infotribu, serie,claveacceso);
-
             claveacceso = infotribu.GenerarClaveAcceso(fecha, "7", serie);
             xmlRetencion._crearXml(PathLocal + @"\" + claveacceso + ".xml", "comprobanteRetencion");
             var ruta = ConfigurationManager.AppSettings["XmlServidor"];
             xmlRetencion._crearXml(PathLocal + @"\" + claveacceso + ".xml", "comprobanteRetencion");
             string pathfinal = PathLocal + claveacceso + ".xml";
-
             imprimir();
             //imprimirRetencion();
-
             //InfoTributaria infotribu = new InfoTributaria(1, 1, Program.razonsocialempresa, Program.nombreempresa, Program.rucempresa, "07", txtSerie1.Text, txtSerie2.Text, txtNumero.Text, Program.direccionempresa);
-
             xmlRetencion.InfoTributaria("infoTributaria", infotribu, serie, claveacceso);
-
-
-
             DataTable dt = ObjConsul.BoolDataTable("Select TIPOIDENTIFICACION,IDENTIFICACION,RAZONSOCIAL,NOMBRES from TbProveedor where IDPROVEEDOR = " + CmbProveedor.SelectedValue + ";");
             DataRow myRow = dt.Rows[0];
             string periodoFiscal = dtpFechaContabilizacion.Value.Date.Month.ToString();
-
-
-
             if (myRow["RAZONSOCIAL"] != System.DBNull.Value)
-            {
                 myRow["RAZONSOCIAL"] = myRow["NOMBRES"];
-            }
             periodoFiscal = periodoFiscal + "/" + dtpFechaContabilizacion.Value.Date.Year.ToString();
             periodoFiscal = Funcion.FormarFechaperiodoFiscal(periodoFiscal);
             string tipoidentificacion = "";
@@ -662,51 +520,27 @@ namespace Comisariato.Formularios.Transacciones
                 tipoidentificacion = "07";
             if (myRow["TIPOIDENTIFICACION"].ToString() == "IDENTIFICACION DELEXTERIOR")
                 tipoidentificacion = "08";
-
             InfoCompRetencion infoCompReten = new InfoCompRetencion(fecha, Program.direccionempresa, parametrosFactu[1], Program.obligadoContabilidad, tipoidentificacion, myRow["RAZONSOCIAL"].ToString(), myRow["IDENTIFICACION"].ToString(), periodoFiscal);
             xmlRetencion.infoCompRetencion(infoCompReten);
-
             //xmlRetencion.impuestos(dgvDatosRetencion,txtSerie1.Text+txtSerie2.Text+ txtNumero.Text);
-
             string CodSustento = ObjConsul.ObtenerValorCampo("CODIGOSRI", "TbCodigoSRI", "where DESCRIPCION = '"+ cbSustentoTributario.Text + "'");
-
             xmlRetencion.impuestos(dgvDatosRetencion, txtSerie1.Text + txtSerie2.Text + txtNumero.Text, Funcion.FormarFecha(dtpFechaDocumentacion.Value.Date.ToShortDateString()), /*Convert.ToInt32(CmbTipoDocumento.SelectedValue)*/CodSustento);
-
             var PathServer = ConfigurationManager.AppSettings["XmlServidor"];
             if (!Directory.Exists(PathServer + @"\Generados\"))
-            {
                 Directory.CreateDirectory(PathServer + @"\Generados\");
-            }
-
             if (!Directory.Exists(PathLocal))
-            {
                 Directory.CreateDirectory(PathLocal);
-            }
-
             File.Copy(pathfinal, PathServer + @"\Generados\" + @"\" + @claveacceso + ".xml", true);
-
-
             //Insertar BDFactuElec
-
             ObjConsul.RegistrarArchivosXml(claveacceso, PathServer + @"\Generados", fecha, hora, "OrdenGiro");
-
             //Creamos el delegado 
             ThreadStart h1 = new ThreadStart(Procesar);
             //Creamos la instancia del hilo 
             Thread h2 = new Thread(h1);
             //Iniciamos el hilo 
             h2.Start();
-
-
             // Fin Insertar BDFactuElec
-
-
         }
-        // DataTable DtDocuemtosXML;
-        string fechaAutorizacion;
-        String CbTipoAutorizacionVariable = "";
-        String cmbAñoRetencionHechaVariable = "";
-        String ProveedorVariable = "";
         private void Procesar()
         {
             try
@@ -717,39 +551,24 @@ namespace Comisariato.Formularios.Transacciones
                 string Recibida = "", AUT = "NO";
                 if (DtDocuemtosXML.Rows.Count > 0)
                 {
-                    //btnEnviar.Enabled = false;
-                    //lblTotalArchivos.Text = "Total de Archivos: " + DtDocuemtosXML.Rows.Count;
                     foreach (DataRow myRow in DtDocuemtosXML.Rows)
                     {
                         RutaXML = myRow["Ruta"].ToString();
                         NombreXML = myRow["NombreXML"].ToString();
                         FechaEmision = myRow["FechaEmision"].ToString();
                         contador++;
-                        //Inicio menuInferior
-                        //TollMenuLablelDocumento.Text = "Documento : " + NombreXML + ".xml";
-                        //TollMenuLablelFecha.Text = "Fecha : " + Funcion.reemplazarcaracterFecha(Convert.ToDateTime(FechaEmision).Date.ToShortDateString());
-                        //Fin menuInferior
-                        //var PathServer = @"C:\ArchivosXml";
-                        //var ruta = ConfigurationManager.AppSettings["XmlServidor"];
                         string RutaXML1 = ConfigurationManager.AppSettings["XmlServidor"];
                         string SRIRecepcion = ConfigurationManager.AppSettings["SRIRecepcion"];
                         string SRIAutorizacion = ConfigurationManager.AppSettings["SRIAutorizacion"];
-                        //string pathXml = RutaXML1 + @"\sonna_judith_vega_solis.p12";
                         if (System.IO.File.Exists(RutaXML1 + @"\Generados" + @"\" + NombreXML + ".xml"))
                         {
-                            //Firmar Documento
                             Firma.Firmalo(Program.RutaCertificado, Program.passwordCertificado, RutaXML1 + @"\Generados\" + NombreXML + ".xml", RutaXML1 + @"\Firmados\" + NombreXML + ".xml", RutaXML1);
-
                             SRIRecepcionComprobante sriRecepcion = new SRIRecepcionComprobante();
                             string respuestaRecepcion = sriRecepcion.RecepcionArchivos(RutaXML1 + @"\Firmados" + @"\" + NombreXML + ".xml", SRIRecepcion, NombreXML, RutaXML1);
-                            //Fin RecepcionSRI
-
                             if (respuestaRecepcion == "RECIBIDA")
                             {
                                 contadorRecibida++;
                                 Recibida = "R";
-
-
                                 SRIAutorizacionComprobante sriAutori = new SRIAutorizacionComprobante(SRIAutorizacion);
                                 string estado = sriAutori.AutorizacionArchivos(NombreXML, RutaXML1, respuestaRecepcion);
                                 string [] autorizado = estado.Split(';');
@@ -768,44 +587,27 @@ namespace Comisariato.Formularios.Transacciones
                                     AUT = "NO";
                                 }
                                 contadorEnviados++;
-                                
-
-                                //Thread.Sleep(500);
-
                                 string contadoraenviar = contador + " de " + DtDocuemtosXML.Rows.Count + " Archivos.";
                                 CambiarProgreso(NombreXML, FechaEmision, contadorDevuelta.ToString(), contadorRecibida.ToString(), contadorAutorizado.ToString(), contadorNoautorizados.ToString(), contadorEnviados.ToString(), contadoraenviar, "" + DtDocuemtosXML.Rows.Count);
-
-
                             }
                             else
                             {
                                 contadorDevuelta++;
                                 Recibida = "D";
                             }
-
                             Consultas Objconsul = new Consultas();
                             Objconsul.EjecutarSQLFactElectronica("UPDATE [dbo].[TbDocumentosGeneradosRect] SET [EstadoAutorizacion] = '" + estadoautorizacion + "',[RecepcionSRI] ='" + Recibida + "',[AutorizadoSRI]='" + AUT + "'  WHERE  NombreXML = '" + NombreXML + "'");
                         }
-
                     }
                 }
                 else
-                {
                     MessageBox.Show("No se encontró ningun archivo.");
-                }
-
-                //Thread.Sleep(1000);
-                // MessageBox.Show("Proceso finalizado");
-                //btnEnviar.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en enviar al SRI: No responde\n Intentelo más tarde en el formulario Corregir Errores");
-                //MessageBox.Show(ex.Message);
             }
-
         }
-
         private void CambiarProgreso(string nombreXml, string fecha, string contadorDevuelta, string contadorRecibida, string contadorautorizado, string contadornoautorizado, string contadorenviados, string contador, string archivosTotales)
         {
             if (this.InvokeRequired)
@@ -813,11 +615,9 @@ namespace Comisariato.Formularios.Transacciones
                 CambiarProgresoDelegado h1 = new CambiarProgresoDelegado(CambiarProgreso);
                 object[] parametros = new object[] { nombreXml, fecha, contadorDevuelta, contadorRecibida, contadorautorizado, contadornoautorizado, contadorenviados, contador, archivosTotales };
                 this.Invoke(h1, parametros);
-
             }
             else
             {
-                //imprimirRetencion();
                 if (fechaAutorizacion != null) //´solo se formara ride si la fecha de autorizacion esta, lo q significa si se autorizo o no
                 {
                     //LLamar Reporte
@@ -833,49 +633,35 @@ namespace Comisariato.Formularios.Transacciones
                         default:
                             break;
                     }
-                    
                     string numeroRetencion2 = (Convert.ToInt32(txtOrdenGiro.Text) - 1).ToString();
                     ObjConsul.EjecutarSQL("UPDATE [dbo].[TbEncabezadoOrdenGiro] SET [AUTORIZACIONSRICLAVEACCESO] = '"+ claveacceso + "' ,[FECHAAUTORIZACIONSRI] = '"+ fechaAutorizacion + "'	WHERE NUMERORETECION =" + numeroRetencion2 + "; ");
                     ReporteRetencion objeformularioReporte = null;
                     objeformularioReporte = new ReporteRetencion(claveacceso, fechaAutorizacion, numeroRetencion2, ambiente, CbTipoAutorizacionVariable, cmbAñoRetencionHechaVariable);
                     objeformularioReporte.Show();
                     //Fin Llamar Reporte
-
                     //Eviar Correo
                     ObjConsul.enviarCorreoRideRetencion(numeroRetencion2, cmbAñoRetencionHechaVariable, claveacceso);
                     //Fin Eviar Correo
                 }
             }
         }
-
-
         private void CmbProveedor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //if (txtNAutorizacion.Text.Length != 49)
-                //{
-                //    MessageBox.Show("La Autorización debe de tener exactamente 49 digitos", "Aviso", MessageBoxButtons.OK);
-                //}
-                //else
-                //{
-                    e.Handled = true;
-                    SendKeys.Send("{TAB}");
-                //}
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
             }
         }
-
         private void btnSalirCompra_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnLimpiarProveedor_Click(object sender, EventArgs e)
         {
             btnGuardarProveedor.Enabled = true;
             inicializar();
         }
-
         private void ImpresionOG_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             try
@@ -892,7 +678,6 @@ namespace Comisariato.Formularios.Transacciones
                 e.Graphics.DrawString(numeroFactura, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 175, 110);
                 e.Graphics.DrawString("Autorizacion: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, 130);
                 e.Graphics.DrawString(txtNAutorizacion.Text, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 175, 130);
-
                 /////////////////////////
                 e.Graphics.DrawString("Subtotal 12%: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, 150);
                 e.Graphics.DrawString(txtSubtotalIVA.Text, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 175, 150);
@@ -906,9 +691,7 @@ namespace Comisariato.Formularios.Transacciones
                 e.Graphics.DrawString(txtIVA.Text, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 175, 230);
                 e.Graphics.DrawString("IRBP: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, 250);
                 e.Graphics.DrawString(txtIRBP.Text, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 175, 250);
-
-
-
+                /////////////////////////
                 e.Graphics.DrawString("Usuario: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Gray, 675, 20);
                 string usurio = ObjConsul.ObtenerValorCampo("USUARIO", "TbUsuario", "WHERE IDUSUARIO = " + Program.IDUsuarioMenu);
                 e.Graphics.DrawString(usurio, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 750, 20);
@@ -919,10 +702,7 @@ namespace Comisariato.Formularios.Transacciones
                 e.Graphics.DrawString(Convert.ToString(dtpFechaContabilizacion.Value), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 675, 90);
                 e.Graphics.DrawString("Fecha Vencimiento:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 500, 110);
                 e.Graphics.DrawString(Convert.ToString(dtpFechaVenceDocumento.Value), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 675, 110);
-                
-
                 //DGV Retencion
-
                 e.Graphics.DrawString("N° Retención: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, 285);
                 string numeroRetencion = (Convert.ToInt32(txtNumeroRetencion.Text) - 1).ToString("D9");
                 string retencion = txtSerie1Retencion.Text + '-' + txtSerie2Retencion.Text + '-' + numeroRetencion;
@@ -932,14 +712,13 @@ namespace Comisariato.Formularios.Transacciones
                 int y = 275;
                 dibujarRayas(ref y, 40, 2);
                 e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
-
+                /////////////////////////
                 e.Graphics.DrawString("Año Fiscal", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 50, y + 2);
                 e.Graphics.DrawString("Codigo", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 200, y + 2);
                 e.Graphics.DrawString("Tipo", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 300, y + 2);
                 e.Graphics.DrawString("%", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 375, y + 2);
                 e.Graphics.DrawString("Base", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 450, y + 2);
                 e.Graphics.DrawString("Monto", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 650, y + 2);
-
                 dibujarRayas(ref y, 20, 2);
                 e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
                 y = y + 5;
@@ -967,19 +746,12 @@ namespace Comisariato.Formularios.Transacciones
                 }
                 e.Graphics.DrawString("Retención:", new Font("Verdana", 9, FontStyle.Bold), Brushes.Black, 550, y);
                 e.Graphics.DrawString(Funcion.reemplazarcaracter(Convert.ToString(sumaRetencion)), new Font("Verdana", 9, FontStyle.Regular), Brushes.Black, 650, y);
-
                 e.Graphics.DrawString("Total a Pagar:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 500, 150);
                 e.Graphics.DrawString(Funcion.reemplazarcaracter(Convert.ToString(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtTotal.Text)) - Convert.ToSingle(sumaRetencion))), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 675, 150);
-
-
                 e.Graphics.DrawString("Firma:", new Font("Verdana", 12, FontStyle.Bold), Brushes.Black, 500, y + 75);
-
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception){}
         }
-
         private void imprimir()
         {
             ElegirImpresero.AllowSomePages = true;
@@ -987,131 +759,32 @@ namespace Comisariato.Formularios.Transacciones
             ElegirImpresero.Document = ImpresionOG;
             DialogResult result = ElegirImpresero.ShowDialog();
             if (result == DialogResult.OK)
-            {
                 ImpresionOG.Print();
-            }
-        }
-        private void imprimirRetencion()
-        {
-            ImprimirRetencionRide.AllowSomePages = true;
-            ImprimirRetencionRide.ShowHelp = true;
-            ImprimirRetencionRide.Document = ImpresionOG;
-            DialogResult result = ImprimirRetencionRide.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                ImpresionRide.Print();
-            }
-        }
-        Pen blackPen;
-        Point puntoInicio;
-        Point puntoFinal;
+        }        
         public void dibujarRayas(ref int y, int sumar, int grosor)
         {
             blackPen = new Pen(Color.Black, grosor);
             puntoInicio = new Point(25, y = y + sumar);
             puntoFinal = new Point(800, y);
         }
-        string cadenaGeneral = "select NUMEROORDENGIRO, NOMBREDOCUMENTO, FECHAORDENGIRO, SERIE1PROVEEDOR, SERIE2PROVEEDOR, NUMERODOCUMENTOPROVEEDOR, FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, SUBTOTAL, IDORDENGIRO, from Vista_InformeOG";
-        //string cadenaGeneral = "select NUMEROORDENGIRO, NOMBREDOCUMENTO, FECHAORDENGIRO, SERIE1PROVEEDOR, SERIE2PROVEEDOR, NUMERODOCUMENTOPROVEEDOR, FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, SUBTOTAL, IDORDENGIRO,SERIE1RETENCION,SERIE2RETENCION,NUMERORETECION from Vista_InformeOG";
         private void btnConsultar_Click(object sender, EventArgs e)
-        {            
-            consultaOG();
-            for (int i = 0; i < dgvDatosOG.RowCount - 1; i++)
-            {
-                if (Convert.ToString(dgvDatosOG.Rows[i].Cells[0].Value) != "")
-                {
-                    for (int j = 6; j < 9; j++)
-                        dgvDatosOG.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvDatosOG.Rows[i].Cells[j].Value.ToString())), 2).ToString());
-                    if (Convert.ToString(dgvDatosOG.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-            }
-            Funcion.dosDecimales(ref dgvDatosOG, 5, 9);
-        }
-        public void consultaOG()
         {
             if (rbActivos.Checked)
                 radioB = true;
             else if (rbAnulados.Checked)
                 radioB = false;
-            string sql = cadenaGeneral + " where (CONVERT(VARCHAR(10),FECHAORDENGIRO, 120) between '" + Funcion.reemplazarcaracterFecha(Convert.ToString(dtpDesde.Value.ToShortDateString())) + "' AND '" + Funcion.reemplazarcaracterFecha(Convert.ToString(dtpHasta.Value.ToShortDateString())) + "') and (NOMBRES like '%"+ txtConsultar.Text +"%') and ESTADO = " + Convert.ToInt32(radioB) ;
-            DataGridView dgvAux = new DataGridView();
-            for (int i = 0; i < 12; i++)
+            string sql = cadenaGeneral + " where (CONVERT(VARCHAR(10),FECHAORDENGIRO, 120) between '" + Funcion.reemplazarcaracterFecha(Convert.ToString(dtpDesde.Value.ToShortDateString())) + "' AND '" + Funcion.reemplazarcaracterFecha(Convert.ToString(dtpHasta.Value.ToShortDateString())) + "') and (NOMBRES like '%" + txtConsultar.Text + "%') and ESTADO = " + Convert.ToInt32(radioB);
+            ObjConsul.boolLlenarDataGrid(dgvDatosOG, sql, 25, 13, 0);
+            for (int i = 0; i < dgvDatosOG.RowCount - 1; i++)
             {
-                dgvAux.Columns.Add("1", "1");
-            }
-            ObjConsul.boolLlenarDataGrid(dgvAux, sql, 25, 11, 0);
-            dgvDatosOG.Rows.Clear();
-            for (int i = 0; i < 25; i++)
-            {
-                dgvDatosOG.Rows.Add();
-            }
-            if (Convert.ToString(dgvAux.Rows[0].Cells[0].Value) != "")
-            {
-                for (int i = 0; i < dgvAux.RowCount - 1; i++)
-                {
-                    if (i == Convert.ToInt32(dgvDatosOG.RowCount - 1))
-                        dgvDatosOG.Rows.Add(1);
-                    int columnas = 0;
-                    for (int j = 0; j < dgvDatosOG.ColumnCount; j++)
-                    {
-                        if (columnas > 2 && columnas < 6)
-                        {
-                            int s1 = Convert.ToInt32(dgvAux.Rows[i].Cells[columnas].Value);
-                            columnas++;
-                            int s2 = Convert.ToInt32(dgvAux.Rows[i].Cells[columnas].Value);
-                            columnas++;
-                            int np = Convert.ToInt32(dgvAux.Rows[i].Cells[columnas].Value);
-                            dgvDatosOG.Rows[i].Cells[j].Value = s1.ToString("D3") + s2.ToString("D3") + np.ToString("D9");
-                        }
-                        else
-                            dgvDatosOG.Rows[i].Cells[j].Value = Convert.ToString(dgvAux.Rows[i].Cells[columnas].Value);
-                        columnas++;
-                    }
-                    if (Convert.ToString(dgvAux.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-                if (Convert.ToString(dgvDatosOG.Rows[0].Cells[0].Value) != "")
-                {
-                    btnVer.Enabled = true;
-                    btnAnular.Enabled = true;
-                }
-                else
-                {
-                    btnVer.Enabled = false;
-                    btnAnular.Enabled = false;
-                }
-                for (int i = 6; i < 9; i++)
-                    dgvDatosOG.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                for (int i = 0; i < 6; i++)
-                    dgvDatosOG.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                for (int i = 0; i < dgvDatosOG.RowCount - 1; i++)
-                {
-                    if (Convert.ToString(dgvDatosOG.Rows[i].Cells[0].Value) != "")
-                    {
-                        for (int j = 6; j < 9; j++)
-                            dgvDatosOG.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(dgvDatosOG.Rows[i].Cells[j].Value.ToString());
-                        if (Convert.ToString(dgvDatosOG.Rows[i + 1].Cells[0].Value) == "")
-                        {
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                for (int i = 0; i < dgvDatosOG.RowCount - 1; i++)
-                {
-                    dgvDatosOG.Rows[i].Cells[2].Value = Convert.ToDateTime(dgvDatosOG.Rows[i].Cells[2].Value).ToShortDateString();
-                    dgvDatosOG.Rows[i].Cells[4].Value = Convert.ToDateTime(dgvDatosOG.Rows[i].Cells[4].Value).ToShortDateString();
-                    if (Convert.ToString(dgvAux.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
+                dgvDatosOG.Rows[i].Cells[2].Value = Convert.ToDateTime(dgvDatosOG.Rows[i].Cells[2].Value).ToShortDateString();
+                dgvDatosOG.Rows[i].Cells[4].Value = Convert.ToDateTime(dgvDatosOG.Rows[i].Cells[4].Value).ToShortDateString();
+                if (Convert.ToString(dgvDatosOG.Rows[i + 1].Cells[0].Value) == "")
+                    break;
             }
             dgvDatosOG.Focus();
+            Funcion.dosDecimales(ref dgvDatosOG, 6, 13, 0);
         }
-
         private void dgvDatosOG_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (Convert.ToString(dgvDatosOG.CurrentRow.Cells[0].Value) != "")
@@ -1125,50 +798,30 @@ namespace Comisariato.Formularios.Transacciones
                 btnAnular.Enabled = false;
             }
         }
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             numeroOrden = Convert.ToInt32(txtOrdenGiro.Text);
             imprimir();
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             string sqlAnular = "";
             
             if (rbActivos.Checked)
-            {
                 sqlAnular = "UPDATE[dbo].[TbEncabezadoOrdenGiro] SET[ESTADO] = 0 WHERE IDORDENGIRO = " + Convert.ToInt32(dgvDatosOG.CurrentRow.Cells[9].Value);
-            }
             else if (rbAnulados.Checked)
-            {
                 sqlAnular = "UPDATE[dbo].[TbEncabezadoOrdenGiro] SET[ESTADO] = 1 WHERE IDORDENGIRO = " + Convert.ToInt32(dgvDatosOG.CurrentRow.Cells[9].Value);
-            }
             if (!ObjConsul.EjecutarSQL(sqlAnular))
-            {
-                //btnConsultar_Click(null, null);
-                //MessageBox.Show("Anulado Correctamente ", "Exito", MessageBoxButtons.OK);
                 MessageBox.Show("Error al guardar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-            //else
-            //{
-            //    MessageBox.Show("Error al guardar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-
             ///Inicio Dar de Baja Factura Electrinonica
             ///
-
             string fechaordengiro = Funcion.reemplazarcaracterFecha(dgvDatosOG.CurrentRow.Cells[2].Value.ToString());
             string numerodocumento = Convert.ToString(dgvDatosOG.CurrentRow.Cells[3].Value);
-
             string serie1 = numerodocumento.Substring(0, 3);
             string serie2 = numerodocumento.Substring(3, 3);
             string serie3Secuencial = numerodocumento.Substring(6, 9);
-
             DataTable dt = ObjConsul.BoolDataTable("Select SERIE1RETENCION,SERIE2RETENCION,NUMERORETECION from Vista_InformeOG where (CONVERT(VARCHAR(10),FECHAORDENGIRO, 120)) = '"
                 + fechaordengiro + "' and SERIE1PROVEEDOR = "+ Convert.ToInt32(serie1) + " and  SERIE2PROVEEDOR = "+ Convert.ToInt32(serie2) + " and  NUMERODOCUMENTOPROVEEDOR= '"+ serie3Secuencial + "' ");
-
             if (dt.Rows.Count > 0)
             {
                 DataRow drFila = dt.Rows[0];
@@ -1176,35 +829,20 @@ namespace Comisariato.Formularios.Transacciones
                 serie2 = Convert.ToInt32(drFila["SERIE2RETENCION"]).ToString("D3");
                 serie3Secuencial = Convert.ToInt32(drFila["NUMERORETECION"]).ToString("D9");
                 String parametroParteClaveAcceso = serie1 + serie2 + serie3Secuencial;  
-
                 if (Program.BoolAutorizadoImprimir)
                 {
                     string sqlEstadoDeBaja = "";
                     if (rbActivos.Checked)
-                    {
                         sqlEstadoDeBaja = "Update TbDocumentosGeneradosRect SET EstadodeBaja = '1' where NombreXML like '%"+ parametroParteClaveAcceso + "%' and FechaEmision = '"+ fechaordengiro + "'";
-                    }
                     else if (rbAnulados.Checked)
-                    {
                         sqlEstadoDeBaja = "Update TbDocumentosGeneradosRect SET EstadodeBaja = '0' where NombreXML like '%"+ parametroParteClaveAcceso + "%' and FechaEmision = '"+ fechaordengiro + "'";
-                    }
                     if (!ObjConsul.EjecutarSQLFactElectronica(sqlEstadoDeBaja))
-                    {
-                        //btnConsultar_Click(null, null);
-                        //MessageBox.Show("Anulado Correctamente ", "Exito", MessageBoxButtons.OK);
                         MessageBox.Show("Error al guardar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    //else
-                    //{
-                    //    MessageBox.Show("Error al guardar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //}
                 }
             }
             ///Fin Dar de Baja Factura Electrinonica
             btnConsultar_Click(null, null);
-
         }
-
         private void rbActivos_CheckedChanged(object sender, EventArgs e)
         {
             if (rbActivos.Checked)
@@ -1212,27 +850,12 @@ namespace Comisariato.Formularios.Transacciones
             else if (rbAnulados.Checked)
                 btnAnular.Text = "Activar";
         }
-
-        private void dgvDatosOG_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnVer_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
             ver = true;
-            string ecanbezadoOG = "SELECT        dbo.TbEncabezadoOrdenGiro.IDORDENGIRO, dbo.TbTipoDocumento.NOMBREDOCUMENTO, dbo.TbEncabezadoOrdenGiro.TIPO, dbo.TbEncabezadoOrdenGiro.PLAZO, dbo.TbEncabezadoOrdenGiro.CONCEPTO, " +
-                         "dbo.TbEncabezadoOrdenGiro.AUTORIZACIONPROVEEDOR, dbo.TbEncabezadoOrdenGiro.NUMERODOCUMENTOPROVEEDOR, dbo.TbEncabezadoOrdenGiro.SERIE1PROVEEDOR, " +
-                         "dbo.TbEncabezadoOrdenGiro.SERIE2PROVEEDOR, dbo.TbEncabezadoOrdenGiro.RISE, dbo.TbEncabezadoOrdenGiro.DECLARASRI, dbo.TbEncabezadoOrdenGiro.RETENCIONMANUAL, " +
-                         "dbo.TbEncabezadoOrdenGiro.FECHADOCUMENTO, dbo.TbEncabezadoOrdenGiro.FECHACONTABILIZACION, dbo.TbEncabezadoOrdenGiro.FECHAORDENGIRO, dbo.TbEncabezadoOrdenGiro.FECHAVIGENTE, " +
-                         "dbo.TbEncabezadoOrdenGiro.VALORAPAGAR, dbo.TbEncabezadoOrdenGiro.FECHARETENCION, dbo.TbEncabezadoOrdenGiro.FECHAVENCEDOCUMENTO, dbo.TbEncabezadoOrdenGiro.SALDO, " +
-                         "dbo.TbEncabezadoOrdenGiro.SERIE1RETENCION, dbo.TbEncabezadoOrdenGiro.SERIE2RETENCION, dbo.TbEncabezadoOrdenGiro.NUMERORETECION, dbo.TbEncabezadoOrdenGiro.AUTORIZACIONRETECION, " +
-                         "dbo.TbEncabezadoOrdenGiro.TOTALDEBE, dbo.TbEncabezadoOrdenGiro.TOTALHABER, dbo.TbProveedor.NOMBRES, dbo.TbCodigoSRI.DESCRIPCION, dbo.TbEncabezadoOrdenGiro.FORMAPAGO, dbo.TbEncabezadoOrdenGiro.TIPOAUTORIZACION " +
-                         "FROM            dbo.TbEncabezadoOrdenGiro INNER JOIN " +
-                         "dbo.TbProveedor ON dbo.TbEncabezadoOrdenGiro.IDPROVEEDOR = dbo.TbProveedor.IDPROVEEDOR INNER JOIN " +
-                         "dbo.TbTipoDocumento ON dbo.TbEncabezadoOrdenGiro.IDTIPODOCUMENTO = dbo.TbTipoDocumento.IDTIPODOCUMENTO CROSS JOIN " +
-                         "dbo.TbCodigoSRI WHERE        (dbo.TbEncabezadoOrdenGiro.IDORDENGIRO = "+Convert.ToInt32(dgvDatosOG.CurrentRow.Cells[9].Value)+")and dbo.TbProveedor.CREDITO = dbo.TbCodigoSRI.IDCODIGOSRI";
+            int columnaID = dgvDatosOG.ColumnCount;
+            string ecanbezadoOG = "select * from Vista_ModificarOG where IDORDENGIRO=" + Convert.ToInt32(dgvDatosOG.CurrentRow.Cells[columnaID - 1].Value);
             DataTable dtOG = ObjConsul.BoolDataTable(ecanbezadoOG);
             if (dtOG.Rows.Count > 0)
             {
@@ -1254,21 +877,15 @@ namespace Comisariato.Formularios.Transacciones
                 dtpFechaContabilizacion.Value = Convert.ToDateTime(drFila[13]);
                 dtpFechaOrdenGiro.Value = Convert.ToDateTime(drFila[14]);
                 dtpFechaVigente.Value = Convert.ToDateTime(drFila[15]);
-                //txtValorPagar.Text = drFila[16].ToString();
                 dtpFechaRetencion.Value = Convert.ToDateTime(drFila[17]);
                 dtpFechaVenceDocumento.Value = Convert.ToDateTime(drFila[18]);
-                //txtSaldo.Text = drFila[19].ToString();
                 txtSerie1Retencion.Text = Convert.ToInt32(drFila[20]).ToString("D3");
                 txtSerie2Retencion.Text = Convert.ToInt32(drFila[21]).ToString("D3");
                 txtNumeroRetencion.Text = Convert.ToInt32(drFila[22]).ToString("D9");
                 txtAutorizacionRetencion.Text = drFila[23].ToString();
-                //txtTotalDebe.Text = drFila[24].ToString();
-                //txtTotalHaber.Text = drFila[25].ToString();                
                 cbSustentoTributario.Text = drFila[27].ToString();
                 if (Convert.ToString(drFila[28]) == "")
-                {
                     cbFormaPago.SelectedIndex = 0;
-                }
                 else
                     cbFormaPago.Text = drFila[28].ToString();
                 if (Convert.ToString(drFila[29]) != "Normal" && Convert.ToString(drFila[29]) != "Electrónica")
@@ -1280,9 +897,7 @@ namespace Comisariato.Formularios.Transacciones
                 btnImprimir.Visible = true;
                 btnGuardarProveedor.Enabled = false;
             }
-            //cbFormaPago.SelectedIndex = 0;
             btnContabilizar_Click(null, null);
-
             txtOrdenGiro.Enabled = false;
             CmbTipoDocumento.Enabled = false;
             cbTipo.Enabled = false;
@@ -1310,129 +925,10 @@ namespace Comisariato.Formularios.Transacciones
             cbFormaPago.Enabled = false;
             cbAutorizacionSRI.Enabled = false;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string fecha = DateTime.Now.Date.ToShortDateString();
             string fechaActual = Funcion.FormarFecha(fecha);
-
-        }
-
-        private void ImpresionRide_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            try
-            {
-                DataTable dtEmpresa = ObjConsul.BoolDataTable("select e.NOMBRECOMERCIAL, e.RAZONSOCIAL, e.RUC, e.DIRECCION as DEmpresa, e.CELULAR1  from TbEmpresa e where e.IDEMPRESA = 1");
-                DataRow rowEmpresa = null;
-                if (dtEmpresa.Rows.Count > 0)
-                {
-                    rowEmpresa = dtEmpresa.Rows[0];
-                    int y = 25;
-                    e.Graphics.DrawString(rowEmpresa[0].ToString(), new Font("Verdana", 12, FontStyle.Bold), Brushes.Black, 300, y);
-                    e.Graphics.DrawString(rowEmpresa[1].ToString(), new Font("Verdana", 12, FontStyle.Bold), Brushes.Black, 275, y = y + 25);
-                    e.Graphics.DrawString("R.U.C " + rowEmpresa[2].ToString(), new Font("Verdana", 11, FontStyle.Bold), Brushes.Black, 310, y = y + 25);
-                    e.Graphics.DrawString("MATRIZ: " + rowEmpresa[3].ToString(), new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 250, y = y + 20);
-                    e.Graphics.DrawString("Teléfono: " + rowEmpresa[4].ToString() + "/ El Empalme - Guayas - Ecuador", new Font("Verdana", 10, FontStyle.Italic), Brushes.Black, 240, y = y + 20);
-                    int encabezadoRetencion = y + 40;
-                    e.Graphics.DrawString("CLAVE DE ACCESO: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, y = y + 40);
-                    e.Graphics.DrawString(claveacceso, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 150, y);
-                    e.Graphics.DrawString("AUTORIZACIÓN: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, y = y + 25);
-                    e.Graphics.DrawString(claveacceso, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 150, y);
-                    e.Graphics.DrawString("FECHA Y HORA DE ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, y = y + 25);
-                    e.Graphics.DrawString("AUTORIZACIÓN: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 25, y = y + 25);
-                    e.Graphics.DrawString(fechaAutorizacion, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 150, y);
-
-
-                    e.Graphics.DrawString("OBLIGADO A LLEVAR CONTABILIDAD", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 550, encabezadoRetencion);
-
-
-                    Pen blackPenC = new Pen(Color.Black, 1);
-                    Point puntoInicioC = new Point(545, encabezadoRetencion + 23);
-                    Point puntoFinalC = new Point(800, encabezadoRetencion + 23);
-                    e.Graphics.DrawLine(blackPenC, puntoInicioC, puntoFinalC);
-                    for (int i = 0; i < 70; i += 10)
-                    {
-                        e.Graphics.DrawString("|", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 540, encabezadoRetencion + 21 + i);
-                        e.Graphics.DrawString("|", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 795, encabezadoRetencion + 21 + i);
-                    }
-                    e.Graphics.DrawString("COMPROBANTE RETENCIÓN", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 575, encabezadoRetencion = encabezadoRetencion + 25);
-                    string numeroRetencion = (Convert.ToInt32(txtNumeroRetencion.Text) - 1).ToString("D9");
-                    e.Graphics.DrawString("N° " + txtSerie1Retencion.Text + "-" + txtSerie2Retencion.Text + "-" + numeroRetencion, new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, encabezadoRetencion = encabezadoRetencion + 25);
-                    e.Graphics.DrawString("Fecha de Emisión: ", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 545, encabezadoRetencion = encabezadoRetencion + 25);
-                    e.Graphics.DrawString(Convert.ToString(fechaEmisionRetencion.ToShortDateString()), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 660, encabezadoRetencion);
-                    puntoInicioC = new Point(545, encabezadoRetencion + 20);
-                    puntoFinalC = new Point(800, encabezadoRetencion + 20);
-                    e.Graphics.DrawLine(blackPenC, puntoInicioC, puntoFinalC);
-
-                    y = encabezadoRetencion;
-                    dibujarRayas(ref y, 25, 3);
-                    e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
-                    DataTable dtProveedor = ObjConsul.BoolDataTable("select NOMBRES, IDENTIFICACION, DIRECCION from TbProveedor where IDPROVEEDOR = " + CmbProveedor.SelectedValue);
-                    DataRow rowProveedor = null;
-                    if (dtProveedor.Rows.Count > 0)
-                    {
-                        rowProveedor = dtProveedor.Rows[0];
-                        e.Graphics.DrawString("SR.(ES): ", new Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 25, y = y + 25);
-                        e.Graphics.DrawString(rowProveedor[0].ToString(), new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 150, y);
-                        e.Graphics.DrawString("RUC: ", new Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 25, y = y + 25);
-                        e.Graphics.DrawString(rowProveedor[1].ToString(), new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 150, y);
-                        e.Graphics.DrawString("DIRECCIÓN: ", new Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 25, y = y + 25);
-                        e.Graphics.DrawString(rowProveedor[2].ToString(), new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 150, y);
-
-                        e.Graphics.DrawString("FECHA DE EMISIÓN: ", new Font("Verdana", 9, FontStyle.Bold), Brushes.Black, 500, y = y - 50);
-                        e.Graphics.DrawString(Convert.ToString(fechaEmisionFActura.ToShortDateString()), new Font("Verdana", 9, FontStyle.Regular), Brushes.Black, 650, y);
-                        e.Graphics.DrawString("COMPROBANTE: ", new Font("Verdana", 9, FontStyle.Bold), Brushes.Black, 500, y = y + 25);
-                        e.Graphics.DrawString(CmbTipoDocumento.Text, new Font("Verdana", 9, FontStyle.Regular), Brushes.Black, 650, y);
-                        e.Graphics.DrawString("N° COMPROBANTE: ", new Font("Verdana", 9, FontStyle.Bold), Brushes.Black, 500, y = y + 25);
-                        e.Graphics.DrawString(serie1 + "-" + serie2 + "-" + numeroDocumentoProveedor, new Font("Verdana", 9, FontStyle.Regular), Brushes.Black, 650, y);
-                    }
-
-                    //DGV Retencion
-
-                    dibujarRayas(ref y, 40, 2);
-                    e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
-
-                    e.Graphics.DrawString("Año Fiscal", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 50, y + 2);
-                    e.Graphics.DrawString("Código", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 150, y + 2);
-                    e.Graphics.DrawString("Impuesto", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 225, y + 2);
-                    e.Graphics.DrawString("% de Retención", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 325, y + 2);
-                    e.Graphics.DrawString("Base Imponible", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 500, y + 2);
-                    e.Graphics.DrawString("para la Retención", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 495, y + 15);
-
-                    e.Graphics.DrawString("Valor Retenido", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 675, y + 2);
-
-                    dibujarRayas(ref y, 33, 2);
-                    e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
-                    y = y + 5;
-                    float sumaRetencion = 0.0f;
-                    for (int i = 0; i < dtpTemporalRetencion.RowCount - 1; i++)
-                    {
-                        DateTime fechaactual = DateTime.Today;
-                        e.Graphics.DrawString(Convert.ToString(fechaactual.Year), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 75, y + 2);
-                        e.Graphics.DrawString(Convert.ToString(dtpTemporalRetencion.Rows[i].Cells[8].Value), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 150, y + 2);
-                        e.Graphics.DrawString(Convert.ToString(dtpTemporalRetencion.Rows[i].Cells[1].Value), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 225, y + 2);
-                        e.Graphics.DrawString(Convert.ToString(dtpTemporalRetencion.Rows[i].Cells[2].Value) + "%", new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 400, y + 2);
-                        double baseIm = Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(Convert.ToString(dtpTemporalRetencion.Rows[i].Cells[3].Value))), 2);
-                        e.Graphics.DrawString(Funcion.reemplazarcaracter(Convert.ToString(baseIm)), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 575, y + 2);
-                        double retenido = Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(Convert.ToString(dtpTemporalRetencion.Rows[i].Cells[4].Value))), 2);
-                        e.Graphics.DrawString(Funcion.reemplazarcaracter(Convert.ToString(retenido)), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 745, y + 2);
-                        y = y + 22;
-                        double totalRetenido = Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(Convert.ToString(dtpTemporalRetencion.Rows[i].Cells[4].Value))), 2);
-                        sumaRetencion = sumaRetencion + Convert.ToSingle(totalRetenido);
-                        if (Convert.ToString(dtpTemporalRetencion.Rows[i + 1].Cells[0].Value) == "")
-                            break;
-                    }
-                    e.Graphics.DrawString("Total Retenido:", new Font("Verdana", 9, FontStyle.Bold), Brushes.Black, 500, y + 5);
-                    e.Graphics.DrawString(Funcion.reemplazarcaracter(Convert.ToString(sumaRetencion)), new Font("Verdana", 9, FontStyle.Regular), Brushes.Black, 745, y);
-
-                    /*
-                    e.Graphics.DrawString("Firma:", new Font("Verdana", 12, FontStyle.Bold), Brushes.Black, 500, y + 75);*/
-                }
-
-            }
-            catch (Exception)
-            {
-            }
-        }
+        }        
     }
 }

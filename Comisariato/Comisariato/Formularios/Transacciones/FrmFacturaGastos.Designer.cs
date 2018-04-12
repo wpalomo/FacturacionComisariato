@@ -363,7 +363,7 @@
             this.txtSubtutalIVA.Size = new System.Drawing.Size(88, 23);
             this.txtSubtutalIVA.TabIndex = 2;
             this.txtSubtutalIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtSubtutalIVA.Click += new System.EventHandler(this.txtSubtutalIVA_Click);
+            this.txtSubtutalIVA.Click += new System.EventHandler(this.txtSubtutalIVA_Enter);
             this.txtSubtutalIVA.Enter += new System.EventHandler(this.txtSubtutalIVA_Enter);
             this.txtSubtutalIVA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1_KeyDown);
             this.txtSubtutalIVA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubtutalIVA_KeyPress);
@@ -377,7 +377,7 @@
             this.txtSubtotal0.Size = new System.Drawing.Size(88, 23);
             this.txtSubtotal0.TabIndex = 3;
             this.txtSubtotal0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtSubtotal0.Click += new System.EventHandler(this.txtSubtotal0_Click);
+            this.txtSubtotal0.Click += new System.EventHandler(this.txtSubtotal0_Enter);
             this.txtSubtotal0.Enter += new System.EventHandler(this.txtSubtotal0_Enter);
             this.txtSubtotal0.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1_KeyDown);
             this.txtSubtotal0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubtotal0_KeyPress);
@@ -391,7 +391,7 @@
             this.txtDesceunto.Size = new System.Drawing.Size(88, 23);
             this.txtDesceunto.TabIndex = 4;
             this.txtDesceunto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDesceunto.Click += new System.EventHandler(this.txtDesceunto_Click);
+            this.txtDesceunto.Click += new System.EventHandler(this.txtDesceunto_Enter);
             this.txtDesceunto.Enter += new System.EventHandler(this.txtDesceunto_Enter);
             this.txtDesceunto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDesceunto_KeyDown);
             this.txtDesceunto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesceunto_KeyPress);
@@ -439,7 +439,7 @@
             this.txtIVA.Size = new System.Drawing.Size(88, 23);
             this.txtIVA.TabIndex = 56;
             this.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtIVA.Click += new System.EventHandler(this.txtIVA_Click);
+            this.txtIVA.Click += new System.EventHandler(this.txtIVA_Enter);
             this.txtIVA.Enter += new System.EventHandler(this.txtIVA_Enter);
             this.txtIVA.Leave += new System.EventHandler(this.txtSubtutalIVA_Leave);
             // 
@@ -467,7 +467,7 @@
             this.BtnLimpiar.Text = "&Limpiar";
             this.BtnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnLimpiar.UseVisualStyleBackColor = true;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            this.BtnLimpiar.Click += new System.EventHandler(this.FrmFacturaGastos_Load);
             // 
             // BtnGuardar
             // 

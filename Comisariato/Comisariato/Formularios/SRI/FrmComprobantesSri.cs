@@ -414,7 +414,7 @@ namespace Comisariato.Formularios.SRI
                         //Fin Llamar Reporte
 
                         //Eviar Correo
-                        objconsul.enviarCorreoRideRetencion(numeroOrdengiro.ToString(), cmbAñoRetencionHechaVariable, nombrexml);
+                        //objconsul.enviarCorreoRideRetencion(numeroOrdengiro.ToString(), cmbAñoRetencionHechaVariable, nombrexml);
                         //Fin Eviar Correo
 
                         //nombrexml = "";

@@ -204,7 +204,7 @@ namespace Comisariato.Formularios.Informes
                     }
                 }
             }
-            Funcion.dosDecimales(ref dgvInformeCajas, 2, 7);
+            Funcion.dosDecimales(ref dgvInformeCajas, 2, 7, 0);
         }
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)

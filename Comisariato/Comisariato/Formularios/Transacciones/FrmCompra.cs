@@ -958,7 +958,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                         break;
                 }
             }
-            Funcion.dosDecimales(ref dgvInformeCompras, 3, 9);
+            Funcion.dosDecimales(ref dgvInformeCompras, 3, 9, 0);
         }
 
         private void dgvProductosIngresos_CellClick(object sender, DataGridViewCellEventArgs e)
