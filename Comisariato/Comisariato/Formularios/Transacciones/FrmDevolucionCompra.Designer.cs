@@ -910,7 +910,7 @@
             this.txtSerie1.Name = "txtSerie1";
             this.txtSerie1.Size = new System.Drawing.Size(56, 23);
             this.txtSerie1.TabIndex = 8;
-            this.txtSerie1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbProveedor_KeyDown);
+            this.txtSerie1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1NC_KeyDown);
             // 
             // txtSerie2NC
             // 
@@ -930,7 +930,7 @@
             this.txtSerie2.Name = "txtSerie2";
             this.txtSerie2.Size = new System.Drawing.Size(56, 23);
             this.txtSerie2.TabIndex = 9;
-            this.txtSerie2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbProveedor_KeyDown);
+            this.txtSerie2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1NC_KeyDown);
             // 
             // label6
             // 

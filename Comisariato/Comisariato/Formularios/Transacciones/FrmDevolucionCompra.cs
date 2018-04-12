@@ -1,12 +1,6 @@
 ﻿using Comisariato.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Comisariato.Formularios.Transacciones
@@ -50,7 +44,7 @@ namespace Comisariato.Formularios.Transacciones
             dgvProductosDevolucion.Rows.Clear();
             Funcion.llenarDGV(ref dgvProductosDevolucion, 20);
             Funcion.llenarDGV(ref dgvDatosProducto, 20);
-            dgvProductosDevolucion.Rows[dgvProductosDevolucion.RowCount].ReadOnly = true;
+            //dgvProductosDevolucion.Rows[dgvProductosDevolucion.RowCount].ReadOnly = true;
             dgvProductosDevolucion.Columns[9].ReadOnly = true;
             dgvProductosDevolucion.Columns[10].ReadOnly = true;
             BtnGuardar.Text = "&Guardar";
@@ -101,7 +95,6 @@ namespace Comisariato.Formularios.Transacciones
                             dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
                             dgvProductosDevolucion.Rows[i].Cells[10].ReadOnly = true;
                         }
-                        //    dgvProductosDevolucion.ReadOnly = true;
                         txtImpuesto.Text = row["IMPUESTO"].ToString();
                         compraDetalle = Convert.ToInt32(row["IDEMCABEZADOCOMPRA"]);
                         ivaEstado = Convert.ToBoolean(row["IVAESTADO"]);
@@ -208,24 +201,13 @@ namespace Comisariato.Formularios.Transacciones
             {
                 for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
                 {
-                    dgvProductosDevolucion.Rows[i].Cells[10].Value = txtPorcetajeDevolucion.Text + "%";
-                    dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txtPorcetajeDevolucion.Text) / 100)).ToString());
-                    dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
-                    dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
-                    Calcular(11);
+                    CalcularDGV(txtPorcetajeDevolucion, i);
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
                         break;
                 }
             }
             else
-            {
-                for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
-                {
-                    dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = false;
-                    if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-            }
+                desBloquearCeldas();
         }
         private void dgvProductosDevolucion_Enter(object sender, EventArgs e)
         {
@@ -243,40 +225,50 @@ namespace Comisariato.Formularios.Transacciones
         }
         private void txt0_Leave(object sender, EventArgs e)
         {
-            CalcularIvas(txt0);
-        }
-
-        private void txt12_Leave(object sender, EventArgs e)
-        {
-            CalcularIvas(txt12);
-        }
-        public void CalcularIvas(TextBox txt)
-        {
-            if (txt.Text != "")
+            if (txt0.Text != "")
             {
                 for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
                 {
-                    if (Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[7].Value) != "0.00")
-                    {
-                        dgvProductosDevolucion.Rows[i].Cells[10].Value = txt.Text + "%";
-                        dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txt.Text) / 100)).ToString());
-                        dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
-                        dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
-                        Calcular(11);
-                    }
+                    if (Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[7].Value) == "0.00")
+                        CalcularDGV(txt0, i);
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
                         break;
                 }
             }
             else
+                desBloquearCeldas();
+        }
+        private void txt12_Leave(object sender, EventArgs e)
+        {
+            if (txt12.Text != "")
             {
                 for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
                 {
-                    dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = false;
+                    if (Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[7].Value) != "0.00")
+                        CalcularDGV(txt12, i);
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
                         break;
                 }
             }
+            else
+                desBloquearCeldas();
+        }
+        public void desBloquearCeldas()
+        {
+            for (int i = 0; i < dgvProductosDevolucion.RowCount - 1; i++)
+            {
+                dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = false;
+                if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
+                    break;
+            }
+        }
+        public void CalcularDGV(TextBox txt, int i)
+        {
+            dgvProductosDevolucion.Rows[i].Cells[10].Value = txt.Text + "%";
+            dgvProductosDevolucion.Rows[i].Cells[11].Value = Funcion.reemplazarcaracter((Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[2].Value) * (Convert.ToSingle(txt.Text) / 100)).ToString());
+            dgvProductosDevolucion.Rows[i].Cells[9].Value = "0";
+            dgvProductosDevolucion.Rows[i].Cells[9].ReadOnly = true;
+            Calcular(11);
         }
         public void consultaNC()
         {
@@ -306,7 +298,6 @@ namespace Comisariato.Formularios.Transacciones
                 txtModificarVer.Enabled = false;
             Funcion.dosDecimales(ref dgvDatosProducto, 4, 6, 0);
         }
-
         private void txtModificarVer_Click(object sender, EventArgs e)
         {
             modificar = true;
@@ -327,7 +318,6 @@ namespace Comisariato.Formularios.Transacciones
                     txtNumero.Text = rowCompra["NUMERO"].ToString();
                     cbProveedor_Leave(null, null);
                 }
-
                 txtAutorizacionNC.Text = Convert.ToString(rowEncabezado["AUTORIZACION"]);
                 dtpFechaEmision.Value = Convert.ToDateTime(rowEncabezado["FECHA"]);
                 txtSerie1NC.Text = rowEncabezado["SERIE1"].ToString();
@@ -363,7 +353,6 @@ namespace Comisariato.Formularios.Transacciones
                 }
             }
         }
-
         private void btnAnular_Click(object sender, EventArgs e)
         {
             int encabezado = Convert.ToInt32(dgvDatosProducto.CurrentRow.Cells[6].Value);
@@ -374,37 +363,22 @@ namespace Comisariato.Formularios.Transacciones
                 estado = 1;
             string sqlAnular = "UPDATE [dbo].[TbEncabezadoNotaCredito] SET [ESTADO] = "+ estado +" WHERE IDENCABEZADONOTACREDITO = "+ encabezado +"";
             if (objConsultas.EjecutarSQL(sqlAnular))
-            {
-                MessageBox.Show("Acción guardada correctamente");
                 consultaNC();
-            }
             else
                 MessageBox.Show("Error al anular");
         }
-
         private void dgvDatosProducto_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (Convert.ToString(dgvDatosProducto.CurrentRow.Cells[0].Value) != "")
             {
                 txtModificarVer.Enabled = true;
                 btnAnular.Enabled = true;
-                //string factura = Convert.ToString(dgvDatosProducto.CurrentRow.Cells[1].Value);
-                //string serie1 = factura.Substring(0, 3);
-                //string serie2 = factura.Substring(3, 3);
-                //string numero = factura.Substring(6, 9);
                 int compra = Convert.ToInt32(dgvDatosProducto.CurrentRow.Cells[7].Value);
-                //string idEncabezadoNC = objConsultas.ObtenerValorCampo("IDENCABEZADONOTACREDITO", "TbEncabezadoNotaCredito", " where IDENCABEZADOCOMPRA = " + compra + " and SERIE1 = '" + serie2 + "' and SERIE2 = '" + serie2 + "' and NUMERO = '" + numero + "' ");
                 bool existeCredito = objConsultas.verificaCreditoCompra(compra, Convert.ToSingle(dgvDatosProducto.CurrentRow.Cells[4].Value));
                 if (existeCredito && rbAnulados.Checked)
-                {
-                    //btnModificar.Text = "Ver";
                     btnAnular.Enabled = true;
-                }
                 else if (!existeCredito && rbAnulados.Checked)
-                {
-                    //btnModificar.Text = "Modificar";
                     btnAnular.Enabled = false;
-                }
             }
             else
             {
@@ -412,7 +386,6 @@ namespace Comisariato.Formularios.Transacciones
                 btnAnular.Enabled = false;
             }
         }
-
         private void txtNumero_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -425,13 +398,9 @@ namespace Comisariato.Formularios.Transacciones
         {
             bool banderaCorrecto = false;
             if (txtTotalDevolucion.Text != "")
-            {
                 if (MessageBox.Show("¿Desea Gaurdar la Nota de Credito?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
                     if (txtSerie1.Text != "" && txtSerie2.Text != "" && txtNumero.Text != "" && txtAutorizacionNC.Text != "" && txtSerie1NC.Text != "" && txtSerie2NC.Text != "" && txtNumeroNC.Text != "")
-                    {
                         if (txtTotalDevolucion.Text != "0.00")
-                        {
                             if (!modificar)
                             {
                                 objENC = new EncabezadoNotaCredito(txtSerie1NC.Text, txtSerie2NC.Text, txtNumeroNC.Text, compraDetalle, Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtTotalDevolucion.Text)), sumasubcero, sumasubiva, ivatotal, sumaice, sumairbp, Convert.ToDateTime(dtpFechaEmision.Value.ToShortDateString()), txtAutorizacionNC.Text, subtotalPie);
@@ -465,8 +434,6 @@ namespace Comisariato.Formularios.Transacciones
                                     else
                                     {
                                         MessageBox.Show("Guardada correctamente la Nota de Crédito");
-                                        //string numeroNC = (Convert.ToInt32(txtNumeroNC.Text) + 1).ToString("D9");
-                                        //objConsultas.EjecutarSQL("UPDATE [dbo].[TbCajasTalonario] SET [DOCUMENTOACTUAL] = '" + numeroNC + "' WHERE SERIE1 = '" + txtSerie1NC.Text + "' and SERIE2 = '" + txtSerie2NC.Text + "' and IPESTACION = '" + bitacora.LocalIPAddress() + "' and TIPODOCUMENTO = 'NCRE'");
                                         inicializar();
                                     }
                                 }
@@ -490,8 +457,6 @@ namespace Comisariato.Formularios.Transacciones
                                         string[] porcentaje = dgvProductosDevolucion.Rows[i].Cells[10].Value.ToString().Split('%');
                                         float precioPorcentaje = Convert.ToSingle(porcentaje[0]);
                                         objDNC = new DetalleNotaCredito(Convert.ToInt32(idEncabezadoNC), Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[9].Value.ToString())), Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[0].Value), Convert.ToSingle(Funcion.reemplazarcaracterViceversa(precioPorcentaje.ToString())));
-                                        //if (Convert.ToString(dgvProductosDevolucion.Rows[i].Cells[9].Value) != "")
-                                        //{
                                         string resultadoDetalle = objDNC.ActualizarDetalleNC();
                                         if (resultadoDetalle == "Datos Guardados")
                                             banderaCorrecto = true;
@@ -502,7 +467,6 @@ namespace Comisariato.Formularios.Transacciones
                                         }
                                         if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
                                             break;
-                                        //}
                                     }
                                     if (!banderaCorrecto)
                                     {
@@ -512,26 +476,16 @@ namespace Comisariato.Formularios.Transacciones
                                     else
                                     {
                                         MessageBox.Show("Guardada correctamente la Nota de Crédito");
-                                        
                                         inicializar();
                                     }
                                 }
                                 else if (resultado == "Error al Registrar")
-                                {
                                     MessageBox.Show("Error al actualizar la Nota de Crédito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    //objConsultas.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoNotaCredito] WHERE IDENCABEZADOCOMPRA = " + encabezadoNotaCredito + "");
-                                }
                             }
-                        }
                         else
                             MessageBox.Show("No se a realizado ninguna devolución", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //--------------------------------------------
-                    
-                    }
                     else
                         MessageBox.Show("Debe ingresar todos los datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
             else
                 MessageBox.Show("No se a realizado ninguna devolución", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -540,12 +494,10 @@ namespace Comisariato.Formularios.Transacciones
             try
             {
                 if (dgvProductosDevolucion.Columns[e.ColumnIndex].Name == "porcentajeDevolucion")
-                {
                     if (Convert.ToString(dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].Value) != "" || Convert.ToString(dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].Value) == "0")
                     {
                         string cantidadProducto = objConsultas.ObtenerValorCampo("CANTIDAD", "TbProducto", "where CODIGOBARRA = '" + Convert.ToString(dgvProductosDevolucion.CurrentRow.Cells[0].Value) + "'");
                         if (Convert.ToSingle(cantidadProducto) >= Convert.ToSingle(dgvProductosDevolucion.CurrentRow.Cells[9].Value))
-                        {
                             if (Convert.ToInt32(dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].Value) <= Convert.ToInt32(dgvProductosDevolucion.Rows[e.RowIndex].Cells[2].Value))
                             {
                                 string[] porcentaje = dgvProductosDevolucion.Rows[e.RowIndex].Cells[10].Value.ToString().Split('%');
@@ -561,25 +513,18 @@ namespace Comisariato.Formularios.Transacciones
                                 dgvProductosDevolucion.CurrentRow.Cells[9].Value = "";
                                 SendKeys.Send("{UP}");
                             }
-                        }
                         else if (Convert.ToInt32(cantidadProducto) == 0)
                             MessageBox.Show("Stock en 0 de este producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
                             MessageBox.Show("No existe cantidad suficiente para devolver", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         if (Convert.ToString(dgvProductosDevolucion.Rows[e.RowIndex].Cells[10].Value) == "0%")
-                        {
                             dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].ReadOnly = false;
-                        }
                     }
-
-                }
                 if (dgvProductosDevolucion.Columns[e.ColumnIndex].Name == "cantidadDevolver")
-                {
                     if (Convert.ToString(dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].Value) != "" && Convert.ToString(dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].Value) != "0")
                     {
                         string cantidadProducto = objConsultas.ObtenerValorCampo("CANTIDAD", "TbProducto", "where CODIGOBARRA = '" + Convert.ToString(dgvProductosDevolucion.CurrentRow.Cells[0].Value) + "'");
                         if (Convert.ToSingle(cantidadProducto) >= Convert.ToSingle(dgvProductosDevolucion.CurrentRow.Cells[9].Value))
-                        {
                             if (Convert.ToSingle(dgvProductosDevolucion.Rows[e.RowIndex].Cells[9].Value) <= Convert.ToSingle(dgvProductosDevolucion.Rows[e.RowIndex].Cells[2].Value))
                             {
                                 dgvProductosDevolucion.Rows[e.RowIndex].Cells[10].ReadOnly = true;
@@ -593,21 +538,15 @@ namespace Comisariato.Formularios.Transacciones
                                 dgvProductosDevolucion.CurrentRow.Cells[9].Value = "";
                                 SendKeys.Send("{UP}");
                             }
-                        }
                         else if (Convert.ToInt32(cantidadProducto) == 0)
                             MessageBox.Show("Stock en 0 de este producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
                             MessageBox.Show("No existe cantidad suficiente para devolver", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     }
                     else
                         dgvProductosDevolucion.Rows[e.RowIndex].Cells[10].ReadOnly = false;
-                }
             }
-            catch
-            {
-
-            }
+            catch {}
         }
         private void Calcular(int posicion)
         {
@@ -622,7 +561,6 @@ namespace Comisariato.Formularios.Transacciones
                     {
                         pc = Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[3].Value.ToString()));
                         sumasubiva += Convert.ToSingle(cantidad * pc);
-
                     }
                     if (Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[7].Value.ToString()) == 0)
                     {
@@ -632,9 +570,7 @@ namespace Comisariato.Formularios.Transacciones
                     sumaice += Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[4].Value.ToString())) * Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[posicion].Value.ToString()));
                     sumairbp += Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[5].Value.ToString())) * Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[posicion].Value.ToString()));
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
-                    {
                         break;
-                    }
                 }
                 string[] s = txtImpuesto.Text.Split('%');
                 float iva = Convert.ToSingle(s[0]) / 100;
@@ -669,9 +605,7 @@ namespace Comisariato.Formularios.Transacciones
                 subtotalPie = Convert.ToSingle(Math.Round(subtotalPie, 6));
                 totalpagar = Convert.ToSingle(Math.Round(totalpagar, 6));
             }
-            catch (Exception EX)
-            {
-            }
+            catch (Exception EX) {}
         }
         private void CalcularPorcentaje()
         {
@@ -688,7 +622,6 @@ namespace Comisariato.Formularios.Transacciones
                         {
                             pc = Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvProductosDevolucion.Rows[i].Cells[3].Value.ToString()));
                             sumasubiva += Convert.ToSingle(cantidad * pc);
-
                         }
                         if (Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[7].Value.ToString()) == 0)
                         {
@@ -697,13 +630,9 @@ namespace Comisariato.Formularios.Transacciones
                         }
                         sumaice += Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[4].Value.ToString()) * cantidad;
                         sumairbp += Convert.ToSingle(dgvProductosDevolucion.Rows[i].Cells[5].Value.ToString()) * cantidad;
-                       
                     }
                     if (Convert.ToString(dgvProductosDevolucion.Rows[i + 1].Cells[0].Value) == "")
-                    {
                         break;
-                    }
-
                 }
                 string[] s = txtImpuesto.Text.Split('%');
                 float iva = Convert.ToSingle(s[0]) / 100;
@@ -725,9 +654,7 @@ namespace Comisariato.Formularios.Transacciones
                 subtotalPie = Convert.ToSingle(Math.Round(subtotalPie, 6));
                 totalpagar = Convert.ToSingle(Math.Round(totalpagar, 6));
             }
-            catch (Exception EX)
-            {
-            }
+            catch (Exception EX) {}
         }
     }
 }

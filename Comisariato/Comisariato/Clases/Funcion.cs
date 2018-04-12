@@ -780,5 +780,10 @@ namespace Comisariato.Clases
             for (int i = 0; i < cantidad; i++)
                 dgv.Rows.Add();
         }
+        public static void ComboAutoCompletable(ComboBox cb, DataTable dt)
+        {
+            for (int i = 0; i < cantidad; i++)
+                dgv.Rows.Add();
+        }
     }
 }
