@@ -156,26 +156,26 @@ namespace Comisariato.Formularios.Cartera
 
                         if (((row.Index == i)))
                         {
-                            // La fila será de sólo lectura.
-                            foreach (DataGridViewCell cell in dgvDetalleCP.CurrentRow.Cells)
-                            {
-                                if (((cell.ColumnIndex == 2)))
-                                {
-                                    cell.ReadOnly = false;
-                                }
-                                else
-                                    cell.ReadOnly = true;
-                            }
-                            //row.ReadOnly = true;
+                            dgvDetalleCP.Rows[row.Index].Cells[1].ReadOnly = true;
                         }
                         else
-                            row.ReadOnly = true;
-
+                        {
+                            if (Convert.ToString(dgvDetalleCP.Rows[row.Index].Cells[0].Value) != "")
+                            {
+                                dgvDetalleCP.Rows[row.Index].Cells[0].ReadOnly = true;
+                                dgvDetalleCP.Rows[row.Index].Cells[1].ReadOnly = true;
+                                dgvDetalleCP.Rows[row.Index].Cells[2].ReadOnly = true;
+                            }
+                            else
+                                row.ReadOnly = true;
+                        }
                     }
                     break;
                 }
             }
             //FIN AGREGAR VARIOS
+
+            Funcion.HabilitarColumnaDatagridview(dgvDetalleCP, 4);
 
 
             dgvDetalleCP.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -219,11 +219,13 @@ namespace Comisariato.Formularios.Cartera
                 {
                     if (dgvDetalleCP.Rows[i].Cells[1].Value != System.DBNull.Value)
                     {
-                        totalDEBE += Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[1].Value);
+                        if(Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[4].Value))
+                            totalDEBE += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[1].Value));
                     }
                     if (dgvDetalleCP.Rows[i].Cells[2].Value != System.DBNull.Value)
                     {
-                        totalHABER += Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[2].Value);
+                        if (Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[4].Value))
+                            totalHABER += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[2].Value));
                     }
                 }
                 else
@@ -238,9 +240,9 @@ namespace Comisariato.Formularios.Cartera
             for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
             {
                 if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
-                    dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[1].Value), 4)).ToString("N4"));
+                    dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[1].Value)), 4)).ToString("N4"));
                 else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
-                    dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[2].Value), 4)).ToString("N4"));
+                    dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[2].Value)), 4)).ToString("N4"));
                 else
                     break;
             }
@@ -252,10 +254,57 @@ namespace Comisariato.Formularios.Cartera
 
         private void dgvDetalleCP_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == FilaDESCUENTOSADICIONALES && FilaDESCUENTOSADICIONALES != 0 && e.ColumnIndex == 2 && estadoValorAUX)
+            if ((e.RowIndex == FilaDESCUENTOSADICIONALES && FilaDESCUENTOSADICIONALES != 0 && e.ColumnIndex == 2 && estadoValorAUX))
             {
-                //dgvDetalleCP.Rows[FilaDESCUENTOSADICIONALES].Cells[1].Value = "";
                 CalcularDEBE_HABER_TOTAL(true);
+            }
+        }
+
+        private void ChkPagarTodo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkPagarTodo.Checked)
+            {
+                for (int i = 0; i < dgvDetalleCP.RowCount; i++)
+                {
+                    if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[0].Value) != "")
+                        dgvDetalleCP.Rows[i].Cells[4].Value = true;
+                    else
+                        break;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dgvDetalleCP.RowCount; i++)
+                {
+                    if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[0].Value) != "")
+                        dgvDetalleCP.Rows[i].Cells[4].Value = false;
+                    else
+                        break;
+                }
+            }
+            CalcularDEBE_HABER_TOTAL(true);
+        }
+
+        private void dgvDetalleCP_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvDetalleCP.IsCurrentCellDirty)
+            {
+                dgvDetalleCP.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dgvDetalleCP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalleCP.Rows[e.RowIndex].Cells[4].Value != null)
+            {
+                bool isCellChecked = (bool)dgvDetalleCP.Rows[e.RowIndex].Cells[4].Value;
+
+                if (isCellChecked)
+                {
+                    CalcularDEBE_HABER_TOTAL(true);
+                }
+                else
+                    CalcularDEBE_HABER_TOTAL(true);
             }
         }
     }

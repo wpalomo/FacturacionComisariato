@@ -272,7 +272,6 @@
             this.codigo.FillWeight = 147.1193F;
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
             this.codigo.Width = 105;
             // 
             // producto
@@ -280,7 +279,6 @@
             this.producto.FillWeight = 208.2813F;
             this.producto.HeaderText = "Producto";
             this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
             this.producto.Width = 225;
             // 
             // cantidad
@@ -288,7 +286,6 @@
             this.cantidad.FillWeight = 60.1572F;
             this.cantidad.HeaderText = "Cant.";
             this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
             this.cantidad.Width = 45;
             // 
             // precioCompra
@@ -296,7 +293,6 @@
             this.precioCompra.FillWeight = 75.41525F;
             this.precioCompra.HeaderText = "P.C.";
             this.precioCompra.Name = "precioCompra";
-            this.precioCompra.ReadOnly = true;
             this.precioCompra.Width = 50;
             // 
             // descuento
@@ -304,7 +300,6 @@
             this.descuento.FillWeight = 90.65001F;
             this.descuento.HeaderText = "Desc.";
             this.descuento.Name = "descuento";
-            this.descuento.ReadOnly = true;
             this.descuento.Width = 50;
             // 
             // iceProducto
@@ -312,7 +307,6 @@
             this.iceProducto.FillWeight = 65.87027F;
             this.iceProducto.HeaderText = "ICE";
             this.iceProducto.Name = "iceProducto";
-            this.iceProducto.ReadOnly = true;
             this.iceProducto.Width = 45;
             // 
             // irbpProducto
@@ -320,7 +314,6 @@
             this.irbpProducto.FillWeight = 68.26523F;
             this.irbpProducto.HeaderText = "IRBP";
             this.irbpProducto.Name = "irbpProducto";
-            this.irbpProducto.ReadOnly = true;
             this.irbpProducto.Width = 51;
             // 
             // precioPublico
@@ -328,7 +321,6 @@
             this.precioPublico.FillWeight = 84.64441F;
             this.precioPublico.HeaderText = "P.V.P";
             this.precioPublico.Name = "precioPublico";
-            this.precioPublico.ReadOnly = true;
             this.precioPublico.Width = 63;
             // 
             // precioMayorista
@@ -336,7 +328,6 @@
             this.precioMayorista.FillWeight = 107.9493F;
             this.precioMayorista.HeaderText = "P.M.";
             this.precioMayorista.Name = "precioMayorista";
-            this.precioMayorista.ReadOnly = true;
             this.precioMayorista.Width = 60;
             // 
             // precioCaja
@@ -344,7 +335,6 @@
             this.precioCaja.FillWeight = 122.7342F;
             this.precioCaja.HeaderText = "P.Cj.";
             this.precioCaja.Name = "precioCaja";
-            this.precioCaja.ReadOnly = true;
             this.precioCaja.Width = 60;
             // 
             // subtotal
@@ -352,7 +342,6 @@
             this.subtotal.FillWeight = 107.4997F;
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
             this.subtotal.Width = 80;
             // 
             // iva
@@ -360,7 +349,6 @@
             this.iva.FillWeight = 64.72799F;
             this.iva.HeaderText = "IVA";
             this.iva.Name = "iva";
-            this.iva.ReadOnly = true;
             this.iva.Width = 49;
             // 
             // total
@@ -368,7 +356,6 @@
             this.total.FillWeight = 96.68581F;
             this.total.HeaderText = "Total";
             this.total.Name = "total";
-            this.total.ReadOnly = true;
             this.total.Width = 72;
             // 
             // txtTotal
@@ -1067,7 +1054,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(1087, 588);
+            this.ClientSize = new System.Drawing.Size(1087, 587);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
