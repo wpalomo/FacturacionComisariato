@@ -120,6 +120,28 @@
             this.dgvDatosProducto = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Deshabilitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.numerofila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoBarra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pvp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pcaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IVA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BtnSiguiente = new System.Windows.Forms.Button();
+            this.BtnAnterior = new System.Windows.Forms.Button();
+            this.BtnUltimo = new System.Windows.Forms.Button();
+            this.BtnPrimero = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lblTotalPagina = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblPaginaActual = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lblCantidadTotal = new System.Windows.Forms.Label();
             this.tcProducto.SuspendLayout();
             this.tpNuevoProducto.SuspendLayout();
             this.gbDescripcionProducto.SuspendLayout();
@@ -142,7 +164,7 @@
             this.tcProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tcProducto.Name = "tcProducto";
             this.tcProducto.SelectedIndex = 0;
-            this.tcProducto.Size = new System.Drawing.Size(1034, 616);
+            this.tcProducto.Size = new System.Drawing.Size(1034, 673);
             this.tcProducto.TabIndex = 1;
             this.tcProducto.TabStop = false;
             // 
@@ -906,15 +928,19 @@
             // tpConsultarModificarProducto
             // 
             this.tpConsultarModificarProducto.BackColor = System.Drawing.Color.Bisque;
+            this.tpConsultarModificarProducto.Controls.Add(this.BtnSiguiente);
+            this.tpConsultarModificarProducto.Controls.Add(this.BtnAnterior);
+            this.tpConsultarModificarProducto.Controls.Add(this.dgvDatosProducto);
+            this.tpConsultarModificarProducto.Controls.Add(this.BtnUltimo);
             this.tpConsultarModificarProducto.Controls.Add(this.GrbMicrobusqueda);
+            this.tpConsultarModificarProducto.Controls.Add(this.BtnPrimero);
             this.tpConsultarModificarProducto.Controls.Add(this.groupBox1);
             this.tpConsultarModificarProducto.Controls.Add(this.BtnExportarExcel);
-            this.tpConsultarModificarProducto.Controls.Add(this.dgvDatosProducto);
             this.tpConsultarModificarProducto.Location = new System.Drawing.Point(4, 25);
             this.tpConsultarModificarProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tpConsultarModificarProducto.Name = "tpConsultarModificarProducto";
             this.tpConsultarModificarProducto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tpConsultarModificarProducto.Size = new System.Drawing.Size(1026, 587);
+            this.tpConsultarModificarProducto.Size = new System.Drawing.Size(1026, 644);
             this.tpConsultarModificarProducto.TabIndex = 1;
             this.tpConsultarModificarProducto.Text = "Consultar - Modificar Producto";
             // 
@@ -1259,7 +1285,19 @@
             this.dgvDatosProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Modificar,
-            this.Deshabilitar});
+            this.Deshabilitar,
+            this.numerofila,
+            this.CodigoBarra,
+            this.Producto,
+            this.stock,
+            this.formato,
+            this.costo,
+            this.pvp,
+            this.pMayor,
+            this.pcaja,
+            this.proveedor,
+            this.categoria,
+            this.IVA});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1268,7 +1306,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatosProducto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatosProducto.Location = new System.Drawing.Point(21, 168);
+            this.dgvDatosProducto.Location = new System.Drawing.Point(21, 159);
             this.dgvDatosProducto.Name = "dgvDatosProducto";
             this.dgvDatosProducto.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1282,26 +1320,195 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Teal;
             this.dgvDatosProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDatosProducto.Size = new System.Drawing.Size(985, 409);
-            this.dgvDatosProducto.TabIndex = 9;
-            this.dgvDatosProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosProducto_CellClick);
-            this.dgvDatosProducto.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDatosProducto_CellPainting);
+            this.dgvDatosProducto.TabIndex = 25;
             // 
             // Modificar
             // 
-            this.Modificar.FillWeight = 5.076141F;
             this.Modificar.HeaderText = "";
             this.Modificar.Name = "Modificar";
             this.Modificar.ReadOnly = true;
-            this.Modificar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Modificar.Width = 19;
+            this.Modificar.Width = 5;
             // 
             // Deshabilitar
             // 
-            this.Deshabilitar.FillWeight = 194.9239F;
             this.Deshabilitar.HeaderText = "";
             this.Deshabilitar.Name = "Deshabilitar";
             this.Deshabilitar.ReadOnly = true;
             this.Deshabilitar.Width = 5;
+            // 
+            // numerofila
+            // 
+            this.numerofila.HeaderText = "Nº";
+            this.numerofila.Name = "numerofila";
+            this.numerofila.ReadOnly = true;
+            this.numerofila.Width = 47;
+            // 
+            // CodigoBarra
+            // 
+            this.CodigoBarra.HeaderText = "CODIGO BARRA";
+            this.CodigoBarra.Name = "CodigoBarra";
+            this.CodigoBarra.ReadOnly = true;
+            this.CodigoBarra.Width = 123;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "PRODUCTO";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 106;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "STOCK";
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Width = 78;
+            // 
+            // formato
+            // 
+            this.formato.HeaderText = "FORMATO";
+            this.formato.Name = "formato";
+            this.formato.ReadOnly = true;
+            this.formato.Width = 97;
+            // 
+            // costo
+            // 
+            this.costo.HeaderText = "COSTO";
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            this.costo.Width = 79;
+            // 
+            // pvp
+            // 
+            this.pvp.HeaderText = "P.V.P";
+            this.pvp.Name = "pvp";
+            this.pvp.ReadOnly = true;
+            this.pvp.Width = 65;
+            // 
+            // pMayor
+            // 
+            this.pMayor.HeaderText = "P. MAYOR";
+            this.pMayor.Name = "pMayor";
+            this.pMayor.ReadOnly = true;
+            this.pMayor.Width = 87;
+            // 
+            // pcaja
+            // 
+            this.pcaja.HeaderText = "P. CAJA";
+            this.pcaja.Name = "pcaja";
+            this.pcaja.ReadOnly = true;
+            this.pcaja.Width = 76;
+            // 
+            // proveedor
+            // 
+            this.proveedor.HeaderText = "PROVEEDOR";
+            this.proveedor.Name = "proveedor";
+            this.proveedor.ReadOnly = true;
+            this.proveedor.Width = 114;
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "CATEGORIA";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            this.categoria.Width = 108;
+            // 
+            // IVA
+            // 
+            this.IVA.HeaderText = "IVA";
+            this.IVA.Name = "IVA";
+            this.IVA.ReadOnly = true;
+            this.IVA.Width = 35;
+            // 
+            // BtnSiguiente
+            // 
+            this.BtnSiguiente.Location = new System.Drawing.Point(929, 574);
+            this.BtnSiguiente.Name = "BtnSiguiente";
+            this.BtnSiguiente.Size = new System.Drawing.Size(77, 26);
+            this.BtnSiguiente.TabIndex = 31;
+            this.BtnSiguiente.Text = "Siguiente";
+            this.BtnSiguiente.UseVisualStyleBackColor = true;
+            // 
+            // BtnAnterior
+            // 
+            this.BtnAnterior.Location = new System.Drawing.Point(848, 574);
+            this.BtnAnterior.Name = "BtnAnterior";
+            this.BtnAnterior.Size = new System.Drawing.Size(77, 26);
+            this.BtnAnterior.TabIndex = 30;
+            this.BtnAnterior.Text = "Anterior";
+            this.BtnAnterior.UseVisualStyleBackColor = true;
+            // 
+            // BtnUltimo
+            // 
+            this.BtnUltimo.Location = new System.Drawing.Point(766, 574);
+            this.BtnUltimo.Name = "BtnUltimo";
+            this.BtnUltimo.Size = new System.Drawing.Size(77, 26);
+            this.BtnUltimo.TabIndex = 29;
+            this.BtnUltimo.Text = "Ultimo";
+            this.BtnUltimo.UseVisualStyleBackColor = true;
+            // 
+            // BtnPrimero
+            // 
+            this.BtnPrimero.Location = new System.Drawing.Point(686, 574);
+            this.BtnPrimero.Name = "BtnPrimero";
+            this.BtnPrimero.Size = new System.Drawing.Size(77, 26);
+            this.BtnPrimero.TabIndex = 28;
+            this.BtnPrimero.Text = "Primero";
+            this.BtnPrimero.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(436, 654);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(90, 16);
+            this.label29.TabIndex = 27;
+            this.label29.Text = "Total Pagina:";
+            // 
+            // lblTotalPagina
+            // 
+            this.lblTotalPagina.AutoSize = true;
+            this.lblTotalPagina.Location = new System.Drawing.Point(526, 654);
+            this.lblTotalPagina.Name = "lblTotalPagina";
+            this.lblTotalPagina.Size = new System.Drawing.Size(82, 16);
+            this.lblTotalPagina.TabIndex = 26;
+            this.lblTotalPagina.Text = "TotalPagina";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(832, 654);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(98, 16);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Pagina Actual:";
+            // 
+            // lblPaginaActual
+            // 
+            this.lblPaginaActual.AutoSize = true;
+            this.lblPaginaActual.Location = new System.Drawing.Point(928, 654);
+            this.lblPaginaActual.Name = "lblPaginaActual";
+            this.lblPaginaActual.Size = new System.Drawing.Size(91, 16);
+            this.lblPaginaActual.TabIndex = 24;
+            this.lblPaginaActual.Text = "PaginaActual";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(16, 654);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(141, 16);
+            this.label31.TabIndex = 23;
+            this.label31.Text = "Cantidad Total Filas: ";
+            // 
+            // lblCantidadTotal
+            // 
+            this.lblCantidadTotal.AutoSize = true;
+            this.lblCantidadTotal.Location = new System.Drawing.Point(157, 654);
+            this.lblCantidadTotal.Name = "lblCantidadTotal";
+            this.lblCantidadTotal.Size = new System.Drawing.Size(95, 16);
+            this.lblCantidadTotal.TabIndex = 22;
+            this.lblCantidadTotal.Text = "CantidadTotal";
             // 
             // FrmProductos
             // 
@@ -1309,7 +1516,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(1052, 630);
+            this.ClientSize = new System.Drawing.Size(1052, 695);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.lblTotalPagina);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.lblPaginaActual);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.lblCantidadTotal);
             this.Controls.Add(this.tcProducto);
             this.Font = new System.Drawing.Font("Arial", 10F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1336,6 +1549,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosProducto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1389,7 +1603,6 @@
         private System.Windows.Forms.TextBox txtConsultarCodigoBarra;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView dgvDatosProducto;
         private System.Windows.Forms.RadioButton rbtInactivos;
         private System.Windows.Forms.RadioButton rbtActivos;
         private System.Windows.Forms.RichTextBox txtNombreProducto;
@@ -1397,8 +1610,6 @@
         private System.Windows.Forms.TextBox txtUnidadProducto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox CkbLibreImpuesto;
-        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
-        private System.Windows.Forms.DataGridViewButtonColumn Deshabilitar;
         private System.Windows.Forms.TextBox TxtStockActual;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BtnExportarExcel;
@@ -1428,5 +1639,30 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox TxtPVPMicrobusca;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button BtnSiguiente;
+        private System.Windows.Forms.Button BtnAnterior;
+        private System.Windows.Forms.DataGridView dgvDatosProducto;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn Deshabilitar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numerofila;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoBarra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn formato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pvp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pMayor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pcaja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IVA;
+        private System.Windows.Forms.Button BtnUltimo;
+        private System.Windows.Forms.Button BtnPrimero;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblTotalPagina;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblPaginaActual;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblCantidadTotal;
     }
 }
