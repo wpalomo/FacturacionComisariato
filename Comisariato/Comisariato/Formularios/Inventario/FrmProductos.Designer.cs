@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcProducto = new System.Windows.Forms.TabControl();
             this.tpNuevoProducto = new System.Windows.Forms.TabPage();
             this.txtIDProducto = new System.Windows.Forms.TextBox();
@@ -93,20 +93,6 @@
             this.BtnSiguiente = new System.Windows.Forms.Button();
             this.BtnAnterior = new System.Windows.Forms.Button();
             this.dgvDatosProducto = new System.Windows.Forms.DataGridView();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Deshabilitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.numerofila = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoBarra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pvp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pcaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IVA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BtnUltimo = new System.Windows.Forms.Button();
             this.GrbMicrobusqueda = new System.Windows.Forms.GroupBox();
             this.TxtPCajaMicrobusca = new System.Windows.Forms.TextBox();
@@ -142,6 +128,20 @@
             this.lblPaginaActual = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.lblCantidadTotal = new System.Windows.Forms.Label();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Deshabilitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.numerofila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoBarra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pvp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pcaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IVA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tcProducto.SuspendLayout();
             this.tpNuevoProducto.SuspendLayout();
             this.gbDescripcionProducto.SuspendLayout();
@@ -978,14 +978,14 @@
             this.dgvDatosProducto.AllowUserToResizeRows = false;
             this.dgvDatosProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDatosProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatosProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Modificar,
@@ -1002,129 +1002,31 @@
             this.proveedor,
             this.categoria,
             this.IVA});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosProducto.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatosProducto.Location = new System.Drawing.Point(21, 159);
             this.dgvDatosProducto.Name = "dgvDatosProducto";
             this.dgvDatosProducto.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Teal;
-            this.dgvDatosProducto.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatosProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Teal;
+            this.dgvDatosProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDatosProducto.Size = new System.Drawing.Size(985, 409);
             this.dgvDatosProducto.TabIndex = 25;
             this.dgvDatosProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosProducto_CellClick);
             this.dgvDatosProducto.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDatosProducto_CellPainting);
-            // 
-            // Modificar
-            // 
-            this.Modificar.HeaderText = "";
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Width = 5;
-            // 
-            // Deshabilitar
-            // 
-            this.Deshabilitar.HeaderText = "";
-            this.Deshabilitar.Name = "Deshabilitar";
-            this.Deshabilitar.ReadOnly = true;
-            this.Deshabilitar.Width = 5;
-            // 
-            // numerofila
-            // 
-            this.numerofila.HeaderText = "Nº";
-            this.numerofila.Name = "numerofila";
-            this.numerofila.ReadOnly = true;
-            this.numerofila.Width = 47;
-            // 
-            // CodigoBarra
-            // 
-            this.CodigoBarra.HeaderText = "CODIGO BARRA";
-            this.CodigoBarra.Name = "CodigoBarra";
-            this.CodigoBarra.ReadOnly = true;
-            this.CodigoBarra.Width = 123;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "PRODUCTO";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 106;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "STOCK";
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 78;
-            // 
-            // formato
-            // 
-            this.formato.HeaderText = "FORMATO";
-            this.formato.Name = "formato";
-            this.formato.ReadOnly = true;
-            this.formato.Width = 97;
-            // 
-            // costo
-            // 
-            this.costo.HeaderText = "COSTO";
-            this.costo.Name = "costo";
-            this.costo.ReadOnly = true;
-            this.costo.Width = 79;
-            // 
-            // pvp
-            // 
-            this.pvp.HeaderText = "P.V.P";
-            this.pvp.Name = "pvp";
-            this.pvp.ReadOnly = true;
-            this.pvp.Width = 65;
-            // 
-            // pMayor
-            // 
-            this.pMayor.HeaderText = "P. MAYOR";
-            this.pMayor.Name = "pMayor";
-            this.pMayor.ReadOnly = true;
-            this.pMayor.Width = 87;
-            // 
-            // pcaja
-            // 
-            this.pcaja.HeaderText = "P. CAJA";
-            this.pcaja.Name = "pcaja";
-            this.pcaja.ReadOnly = true;
-            this.pcaja.Width = 76;
-            // 
-            // proveedor
-            // 
-            this.proveedor.HeaderText = "PROVEEDOR";
-            this.proveedor.Name = "proveedor";
-            this.proveedor.ReadOnly = true;
-            this.proveedor.Width = 114;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "CATEGORIA";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Width = 108;
-            // 
-            // IVA
-            // 
-            this.IVA.HeaderText = "IVA";
-            this.IVA.Name = "IVA";
-            this.IVA.ReadOnly = true;
-            this.IVA.Width = 35;
             // 
             // BtnUltimo
             // 
@@ -1523,6 +1425,104 @@
             this.lblCantidadTotal.TabIndex = 22;
             this.lblCantidadTotal.Text = "CantidadTotal";
             // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Width = 5;
+            // 
+            // Deshabilitar
+            // 
+            this.Deshabilitar.HeaderText = "";
+            this.Deshabilitar.Name = "Deshabilitar";
+            this.Deshabilitar.ReadOnly = true;
+            this.Deshabilitar.Width = 5;
+            // 
+            // numerofila
+            // 
+            this.numerofila.HeaderText = "Nº";
+            this.numerofila.Name = "numerofila";
+            this.numerofila.ReadOnly = true;
+            this.numerofila.Width = 47;
+            // 
+            // CodigoBarra
+            // 
+            this.CodigoBarra.HeaderText = "CODIGO BARRA";
+            this.CodigoBarra.Name = "CodigoBarra";
+            this.CodigoBarra.ReadOnly = true;
+            this.CodigoBarra.Width = 123;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "PRODUCTO";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 106;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "STOCK";
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Width = 78;
+            // 
+            // formato
+            // 
+            this.formato.HeaderText = "FORMATO";
+            this.formato.Name = "formato";
+            this.formato.ReadOnly = true;
+            this.formato.Width = 97;
+            // 
+            // costo
+            // 
+            this.costo.HeaderText = "COSTO";
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            this.costo.Width = 79;
+            // 
+            // pvp
+            // 
+            this.pvp.HeaderText = "P.V.P";
+            this.pvp.Name = "pvp";
+            this.pvp.ReadOnly = true;
+            this.pvp.Width = 65;
+            // 
+            // pMayor
+            // 
+            this.pMayor.HeaderText = "P. MAYOR";
+            this.pMayor.Name = "pMayor";
+            this.pMayor.ReadOnly = true;
+            this.pMayor.Width = 87;
+            // 
+            // pcaja
+            // 
+            this.pcaja.HeaderText = "P. CAJA";
+            this.pcaja.Name = "pcaja";
+            this.pcaja.ReadOnly = true;
+            this.pcaja.Width = 76;
+            // 
+            // proveedor
+            // 
+            this.proveedor.HeaderText = "PROVEEDOR";
+            this.proveedor.Name = "proveedor";
+            this.proveedor.ReadOnly = true;
+            this.proveedor.Width = 114;
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "CATEGORIA";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            this.categoria.Width = 108;
+            // 
+            // IVA
+            // 
+            this.IVA.HeaderText = "IVA";
+            this.IVA.Name = "IVA";
+            this.IVA.ReadOnly = true;
+            this.IVA.Width = 35;
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1649,6 +1649,14 @@
         private System.Windows.Forms.Button BtnSiguiente;
         private System.Windows.Forms.Button BtnAnterior;
         private System.Windows.Forms.DataGridView dgvDatosProducto;
+        private System.Windows.Forms.Button BtnUltimo;
+        private System.Windows.Forms.Button BtnPrimero;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblTotalPagina;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblPaginaActual;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblCantidadTotal;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Deshabilitar;
         private System.Windows.Forms.DataGridViewTextBoxColumn numerofila;
@@ -1663,13 +1671,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IVA;
-        private System.Windows.Forms.Button BtnUltimo;
-        private System.Windows.Forms.Button BtnPrimero;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label lblTotalPagina;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label lblPaginaActual;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label lblCantidadTotal;
     }
 }

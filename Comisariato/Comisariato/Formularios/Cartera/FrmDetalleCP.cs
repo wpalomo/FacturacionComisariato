@@ -156,26 +156,26 @@ namespace Comisariato.Formularios.Cartera
 
                         if (((row.Index == i)))
                         {
-                            // La fila será de sólo lectura.
-                            foreach (DataGridViewCell cell in dgvDetalleCP.CurrentRow.Cells)
-                            {
-                                if (((cell.ColumnIndex == 2)))
-                                {
-                                    cell.ReadOnly = false;
-                                }
-                                else
-                                    cell.ReadOnly = true;
-                            }
-                            //row.ReadOnly = true;
+                            dgvDetalleCP.Rows[row.Index].Cells[4].ReadOnly = false;
+                            dgvDetalleCP.Rows[row.Index].Cells[0].ReadOnly = false;
+                            dgvDetalleCP.Rows[row.Index].Cells[2].ReadOnly = false;
                         }
                         else
-                            row.ReadOnly = true;
+                        {
+                            if (Convert.ToString(dgvDetalleCP.Rows[row.Index].Cells[0].Value) != "")
+                            {
+                                dgvDetalleCP.Rows[row.Index].Cells[4].ReadOnly = false;
+                            }
+                        }
+                            
 
                     }
                     break;
                 }
             }
             //FIN AGREGAR VARIOS
+
+            Funcion.HabilitarColumnaDatagridview(dgvDetalleCP, 4);
 
 
             dgvDetalleCP.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -219,11 +219,11 @@ namespace Comisariato.Formularios.Cartera
                 {
                     if (dgvDetalleCP.Rows[i].Cells[1].Value != System.DBNull.Value)
                     {
-                        totalDEBE += Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[1].Value);
+                        totalDEBE += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[1].Value));
                     }
                     if (dgvDetalleCP.Rows[i].Cells[2].Value != System.DBNull.Value)
                     {
-                        totalHABER += Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[2].Value);
+                        totalHABER += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[2].Value));
                     }
                 }
                 else
@@ -238,9 +238,9 @@ namespace Comisariato.Formularios.Cartera
             for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
             {
                 if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
-                    dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[1].Value), 4)).ToString("N4"));
+                    dgvDetalleCP.Rows[i].Cells[1].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[1].Value)), 4)).ToString("N4"));
                 else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
-                    dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(dgvDetalleCP.Rows[i].Cells[2].Value), 4)).ToString("N4"));
+                    dgvDetalleCP.Rows[i].Cells[2].Value = Funcion.reemplazarcaracter((Math.Round(Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[2].Value)), 4)).ToString("N4"));
                 else
                     break;
             }
@@ -258,5 +258,6 @@ namespace Comisariato.Formularios.Cartera
                 CalcularDEBE_HABER_TOTAL(true);
             }
         }
+
     }
 }

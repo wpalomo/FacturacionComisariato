@@ -364,7 +364,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 {
                     if (this.dgvDatosProducto.Columns[e.ColumnIndex].Name == "Deshabilitar")
                     {
-                        ObjProducto.EstadoProducto(dgvDatosProducto.CurrentRow.Cells[2].Value.ToString(), 2);
+                        ObjProducto.EstadoProducto(dgvDatosProducto.CurrentRow.Cells[3].Value.ToString(), 2);
                         //cargarDatos("1");
                         dgvDatosProducto.Rows.RemoveAt(e.RowIndex);
                     }
@@ -373,7 +373,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 {
                     if (this.dgvDatosProducto.Columns[e.ColumnIndex].Name == "Deshabilitar")
                     {
-                        ObjProducto.EstadoProducto(dgvDatosProducto.CurrentRow.Cells[2].Value.ToString(), 1);
+                        ObjProducto.EstadoProducto(dgvDatosProducto.CurrentRow.Cells[3].Value.ToString(), 1);
                         //cargarDatos("0");
                         dgvDatosProducto.Rows.RemoveAt(e.RowIndex);
                     }
@@ -382,7 +382,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 if (this.dgvDatosProducto.Columns[e.ColumnIndex].Name == "Modificar")
                 {
                     //MessageBox.Show("modificar toca " + DgvDatosEmpleado.CurrentRow.Cells[3].Value.ToString());
-                    GlobalCodigoBarra = dgvDatosProducto.CurrentRow.Cells[2].Value.ToString();
+                    GlobalCodigoBarra = dgvDatosProducto.CurrentRow.Cells[3].Value.ToString();
                     tcProducto.SelectedIndex = 0;
                     bandera_Estado = true;
                     //Llenar el DataTable
@@ -470,13 +470,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                         {
                             CkbLibreImpuesto.Checked = Convert.ToBoolean(myRow["LIBREIMPUESTO"]);
                         }
-                        //CkbICE.Checked = Convert.ToBoolean(myRow["ICEESTADO"]);
-                        //CkbIRBP.Checked = Convert.ToBoolean(myRow["IRBPESTADO"]);
-
-                        //TxtIVA.Text = myRow["IVA"].ToString();
-                        //TxtIce.Text = myRow["ICE"].ToString();
-                        //TxtIRBP.Text = myRow["IRBP"].ToString();
-
                         txtObservacionesProducto.Text = myRow["OBSERVACIONES"].ToString();
                     }
                     btnLimpiarProducto.Text = "&Cancelar";
@@ -1043,7 +1036,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         {
             if (e.KeyChar == (char)Keys.Return)
             {
-                //SendKeys.Send("{TAB}");ç
                 BtnBuscar_Click(null, null);
             }
         }
@@ -1139,7 +1131,14 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             }
         }
 
-
+        public void calcularIvaBusquedaProducto()
+        {
+            for (int i = 0; i < dtProductos.Rows.Count; i++)
+            {
+                if(Convert.ToBoolean(dtProductos.Rows[i][9]))
+                    dtProductos.Rows[i][5] = Convert.ToSingle(dtProductos.Rows[i][5]) * 1.12;
+            }
+        }
 
         
         private void BtnBuscarMicroBusqueda_Click(object sender, EventArgs e)
@@ -1237,6 +1236,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         }
         private void paginar()
         {
+            /// AÑADIDO
+            calcularIvaBusquedaProducto();
+            ///
             nroPagina = Convert.ToInt32(lblPaginaActual.Text); //Obtenemos el numero de pagina atual
             if (dtProductos.Rows.Count > filasPagina)
             {
@@ -1276,7 +1278,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 dgvDatosProducto.Rows[indiceInsertar].Cells[11].Value = fila[12];//Proveedor
 
             }
-
+            /// AÑADIDO
+            Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
+            ///
         }
         private void numPaginas()
         {
@@ -1298,7 +1302,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 this.nroPagina = 1;
                 lblPaginaActual.Text = this.nroPagina.ToString();
                 this.paginar();
-                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
             }
         }
 
@@ -1309,7 +1312,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 this.nroPagina = Convert.ToInt32(lblTotalPagina.Text);
                 lblPaginaActual.Text = this.nroPagina.ToString();
                 this.paginar();
-                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
             }
         }
 
@@ -1320,7 +1322,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 this.nroPagina -= 1;
                 lblPaginaActual.Text = this.nroPagina.ToString();
                 this.paginar();
-                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
             }
         }
 
@@ -1331,7 +1332,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 this.nroPagina += 1;
                 lblPaginaActual.Text = this.nroPagina.ToString();
                 this.paginar();
-                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
             }
         }
 

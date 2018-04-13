@@ -93,16 +93,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gbInformeCompra = new System.Windows.Forms.GroupBox();
             this.dgvInformeCompras = new System.Windows.Forms.DataGridView();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.txtConsultar = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +103,16 @@
             this.Irbp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtConsultar = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.pcOrdenCompra.SuspendLayout();
             this.gbDetalleProducto.SuspendLayout();
@@ -272,7 +272,6 @@
             this.codigo.FillWeight = 147.1193F;
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
             this.codigo.Width = 105;
             // 
             // producto
@@ -280,7 +279,6 @@
             this.producto.FillWeight = 208.2813F;
             this.producto.HeaderText = "Producto";
             this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
             this.producto.Width = 225;
             // 
             // cantidad
@@ -288,7 +286,6 @@
             this.cantidad.FillWeight = 60.1572F;
             this.cantidad.HeaderText = "Cant.";
             this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
             this.cantidad.Width = 45;
             // 
             // precioCompra
@@ -296,7 +293,6 @@
             this.precioCompra.FillWeight = 75.41525F;
             this.precioCompra.HeaderText = "P.C.";
             this.precioCompra.Name = "precioCompra";
-            this.precioCompra.ReadOnly = true;
             this.precioCompra.Width = 50;
             // 
             // descuento
@@ -304,7 +300,6 @@
             this.descuento.FillWeight = 90.65001F;
             this.descuento.HeaderText = "Desc.";
             this.descuento.Name = "descuento";
-            this.descuento.ReadOnly = true;
             this.descuento.Width = 50;
             // 
             // iceProducto
@@ -312,7 +307,6 @@
             this.iceProducto.FillWeight = 65.87027F;
             this.iceProducto.HeaderText = "ICE";
             this.iceProducto.Name = "iceProducto";
-            this.iceProducto.ReadOnly = true;
             this.iceProducto.Width = 45;
             // 
             // irbpProducto
@@ -320,7 +314,6 @@
             this.irbpProducto.FillWeight = 68.26523F;
             this.irbpProducto.HeaderText = "IRBP";
             this.irbpProducto.Name = "irbpProducto";
-            this.irbpProducto.ReadOnly = true;
             this.irbpProducto.Width = 51;
             // 
             // precioPublico
@@ -328,7 +321,6 @@
             this.precioPublico.FillWeight = 84.64441F;
             this.precioPublico.HeaderText = "P.V.P";
             this.precioPublico.Name = "precioPublico";
-            this.precioPublico.ReadOnly = true;
             this.precioPublico.Width = 63;
             // 
             // precioMayorista
@@ -336,7 +328,6 @@
             this.precioMayorista.FillWeight = 107.9493F;
             this.precioMayorista.HeaderText = "P.M.";
             this.precioMayorista.Name = "precioMayorista";
-            this.precioMayorista.ReadOnly = true;
             this.precioMayorista.Width = 60;
             // 
             // precioCaja
@@ -344,7 +335,6 @@
             this.precioCaja.FillWeight = 122.7342F;
             this.precioCaja.HeaderText = "P.Cj.";
             this.precioCaja.Name = "precioCaja";
-            this.precioCaja.ReadOnly = true;
             this.precioCaja.Width = 60;
             // 
             // subtotal
@@ -352,7 +342,6 @@
             this.subtotal.FillWeight = 107.4997F;
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
             this.subtotal.Width = 80;
             // 
             // iva
@@ -360,7 +349,6 @@
             this.iva.FillWeight = 64.72799F;
             this.iva.HeaderText = "IVA";
             this.iva.Name = "iva";
-            this.iva.ReadOnly = true;
             this.iva.Width = 49;
             // 
             // total
@@ -368,7 +356,6 @@
             this.total.FillWeight = 96.68581F;
             this.total.HeaderText = "Total";
             this.total.Name = "total";
-            this.total.ReadOnly = true;
             this.total.Width = 72;
             // 
             // txtTotal
@@ -877,6 +864,83 @@
             this.dgvInformeCompras.TabIndex = 22;
             this.dgvInformeCompras.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformeCompras_CellEnter);
             // 
+            // Factura
+            // 
+            this.Factura.FillWeight = 160.7917F;
+            this.Factura.HeaderText = "Factura";
+            this.Factura.Name = "Factura";
+            this.Factura.ReadOnly = true;
+            this.Factura.Width = 135;
+            // 
+            // Fecha
+            // 
+            this.Fecha.FillWeight = 82.69291F;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 85;
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.FillWeight = 82.69291F;
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.ReadOnly = true;
+            this.Proveedor.Width = 265;
+            // 
+            // Subtotal0
+            // 
+            this.Subtotal0.FillWeight = 82.69291F;
+            this.Subtotal0.HeaderText = "Sub 0%";
+            this.Subtotal0.Name = "Subtotal0";
+            this.Subtotal0.ReadOnly = true;
+            this.Subtotal0.Width = 90;
+            // 
+            // Subtotal12
+            // 
+            this.Subtotal12.FillWeight = 82.69291F;
+            this.Subtotal12.HeaderText = "Sub12%";
+            this.Subtotal12.Name = "Subtotal12";
+            this.Subtotal12.ReadOnly = true;
+            this.Subtotal12.Width = 90;
+            // 
+            // Ice
+            // 
+            this.Ice.HeaderText = "ICE";
+            this.Ice.Name = "Ice";
+            this.Ice.ReadOnly = true;
+            this.Ice.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 82.69291F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Iva";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // Irbp
+            // 
+            this.Irbp.HeaderText = "IRBP";
+            this.Irbp.Name = "Irbp";
+            this.Irbp.ReadOnly = true;
+            this.Irbp.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 82.69291F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 115;
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.HeaderText = "IDProveedor";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            this.idProveedor.Visible = false;
+            // 
             // btnAnular
             // 
             this.btnAnular.Enabled = false;
@@ -984,90 +1048,13 @@
             this.label16.TabIndex = 17;
             this.label16.Text = "Desde:";
             // 
-            // Factura
-            // 
-            this.Factura.FillWeight = 160.7917F;
-            this.Factura.HeaderText = "Factura";
-            this.Factura.Name = "Factura";
-            this.Factura.ReadOnly = true;
-            this.Factura.Width = 135;
-            // 
-            // Fecha
-            // 
-            this.Fecha.FillWeight = 82.69291F;
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 85;
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.FillWeight = 82.69291F;
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            this.Proveedor.ReadOnly = true;
-            this.Proveedor.Width = 265;
-            // 
-            // Subtotal0
-            // 
-            this.Subtotal0.FillWeight = 82.69291F;
-            this.Subtotal0.HeaderText = "Sub 0%";
-            this.Subtotal0.Name = "Subtotal0";
-            this.Subtotal0.ReadOnly = true;
-            this.Subtotal0.Width = 90;
-            // 
-            // Subtotal12
-            // 
-            this.Subtotal12.FillWeight = 82.69291F;
-            this.Subtotal12.HeaderText = "Sub12%";
-            this.Subtotal12.Name = "Subtotal12";
-            this.Subtotal12.ReadOnly = true;
-            this.Subtotal12.Width = 90;
-            // 
-            // Ice
-            // 
-            this.Ice.HeaderText = "ICE";
-            this.Ice.Name = "Ice";
-            this.Ice.ReadOnly = true;
-            this.Ice.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 82.69291F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Iva";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // Irbp
-            // 
-            this.Irbp.HeaderText = "IRBP";
-            this.Irbp.Name = "Irbp";
-            this.Irbp.ReadOnly = true;
-            this.Irbp.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 82.69291F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 115;
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.HeaderText = "IDProveedor";
-            this.idProveedor.Name = "idProveedor";
-            this.idProveedor.ReadOnly = true;
-            this.idProveedor.Visible = false;
-            // 
             // FrmCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(1087, 588);
+            this.ClientSize = new System.Drawing.Size(1087, 587);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;

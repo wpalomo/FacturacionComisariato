@@ -34,7 +34,7 @@ namespace Comisariato.Clases
         {
             string fecha1 = "";
             string[] vector = fecha.Split('/');
-            if (vector[0].Length!=2)
+            if (vector[0].Length != 2)
             {
                 vector[0] = "0" + vector[0];
             }
@@ -69,7 +69,7 @@ namespace Comisariato.Clases
                     {
                         for (int j = InicioDeColumna; j < grd.Columns.Count; j++)
                         {
-                            hoja_trabajo.Cells[i + 1, j + 1] = grd.Rows[i-1].Cells[j].FormattedValue;
+                            hoja_trabajo.Cells[i + 1, j + 1] = grd.Rows[i - 1].Cells[j].FormattedValue;
                         }
                     }
                     //libros_trabajo.SaveAs(fichero.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
@@ -392,11 +392,11 @@ namespace Comisariato.Clases
 
         public static String reemplazarcaracterFecha(String cadena)
         {
-                string[] fecha = cadena.Split('/');
+            string[] fecha = cadena.Split('/');
 
-                string FinalFecha = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
+            string FinalFecha = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
 
-                return FinalFecha;
+            return FinalFecha;
         }
 
 
@@ -543,7 +543,7 @@ namespace Comisariato.Clases
         /// </summary>
         /// 
 
-        
+
 
         private static Random rnd = new Random(DateTime.Now.Millisecond);
         public const string XmlDsigRSASHA1Url = "http://www.w3.org/2000/09/xmldsig#rsa-sha1";
@@ -639,7 +639,7 @@ namespace Comisariato.Clases
                 }
 
 
-                xmlDoc.Save(@PathServer + @"\Firmados\" + @"\"+ nombrexml + ".xml");
+                xmlDoc.Save(@PathServer + @"\Firmados\" + @"\" + nombrexml + ".xml");
 
             }
             catch (Exception e)
@@ -661,7 +661,7 @@ namespace Comisariato.Clases
         public static string FormarFecha(string fecha)
         {
             //Dia-Mes-Año
-            string [] arregloFecha = fecha.Split('/');
+            string[] arregloFecha = fecha.Split('/');
             //dia
             if (arregloFecha[0].Length < 2)
             {
@@ -772,7 +772,7 @@ namespace Comisariato.Clases
             for (int i = 0; i < cantidad; i++)
                 dgv.Rows.Add();
         }
-        
+
         public static void ComboAutoCompletable(ComboBox cb)
         {
             Consultas consultas = new Consultas();
@@ -814,7 +814,6 @@ namespace Comisariato.Clases
                             hoja_trabajo.Cells[i + 2, j + 1] = grd.Rows[i][j].ToString();
                         }
                     }
-                    //libros_trabajo.SaveAs(fichero.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                     libros_trabajo.SaveAs(fichero.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal,
                                       System.Reflection.Missing.Value, System.Reflection.Missing.Value, false, false,
                                       Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, false, false,
@@ -867,5 +866,38 @@ namespace Comisariato.Clases
             }
         }
 
+        public static void HabilitarColumnaDatagridview(DataGridView dgv, int Columna)
+        {
+            for (int i = 0; i < dgv.ColumnCount; i++)
+            {
+                if (Convert.ToString(dgv.Rows[i].Cells[0].Value) != "")
+                {
+                    foreach (DataGridViewColumn Column in dgv.Columns)
+                    {
+
+                        {
+                            if (((Column.Index == Columna)))
+                            {
+                                Column.ReadOnly = false;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        public static string comprobarnumeroCelda(object valor)
+        {
+            try
+            {
+                double numero = Convert.ToDouble(valor);
+                return numero.ToString(); 
+            }
+            catch (Exception ex)
+            {
+                return "0";
+            }
+        }
     }
 }
