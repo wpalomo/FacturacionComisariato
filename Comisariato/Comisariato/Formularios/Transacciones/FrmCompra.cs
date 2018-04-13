@@ -19,7 +19,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         DetalleCompra ObjDetalleCompra;
         Producto objProducto;
         int ordenCompra = 0, idOrdenComrpa, posicion = 0;
-        float sumasubiva = 0.0f, sumasubcero = 0.0f, totalpagar = 0.0f, ivatotal = 0.0f, sumaice = 0.0f, sumairbp = 0.0f, subtotalPie = 0.0f, ivaTotal = 0.0f;
+        float sumasubiva = 0.0f, sumasubcero = 0.0f, totalpagar = 0.0f, ivatotal = 0.0f, sumaice = 0.0f, sumairbp = 0.0f, subtotalPie = 0.0f, ivaTotal = 0.0f, ivaFila = 0.0f, subtotalFila = 0.0f, totalFila = 0.0f;
         bool tieneIVA = false, saltarPosicionEsc = false, dobleTab = false, eliminacion = false, banderaFocoCelda = false;
         public static string CodigoBarraConsultaProducto = "";
         Bitacora ip = new Bitacora();
@@ -48,8 +48,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             cbTerminoPago.SelectedIndex = 0;
             dgvProductosIngresos.Rows.Clear();
             Funcion.llenarDGV(ref dgvProductosIngresos, 8);
-            for (int i = 0; i < dgvProductosIngresos.ColumnCount - 1; i++)
-                dgvProductosIngresos.Columns[i].ReadOnly = true;
             dgvProductosIngresos.Rows[0].Cells[0].ReadOnly = false;
         }
         private void FrmCompra_Load(object sender, EventArgs e)
@@ -81,14 +79,8 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             cbTerminoPago.SelectedIndex = 0;
             Funcion.llenarDGV(ref dgvInformeCompras, 20);
             cadenaConsultar = cadenaGeneral;
-            DataTable dt = (DataTable)cbProveedor.DataSource;
-            cbProveedor.AutoCompleteCustomSource = consultas.LoadAutoComplete(dt);
-            cbProveedor.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cbProveedor.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            dt = (DataTable)cbSucursal.DataSource;
-            cbSucursal.AutoCompleteCustomSource = consultas.LoadAutoComplete(dt);
-            cbSucursal.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cbSucursal.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            Funcion.ComboAutoCompletable(cbProveedor);
+            Funcion.ComboAutoCompletable(cbSucursal);
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -225,7 +217,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             else
                 MessageBox.Show("Ingrese los datos necesarios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }        
-        
         public void informacionProducto()
         {
             datosProductoCompra.CurrentRow.Cells[1].Value = objProducto.Nombreproducto;
@@ -274,7 +265,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
             }
         }
-        
         public bool validarCodigoRepetido(DataGridViewCellEventArgs e)
         {
             bool repetido = false;
@@ -293,20 +283,41 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             }
             return repetido;
         }
-        float ivaFila = 0.0f, subtotalFila = 0.0f, totalFila = 0.0f;
+        public bool llamaFormularioProducto()
+        {
+            if (FrmPrincipal.FrmProducto == null || FrmPrincipal.FrmProducto.IsDisposed)
+            {
+                FrmPrincipal.FrmProducto = new FrmProductos();
+                FrmPrincipal.FrmProducto.MdiParent = Program.panelPrincipalVariable;
+                FrmPrincipal.FrmProducto.BringToFront();
+                FrmPrincipal.FrmProducto.Show();
+                return true;
+            }
+            else
+                return false;
+        }
+        public void identificarCeldaPos(int pos, string nombre, ref bool ban)
+        {
+            if (datosProductoCompra.Columns[pos].Name == nombre)
+            {
+                if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[pos].Value) != "")
+                {
+                    Funcion.ValidaCeldasPrecios(datosProductoCompra, pos, ref banderaFocoCelda);
+                    SendKeys.Send("{RIGHT}");
+                }
+                ban = true;
+            }
+        }
         private void dgvProductosIngresos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             bool banderaTab = false;
             objProducto = new Producto();
-            
             try
             {
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "codigo")
                 {
-                    //---------------Desbloquear Celdas
                     if (!validarCodigoRepetido(e))
                     {
-                        //---------------Desbloquear Celdas
                         for (int i = 0; i < datosProductoCompra.ColumnCount - 3; i++)
                             datosProductoCompra.CurrentRow.Cells[i].ReadOnly = false;
                         objProducto = consultas.ConsultarproductoCompra(Convert.ToString(datosProductoCompra.CurrentRow.Cells[0].Value));
@@ -314,26 +325,12 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                         {
                             if (MessageBox.Show("¿Desea agregar el producto?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                //FrmProductos frmProducto = new FrmProductos();
                                 Program.FormularioLlamado = true;
                                 FrmProductos.codigo = Convert.ToString(datosProductoCompra.CurrentRow.Cells[0].Value);
-                                if (FrmPrincipal.FrmProducto == null || FrmPrincipal.FrmProducto.IsDisposed)
-                                {
-                                    FrmPrincipal.FrmProducto = new FrmProductos();
-                                    FrmPrincipal.FrmProducto.MdiParent = Program.panelPrincipalVariable;
-                                    FrmPrincipal.FrmProducto.BringToFront();
-                                    FrmPrincipal.FrmProducto.Show();
-                                }
-                                else
+                                if (!llamaFormularioProducto())
                                 {
                                     FrmPrincipal.FrmProducto.Close();
-                                    if (FrmPrincipal.FrmProducto == null || FrmPrincipal.FrmProducto.IsDisposed)
-                                    {
-                                        FrmPrincipal.FrmProducto = new FrmProductos();
-                                        FrmPrincipal.FrmProducto.MdiParent = Program.panelPrincipalVariable;
-                                        FrmPrincipal.FrmProducto.BringToFront();
-                                        FrmPrincipal.FrmProducto.Show();
-                                    }
+                                    llamaFormularioProducto();
                                 }
                                 informacionProducto();
                                 datosProductoCompra.CurrentCell = datosProductoCompra.CurrentRow.Cells[2];
@@ -362,26 +359,14 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                         SendKeys.Send("{LEFT}");
                         banderaTab = true;
                     }
-
                 }
-
-
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "cantidad")
                 {
                     if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[2].Value) != "")
                         SendKeys.Send("{RIGHT}");
                     banderaTab = true;
                 }
-                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCompra")
-                {
-                    if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[3].Value) != "")
-                    {
-                        posicion = 3;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        SendKeys.Send("{RIGHT}");
-                    }
-                    banderaTab = true;
-                }
+                identificarCeldaPos(e.ColumnIndex, "precioCompra", ref banderaTab);
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "descuento")
                 {
                     if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[4].Value) == "")
@@ -391,58 +376,20 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     }
                     else
                     {
-                        posicion = 4;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
+                        Funcion.ValidaCeldasPrecios(datosProductoCompra, e.ColumnIndex, ref banderaFocoCelda);
                         SendKeys.Send("{RIGHT}");
                     }
                     banderaTab = true;
                 }
-                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "iceProducto")
-                {
-                    if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[5].Value) != "")
-                    {
-                        posicion = 5;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        SendKeys.Send("{RIGHT}");
-                    }
-                    banderaTab = true;
-                }
-                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "irbpProducto")
-                {
-                    if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[6].Value) != "")
-                    {
-                        posicion = 6;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        SendKeys.Send("{RIGHT}");
-                    }
-                    banderaTab = true;
-                }
-                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioPublico")
-                {
-                    if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[7].Value) != "")
-                    {
-                        posicion = 7;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        SendKeys.Send("{RIGHT}");
-                    }
-                    banderaTab = true;
-                }
-                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioMayorista")
-                {
-                    if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[8].Value) != "")
-                    {
-                        posicion = 8;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        SendKeys.Send("{RIGHT}");
-                    }
-                    banderaTab = true;
-                }
+                identificarCeldaPos(e.ColumnIndex, "iceProducto", ref banderaTab);
+                identificarCeldaPos(e.ColumnIndex, "irbpProducto", ref banderaTab);
+                identificarCeldaPos(e.ColumnIndex, "precioPublico", ref banderaTab);
+                identificarCeldaPos(e.ColumnIndex, "precioMayorista", ref banderaTab);
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCaja")
                 {
                     if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[9].Value) != "")
                     {
-                        posicion = 9;
-                        Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
+                        Funcion.ValidaCeldasPrecios(datosProductoCompra, e.ColumnIndex, ref banderaFocoCelda);
                         datosProductoCompra.CurrentCell = datosProductoCompra.CurrentRow.Cells[12];
                         datosProductoCompra.Rows[e.RowIndex + 1].Cells[0].ReadOnly = false;
                         if (e.RowIndex == dgvProductosIngresos.RowCount - 2)
@@ -451,7 +398,8 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     }
                     banderaTab = true;
                 }
-                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCompra" || datosProductoCompra.Columns[e.ColumnIndex].Name == "cantidad" || datosProductoCompra.Columns[e.ColumnIndex].Name == "iceProducto" || datosProductoCompra.Columns[e.ColumnIndex].Name == "irbpProducto" || datosProductoCompra.Columns[e.ColumnIndex].Name == "codigo")
+                if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCompra" || datosProductoCompra.Columns[e.ColumnIndex].Name == "cantidad" || datosProductoCompra.Columns[e.ColumnIndex].Name == "iceProducto" || 
+                    datosProductoCompra.Columns[e.ColumnIndex].Name == "irbpProducto" || datosProductoCompra.Columns[e.ColumnIndex].Name == "codigo")
                     calcularFila();
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCaja")
                     dgvProductosIngresos.CurrentRow.ReadOnly = true;
