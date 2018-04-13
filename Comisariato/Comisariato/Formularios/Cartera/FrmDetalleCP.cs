@@ -156,19 +156,19 @@ namespace Comisariato.Formularios.Cartera
 
                         if (((row.Index == i)))
                         {
-                            dgvDetalleCP.Rows[row.Index].Cells[4].ReadOnly = false;
-                            dgvDetalleCP.Rows[row.Index].Cells[0].ReadOnly = false;
-                            dgvDetalleCP.Rows[row.Index].Cells[2].ReadOnly = false;
+                            dgvDetalleCP.Rows[row.Index].Cells[1].ReadOnly = true;
                         }
                         else
                         {
                             if (Convert.ToString(dgvDetalleCP.Rows[row.Index].Cells[0].Value) != "")
                             {
-                                dgvDetalleCP.Rows[row.Index].Cells[4].ReadOnly = false;
+                                dgvDetalleCP.Rows[row.Index].Cells[0].ReadOnly = true;
+                                dgvDetalleCP.Rows[row.Index].Cells[1].ReadOnly = true;
+                                dgvDetalleCP.Rows[row.Index].Cells[2].ReadOnly = true;
                             }
+                            else
+                                row.ReadOnly = true;
                         }
-                            
-
                     }
                     break;
                 }
@@ -219,11 +219,13 @@ namespace Comisariato.Formularios.Cartera
                 {
                     if (dgvDetalleCP.Rows[i].Cells[1].Value != System.DBNull.Value)
                     {
-                        totalDEBE += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[1].Value));
+                        if(Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[4].Value))
+                            totalDEBE += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[1].Value));
                     }
                     if (dgvDetalleCP.Rows[i].Cells[2].Value != System.DBNull.Value)
                     {
-                        totalHABER += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[2].Value));
+                        if (Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[4].Value))
+                            totalHABER += Convert.ToDouble(Funcion.comprobarnumeroCelda(dgvDetalleCP.Rows[i].Cells[2].Value));
                     }
                 }
                 else
@@ -252,12 +254,58 @@ namespace Comisariato.Formularios.Cartera
 
         private void dgvDetalleCP_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == FilaDESCUENTOSADICIONALES && FilaDESCUENTOSADICIONALES != 0 && e.ColumnIndex == 2 && estadoValorAUX)
+            if ((e.RowIndex == FilaDESCUENTOSADICIONALES && FilaDESCUENTOSADICIONALES != 0 && e.ColumnIndex == 2 && estadoValorAUX))
             {
-                //dgvDetalleCP.Rows[FilaDESCUENTOSADICIONALES].Cells[1].Value = "";
                 CalcularDEBE_HABER_TOTAL(true);
             }
         }
 
+        private void ChkPagarTodo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkPagarTodo.Checked)
+            {
+                for (int i = 0; i < dgvDetalleCP.RowCount; i++)
+                {
+                    if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[0].Value) != "")
+                        dgvDetalleCP.Rows[i].Cells[4].Value = true;
+                    else
+                        break;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dgvDetalleCP.RowCount; i++)
+                {
+                    if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[0].Value) != "")
+                        dgvDetalleCP.Rows[i].Cells[4].Value = false;
+                    else
+                        break;
+                }
+            }
+            CalcularDEBE_HABER_TOTAL(true);
+        }
+
+        private void dgvDetalleCP_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvDetalleCP.IsCurrentCellDirty)
+            {
+                dgvDetalleCP.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void dgvDetalleCP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalleCP.Rows[e.RowIndex].Cells[4].Value != null)
+            {
+                bool isCellChecked = (bool)dgvDetalleCP.Rows[e.RowIndex].Cells[4].Value;
+
+                if (isCellChecked)
+                {
+                    CalcularDEBE_HABER_TOTAL(true);
+                }
+                else
+                    CalcularDEBE_HABER_TOTAL(true);
+            }
+        }
     }
 }
