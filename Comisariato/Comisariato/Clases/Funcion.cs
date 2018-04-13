@@ -17,15 +17,7 @@ namespace Comisariato.Clases
     {
         public void AddFormInPanel(Form formHijo /*, Panel panelPrincipal*/)
         {
-            //Form fh = formHijo as Form;
-            //fh.TopLevel = false;
-            //panelPrincipal.Controls.Add(fh);  
-            ////panelPrincipal.Tag = fh;
-            //int index = panelPrincipal.Controls.GetChildIndex(fh);
-            //fh.BringToFront();
-            //fh.Show();
             formHijo = new Form();
-            //Form fh = (Form)formHijo;
             FrmPrincipal frmprincipal = new FrmPrincipal();
             if (formHijo == null || formHijo.IsDisposed)
             {
@@ -789,5 +781,91 @@ namespace Comisariato.Clases
             cb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cb.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
+
+
+
+        ////////////
+
+        public static bool ExportarDataTableViewExcel(DataTable grd, int InicioDeColumna) //InicioDeColumna comienza desde 0
+        {
+            try
+            {
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.Filter = "Excel (*.xls)|*.xls";
+                if (fichero.ShowDialog() == DialogResult.OK)
+                {
+                    Microsoft.Office.Interop.Excel.Application aplicacion;
+                    Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
+                    Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
+                    aplicacion = new Microsoft.Office.Interop.Excel.Application();
+                    libros_trabajo = aplicacion.Workbooks.Add();
+                    hoja_trabajo = (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
+                    int iCol = 0;
+                    for (int i = InicioDeColumna; i < grd.Columns.Count; i++)
+                    {
+                        hoja_trabajo.Cells[1, ++iCol] = grd.Columns[i].ColumnName;
+                    }
+
+                    //Recorremos el DataGridView rellenando la hoja de trabajo
+                    for (int i = 0; i < grd.Rows.Count; i++)
+                    {
+                        for (int j = InicioDeColumna; j < grd.Columns.Count; j++)
+                        {
+                            hoja_trabajo.Cells[i + 2, j + 1] = grd.Rows[i][j].ToString();
+                        }
+                    }
+                    //libros_trabajo.SaveAs(fichero.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                    libros_trabajo.SaveAs(fichero.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal,
+                                      System.Reflection.Missing.Value, System.Reflection.Missing.Value, false, false,
+                                      Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, false, false,
+                                      System.Reflection.Missing.Value, System.Reflection.Missing.Value, System.Reflection.Missing.Value);
+                    libros_trabajo.Close(true);
+                    aplicacion.Quit();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static DataTable filtarDataTable(DataTable dt, string condicion)
+        {
+            try
+            {
+                DataTable dtable = dt.Clone();
+                DataRow[] foundRows = dt.Select(condicion);
+                dtable.Rows.Clear();
+                foreach (DataRow rows in foundRows)
+                {
+                    dtable.ImportRow(rows);
+                }
+                return dtable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public static void DataTabledosDecimales(ref DataGridView dgv, int inicio, int fin, int celdaInicial)
+        {
+            for (int i = 0; i < dgv.RowCount; i++)
+            {
+                if (Convert.ToString(dgv.Rows[i].Cells[celdaInicial].Value) != "")
+                {
+                    for (int j = inicio; j < fin; j++)
+                    {
+                        dgv.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgv.Rows[i].Cells[j].Value.ToString())), 2).ToString("#####0.00"));
+                        dgv.Columns[j].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    }
+                    if (Convert.ToString(dgv.Rows[i].Cells[celdaInicial].Value) == "")
+                        break;
+                }
+            }
+        }
+
     }
 }

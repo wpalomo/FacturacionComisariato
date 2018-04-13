@@ -27,7 +27,17 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         bool bandera_Estado = false;
         public static String nameImagen = "";
         byte[] AuxMyDataImagenProducto = new byte[0];
-        DataTable dtProductos;
+
+        DataTable dtProductos = new DataTable();
+
+        DataRow fila;
+
+        int filasPagina = 20; // Definimos el numero de filas que deseamos ver por pagina, tambien puede leerse desde un archivo de configuracion.
+        int nroPagina = 1;//Esto define el numero de pagina actual en al que  nos encontramos
+        int ini = 0; //inicio del paginado
+        int fin = 0;//fin del paginado
+
+        int numeroRegistro;
 
         public void inicializarDatos()
         {
@@ -1045,10 +1055,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
 
         private void BtnExportarExcel_Click(object sender, EventArgs e)
         {
-
             if (dgvDatosProducto.Rows.Count > 0)
             {
-                if (Funcion.ExportarDataGridViewExcel(dgvDatosProducto,2))
+                if (Funcion.ExportarDataTableViewExcel(dtProductos, 1))
                 {
                     MessageBox.Show("Reporte creado con exito.");
                 }
@@ -1075,10 +1084,8 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         {
             try
             {
-                Objconsul = new Consultas();
-                //if (e.KeyChar == (char)Keys.Return)
-                //{
                 int auxiliarcont = 0;
+                string sql = "";
                 string codigobarra = "", nombreproducto = "", proveedor = "", categoriaconsult = "";
 
                 string condicioncodigobarra = "", condicionnombreproducto = "", condicionproveedor = "", condicioncategoriaconsult = "";
@@ -1107,17 +1114,18 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 if (rbtActivos.Checked)
                 {
                     if ((txtConsultarCodigoBarra.Text != "" || txtConsultarNombreProducto.Text != "" || txtConsultarProveedor.Text != "" || CmbConsultarCategoria.Text != ""))
-                        dtProductos = Objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 1 " + condicioncodigobarra + " " + condicionnombreproducto + " " + condicioncategoriaconsult + " " + condicionproveedor + " ; ");
+                        sql = "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 1 " + condicioncodigobarra + " " + condicionnombreproducto + " " + condicioncategoriaconsult + " " + condicionproveedor + " ; ";
                 }
                 else if (rbtInactivos.Checked)
                 {
                     if ((txtConsultarCodigoBarra.Text != "" || txtConsultarNombreProducto.Text != "" || txtConsultarProveedor.Text != "" || CmbConsultarCategoria.Text != ""))
-                        dtProductos = Objconsul.BoolCrearDateTableProductos(dgvDatosProducto, "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 0 " + condicioncodigobarra + " " + condicionnombreproducto + " " + condicioncategoriaconsult + " " + condicionproveedor + " ; ");
+                        sql = "Select  * from View_VistaFinalProducto P where P.ACTIVO   = 0 " + condicioncodigobarra + " " + condicionnombreproducto + " " + condicioncategoriaconsult + " " + condicionproveedor + " ; ";
                 }
-
+                Buscar(sql);
+                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
                 if (dgvDatosProducto.Rows.Count > 2)
                 {
-                    if(dgvDatosProducto.Rows[0].Cells[3].Value != null)
+                    if (dgvDatosProducto.Rows[0].Cells[3].Value != null)
                         GrbMicrobusqueda.Enabled = true;
                     else
                         GrbMicrobusqueda.Enabled = false;
@@ -1129,31 +1137,27 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             {
 
             }
-            
-            //}
         }
+
+
 
         
         private void BtnBuscarMicroBusqueda_Click(object sender, EventArgs e)
         {
             if (dtProductos != null)
             {
-                string Codigo = string.Concat("[", dtProductos.Columns[0].ColumnName, "]");
-                string Nombre = string.Concat("[", dtProductos.Columns[1].ColumnName, "]");
-                string Costo = string.Concat("[", dtProductos.Columns[4].ColumnName, "]");
+                string Codigo = string.Concat("[", dtProductos.Columns[1].ColumnName, "]");
+                string Nombre = string.Concat("[", dtProductos.Columns[2].ColumnName, "]");
+                string Costo = string.Concat("[", dtProductos.Columns[5].ColumnName, "]");
 
-                string PVP = string.Concat("[", dtProductos.Columns[5].ColumnName, "]");
-                string PMayor = string.Concat("[", dtProductos.Columns[6].ColumnName, "]");
-                string PCaja = string.Concat("[", dtProductos.Columns[7].ColumnName, "]");
-                dtProductos.DefaultView.Sort = Codigo;
-                DataView view = dtProductos.DefaultView;
-                view.RowFilter = string.Empty;
-
+                string PVP = string.Concat("[", dtProductos.Columns[6].ColumnName, "]");
+                string PMayor = string.Concat("[", dtProductos.Columns[7].ColumnName, "]");
+                string PCaja = string.Concat("[", dtProductos.Columns[8].ColumnName, "]");
                 String condicion = "";
 
                 if (TxtNombreMicrobusca.Text != "")
                 {
-                    condicion += " and " + Nombre + "like '%" + TxtNombreMicrobusca.Text + "%'"; 
+                    condicion += " and " + Nombre + "like '%" + TxtNombreMicrobusca.Text + "%'";
                 }
                 if (TxtCodigoBarraMicrobusca.Text != "")
                 {
@@ -1161,27 +1165,38 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 }
                 if (TxtCostoMicrobusca.Text != "")
                 {
-                    condicion += " and " + Costo + "='" + TxtCostoMicrobusca.Text + "'";
+                    condicion += " and " + Costo + "='" + Funcion.reemplazarcaracterViceversa(TxtCostoMicrobusca.Text) + "'";
                 }
                 if (TxtPVPMicrobusca.Text != "")
                 {
-                    condicion += " and " + PVP + "='" + TxtPVPMicrobusca.Text + "'";
+                    condicion += " and " + PVP + "='" + Funcion.reemplazarcaracterViceversa(TxtPVPMicrobusca.Text) + "'";
                 }
                 if (TxtPMayorMicrobusca.Text != "")
                 {
-                    condicion += " and " + PMayor + "='" + TxtPMayorMicrobusca.Text + "'";
+                    condicion += " and " + PMayor + "='" + Funcion.reemplazarcaracterViceversa(TxtPMayorMicrobusca.Text) + "'";
                 }
                 if (TxtPCajaMicrobusca.Text != "")
                 {
-                    condicion += " and " + PCaja + "='" + TxtPCajaMicrobusca.Text + "'";
+                    condicion += " and " + PCaja + "='" + Funcion.reemplazarcaracterViceversa(TxtPCajaMicrobusca.Text) + "'";
                 }
                 int longitudcondicion = condicion.Length;
-                if(longitudcondicion>0)
-                { 
-                condicion = condicion.Substring(4, (longitudcondicion-4));
-                
-                view.RowFilter = condicion;
-                dgvDatosProducto.DataSource = view;
+                if (longitudcondicion > 0)
+                {
+                    condicion = condicion.Substring(4, (longitudcondicion - 4));
+                    dtProductos = Funcion.filtarDataTable(dtProductos, condicion);
+                    if (dtProductos != null)
+                    {
+                        this.numPaginas(); //Funcion para calcular el numero total de paginas que tendra nuestra vista
+                        this.paginar();//empezamos con la paginacion
+                        lblCantidadTotal.Text = " " + dtProductos.Rows.Count.ToString();//Cantidad totoal de registros encontrados
+                        dgvDatosProducto.Select();
+                    }
+                    else
+                    {
+                        dgvDatosProducto.Rows.Clear();//En el caso de que la busqueda no genere ningun registro limopiamos el datagridview
+                        lblCantidadTotal.Text = " 0";
+                    }
+                    Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
                 }
             }
         }
@@ -1190,9 +1205,135 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         {
             if (e.KeyChar == (char)Keys.Return)
             {
-                //SendKeys.Send("{TAB}");ç
                 BtnBuscarMicroBusqueda_Click(null, null);
             }
         }
+
+
+        ///Paginacion
+        ///
+        private void Buscar(string sentencia)
+        {
+            try
+            {
+                dtProductos = Objconsul.BoolDataTable(sentencia);//Metodo que devuelve un datatable como resultado de la ejecucion de una consulta
+                if (dtProductos.Rows.Count > 0)
+                {
+                    this.numPaginas(); //Funcion para calcular el numero total de paginas que tendra nuestra vista
+                    this.paginar();//empezamos con la paginacion
+                    lblCantidadTotal.Text = " " + dtProductos.Rows.Count.ToString();//Cantidad totoal de registros encontrados
+                    dgvDatosProducto.Select();
+                }
+                else
+                {
+                    dgvDatosProducto.Rows.Clear();//En el caso de que la busqueda no genere ningun registro limopiamos el datagridview
+                    lblCantidadTotal.Text = " 0";
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void paginar()
+        {
+            nroPagina = Convert.ToInt32(lblPaginaActual.Text); //Obtenemos el numero de pagina atual
+            if (dtProductos.Rows.Count > filasPagina)
+            {
+                this.ini = nroPagina * filasPagina - filasPagina;
+                this.fin = nroPagina * filasPagina;
+                if (fin > dtProductos.Rows.Count)
+                    fin = dtProductos.Rows.Count;
+            }
+            else
+            {
+                this.ini = 0;
+                this.fin = dtProductos.Rows.Count;
+            }
+
+            if (dgvDatosProducto.RowCount > 0)
+                dgvDatosProducto.Rows.Clear();
+
+            int indiceInsertar;//
+            numeroRegistro = this.ini;
+            for (int i = ini; i < fin; i++)
+            {
+                fila = dtProductos.Rows[i];
+                numeroRegistro = numeroRegistro + 1;
+                dgvDatosProducto.Rows.Add();
+                indiceInsertar = dgvDatosProducto.Rows.Count - 1;
+                dgvDatosProducto.Rows[indiceInsertar].Cells[2].Value = numeroRegistro;//nro
+                dgvDatosProducto.Rows[indiceInsertar].Cells[3].Value = fila[1];//CodigoBarra
+                dgvDatosProducto.Rows[indiceInsertar].Cells[4].Value = fila[2];//Producto
+                dgvDatosProducto.Rows[indiceInsertar].Cells[5].Value = fila[3];//Stock
+                dgvDatosProducto.Rows[indiceInsertar].Cells[6].Value = fila[4];//Formato
+                dgvDatosProducto.Rows[indiceInsertar].Cells[7].Value = fila[5];//Costo
+                dgvDatosProducto.Rows[indiceInsertar].Cells[8].Value = fila[6];//PVP
+                dgvDatosProducto.Rows[indiceInsertar].Cells[9].Value = fila[7];//PMayor
+                dgvDatosProducto.Rows[indiceInsertar].Cells[10].Value = fila[8];//PCaja
+                dgvDatosProducto.Rows[indiceInsertar].Cells[13].Value = fila[9];//iVA
+                dgvDatosProducto.Rows[indiceInsertar].Cells[12].Value = fila[10];//Categoria
+                dgvDatosProducto.Rows[indiceInsertar].Cells[11].Value = fila[12];//Proveedor
+
+            }
+
+        }
+        private void numPaginas()
+        {
+            if (dtProductos.Rows.Count % filasPagina == 0)
+                lblTotalPagina.Text = (dtProductos.Rows.Count / filasPagina).ToString();
+            else
+            {
+                double valor = dtProductos.Rows.Count / filasPagina;
+                lblTotalPagina.Text = (Convert.ToInt32(valor) + 1).ToString();
+
+            }
+            lblPaginaActual.Text = "1";
+        }
+
+        private void BtnPrimero_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(lblTotalPagina.Text) > 1)
+            {
+                this.nroPagina = 1;
+                lblPaginaActual.Text = this.nroPagina.ToString();
+                this.paginar();
+                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
+            }
+        }
+
+        private void BtnUltimo_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(lblTotalPagina.Text) > 1)
+            {
+                this.nroPagina = Convert.ToInt32(lblTotalPagina.Text);
+                lblPaginaActual.Text = this.nroPagina.ToString();
+                this.paginar();
+                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
+            }
+        }
+
+        private void BtnAnterior_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(lblPaginaActual.Text) > 1)
+            {
+                this.nroPagina -= 1;
+                lblPaginaActual.Text = this.nroPagina.ToString();
+                this.paginar();
+                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
+            }
+        }
+
+        private void BtnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(lblPaginaActual.Text) < Convert.ToInt32(lblTotalPagina.Text))
+            {
+                this.nroPagina += 1;
+                lblPaginaActual.Text = this.nroPagina.ToString();
+                this.paginar();
+                Funcion.DataTabledosDecimales(ref dgvDatosProducto, 7, 11, 2);
+            }
+        }
+
     }
 }
