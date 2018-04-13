@@ -121,9 +121,11 @@ namespace Comisariato.Formularios
                 e.Handled = true;
             }
             if (rbtInactivos.Checked)
+            {
                 if (e.ColumnIndex >= 1 && this.dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
                 {
                     e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
                     DataGridViewButtonCell celBoton = this.dgvDatosUsuario.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
                     Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.Habilitar);
                     IntPtr Hicon = bitmap.GetHicon();
@@ -133,18 +135,21 @@ namespace Comisariato.Formularios
                     this.dgvDatosUsuario.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
                     e.Handled = true;
                 }
-                else if (e.ColumnIndex >= 1 && this.dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                    DataGridViewButtonCell celBoton = this.dgvDatosUsuario.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
-                    Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.EliminarDgv);
-                    IntPtr Hicon = bitmap.GetHicon();
-                    Icon icoAtomico = Icon.FromHandle(Hicon);
-                    e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
-                    this.dgvDatosUsuario.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
-                    this.dgvDatosUsuario.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
-                    e.Handled = true;
-                }
+            }
+            else
+                if (e.ColumnIndex >= 1 && this.dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvDatosUsuario.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
+                Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.EliminarDgv);
+                IntPtr Hicon = bitmap.GetHicon();
+                Icon icoAtomico = Icon.FromHandle(Hicon);
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+                this.dgvDatosUsuario.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.dgvDatosUsuario.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+                e.Handled = true;
+            }
         }
 
         private void dgvDatosUsuario_CellClick(object sender, DataGridViewCellEventArgs e)

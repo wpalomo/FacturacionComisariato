@@ -53,7 +53,6 @@ namespace Comisariato.Formularios.SRI
 
         private void FrmComprobantesSri_Load(object sender, EventArgs e)
         {
-            //DataTable dt = objconsul.BoolDataTable("");
             CmbTipoComprobante.SelectedIndex = 0;
         }
 
@@ -97,7 +96,6 @@ namespace Comisariato.Formularios.SRI
 
             if (CmbTipoComprobante.Text == "Factura")
             {
-                //MessageBox.Show("factura");
                 dtComprobantes = null;
                 dtComprobantes = objconsul.BoolDataTable("");
                 int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from VistaComprobantesFactura");
@@ -105,21 +103,15 @@ namespace Comisariato.Formularios.SRI
                 objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesFactura]");
 
                 modificarDatagridviweDiseño();
-
-                //dtComprobantes = Funcion.llenarDataTable_Datagriview(dgvComprobantesErroneos);
-
             }
             else
             {
-                //MessageBox.Show("retención");
                 dtComprobantes = null;
                 int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from VistaComprobantesRetencion");
                 TxtCantComprobantesPendientes.Text = cantidadComprobanrt.ToString();
                 objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesRetencion]");
 
                 modificarDatagridviweDiseño();
-
-                //dtComprobantes = Funcion.llenarDataTable_Datagriview(dgvComprobantesErroneos);
 
             }
         }
@@ -246,8 +238,6 @@ namespace Comisariato.Formularios.SRI
                 string Recibida = "", AUT = "NO";
                 if (DtDocuemtosXML.Rows.Count > 0)
                 {
-                    //btnEnviar.Enabled = false;
-                    //lblTotalArchivos.Text = "Total de Archivos: " + DtDocuemtosXML.Rows.Count;
                     foreach (DataRow myRow in DtDocuemtosXML.Rows)
                     {
                         RutaXML = myRow["Ruta"].ToString();
@@ -257,7 +247,6 @@ namespace Comisariato.Formularios.SRI
                         string RutaXML1 = ConfigurationManager.AppSettings["XmlServidor"];
                         string SRIRecepcion = ConfigurationManager.AppSettings["SRIRecepcion"];
                         string SRIAutorizacion = ConfigurationManager.AppSettings["SRIAutorizacion"];
-                        //string pathXml = RutaXML1 + @"\sonna_judith_vega_solis.p12";
                         if (System.IO.File.Exists(RutaXML1 + @"\Generados" + @"\" + NombreXML + ".xml"))
                         {
                             //Firmar Documento
@@ -265,7 +254,6 @@ namespace Comisariato.Formularios.SRI
 
                             SRIRecepcionComprobante sriRecepcion = new SRIRecepcionComprobante();
                             string respuestaRecepcion = sriRecepcion.RecepcionArchivos(RutaXML1 + @"\Firmados" + @"\" + NombreXML + ".xml", SRIRecepcion, NombreXML, RutaXML1);
-                            //string respuestaRecepcion = "RECIBIDA";
 
                             string[] valoresrecepcion = respuestaRecepcion.Split(';');
                             //Fin RecepcionSRI
@@ -295,13 +283,8 @@ namespace Comisariato.Formularios.SRI
                                 }
                                 contadorEnviados++;
 
-
-                                //Thread.Sleep(500);
-
                                 string contadoraenviar = contador + " de " + DtDocuemtosXML.Rows.Count + " Archivos.";
                                 CambiarProgreso(NombreXML, FechaEmision, contadorDevuelta.ToString(), contadorRecibida.ToString(), contadorAutorizado.ToString(), contadorNoautorizados.ToString(), contadorEnviados.ToString(), contadoraenviar, "" + DtDocuemtosXML.Rows.Count);
-
-
                             }
                             else
                             {
@@ -337,14 +320,10 @@ namespace Comisariato.Formularios.SRI
                     MessageBox.Show("No se encontró ningun archivo.");
                 }
 
-                //Thread.Sleep(1000);
-                // MessageBox.Show("Proceso finalizado");
-                //btnEnviar.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en enviar al SRI: No responde\n Intentelo más tarde en el formulario Corregir Errores");
-                //MessageBox.Show(ex.Message);
             }
 
         }
@@ -360,7 +339,6 @@ namespace Comisariato.Formularios.SRI
             }
             else
             {
-                //imprimirRetencion();
                 if (fechaAutorizacion != null) //´solo se formara ride si la fecha de autorizacion esta, lo q significa si se autorizo o no
                 {
                     //LLamar Reporte
@@ -390,8 +368,6 @@ namespace Comisariato.Formularios.SRI
                         Comisariato.Ride.Factura.ReporteFacturaRide ObjformularioRepoteFactura = null;
                         ObjformularioRepoteFactura = new Ride.Factura.ReporteFacturaRide(nombrexml, fechaAutorizacion, ambiente, año);
                         ObjformularioRepoteFactura.Show();
-
-
                     }
                     else
                     {
@@ -407,18 +383,15 @@ namespace Comisariato.Formularios.SRI
                         string fechaemision = docxml.GetElementsByTagName("fechaEmision")[0].InnerText;
                         string[] fechaseparada = fechaemision.Split('/');
                         cmbAñoRetencionHechaVariable = fechaseparada[2];
-                        //string numeroRetencion2 = "10";
                         ReporteRetencion objeformularioReporte = null;
                         objeformularioReporte = new ReporteRetencion(nombrexml, fechaAutorizacion, numeroOrdengiro.ToString(), ambiente, "NORMAL", cmbAñoRetencionHechaVariable);
                         objeformularioReporte.Show();
                         //Fin Llamar Reporte
 
                         //Eviar Correo
-                        //objconsul.enviarCorreoRideRetencion(numeroOrdengiro.ToString(), cmbAñoRetencionHechaVariable, nombrexml);
+                        objconsul.enviarCorreoRideRetencion(numeroOrdengiro.ToString(), cmbAñoRetencionHechaVariable, nombrexml);
                         //Fin Eviar Correo
 
-                        //nombrexml = "";
-                        //BtnProcesarPendientes_Click(null, null);
                     }
                 }
                 nombrexml = "";
@@ -430,21 +403,10 @@ namespace Comisariato.Formularios.SRI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //if (dtComprobantes != null)
-            //{
-            //    string fieldName = string.Concat("[", dtComprobantes.Columns[2].ColumnName, "]");
-            //    dtComprobantes.DefaultView.Sort = fieldName;
-            //    DataView view = dtComprobantes.DefaultView;
-            //    view.RowFilter = string.Empty;
-            //    if (DtpFechaInicial.Value.ToShortDateString() != string.Empty)
-            //        view.RowFilter = fieldName + " >=  '" + DtpFechaInicial.Value.ToShortDateString() + "' and  " + fieldName + " <=  '" + DtpFechaFinal.Value.ToShortDateString() + "'";
-            //    dgvComprobantesErroneos.DataSource = view;
-            //}
             TxtMensajeError.Text = "";
 
             if (CmbTipoComprobante.Text == "Factura")
             {
-                //MessageBox.Show("factura");
                 dtComprobantes = null;
                 dtComprobantes = objconsul.BoolDataTable("");
                 int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from VistaComprobantesFactura where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "'; ");
@@ -452,13 +414,9 @@ namespace Comisariato.Formularios.SRI
                 objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesFactura] where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "';");
 
                 modificarDatagridviweDiseño();
-
-                //dtComprobantes = Funcion.llenarDataTable_Datagriview(dgvComprobantesErroneos);
-
             }
             else
             {
-                //MessageBox.Show("retención");
                 dtComprobantes = null;
                 int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from [BDFacturacionElectronica].[dbo].VistaComprobantesRetencion where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "';");
                 TxtCantComprobantesPendientes.Text = cantidadComprobanrt.ToString();
@@ -466,7 +424,6 @@ namespace Comisariato.Formularios.SRI
 
                 modificarDatagridviweDiseño();
 
-                //dtComprobantes = Funcion.llenarDataTable_Datagriview(dgvComprobantesErroneos);
 
             }
         }

@@ -725,13 +725,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 DataGridViewButtonCell celBoton = dgvDatosProducto.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
-                //Icon icoAtomico = new Icon(Environment.CurrentDirectory + "\\modificarDgv.ico");
-
                 Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.modificarDgv);
                 IntPtr Hicon = bitmap.GetHicon();
                 Icon icoAtomico = Icon.FromHandle(Hicon);
-                //bitmap.SetResolution(72, 72);
-
                 e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
                 dgvDatosProducto.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
                 dgvDatosProducto.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
@@ -745,13 +741,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                     DataGridViewButtonCell celBoton = this.dgvDatosProducto.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
-                    //Icon icoAtomico = new Icon(Environment.CurrentDirectory + "\\Habilitar.ico");
-
                     Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.Habilitar);
                     IntPtr Hicon = bitmap.GetHicon();
                     Icon icoAtomico = Icon.FromHandle(Hicon);
-                    //bitmap.SetResolution(72, 72);
-
                     e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
                     this.dgvDatosProducto.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
                     this.dgvDatosProducto.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
@@ -759,24 +751,18 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 }
             }
             else
-            {
                 if (e.ColumnIndex >= 1 && this.dgvDatosProducto.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                    DataGridViewButtonCell celBoton = this.dgvDatosProducto.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
-                    //Icon icoAtomico = new Icon(Environment.CurrentDirectory + "\\EliminarDgv.ico");
-
-                    Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.EliminarDgv);
-                    IntPtr Hicon = bitmap.GetHicon();
-                    Icon icoAtomico = Icon.FromHandle(Hicon);
-                    //bitmap.SetResolution(72, 72);
-
-                    e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
-                    this.dgvDatosProducto.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
-                    this.dgvDatosProducto.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
-                    e.Handled = true;
-                }
+                DataGridViewButtonCell celBoton = this.dgvDatosProducto.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
+                Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.EliminarDgv);
+                IntPtr Hicon = bitmap.GetHicon();
+                Icon icoAtomico = Icon.FromHandle(Hicon);
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+                this.dgvDatosProducto.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.dgvDatosProducto.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+                e.Handled = true;
             }
         }
 
