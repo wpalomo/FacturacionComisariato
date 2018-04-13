@@ -889,7 +889,6 @@
             this.dgvCredito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCredito_CellDoubleClick);
             this.dgvCredito.Enter += new System.EventHandler(this.dgvCredito_Enter);
             this.dgvCredito.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCredito_KeyDown);
-            this.dgvCredito.Leave += new System.EventHandler(this.dgvCredito_Leave);
             // 
             // dgvICE
             // 
@@ -942,7 +941,6 @@
             this.dgvRetencionFuenteIva.Visible = false;
             this.dgvRetencionFuenteIva.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRetencionFuenteIva_CellDoubleClick);
             this.dgvRetencionFuenteIva.Click += new System.EventHandler(this.dgvRetencionFuenteIva_Click);
-            this.dgvRetencionFuenteIva.DoubleClick += new System.EventHandler(this.dgvRetencionFuenteIva_DoubleClick);
             this.dgvRetencionFuenteIva.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRetencionFuenteIva_KeyDown);
             // 
             // gbInformcionGeneralProveedor
@@ -1087,7 +1085,6 @@
             this.txtNumeroIdentificacionProveedor.Size = new System.Drawing.Size(152, 22);
             this.txtNumeroIdentificacionProveedor.TabIndex = 5;
             this.txtNumeroIdentificacionProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdentificacion_KeyPress);
-            this.txtNumeroIdentificacionProveedor.Leave += new System.EventHandler(this.txtNumeroIdentificacionProveedor_Leave);
             // 
             // cbIdentificacionProveedor
             // 
@@ -1220,7 +1217,6 @@
             this.dgvDatosProveedor.Size = new System.Drawing.Size(1013, 375);
             this.dgvDatosProveedor.TabIndex = 5;
             this.dgvDatosProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosProveedor_CellClick);
-            this.dgvDatosProveedor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDatosProveedor_CellFormatting);
             this.dgvDatosProveedor.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDatosProveedor_CellPainting);
             // 
             // modificarProveedor

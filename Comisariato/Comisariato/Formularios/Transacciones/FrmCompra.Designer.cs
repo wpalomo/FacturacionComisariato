@@ -93,16 +93,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gbInformeCompra = new System.Windows.Forms.GroupBox();
             this.dgvInformeCompras = new System.Windows.Forms.DataGridView();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.txtConsultar = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +103,16 @@
             this.Irbp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtConsultar = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.pcOrdenCompra.SuspendLayout();
             this.gbDetalleProducto.SuspendLayout();
@@ -594,7 +594,7 @@
             this.txtNumero.Size = new System.Drawing.Size(156, 23);
             this.txtNumero.TabIndex = 4;
             this.txtNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1_KeyDown);
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrdenCompra_KeyPress);
             // 
             // txtSerie1
             // 
@@ -605,7 +605,7 @@
             this.txtSerie1.Size = new System.Drawing.Size(56, 23);
             this.txtSerie1.TabIndex = 2;
             this.txtSerie1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1_KeyDown);
-            this.txtSerie1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerie1_KeyPress);
+            this.txtSerie1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrdenCompra_KeyPress);
             // 
             // txtSerie2
             // 
@@ -616,7 +616,7 @@
             this.txtSerie2.Size = new System.Drawing.Size(56, 23);
             this.txtSerie2.TabIndex = 3;
             this.txtSerie2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1_KeyDown);
-            this.txtSerie2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerie2_KeyPress);
+            this.txtSerie2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrdenCompra_KeyPress);
             // 
             // label1
             // 
@@ -877,6 +877,83 @@
             this.dgvInformeCompras.TabIndex = 22;
             this.dgvInformeCompras.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformeCompras_CellEnter);
             // 
+            // Factura
+            // 
+            this.Factura.FillWeight = 160.7917F;
+            this.Factura.HeaderText = "Factura";
+            this.Factura.Name = "Factura";
+            this.Factura.ReadOnly = true;
+            this.Factura.Width = 135;
+            // 
+            // Fecha
+            // 
+            this.Fecha.FillWeight = 82.69291F;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 85;
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.FillWeight = 82.69291F;
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.ReadOnly = true;
+            this.Proveedor.Width = 265;
+            // 
+            // Subtotal0
+            // 
+            this.Subtotal0.FillWeight = 82.69291F;
+            this.Subtotal0.HeaderText = "Sub 0%";
+            this.Subtotal0.Name = "Subtotal0";
+            this.Subtotal0.ReadOnly = true;
+            this.Subtotal0.Width = 90;
+            // 
+            // Subtotal12
+            // 
+            this.Subtotal12.FillWeight = 82.69291F;
+            this.Subtotal12.HeaderText = "Sub12%";
+            this.Subtotal12.Name = "Subtotal12";
+            this.Subtotal12.ReadOnly = true;
+            this.Subtotal12.Width = 90;
+            // 
+            // Ice
+            // 
+            this.Ice.HeaderText = "ICE";
+            this.Ice.Name = "Ice";
+            this.Ice.ReadOnly = true;
+            this.Ice.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 82.69291F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Iva";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // Irbp
+            // 
+            this.Irbp.HeaderText = "IRBP";
+            this.Irbp.Name = "Irbp";
+            this.Irbp.ReadOnly = true;
+            this.Irbp.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 82.69291F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 115;
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.HeaderText = "IDProveedor";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            this.idProveedor.Visible = false;
+            // 
             // btnAnular
             // 
             this.btnAnular.Enabled = false;
@@ -983,83 +1060,6 @@
             this.label16.Size = new System.Drawing.Size(52, 16);
             this.label16.TabIndex = 17;
             this.label16.Text = "Desde:";
-            // 
-            // Factura
-            // 
-            this.Factura.FillWeight = 160.7917F;
-            this.Factura.HeaderText = "Factura";
-            this.Factura.Name = "Factura";
-            this.Factura.ReadOnly = true;
-            this.Factura.Width = 135;
-            // 
-            // Fecha
-            // 
-            this.Fecha.FillWeight = 82.69291F;
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 85;
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.FillWeight = 82.69291F;
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            this.Proveedor.ReadOnly = true;
-            this.Proveedor.Width = 265;
-            // 
-            // Subtotal0
-            // 
-            this.Subtotal0.FillWeight = 82.69291F;
-            this.Subtotal0.HeaderText = "Sub 0%";
-            this.Subtotal0.Name = "Subtotal0";
-            this.Subtotal0.ReadOnly = true;
-            this.Subtotal0.Width = 90;
-            // 
-            // Subtotal12
-            // 
-            this.Subtotal12.FillWeight = 82.69291F;
-            this.Subtotal12.HeaderText = "Sub12%";
-            this.Subtotal12.Name = "Subtotal12";
-            this.Subtotal12.ReadOnly = true;
-            this.Subtotal12.Width = 90;
-            // 
-            // Ice
-            // 
-            this.Ice.HeaderText = "ICE";
-            this.Ice.Name = "Ice";
-            this.Ice.ReadOnly = true;
-            this.Ice.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 82.69291F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Iva";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // Irbp
-            // 
-            this.Irbp.HeaderText = "IRBP";
-            this.Irbp.Name = "Irbp";
-            this.Irbp.ReadOnly = true;
-            this.Irbp.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 82.69291F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 115;
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.HeaderText = "IDProveedor";
-            this.idProveedor.Name = "idProveedor";
-            this.idProveedor.ReadOnly = true;
-            this.idProveedor.Visible = false;
             // 
             // FrmCompra
             // 

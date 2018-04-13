@@ -20,9 +20,12 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         Producto objProducto;
         int ordenCompra = 0, idOrdenComrpa, posicion = 0;
         float sumasubiva = 0.0f, sumasubcero = 0.0f, totalpagar = 0.0f, ivatotal = 0.0f, sumaice = 0.0f, sumairbp = 0.0f, subtotalPie = 0.0f, ivaTotal = 0.0f, ivaFila = 0.0f, subtotalFila = 0.0f, totalFila = 0.0f;
-        bool tieneIVA = false, saltarPosicionEsc = false, dobleTab = false, eliminacion = false, banderaFocoCelda = false;
+        bool tieneIVA = false, saltarPosicionEsc = false, dobleTab = false, eliminacion = false, banderaFocoCelda = false, existeOG = false, modificarVer = false;
         public static string CodigoBarraConsultaProducto = "";
         Bitacora ip = new Bitacora();
+        Consultas objConsulta = new Consultas();
+        string cadenaGeneral = "select SERIE1 +''+ SERIE2 +''+ NUMERO AS SERIES , FECHAORDENCOMPRA, NOMBRES, TOTALIVA, TOTALICE, TOTALIRBP, SUBTOTAL0, SUBTOTALIVA, TOTAL, IDPROVEEDOR from Vista_InformeCompras", 
+             fechaDesde = "", fechaHasta = "",cadenaConsultar = "", idEncabezadoCompra = "";
 
         public FrmCompra()
         {
@@ -478,7 +481,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             }
             catch (Exception EX){ }
         }
-
         private void dgvProductosIngresos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -515,7 +517,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             }
             else { FrmPrincipal.FrmProveedor.BringToFront(); }
         }
-
         private void OnlyNumbersdgvcheque_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[2])
@@ -539,37 +540,26 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 txt.KeyPress += OnlyNumbersdgvcheque_KeyPress;
             }
         }
-
         private void txtOrdenCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.Validar_Numeros(e);
         }
-
         private void txtFlete_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtFlete.Text);
         }
-        
         private void txtPlazoOC_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.validar_Num_Letras(e);
         }
-
         private void txtICE_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtICE.Text);
         }
-
         private void txtIRBP_KeyPress(object sender, KeyPressEventArgs e)
         {
             Funcion.SoloValores(e, txtIRBP.Text);
         }
-
-        private void txtSerie1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Funcion.Validar_Numeros(e);
-        }
-
         private void txtObservacion_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
@@ -578,11 +568,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 dgvProductosIngresos.Focus();
             }
         }
-        Consultas objConsulta = new Consultas();
-        string cadenaGeneral = "select SERIE1 +''+ SERIE2 +''+ NUMERO AS SERIES , FECHAORDENCOMPRA, NOMBRES, TOTALIVA,"+
-" TOTALICE, TOTALIRBP, SUBTOTAL0, SUBTOTALIVA, TOTAL, IDPROVEEDOR "+
-" from Vista_InformeCompras", añoDesde = "", fechaDesde = "", añoHasta = "", fechaHasta = "", mesDesde = "", diaDesde = "", mesHasta = "", diaHasta = "", cadenaConsultar = "";
-
         private void dgvProductosIngresos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             for (int i = 2; i < 10; i++)
@@ -593,19 +578,14 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             }
             dgvProductosIngresos.Rows.Add();
         }
-
         private void btnAnular_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea eliminar esta compra?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 actualizarProducto();   
                 if (objConsulta.EjecutarSQL("DELETE FROM [dbo].[TbDetalleCompra] WHERE IDENCABEZADOCOMPRA = " + idEncabezadoCompra))
-                {
                     if (objConsulta.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoyPieCompra] WHERE IDEMCABEZADOCOMPRA = " + idEncabezadoCompra))
-                    {
                         MessageBox.Show("Eliminado correctamente");
-                    }
-                }
                 consultaCompras();
             }
         }
@@ -613,7 +593,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
         {
             DataTable dtProductoCantidad = objConsulta.BoolDataTable("select dc.CODIGOBARRAPRODUCTO, dc.CANTIDAD from TbDetalleCompra dc, TbEncabezadoyPieCompra ec where ec.IDEMCABEZADOCOMPRA = dc.IDENCABEZADOCOMPRA and ec.IDEMCABEZADOCOMPRA = " + idEncabezadoCompra);
             if (dtProductoCantidad.Rows.Count > 0)
-            {
                 for (int i = 0; i < dtProductoCantidad.Rows.Count; i++)
                 {
                     DataRow rowCantidad = dtProductoCantidad.Rows[i];
@@ -621,14 +600,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     float cantidadFinal = cantidadActualProducto - Convert.ToSingle(rowCantidad[1]);
                     objConsulta.EjecutarSQL("UPDATE [dbo].[TbProducto] SET [CANTIDAD] = " + cantidadFinal + "  WHERE CODIGOBARRA = " + rowCantidad[0]);
                 }
-            }
         }
-
-        bool modificarVer = false;
-        //string valorNumeroOrdenCopra = "";
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //valorNumeroOrdenCopra = txtOrdenCompra.Text;
             modificarVer = true;
             incializar();
             if (existeOG)
@@ -687,9 +661,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 for (i = 0; i < detalleCompra.Rows.Count; i++)
                 {
                     if (i >= dgvProductosIngresos.RowCount - 1)
-                    {
                         dgvProductosIngresos.Rows.Add();
-                    }
                     DataRow rowDetalle = detalleCompra.Rows[i];
                     for (int j = 0; j < 10; j++)
                     {
@@ -699,9 +671,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                             tieneIVA = Convert.ToBoolean(ivaBool);
                         }
                         if (j > 1)
-                        {
                             dgvProductosIngresos.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(rowDetalle[j].ToString());
-                        }
                         else
                             dgvProductosIngresos.Rows[i].Cells[j].Value = rowDetalle[j];
                     }
@@ -710,13 +680,10 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 }
             }
         }
-        bool existeOG = false;
-        string idEncabezadoCompra = "";
         private void dgvInformeCompras_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-
                 if (Convert.ToString(dgvInformeCompras.CurrentRow.Cells[0].Value) != "")
                 {
                     btnModificar.Enabled = true;
@@ -746,7 +713,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 }
             }
             catch { }
-
         }
         public void consultaCompras()
         {
@@ -762,66 +728,28 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 btnModificar.Enabled = false;
                 btnAnular.Enabled = false;
             }
-            if (Convert.ToString(dgvInformeCompras.Rows[0].Cells[0].Value) != "")
+            for (int i = 0; i < dgvInformeCompras.RowCount - 1; i++)
             {
-                for (int i = 3; i < 9; i++)
-                    dgvInformeCompras.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                for (int i = 0; i < 3; i++)
-                    dgvInformeCompras.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                for (int i = 0; i < dgvInformeCompras.RowCount - 1; i++)
-                {
-                    if (Convert.ToString(dgvInformeCompras.Rows[i].Cells[0].Value) != "")
-                    {
-                        for (int j = 3; j < 9; j++)
-                            dgvInformeCompras.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(dgvInformeCompras.Rows[i].Cells[j].Value.ToString());
-                        if (Convert.ToString(dgvInformeCompras.Rows[i + 1].Cells[0].Value) == "")
-                            break;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                for (int i = 0; i < dgvInformeCompras.RowCount - 1; i++)
-                {
-                    dgvInformeCompras.Rows[i].Cells[1].Value = Convert.ToDateTime(dgvInformeCompras.Rows[i].Cells[1].Value).ToShortDateString();
-                    if (Convert.ToString(dgvInformeCompras.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
+                dgvInformeCompras.Rows[i].Cells[1].Value = Convert.ToDateTime(dgvInformeCompras.Rows[i].Cells[1].Value).ToShortDateString();
+                if (Convert.ToString(dgvInformeCompras.Rows[i + 1].Cells[0].Value) == "")
+                    break;
             }
             dgvInformeCompras.Focus();
         }
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            obtenerFechas();
+            fechaDesde = Funcion.reemplazarcaracterFecha(dtpDesde.Value.ToShortDateString());
+            fechaHasta = Funcion.reemplazarcaracterFecha(dtpHasta.Value.ToShortDateString());
             consultaCompras();
-            for (int i = 0; i < dgvInformeCompras.RowCount - 1; i++)
-            {
-                if (Convert.ToString(dgvInformeCompras.Rows[i].Cells[0].Value) != "")
-                {
-                    for (int j = 3; j < 9; j++)
-                        dgvInformeCompras.Rows[i].Cells[j].Value = Funcion.reemplazarcaracter(Math.Round(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(dgvInformeCompras.Rows[i].Cells[j].Value.ToString())), 2).ToString());
-                    if (Convert.ToString(dgvInformeCompras.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                }
-            }
             Funcion.dosDecimales(ref dgvInformeCompras, 3, 9, 0);
         }
-
         private void dgvProductosIngresos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
-            {
                 if (e.RowIndex > 0)
-                {
                     if (Convert.ToString(dgvProductosIngresos.Rows[e.RowIndex - 1].Cells[0].Value) != "")
-                    {
                         dgvProductosIngresos.CurrentCell.ReadOnly = false;
-                    }
-                }
-            }
         }
-
         private void FrmCompra_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -829,13 +757,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 case Keys.F6:
                     Program.banderaProductosCompras = true;
                     for (int i = 0; i < dgvProductosIngresos.ColumnCount; i++)
-                    {
                         dgvProductosIngresos.CurrentRow.Cells[i].Value = "";
-                    }
                     for (int i = 1; i < dgvProductosIngresos.ColumnCount; i++)
-                    {
                         dgvProductosIngresos.CurrentRow.Cells[i].ReadOnly = true;
-                    }
                     FrmConsultarProducto FrmConsultarProduct = new FrmConsultarProducto();
                     FrmConsultarProduct.ShowDialog();
                     dgvProductosIngresos.Focus();
@@ -847,66 +771,29 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     break;
             }
         }
-        
-        public void obtenerFechas()
-        {
-            añoDesde = Convert.ToString(dtpDesde.Value.Date.Year);
-            mesDesde = Convert.ToString(dtpDesde.Value.Date.Month);
-            diaDesde = Convert.ToString(dtpDesde.Value.Date.Day);
-            fechaDesde = añoDesde + "-" + mesDesde + "-" + diaDesde;
-            añoHasta = Convert.ToString(dtpHasta.Value.Date.Year);
-            mesHasta = Convert.ToString(dtpHasta.Value.Date.Month);
-            diaHasta = Convert.ToString(dtpHasta.Value.Date.Day);
-            fechaHasta = añoHasta + "-" + mesHasta + "-" + diaHasta;
-        }
-        private void txtSerie2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Funcion.Validar_Numeros(e);
-        }
-
-        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Funcion.Validar_Numeros(e);
-        }
-
         private void dgvProductosIngresos_Enter(object sender, EventArgs e)
         {
             try
             {
                 datosProductoCompra.Rows[0].Cells[0].ReadOnly = false;
             }
-            catch (Exception)
-            {
-            }
-            
+            catch (Exception){}
         }
-
         private void dgvProductosIngresos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[posicion] && banderaFocoCelda)
                     datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[2])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[3])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[4])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[5])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[6])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[7])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[8])
-                    datosProductoCompra.BeginEdit(true);
-                if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[9])
-                    datosProductoCompra.BeginEdit(true);
+                for (int i = 2; i < 10; i++)
+                    CeldaAEditar(i);
             }
-            catch (Exception ex)
-            {
-            }
+            catch (Exception ex){}
+        }
+        public void CeldaAEditar(int pos)
+        {
+            if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[pos])
+                datosProductoCompra.BeginEdit(true);
         }
         private void txtSerie1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -916,7 +803,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 SendKeys.Send("{TAB}");
             }
         }
-
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             string ordenNumero = txtOrdenCompra.Text;
@@ -939,7 +825,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             BtnGuardar.Text = "&Guardar";
             incializar();
         }
-
         private void btnSalirCompra_Click(object sender, EventArgs e)
         {
             this.Close();

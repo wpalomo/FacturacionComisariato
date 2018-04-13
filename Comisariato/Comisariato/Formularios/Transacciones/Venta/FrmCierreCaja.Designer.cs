@@ -452,7 +452,7 @@
             this.txtBillestes1.TabIndex = 1;
             this.txtBillestes1.Text = "0";
             this.txtBillestes1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBillestes1.Click += new System.EventHandler(this.txtBillestes1_Click);
+            this.txtBillestes1.Click += new System.EventHandler(this.txtBillestes1_Enter);
             this.txtBillestes1.Enter += new System.EventHandler(this.txtBillestes1_Enter);
             this.txtBillestes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillestes1_KeyDown);
             this.txtBillestes1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -466,7 +466,7 @@
             this.txtBillestes5.TabIndex = 2;
             this.txtBillestes5.Text = "0";
             this.txtBillestes5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBillestes5.Click += new System.EventHandler(this.txtBillestes5_Click);
+            this.txtBillestes5.Click += new System.EventHandler(this.txtBillestes5_Enter);
             this.txtBillestes5.Enter += new System.EventHandler(this.txtBillestes5_Enter);
             this.txtBillestes5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillestes1_KeyDown);
             this.txtBillestes5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -480,7 +480,7 @@
             this.txtBillestes10.TabIndex = 3;
             this.txtBillestes10.Text = "0";
             this.txtBillestes10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBillestes10.Click += new System.EventHandler(this.txtBillestes10_Click);
+            this.txtBillestes10.Click += new System.EventHandler(this.txtBillestes10_Enter);
             this.txtBillestes10.Enter += new System.EventHandler(this.txtBillestes10_Enter);
             this.txtBillestes10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillestes1_KeyDown);
             this.txtBillestes10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -494,7 +494,7 @@
             this.txtBillestes20.TabIndex = 4;
             this.txtBillestes20.Text = "0";
             this.txtBillestes20.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBillestes20.Click += new System.EventHandler(this.txtBillestes20_Click);
+            this.txtBillestes20.Click += new System.EventHandler(this.txtBillestes20_Enter);
             this.txtBillestes20.Enter += new System.EventHandler(this.txtBillestes20_Enter);
             this.txtBillestes20.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillestes1_KeyDown);
             this.txtBillestes20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -508,7 +508,7 @@
             this.txtBillestes50.TabIndex = 5;
             this.txtBillestes50.Text = "0";
             this.txtBillestes50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBillestes50.Click += new System.EventHandler(this.txtBillestes50_Click);
+            this.txtBillestes50.Click += new System.EventHandler(this.txtBillestes50_Enter);
             this.txtBillestes50.Enter += new System.EventHandler(this.txtBillestes50_Enter);
             this.txtBillestes50.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillestes1_KeyDown);
             this.txtBillestes50.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -522,7 +522,7 @@
             this.txtBillestes100.TabIndex = 6;
             this.txtBillestes100.Text = "0";
             this.txtBillestes100.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBillestes100.Click += new System.EventHandler(this.txtBillestes100_Click);
+            this.txtBillestes100.Click += new System.EventHandler(this.txtBillestes100_Enter);
             this.txtBillestes100.Enter += new System.EventHandler(this.txtBillestes100_Enter);
             this.txtBillestes100.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillestes1_KeyDown);
             this.txtBillestes100.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -536,7 +536,7 @@
             this.txtMonedas1.TabIndex = 7;
             this.txtMonedas1.Text = "0";
             this.txtMonedas1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMonedas1.Click += new System.EventHandler(this.txtMonedas1_Click);
+            this.txtMonedas1.Click += new System.EventHandler(this.txtMonedas1_Enter);
             this.txtMonedas1.Enter += new System.EventHandler(this.txtMonedas1_Enter);
             this.txtMonedas1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonedas1_KeyDown);
             this.txtMonedas1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -550,7 +550,7 @@
             this.txtMonedas5.TabIndex = 8;
             this.txtMonedas5.Text = "0";
             this.txtMonedas5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMonedas5.Click += new System.EventHandler(this.txtMonedas5_Click);
+            this.txtMonedas5.Click += new System.EventHandler(this.txtMonedas5_Enter);
             this.txtMonedas5.Enter += new System.EventHandler(this.txtMonedas5_Enter);
             this.txtMonedas5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonedas1_KeyDown);
             this.txtMonedas5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -564,7 +564,7 @@
             this.txtMonedas10.TabIndex = 9;
             this.txtMonedas10.Text = "0";
             this.txtMonedas10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMonedas10.Click += new System.EventHandler(this.txtMonedas10_Click);
+            this.txtMonedas10.Click += new System.EventHandler(this.txtMonedas10_Enter);
             this.txtMonedas10.Enter += new System.EventHandler(this.txtMonedas10_Enter);
             this.txtMonedas10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonedas1_KeyDown);
             this.txtMonedas10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -578,7 +578,7 @@
             this.txtMonedas25.TabIndex = 10;
             this.txtMonedas25.Text = "0";
             this.txtMonedas25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMonedas25.Click += new System.EventHandler(this.txtMonedas25_Click);
+            this.txtMonedas25.Click += new System.EventHandler(this.txtMonedas25_Enter);
             this.txtMonedas25.Enter += new System.EventHandler(this.txtMonedas25_Enter);
             this.txtMonedas25.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonedas1_KeyDown);
             this.txtMonedas25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -592,7 +592,7 @@
             this.txtMonedas50.TabIndex = 11;
             this.txtMonedas50.Text = "0";
             this.txtMonedas50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMonedas50.Click += new System.EventHandler(this.txtMonedas50_Click);
+            this.txtMonedas50.Click += new System.EventHandler(this.txtMonedas50_Enter);
             this.txtMonedas50.Enter += new System.EventHandler(this.txtMonedas50_Enter);
             this.txtMonedas50.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonedas1_KeyDown);
             this.txtMonedas50.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);
@@ -606,7 +606,7 @@
             this.txtMonedas1Dolar.TabIndex = 12;
             this.txtMonedas1Dolar.Text = "0";
             this.txtMonedas1Dolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMonedas1Dolar.Click += new System.EventHandler(this.txtMonedas1Dolar_Click);
+            this.txtMonedas1Dolar.Click += new System.EventHandler(this.txtMonedas1Dolar_Enter);
             this.txtMonedas1Dolar.Enter += new System.EventHandler(this.txtMonedas1Dolar_Enter);
             this.txtMonedas1Dolar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMonedas1Dolar_KeyDown);
             this.txtMonedas1Dolar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillestes1_KeyPress);

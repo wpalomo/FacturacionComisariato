@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlPromociones = new System.Windows.Forms.TabControl();
             this.pcOrdenCompra = new System.Windows.Forms.TabPage();
             this.GrbDatosTicket = new System.Windows.Forms.GroupBox();
@@ -150,7 +150,7 @@
             this.TxtLinea5.Name = "TxtLinea5";
             this.TxtLinea5.Size = new System.Drawing.Size(545, 23);
             this.TxtLinea5.TabIndex = 14;
-            this.TxtLinea5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCabecera_KeyPress);
+            this.TxtLinea5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudNumTickets_KeyPress);
             // 
             // label12
             // 
@@ -181,7 +181,7 @@
             this.TxtLinea1.Name = "TxtLinea1";
             this.TxtLinea1.Size = new System.Drawing.Size(545, 23);
             this.TxtLinea1.TabIndex = 10;
-            this.TxtLinea1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCabecera_KeyPress);
+            this.TxtLinea1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudNumTickets_KeyPress);
             // 
             // TxtLinea2
             // 
@@ -190,7 +190,7 @@
             this.TxtLinea2.Name = "TxtLinea2";
             this.TxtLinea2.Size = new System.Drawing.Size(545, 23);
             this.TxtLinea2.TabIndex = 11;
-            this.TxtLinea2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCabecera_KeyPress);
+            this.TxtLinea2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudNumTickets_KeyPress);
             // 
             // TxtLinea3
             // 
@@ -199,7 +199,7 @@
             this.TxtLinea3.Name = "TxtLinea3";
             this.TxtLinea3.Size = new System.Drawing.Size(545, 23);
             this.TxtLinea3.TabIndex = 12;
-            this.TxtLinea3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCabecera_KeyPress);
+            this.TxtLinea3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudNumTickets_KeyPress);
             // 
             // label9
             // 
@@ -230,7 +230,7 @@
             this.TxtCabecera.Name = "TxtCabecera";
             this.TxtCabecera.Size = new System.Drawing.Size(545, 23);
             this.TxtCabecera.TabIndex = 9;
-            this.TxtCabecera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCabecera_KeyPress);
+            this.TxtCabecera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudNumTickets_KeyPress);
             // 
             // TxtLinea4
             // 
@@ -239,7 +239,7 @@
             this.TxtLinea4.Name = "TxtLinea4";
             this.TxtLinea4.Size = new System.Drawing.Size(545, 23);
             this.TxtLinea4.TabIndex = 13;
-            this.TxtLinea4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCabecera_KeyPress);
+            this.TxtLinea4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudNumTickets_KeyPress);
             // 
             // label6
             // 
@@ -539,37 +539,37 @@
             this.DgvPromociones.AllowUserToOrderColumns = true;
             this.DgvPromociones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgvPromociones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvPromociones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvPromociones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvPromociones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvPromociones.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvPromociones.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvPromociones.Location = new System.Drawing.Point(9, 20);
             this.DgvPromociones.Name = "DgvPromociones";
             this.DgvPromociones.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvPromociones.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvPromociones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvPromociones.RowHeadersVisible = false;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Teal;
-            this.DgvPromociones.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Teal;
+            this.DgvPromociones.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvPromociones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvPromociones.Size = new System.Drawing.Size(758, 351);
             this.DgvPromociones.TabIndex = 22;

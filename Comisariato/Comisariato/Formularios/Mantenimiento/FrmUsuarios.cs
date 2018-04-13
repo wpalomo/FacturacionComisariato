@@ -1,37 +1,26 @@
 ﻿using Comisariato.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Comisariato.Formularios
 {
     public partial class FrmUsuarios : Form
     {
+        Consultas objConsul = new Consultas();
+        bool bandera_Estado = false;
+        String GlovalIDUsuario = "";
+
         public FrmUsuarios()
         {
             InitializeComponent();
         }
-        Consultas objConsul = new Consultas();
-
-        bool bandera_Estado = false;
-        String GlovalIDUsuario = "";
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                dgvDatosUsuario.Rows.Add();
-            }
+            Funcion.llenarDGV(ref dgvDatosUsuario, 10);
             inicializarDatos();
         }
-
-
-
         private void ckMostrarContra_CheckedChanged(object sender, EventArgs e)
         {
             string text = txtContraseñaUsuario.Text;
@@ -46,21 +35,16 @@ namespace Comisariato.Formularios
                 txtContraseñaUsuario.Text = text;
             }
         }
-
         public void inicializarDatos()
         {
             for (int i = 0; i < CheckListBEmpresas.Items.Count; i++)
-            {
                 CheckListBEmpresas.SetItemChecked(i, false);
-            }
             txtConsultarUsuario.Text = "";
             TxtConfirmarContraUsuario.Text = "";
             txtContraseñaUsuario.Text = "";
             txtUsuario.Text = "";
             if (cbPersonaUsuario.Items.Count > 0)
-            {
                 cbPersonaUsuario.SelectedIndex = 0;
-            }
             objConsul.BoolLlenarCheckListBox(CheckListBEmpresas, "Select IDEMPRESA as ID, NOMBRE as 'Texto' from TbEmpresa;");
             objConsul.BoolLlenarComboBox(cbPersonaUsuario, "Select IDEMPLEADO as ID,(E.APELLIDOS +' '+ E.NOMBRES) as Texto from TbEmpleado E  WHERE (E.NOMBRES != 'ADMINISTRADOR');");
             objConsul.BoolLlenarComboBox(cbTipoUsuario, "Select IDTIPOUSUARIO as ID,TIPO as Texto from TbTipousuario;");
@@ -69,21 +53,15 @@ namespace Comisariato.Formularios
             cbPersonaUsuario.DropDownHeight = cbPersonaUsuario.ItemHeight = 150;
             cbTipoUsuario.DropDownHeight = cbTipoUsuario.ItemHeight = 150;
             cargarDatos("1");
-
-
         }
-
         private void cargarDatos(string condicion)
         {
             string consulta = "Select USUARIO,CONTRASEÑA,FACTURA, E.NOMBRE, IDUSUARIO as ID from TbUsuario U, TbEmpresa E where U.IDEMPRESA= E.IDEMPRESA AND ACTIVO = '" + condicion + "';";
-            //dgvDatosUsuario.Columns["ID"].Visible = false;
             objConsul.boolLlenarDataGrid(dgvDatosUsuario, consulta, 10, 4, 2);
         }
-
         private void btnGuardarUsuario_Click(object sender, EventArgs e)
         {
             if (txtUsuario.Text != "" && txtContraseñaUsuario.Text != "" && TxtConfirmarContraUsuario.Text != "")
-            {
                 if (txtContraseñaUsuario.Text == TxtConfirmarContraUsuario.Text)
                 {
                     Usuario ObjUsuario = new Usuario(Convert.ToInt32(cbPersonaUsuario.SelectedValue), txtUsuario.Text, txtContraseñaUsuario.Text, Convert.ToInt32(cbTipoUsuario.SelectedValue), Convert.ToInt32(CheckListBEmpresas.SelectedValue), ckbFacturaUsuario.Checked);
@@ -101,7 +79,6 @@ namespace Comisariato.Formularios
                     }
                     else if (bandera_Estado) // Para identificar si se va modificar
                     {
-
                         String Resultado = ObjUsuario.ModificarUsuario(GlovalIDUsuario); // retorna true si esta correcto todo
                         if (Resultado == "Correcto")
                         {
@@ -117,11 +94,8 @@ namespace Comisariato.Formularios
                 }
                 else
                 { MessageBox.Show("Las contraseñas no Coinciden", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-
-            }
             else { MessageBox.Show("Ingrese los datos del Usuario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-
         private void btnLimpiarProveedor_Click(object sender, EventArgs e)
         {
             if (btnLimpiarProveedor.Text == "&Cancelar")
@@ -132,76 +106,51 @@ namespace Comisariato.Formularios
             }
             else { inicializarDatos(); }
         }
-
         private void dgvDatosUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-
             if (e.ColumnIndex >= 0 && dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Modificar" && e.RowIndex >= 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
                 DataGridViewButtonCell celBoton = dgvDatosUsuario.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
-                //Icon icoAtomico = new Icon(Environment.CurrentDirectory + "\\modificarDgv.ico");
-
                 Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.modificarDgv);
                 IntPtr Hicon = bitmap.GetHicon();
                 Icon icoAtomico = Icon.FromHandle(Hicon);
-                //bitmap.SetResolution(72, 72);
-
                 e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
                 dgvDatosUsuario.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
                 dgvDatosUsuario.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
                 e.Handled = true;
             }
-
             if (rbtInactivos.Checked)
-            {
                 if (e.ColumnIndex >= 1 && this.dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
                 {
                     e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
                     DataGridViewButtonCell celBoton = this.dgvDatosUsuario.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
-                    //Icon icoAtomico = new Icon(Environment.CurrentDirectory + "\\Habilitar.ico");
-
                     Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.Habilitar);
                     IntPtr Hicon = bitmap.GetHicon();
                     Icon icoAtomico = Icon.FromHandle(Hicon);
-                    //bitmap.SetResolution(72, 72);
-
                     e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
                     this.dgvDatosUsuario.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
                     this.dgvDatosUsuario.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
                     e.Handled = true;
                 }
-            }
-            else
-            {
-                if (e.ColumnIndex >= 1 && this.dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
+                else if (e.ColumnIndex >= 1 && this.dgvDatosUsuario.Columns[e.ColumnIndex].Name == "Deshabilitar" && e.RowIndex >= 0)
                 {
                     e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
                     DataGridViewButtonCell celBoton = this.dgvDatosUsuario.Rows[e.RowIndex].Cells["Deshabilitar"] as DataGridViewButtonCell;
-                    //Icon icoAtomico = new Icon(Environment.CurrentDirectory + "\\EliminarDgv.ico");
-
                     Bitmap bitmap = new Bitmap(Comisariato.Properties.Resources.EliminarDgv);
                     IntPtr Hicon = bitmap.GetHicon();
                     Icon icoAtomico = Icon.FromHandle(Hicon);
-                    //bitmap.SetResolution(72, 72);
-
                     e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
                     this.dgvDatosUsuario.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
                     this.dgvDatosUsuario.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
                     e.Handled = true;
                 }
-            }
         }
 
         private void dgvDatosUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
-
-
                 Usuario ObjUsuario = new Usuario();
                 if (Convert.ToString(dgvDatosUsuario.CurrentRow.Cells[6].Value) != "")
                 {

@@ -1,5 +1,4 @@
 ﻿using System;
-//using Comisariato.ServiceAutorizacion;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -17,15 +16,7 @@ namespace Comisariato.Clases
     {
         public void AddFormInPanel(Form formHijo /*, Panel panelPrincipal*/)
         {
-            //Form fh = formHijo as Form;
-            //fh.TopLevel = false;
-            //panelPrincipal.Controls.Add(fh);  
-            ////panelPrincipal.Tag = fh;
-            //int index = panelPrincipal.Controls.GetChildIndex(fh);
-            //fh.BringToFront();
-            //fh.Show();
             formHijo = new Form();
-            //Form fh = (Form)formHijo;
             FrmPrincipal frmprincipal = new FrmPrincipal();
             if (formHijo == null || formHijo.IsDisposed)
             {
