@@ -1,42 +1,33 @@
 ﻿using Comisariato.Clases;
 using Comisariato.Formularios.Transacciones;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Comisariato.Formularios.Mantenimiento.Inventario
 {
     public partial class FrmCompra : Form
     {
-        public FrmCompra()
-        {
-            InitializeComponent();
-        }
         public static DataGridView datosProductoCompra;
         public static ComboBox datosProveedor;
         Funcion objFuncion = new Funcion();
         FrmPrincipal objPrincipal = new FrmPrincipal();
         public static int IDEncabezadoCompraOG = 0;
         public static string IVA = "";
-
         Consultas consultas;
         EmcabezadoCompra ObjEncabezadoCompra;
         DetalleCompra ObjDetalleCompra;
         Producto objProducto;
-        int ordenCompra = 0, idOrdenComrpa;
-        float sumasubiva = 0.0f, sumasubcero = 0.0f, totalpagar = 0.0f, ivatotal = 0.0f, sumaice = 0.0f, sumairbp = 0.0f, subtotalPie = 0.0f;
-        bool banderaFocoCelda = false;
-        int posicion = 0;
-        bool tieneIVA = false, saltarPosicionEsc = false, dobleTab = false, eliminacion = false;
-        float ivaTotal = 0.0f;
+        int ordenCompra = 0, idOrdenComrpa, posicion = 0;
+        float sumasubiva = 0.0f, sumasubcero = 0.0f, totalpagar = 0.0f, ivatotal = 0.0f, sumaice = 0.0f, sumairbp = 0.0f, subtotalPie = 0.0f, ivaTotal = 0.0f;
+        bool tieneIVA = false, saltarPosicionEsc = false, dobleTab = false, eliminacion = false, banderaFocoCelda = false;
         public static string CodigoBarraConsultaProducto = "";
         Bitacora ip = new Bitacora();
+
+        public FrmCompra()
+        {
+            InitializeComponent();
+        }
         public void incializar()
         {
             tieneIVA = false;
@@ -56,19 +47,13 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             txtFlete.Text = "0.0";
             cbTerminoPago.SelectedIndex = 0;
             dgvProductosIngresos.Rows.Clear();
-            for (int i = 0; i < 8; i++)
-            {
-                dgvProductosIngresos.Rows.Add();
-            }
+            Funcion.llenarDGV(ref dgvProductosIngresos, 8);
             for (int i = 0; i < dgvProductosIngresos.ColumnCount - 1; i++)
-            {
                 dgvProductosIngresos.Columns[i].ReadOnly = true;
-            }
             dgvProductosIngresos.Rows[0].Cells[0].ReadOnly = false;
         }
         private void FrmCompra_Load(object sender, EventArgs e)
         {
-            
             for (int i = 2; i < 13; i++)
                 dgvProductosIngresos.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             SendKeys.Send("{TAB}");
@@ -94,8 +79,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             txtIVA.Text = "0.0";
             txtFlete.Text = "0.0";
             cbTerminoPago.SelectedIndex = 0;
-            for (int i = 0; i < 20; i++)
-                dgvInformeCompras.Rows.Add();
+            Funcion.llenarDGV(ref dgvInformeCompras, 20);
             cadenaConsultar = cadenaGeneral;
             DataTable dt = (DataTable)cbProveedor.DataSource;
             cbProveedor.AutoCompleteCustomSource = consultas.LoadAutoComplete(dt);
@@ -106,43 +90,29 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             cbSucursal.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbSucursal.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
-        //FrmOrdenDeGiro frmOrdenDeGiro = new FrmOrdenDeGiro();
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if (txtSerie1.Text != "" && txtSerie2.Text != "" && txtNumero.Text != "")
             {
                 bool cantidadRegistros = false;
                 if (!modificarVer)
-                {
                     cantidadRegistros = consultas.Existe("SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " and SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " and NUMERO = " + Convert.ToInt32(txtNumero.Text) + " and IDPROVEEDOR", Convert.ToString(cbProveedor.SelectedValue), "TbEncabezadoyPieCompra");
-                }
                 if (!cantidadRegistros)
                 {
                     bool dataGridCorrecto = false;
                     for (int i = 0; i < datosProductoCompra.RowCount - 1; i++)
-                    {
                         if (Convert.ToString(datosProductoCompra.Rows[i].Cells[0].Value) != "")
-                        {
                             for (int j = 1; j < datosProductoCompra.ColumnCount - 3; j++)
-                            {
                                 if (Convert.ToString(datosProductoCompra.Rows[i].Cells[j].Value) != "")
-                                {
                                     dataGridCorrecto = true;
-                                }
                                 else
                                 {
                                     dataGridCorrecto = false;
                                     break;
                                 }
-                            }
-                        }
                         else
-                        {
                             break;
-                        }
-                    }
                     if (dataGridCorrecto)
-                    {
                         if (MessageBox.Show("¿Desea guardar la compra?", "CONFIRMACIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             ObjEncabezadoCompra = new EmcabezadoCompra(txtSerie1.Text, txtSerie2.Text, txtNumero.Text, sumasubiva, sumasubcero, subtotalPie, totalpagar, txtOrdenCompra.Text,
@@ -151,9 +121,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                             String resultadoDetalle = "";
                             String resultadoEncabezado = "";
                             if (modificarVer)
-                            {
                                 resultadoEncabezado = ObjEncabezadoCompra.ActualizarEncabezadoyPieCompra(ObjEncabezadoCompra, Convert.ToInt32(idEncabezadoCompra)); // retorna true si esta correcto todo
-                            }
                             else
                                 resultadoEncabezado = ObjEncabezadoCompra.InsertarEncabezadoyPieCompra(ObjEncabezadoCompra); // retorna true si esta correcto todo
                             if (resultadoEncabezado == "Datos Guardados")
@@ -170,16 +138,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                                         Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[3].Value.ToString())), Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[4].Value.ToString())),
                                         Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[7].Value.ToString())), Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[8].Value.ToString())),
                                         Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[9].Value.ToString())), Convert.ToInt32(txtSerie1.Text), Convert.ToInt32(txtSerie2.Text), Convert.ToInt32(txtNumero.Text), Convert.ToInt32(cbProveedor.SelectedValue));
-                                    //if (modificarVer)
-                                    //{
-                                    //    int idProductoDetalleCompra = Convert.ToInt32(objConsulta.ObtenerValorCampo("IDDETALLECOMPRA", "TbDetalleCompra", "where CODIGOBARRAPRODUCTO = '" + Convert.ToString(datosProductoCompra.Rows[i].Cells[0].Value) + "' AND IDENCABEZADOCOMPRA = " + Convert.ToInt32(idEncabezadoCompra)));
-                                    //    //resultadoDetalle = ObjDetalleCompra.ActualizarDetalleCompra(ObjDetalleCompra, Convert.ToInt32(idEncabezadoCompra), idProductoDetalleCompra);
-                                    //    if (!objConsulta.Existe(" IDENCABEZADOCOMPRA = " + Convert.ToInt32(idEncabezadoCompra) + " and CODIGOBARRAPRODUCTO", Convert.ToString(datosProductoCompra.Rows[i + 1].Cells[0].Value), "TbDetalleCompra"))
-                                    //    {
-                                    //        modificarVer = false;
-                                    //    }
-                                    //}
-                                    //else                                    
                                         resultadoDetalle = ObjDetalleCompra.InsertarDetalleCompra(ObjDetalleCompra);
                                     if (Convert.ToString(datosProductoCompra.Rows[i + 1].Cells[0].Value) == "")
                                         break;
@@ -194,7 +152,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                                         IVA = cbImpuesto.Text;
                                         string condicion = "where SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " AND SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " AND NUMERO = " + Convert.ToInt32(txtNumero.Text) + " AND IDPROVEEDOR = " + Convert.ToInt32(cbProveedor.SelectedValue);
                                         IDEncabezadoCompraOG = Convert.ToInt32(consultas.ObtenerValorCampo("IDEMCABEZADOCOMPRA", "TbEncabezadoyPieCompra", condicion));
-                                        //select * from TbCajasTalonario WHERE IPESTACION = '' AND TIPODOCUMENTO = 'RET' AND ESTADO = 1
                                         if (objConsulta.Existe("IPESTACION", "" + ip.LocalIPAddress() + "' AND TIPODOCUMENTO = 'RET' AND ESTADO = '1", "TbCajasTalonario"))
                                         {
                                             if (FrmPrincipal.FrmOrdenDeGiro == null || FrmPrincipal.FrmOrdenDeGiro.IsDisposed)
@@ -242,13 +199,10 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                                         consultas.ObtenerIDCompra(ref idEncabezado, "select E.IDEMCABEZADOCOMPRA from TbEncabezadoyPieCompra E where E.NUMERO = " + Convert.ToInt32(txtNumero.Text) + " AND E. SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " AND SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " AND IDPROVEEDOR = " + Convert.ToInt32(cbProveedor.SelectedValue) + "");
                                         consultas.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoyPieCompra] WHERE IDEMCABEZADOCOMPRA = " + idEncabezado + "");
                                     }
-                                    catch (Exception)
-                                    {
-                                    }
+                                    catch (Exception) {}
                                 }
                             }
                             else if (resultadoEncabezado == "Error al Registrar Encabezado")
-                            {
                                 try
                                 {
                                     int idEncabezado = 0;
@@ -256,13 +210,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                                     consultas.ObtenerIDCompra(ref idEncabezado, "select E.IDEMCABEZADOCOMPRA from TbEncabezadoyPieCompra E where E.NUMERO = " + Convert.ToInt32(txtNumero.Text) + " AND E. SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " AND SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " AND IDPROVEEDOR = " + Convert.ToInt32(cbProveedor.SelectedValue) + "");
                                     consultas.EjecutarSQL("DELETE FROM [dbo].[TbEncabezadoyPieCompra] WHERE IDEMCABEZADOCOMPRA = " + idEncabezado + "");
                                 }
-                                catch (Exception)
-                                {
-                                }
-                            }
+                                catch (Exception){}
                             else if (resultadoEncabezado == "Existe") { MessageBox.Show("Ya Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }                            
                         }
-                    }
                     else
                     {
                         MessageBox.Show("Uno o mas campos en el detalle de la compra estan vacíos");
@@ -339,9 +289,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     break;
                 }
                 else
-                {
                     repetido = false;
-                }
             }
             return repetido;
         }
@@ -360,9 +308,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     {
                         //---------------Desbloquear Celdas
                         for (int i = 0; i < datosProductoCompra.ColumnCount - 3; i++)
-                        {
                             datosProductoCompra.CurrentRow.Cells[i].ReadOnly = false;
-                        }
                         objProducto = consultas.ConsultarproductoCompra(Convert.ToString(datosProductoCompra.CurrentRow.Cells[0].Value));
                         if (objProducto == null)
                         {
@@ -405,9 +351,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                             tieneIVA = objProducto.Ivaestado;
                             informacionProducto();
                             if (!dobleTab)
-                            {
                                 SendKeys.Send("{TAB}");
-                            }
                             else
                                 dobleTab = false;
                         }
@@ -443,21 +387,13 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     if (Convert.ToString(datosProductoCompra.CurrentRow.Cells[4].Value) == "")
                     {
                         datosProductoCompra.CurrentRow.Cells[4].Value = "0.0";
-                        // posicion = 4;
-                        //Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        //if (dgvProductosIngresos.CurrentRow.Cells[5].ReadOnly == true)
-                        //    dgvProductosIngresos.CurrentCell = dgvProductosIngresos.CurrentRow.Cells[5];
-                        //else
-                            SendKeys.Send("{RIGHT}");
+                        SendKeys.Send("{RIGHT}");
                     }
                     else
                     {
                         posicion = 4;
                         Funcion.ValidaCeldasPrecios(datosProductoCompra, posicion, ref banderaFocoCelda);
-                        //if (dgvProductosIngresos.CurrentRow.Cells[5].ReadOnly == true)
-                        //    dgvProductosIngresos.CurrentCell = dgvProductosIngresos.CurrentRow.Cells[5];
-                        //else
-                            SendKeys.Send("{RIGHT}");
+                        SendKeys.Send("{RIGHT}");
                     }
                     banderaTab = true;
                 }
@@ -510,25 +446,17 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                         datosProductoCompra.CurrentCell = datosProductoCompra.CurrentRow.Cells[12];
                         datosProductoCompra.Rows[e.RowIndex + 1].Cells[0].ReadOnly = false;
                         if (e.RowIndex == dgvProductosIngresos.RowCount - 2)
-                        {
                             dgvProductosIngresos.Rows.Add();
-                        }
                         SendKeys.Send("{TAB}");
                     }
                     banderaTab = true;
                 }
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCompra" || datosProductoCompra.Columns[e.ColumnIndex].Name == "cantidad" || datosProductoCompra.Columns[e.ColumnIndex].Name == "iceProducto" || datosProductoCompra.Columns[e.ColumnIndex].Name == "irbpProducto" || datosProductoCompra.Columns[e.ColumnIndex].Name == "codigo")
-                {
                     calcularFila();
-                }
                 if (datosProductoCompra.Columns[e.ColumnIndex].Name == "precioCaja")
-                {
                     dgvProductosIngresos.CurrentRow.ReadOnly = true;
-                }
             }
-            catch (Exception otro)
-            {
-            }
+            catch (Exception otro){}
             Calcular();
             SendKeys.Send("{UP}");
             if (!banderaTab)
@@ -545,13 +473,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             string[] separadorPorcentaje = cbImpuesto.Text.Split('%');
             int tipoIva = Convert.ToInt32(separadorPorcentaje[0]);
             if (tieneIVA)
-            {
                 ivaFila = (((precioCompra + precioICE) * cantidad) * tipoIva) / 100;
-            }
             else
-            {
                 ivaFila = 0;
-            }
             subtotalFila = ((precioCompra + precioICE + precioIRBP) * cantidad);
             totalFila = subtotalFila + ivaFila;
             ivaTotal = ivaFila;
@@ -572,7 +496,6 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                         cantidad = Convert.ToInt32(datosProductoCompra.Rows[i].Cells[2].Value);
                         pc = Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[3].Value.ToString()));
                         sumasubiva += Convert.ToSingle(cantidad * pc);
-                        
                     }
                     if (Convert.ToSingle(datosProductoCompra.Rows[i].Cells[11].Value.ToString()) == 0)
                     {
@@ -583,9 +506,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     sumaice += Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[5].Value.ToString())) * Convert.ToInt32(datosProductoCompra.Rows[i].Cells[2].Value);
                     sumairbp += Convert.ToSingle(Funcion.reemplazarcaracterViceversa(datosProductoCompra.Rows[i].Cells[6].Value.ToString())) * Convert.ToInt32(datosProductoCompra.Rows[i].Cells[2].Value);
                     if (Convert.ToString(datosProductoCompra.Rows[i + 1].Cells[0].Value) == "")
-                    {
                         break;
-                    }
                 }
                 string[] s = cbImpuesto.Text.Split('%');
                 float iva = Convert.ToSingle(s[0]) / 100;
@@ -607,9 +528,7 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 subtotalPie = Convert.ToSingle(Math.Round(subtotalPie, 6));
                 totalpagar = Convert.ToSingle(Math.Round(totalpagar, 6));
             }
-            catch (Exception EX)
-            {
-            }
+            catch (Exception EX){ }
         }
 
         private void dgvProductosIngresos_KeyDown(object sender, KeyEventArgs e)
@@ -624,13 +543,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                     dobleTab = true;
                 }
                 else if (dgvProductosIngresos.CurrentCell == dgvProductosIngresos.CurrentRow.Cells[5] && dgvProductosIngresos.CurrentCell.ReadOnly == true)
-                {
                     SendKeys.Send("{TAB}");
-                }
                 else if (dgvProductosIngresos.CurrentCell == dgvProductosIngresos.CurrentRow.Cells[6] && dgvProductosIngresos.CurrentCell.ReadOnly == true)
-                {
                     SendKeys.Send("{TAB}");
-                }
             }
             if (e.KeyCode == Keys.Delete && eliminacion)
             {
@@ -638,30 +553,19 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 dgvProductosIngresos.CurrentRow.Cells[0].ReadOnly = false;
                 eliminacion = false;
             }
-            //if (e.KeyCode == Keys.Tab)
-            //{
-            //    e.Handled = true;
-            //    SendKeys.Send("{RIGHT}");
-            //}
         }
-
-
-        //FrmProveedores FrmProveedor;
         private void btnProveedor_Click(object sender, EventArgs e)
-        {            
+        {
             consultas.BoolLlenarComboBox(cbProveedor, "select IDPROVEEDOR AS Id, NOMBRES AS Texto from TbProveedor");
-            //if (!Program.FormularioProveedorCompra)
-            //{//FrmProveedores frmProveedor = null;
-                Program.FormularioLlamado = true;
-                if (FrmPrincipal.FrmProveedor == null || FrmPrincipal.FrmProveedor.IsDisposed)
-                {
-                    FrmPrincipal.FrmProveedor = new FrmProveedores();
-                    FrmPrincipal.FrmProveedor.MdiParent = Program.panelPrincipalVariable;
-                    FrmPrincipal.FrmProveedor.BringToFront();
-                    FrmPrincipal.FrmProveedor.Show();
-                }
-                else { FrmPrincipal.FrmProveedor.BringToFront(); }
-            //}
+            Program.FormularioLlamado = true;
+            if (FrmPrincipal.FrmProveedor == null || FrmPrincipal.FrmProveedor.IsDisposed)
+            {
+                FrmPrincipal.FrmProveedor = new FrmProveedores();
+                FrmPrincipal.FrmProveedor.MdiParent = Program.panelPrincipalVariable;
+                FrmPrincipal.FrmProveedor.BringToFront();
+                FrmPrincipal.FrmProveedor.Show();
+            }
+            else { FrmPrincipal.FrmProveedor.BringToFront(); }
         }
 
         private void OnlyNumbersdgvcheque_KeyPress(object sender, KeyPressEventArgs e)
@@ -675,14 +579,9 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
                 }
             }
             if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[0])
-            {
                 Funcion.validar_Num_Letras(e);
-            }
             if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[1])
-            {
                 Funcion.validar_Num_Letras(e);
-            }
-            
         }
         private void dgvProductosIngresos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
