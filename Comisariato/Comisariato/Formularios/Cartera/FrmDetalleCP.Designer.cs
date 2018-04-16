@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDetalleCP = new System.Windows.Forms.DataGridView();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pagar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LblNombreProveedor = new System.Windows.Forms.Label();
             this.TxtTotalPagar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,11 +45,8 @@
             this.TxtTotalDebe = new System.Windows.Forms.TextBox();
             this.BtnPagar = new System.Windows.Forms.Button();
             this.ChkPagarTodo = new System.Windows.Forms.CheckBox();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pagar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ElegirImpresero = new System.Windows.Forms.PrintDialog();
+            this.ImpresionDetallePago = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,14 +54,14 @@
             // 
             this.dgvDetalleCP.AllowUserToResizeColumns = false;
             this.dgvDetalleCP.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleCP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetalleCP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleCP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.detalle,
@@ -67,14 +69,14 @@
             this.haber,
             this.Fecha,
             this.Pagar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleCP.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleCP.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalleCP.Location = new System.Drawing.Point(11, 79);
             this.dgvDetalleCP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDetalleCP.Name = "dgvDetalleCP";
@@ -85,6 +87,39 @@
             this.dgvDetalleCP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleCP_CellContentClick);
             this.dgvDetalleCP.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleCP_CellValueChanged);
             this.dgvDetalleCP.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvDetalleCP_CurrentCellDirtyStateChanged);
+            // 
+            // detalle
+            // 
+            this.detalle.HeaderText = "Detalle";
+            this.detalle.Name = "detalle";
+            this.detalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.detalle.Width = 220;
+            // 
+            // debe
+            // 
+            this.debe.HeaderText = "Debe";
+            this.debe.Name = "debe";
+            this.debe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.debe.Width = 95;
+            // 
+            // haber
+            // 
+            this.haber.HeaderText = "Haber";
+            this.haber.Name = "haber";
+            this.haber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.haber.Width = 95;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Visible = false;
+            // 
+            // Pagar
+            // 
+            this.Pagar.HeaderText = "Pagar";
+            this.Pagar.Name = "Pagar";
+            this.Pagar.Width = 45;
             // 
             // LblNombreProveedor
             // 
@@ -180,6 +215,7 @@
             this.BtnPagar.Text = "Pagar";
             this.BtnPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnPagar.UseVisualStyleBackColor = true;
+            this.BtnPagar.Click += new System.EventHandler(this.BtnPagar_Click);
             // 
             // ChkPagarTodo
             // 
@@ -192,45 +228,20 @@
             this.ChkPagarTodo.UseVisualStyleBackColor = true;
             this.ChkPagarTodo.CheckedChanged += new System.EventHandler(this.ChkPagarTodo_CheckedChanged);
             // 
-            // detalle
+            // ElegirImpresero
             // 
-            this.detalle.HeaderText = "Detalle";
-            this.detalle.Name = "detalle";
-            this.detalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.detalle.Width = 220;
+            this.ElegirImpresero.UseEXDialog = true;
             // 
-            // debe
+            // ImpresionDetallePago
             // 
-            this.debe.HeaderText = "Debe";
-            this.debe.Name = "debe";
-            this.debe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.debe.Width = 95;
-            // 
-            // haber
-            // 
-            this.haber.HeaderText = "Haber";
-            this.haber.Name = "haber";
-            this.haber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.haber.Width = 95;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Visible = false;
-            // 
-            // Pagar
-            // 
-            this.Pagar.HeaderText = "Pagar";
-            this.Pagar.Name = "Pagar";
-            this.Pagar.Width = 45;
+            this.ImpresionDetallePago.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.ImpresionDetallePago_PrintPage);
             // 
             // FrmDetalleCP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(504, 665);
+            this.ClientSize = new System.Drawing.Size(504, 666);
             this.Controls.Add(this.ChkPagarTodo);
             this.Controls.Add(this.BtnPagar);
             this.Controls.Add(this.TxtTotalDebe);
@@ -274,5 +285,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn haber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pagar;
+        private System.Windows.Forms.PrintDialog ElegirImpresero;
+        private System.Drawing.Printing.PrintDocument ImpresionDetallePago;
     }
 }
