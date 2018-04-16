@@ -82,6 +82,8 @@ namespace Comisariato.Formularios.Cartera
 
                     for (int j = 0; j < dgvDetalleCP.RowCount - 1; j++)
                     {
+                        string sadasd = rowRetencion["FECHAORDENGIRO"].ToString();
+                        string asdsccccc = Funcion.FormarFechaGuiones(rowRetencion["FECHAORDENGIRO"].ToString());
                         if (Convert.ToDateTime(rowRetencion["FECHAORDENGIRO"]) < Convert.ToDateTime(dgvDetalleCP.Rows[j].Cells[3].Value))
                         {
                             ///Inicio Detalle OrdenGiro
