@@ -367,6 +367,43 @@ namespace Comisariato.Formularios.Transacciones
             else
                 MessageBox.Show("Error al anular");
         }
+
+        private void txtSerie1NC_Leave(object sender, EventArgs e)
+        {
+            if (txtSerie1NC.Text.Length < 3)
+            {
+                MessageBox.Show("Ingrese los 3 dígitos correspondientes");
+                txtSerie1NC.Focus();
+            }
+        }
+
+        private void txtSerie2NC_Leave(object sender, EventArgs e)
+        {
+            if (txtSerie2NC.Text.Length < 3)
+            {
+                MessageBox.Show("Ingrese los 3 dígitos correspondientes");
+                txtSerie2NC.Focus();
+            }
+        }
+
+
+        private void FrmDevolucionCompra_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            txtNumeroNC.Text = "000000000";
+            txtSerie1NC.Text = "000";
+            txtSerie2NC.Text = "000";
+        }
+
+        private void txtNumeroNC_Leave(object sender, EventArgs e)
+        {
+
+            if (txtNumeroNC.Text.Length < 9)
+            {
+                MessageBox.Show("Ingrese los 9 dígitos correspondientes");
+                txtNumeroNC.Focus();
+            }
+        }
+
         private void dgvDatosProducto_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (Convert.ToString(dgvDatosProducto.CurrentRow.Cells[0].Value) != "")

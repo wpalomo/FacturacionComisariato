@@ -869,6 +869,7 @@
             this.txtNumeroNC.Size = new System.Drawing.Size(174, 23);
             this.txtNumeroNC.TabIndex = 4;
             this.txtNumeroNC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1NC_KeyDown);
+            this.txtNumeroNC.Leave += new System.EventHandler(this.txtNumeroNC_Leave);
             // 
             // txtNumero
             // 
@@ -890,6 +891,7 @@
             this.txtSerie1NC.Size = new System.Drawing.Size(56, 23);
             this.txtSerie1NC.TabIndex = 1;
             this.txtSerie1NC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1NC_KeyDown);
+            this.txtSerie1NC.Leave += new System.EventHandler(this.txtSerie1NC_Leave);
             // 
             // txtPorcetajeDevolucion
             // 
@@ -921,6 +923,7 @@
             this.txtSerie2NC.Size = new System.Drawing.Size(56, 23);
             this.txtSerie2NC.TabIndex = 2;
             this.txtSerie2NC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSerie1NC_KeyDown);
+            this.txtSerie2NC.Leave += new System.EventHandler(this.txtSerie2NC_Leave);
             // 
             // txtSerie2
             // 
@@ -1262,6 +1265,7 @@
             this.MinimumSize = new System.Drawing.Size(977, 663);
             this.Name = "FrmDevolucionCompra";
             this.Text = "Nota de Crédito";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDevolucionCompra_FormClosing);
             this.Load += new System.EventHandler(this.FrmDevolucionCompra_Load);
             this.tabControl1.ResumeLayout(false);
             this.pcOrdenCompra.ResumeLayout(false);
