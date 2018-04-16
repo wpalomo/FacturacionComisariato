@@ -120,14 +120,6 @@ namespace Comisariato.Formularios
                     Image img2 = pbfondoPantallaEmpresa.Image;
                     bitDataFondo = Funcion.imgToByteArray(img2);
                 }
-                //if (nameLogo != "")
-                //{
-                //    bitDataLogo = Funcion.ConvertImg_Bytes(nameLogo);
-                //}
-                //if (nameFondo != "")
-                //{
-                //    bitDataFondo = Funcion.ConvertImg_Bytes(nameFondo);
-                //}
                 Empresa ObjEmpresa = new Empresa(txtNombreEmpresa.Text, txtRUCEmpresa.Text, txtNombreComercialEmpresa.Text, txtRazonSocialEmpresa.Text, txtGerenteEmpresa.Text, txtDireccionEmpresa.Text, txtEmailEmpresa.Text, dtpFechaInicioContableEmpresa.Value, txtCeluar1Empresa.Text, txtCelular2Empresa.Text, txtRUCContadorEmpresa.Text, txtNombreContadorempresa.Text, txtEmailContadorEmpresa.Text, txtCelular1ContadorEmpresa.Text, txtCelular2ContadorEmpresa.Text, bitDataLogo, bitDataFondo,txtClaveUsuario.Text);
 
                 if (!bandera_Estado) // Para identificar si se va ingresar
@@ -137,6 +129,10 @@ namespace Comisariato.Formularios
                     {
                         MessageBox.Show("Empresa Registrada Correctamente ", "Exito", MessageBoxButtons.OK);
                         //rbtActivosEmpresa.Checked = true;
+                        Program.razonsocialempresa = txtRazonSocialEmpresa.Text;
+                        Program.rucempresa = txtRUCEmpresa.Text;
+                        Program.direccionempresa = txtDireccionEmpresa.Text;
+
                         inicializarDatos();
                         cargarDatos();
                     }
@@ -150,6 +146,9 @@ namespace Comisariato.Formularios
                     {
                         MessageBox.Show("Empresa Actualizada", "Exito");
                         //rbtActivosEmpleado.Checked = true;
+                        Program.razonsocialempresa = txtRazonSocialEmpresa.Text;
+                        Program.rucempresa = txtRUCEmpresa.Text;
+                        Program.direccionempresa = txtDireccionEmpresa.Text;
                         GlobalRuc = "";
                     }
                     else { MessageBox.Show("Error al actualizar la Empresa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
@@ -158,12 +157,6 @@ namespace Comisariato.Formularios
                     btnGuardarEmpresa.Text = "&Guardar";
                     btnLimpiarEmpresa.Text = "&Limpiar";
                 }
-                //else if(txtCeluar1Empresa.Text == "")
-                //{
-                //    MessageBox.Show("Ingrese al menos un numero de telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
-
-
             }
             else { MessageBox.Show("Ingrese los datos de la Empresa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }

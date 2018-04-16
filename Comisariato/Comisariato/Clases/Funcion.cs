@@ -64,7 +64,7 @@ namespace Comisariato.Clases
                         if (column.Visible)
                             hoja_trabajo.Cells[1, ++iCol] = column.HeaderText;
                     //Recorremos el DataGridView rellenando la hoja de trabajo
-                    for (int i = 1; i < grd.Rows.Count - 1; i++)
+                    for (int i = 1; i < grd.Rows.Count+1; i++)
                     {
                         for (int j = InicioDeColumna; j < grd.Columns.Count; j++)
                         {
