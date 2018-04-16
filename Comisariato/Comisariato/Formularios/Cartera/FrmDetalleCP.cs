@@ -63,7 +63,7 @@ namespace Comisariato.Formularios.Cartera
                     dgvDetalleCP.Rows[i].Cells[0].Value = "COMPRA - " + rowCompra[3].ToString() + rowCompra[4].ToString() + rowCompra[5].ToString(); //Detalle
                     dgvDetalleCP.Rows[i].Cells[1].Value = rowCompra[2]; //Debe
                     //dgvDetalleCP.Rows[i].Cells[2].Value = rowCompra[0]; // Haber
-                    dgvDetalleCP.Rows[i].Cells[3].Value = rowCompra[1]; //Fecha
+                    dgvDetalleCP.Rows[i].Cells[3].Value = Convert.ToDateTime(rowCompra[1]).ToShortDateString(); //Fecha
 
                 }
             }
@@ -82,9 +82,7 @@ namespace Comisariato.Formularios.Cartera
 
                     for (int j = 0; j < dgvDetalleCP.RowCount - 1; j++)
                     {
-                        string sadasd = rowRetencion["FECHAORDENGIRO"].ToString();
-                        string asdsccccc = Funcion.FormarFechaGuiones(rowRetencion["FECHAORDENGIRO"].ToString());
-                        if (Convert.ToDateTime(rowRetencion["FECHAORDENGIRO"]) < Convert.ToDateTime(dgvDetalleCP.Rows[j].Cells[3].Value))
+                        if (Convert.ToDateTime(Funcion.FormarFechaDiaMesAño(rowRetencion["FECHAORDENGIRO"].ToString())) < Convert.ToDateTime(dgvDetalleCP.Rows[j].Cells[3].Value))
                         {
                             ///Inicio Detalle OrdenGiro
                             int IDOrdenGiro = Convert.ToInt32(rowRetencion[3]);
@@ -105,7 +103,7 @@ namespace Comisariato.Formularios.Cartera
                             dgvDetalleCP.Rows[j].Cells[0].Value = "RETENCION - " + Convert.ToInt32(rowRetencion[4]).ToString("D3") + Convert.ToInt32(rowRetencion[5]).ToString("D3") + Convert.ToInt32(rowRetencion[6]).ToString("D9"); //Detalle
                             //dgvDetalleCP.Rows[j].Cells[1].Value = Monto; //Debe
                             dgvDetalleCP.Rows[j].Cells[2].Value = Monto; // Haber
-                            dgvDetalleCP.Rows[j].Cells[3].Value = rowRetencion[1]; //Fecha
+                            dgvDetalleCP.Rows[j].Cells[3].Value = Convert.ToDateTime(Funcion.FormarFechaDiaMesAño(rowRetencion[1].ToString())).ToShortDateString();//Fecha
                             break;
                         }
                     }

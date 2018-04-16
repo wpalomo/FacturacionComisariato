@@ -703,6 +703,23 @@ namespace Comisariato.Clases
 
             return arregloFecha[0] + "/" + arregloFecha[1];
         }
+        public static string FormarFechaDiaMesAño(string fecha)
+        {
+            //Dia-Mes-Año
+            string[] arregloFecha = fecha.Split('-');
+            //dia
+            if (arregloFecha[0].Length < 2)
+            {
+                arregloFecha[0] = "0" + arregloFecha[0];
+            }
+            //Mes
+            if (arregloFecha[1].Length < 2)
+            {
+                arregloFecha[1] = "0" + arregloFecha[1];
+            }
+
+            return arregloFecha[1] + "-" + arregloFecha[0] + "-" + arregloFecha[2];
+        }
         public static DataTable llenarDataTable_Datagriview(DataGridView datagrid)
         {
             try
