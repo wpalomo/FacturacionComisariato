@@ -1283,41 +1283,53 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
 
         private void BtnPrimero_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(lblTotalPagina.Text) > 1)
+            if (dtProductos.Rows.Count > filasPagina)
             {
-                this.nroPagina = 1;
-                lblPaginaActual.Text = this.nroPagina.ToString();
-                this.paginar();
+                if (Convert.ToInt32(lblTotalPagina.Text) > 1)
+                {
+                    this.nroPagina = 1;
+                    lblPaginaActual.Text = this.nroPagina.ToString();
+                    this.paginar();
+                }
             }
         }
 
         private void BtnUltimo_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(lblTotalPagina.Text) > 1)
+            if (dtProductos.Rows.Count > filasPagina)
             {
-                this.nroPagina = Convert.ToInt32(lblTotalPagina.Text);
-                lblPaginaActual.Text = this.nroPagina.ToString();
-                this.paginar();
+                if (Convert.ToInt32(lblTotalPagina.Text) > 1)
+                {
+                    this.nroPagina = Convert.ToInt32(lblTotalPagina.Text);
+                    lblPaginaActual.Text = this.nroPagina.ToString();
+                    this.paginar();
+                }
             }
         }
 
         private void BtnAnterior_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(lblPaginaActual.Text) > 1)
+            if (dtProductos.Rows.Count > filasPagina)
             {
-                this.nroPagina -= 1;
-                lblPaginaActual.Text = this.nroPagina.ToString();
-                this.paginar();
+                if (Convert.ToInt32(lblPaginaActual.Text) > 1)
+                {
+                    this.nroPagina -= 1;
+                    lblPaginaActual.Text = this.nroPagina.ToString();
+                    this.paginar();
+                }
             }
         }
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(lblPaginaActual.Text) < Convert.ToInt32(lblTotalPagina.Text))
+            if (dtProductos.Rows.Count > filasPagina)
             {
-                this.nroPagina += 1;
-                lblPaginaActual.Text = this.nroPagina.ToString();
-                this.paginar();
+                if (Convert.ToInt32(lblPaginaActual.Text) < Convert.ToInt32(lblTotalPagina.Text))
+                {
+                    this.nroPagina += 1;
+                    lblPaginaActual.Text = this.nroPagina.ToString();
+                    this.paginar();
+                }
             }
         }
 

@@ -251,10 +251,9 @@ namespace Comisariato.Formularios.SRI
                         {
                             //Firmar Documento
                             Firma.Firmalo(Program.RutaCertificado, Program.passwordCertificado, RutaXML1 + @"\Generados\" + NombreXML + ".xml", RutaXML1 + @"\Firmados\" + NombreXML + ".xml", RutaXML1);
-
+                            // Inicio RecepcionSRI
                             SRIRecepcionComprobante sriRecepcion = new SRIRecepcionComprobante();
                             string respuestaRecepcion = sriRecepcion.RecepcionArchivos(RutaXML1 + @"\Firmados" + @"\" + NombreXML + ".xml", SRIRecepcion, NombreXML, RutaXML1);
-
                             string[] valoresrecepcion = respuestaRecepcion.Split(';');
                             //Fin RecepcionSRI
 
@@ -263,7 +262,7 @@ namespace Comisariato.Formularios.SRI
                                 contadorRecibida++;
                                 Recibida = "R";
 
-
+                                //Inicio Autorizacion
                                 SRIAutorizacionComprobante sriAutori = new SRIAutorizacionComprobante(SRIAutorizacion);
                                 string estado = sriAutori.AutorizacionArchivos(NombreXML, RutaXML1, respuestaRecepcion);
                                 string[] autorizado = estado.Split(';');
@@ -281,6 +280,7 @@ namespace Comisariato.Formularios.SRI
                                     estadoautorizacion = 0;
                                     AUT = "NO";
                                 }
+                                //Fin Autorizacion
                                 contadorEnviados++;
 
                                 string contadoraenviar = contador + " de " + DtDocuemtosXML.Rows.Count + " Archivos.";
@@ -323,7 +323,7 @@ namespace Comisariato.Formularios.SRI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en enviar al SRI: No responde\n Intentelo más tarde en el formulario Corregir Errores");
+                MessageBox.Show("Error en enviar al SRI: No responde o el xml contiene errores\n Intentelo más tarde en el formulario Corregir Errores");
             }
 
         }
@@ -339,7 +339,7 @@ namespace Comisariato.Formularios.SRI
             }
             else
             {
-                if (fechaAutorizacion != null) //´solo se formara ride si la fecha de autorizacion esta, lo q significa si se autorizo o no
+                if (fechaAutorizacion != null) //solo se formara ride si la fecha de autorizacion esta, lo q significa si se autorizo o no
                 {
                     //LLamar Reporte
                     string ambiente = "";

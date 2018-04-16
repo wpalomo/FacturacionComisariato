@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbEncabezadoKardex = new System.Windows.Forms.GroupBox();
+            this.LblNombreProducto = new System.Windows.Forms.Label();
             this.btnGenerarKardex = new System.Windows.Forms.Button();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -38,6 +39,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.BtnExportarExcel = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,15 +67,6 @@
             this.cantidadExistecia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.gbEncabezadoKardex.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // gbEncabezadoKardex
             // 
+            this.gbEncabezadoKardex.Controls.Add(this.LblNombreProducto);
             this.gbEncabezadoKardex.Controls.Add(this.btnGenerarKardex);
             this.gbEncabezadoKardex.Controls.Add(this.txtProducto);
             this.gbEncabezadoKardex.Controls.Add(this.dtpHasta);
@@ -91,6 +93,17 @@
             this.gbEncabezadoKardex.TabIndex = 0;
             this.gbEncabezadoKardex.TabStop = false;
             this.gbEncabezadoKardex.Text = "Información Necesaria para el Kardex";
+            // 
+            // LblNombreProducto
+            // 
+            this.LblNombreProducto.AutoSize = true;
+            this.LblNombreProducto.Font = new System.Drawing.Font("Arial", 10F);
+            this.LblNombreProducto.Location = new System.Drawing.Point(462, 109);
+            this.LblNombreProducto.Name = "LblNombreProducto";
+            this.LblNombreProducto.Size = new System.Drawing.Size(114, 16);
+            this.LblNombreProducto.TabIndex = 7;
+            this.LblNombreProducto.Text = "NombreProducto";
+            this.LblNombreProducto.Visible = false;
             // 
             // btnGenerarKardex
             // 
@@ -109,6 +122,7 @@
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(296, 23);
             this.txtProducto.TabIndex = 4;
+            this.txtProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProducto_KeyPress);
             // 
             // dtpHasta
             // 
@@ -180,6 +194,78 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle del Kardex";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(959, 438);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(75, 22);
+            this.textBox7.TabIndex = 26;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(884, 438);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(75, 22);
+            this.textBox8.TabIndex = 27;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(833, 438);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(51, 22);
+            this.textBox9.TabIndex = 28;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(758, 438);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(75, 22);
+            this.textBox6.TabIndex = 25;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(683, 438);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(75, 22);
+            this.textBox5.TabIndex = 25;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(632, 438);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(51, 22);
+            this.textBox4.TabIndex = 25;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(557, 438);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(75, 22);
+            this.textBox3.TabIndex = 25;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(482, 438);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(75, 22);
+            this.textBox2.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(431, 438);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(51, 22);
+            this.textBox1.TabIndex = 25;
             // 
             // BtnExportarExcel
             // 
@@ -257,6 +343,8 @@
             // 
             // dgvKardex
             // 
+            this.dgvKardex.AllowUserToResizeColumns = false;
+            this.dgvKardex.AllowUserToResizeRows = false;
             this.dgvKardex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKardex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fecha,
@@ -350,78 +438,6 @@
             this.totalExistencia.Name = "totalExistencia";
             this.totalExistencia.Width = 75;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(431, 438);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(51, 22);
-            this.textBox1.TabIndex = 25;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(482, 438);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(75, 22);
-            this.textBox2.TabIndex = 25;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(557, 438);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(75, 22);
-            this.textBox3.TabIndex = 25;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(632, 438);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(51, 22);
-            this.textBox4.TabIndex = 25;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(683, 438);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(75, 22);
-            this.textBox5.TabIndex = 25;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(758, 438);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(75, 22);
-            this.textBox6.TabIndex = 25;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(959, 438);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(75, 22);
-            this.textBox7.TabIndex = 26;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(884, 438);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(75, 22);
-            this.textBox8.TabIndex = 27;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(833, 438);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(51, 22);
-            this.textBox9.TabIndex = 28;
-            // 
             // FrmKardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,11 +448,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbEncabezadoKardex);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FrmKardex";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Kardex";
             this.Load += new System.EventHandler(this.FrmKardex_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmKardex_KeyUp);
             this.gbEncabezadoKardex.ResumeLayout(false);
             this.gbEncabezadoKardex.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -491,5 +509,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label LblNombreProducto;
     }
 }

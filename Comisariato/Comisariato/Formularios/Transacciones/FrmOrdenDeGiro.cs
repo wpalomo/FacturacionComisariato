@@ -605,7 +605,7 @@ namespace Comisariato.Formularios.Transacciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en enviar al SRI: No responde\n Intentelo más tarde en el formulario Corregir Errores");
+                MessageBox.Show("Error en enviar al SRI: No responde o el xml contiene errores\n Intentelo más tarde en el formulario Corregir Errores");
             }
         }
         private void CambiarProgreso(string nombreXml, string fecha, string contadorDevuelta, string contadorRecibida, string contadorautorizado, string contadornoautorizado, string contadorenviados, string contador, string archivosTotales)
