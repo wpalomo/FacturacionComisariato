@@ -51,6 +51,8 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             cbTerminoPago.SelectedIndex = 0;
             dgvProductosIngresos.Rows.Clear();
             Funcion.llenarDGV(ref dgvProductosIngresos, 8);
+            for (int i = 0; i < dgvProductosIngresos.ColumnCount - 1; i++)
+                dgvProductosIngresos.Columns[i].ReadOnly = true;
             dgvProductosIngresos.Rows[0].Cells[0].ReadOnly = false;
         }
         private void FrmCompra_Load(object sender, EventArgs e)
