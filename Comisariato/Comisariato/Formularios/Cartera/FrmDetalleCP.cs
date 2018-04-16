@@ -322,8 +322,8 @@ namespace Comisariato.Formularios.Cartera
         public void dibujarRayas(ref int y, int sumar, int grosor)
         {
             blackPen = new Pen(Color.Black, grosor);
-            puntoInicio = new Point(25, y = y + sumar);
-            puntoFinal = new Point(800, y);
+            puntoInicio = new Point(75, y = y + sumar);
+            puntoFinal = new Point(735, y);
         }
 
         private void ImpresionDetallePago_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -333,7 +333,7 @@ namespace Comisariato.Formularios.Cartera
                 //imprimirRetencion(e);
                 e.Graphics.DrawString("ORDEN DE PAGO #:", new Font("Verdana", 14, FontStyle.Bold), Brushes.Black, 25, 25);
                 e.Graphics.DrawString("---", new Font("Verdana", 14, FontStyle.Italic), Brushes.Black, 300, 25);
-                e.Graphics.DrawString(DateTime.Today.ToString(), new Font("Verdana", 12, FontStyle.Regular), Brushes.Gray, 625, 25);
+                e.Graphics.DrawString(DateTime.Now.ToString(), new Font("Verdana", 12, FontStyle.Regular), Brushes.Gray, 625, 25);
                 e.Graphics.DrawString("COMISARIATO SUPER 2 ", new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, 310, 70);
                 e.Graphics.DrawString("VEGA SOLIS SONÑA JUDITH", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 320, 90);
                 e.Graphics.DrawString("RUC: 1802114429001", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 335, 110);
@@ -345,23 +345,33 @@ namespace Comisariato.Formularios.Cartera
                 e.Graphics.DrawString("----", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 150, 170);
                 e.Graphics.DrawString("CODIGO: ", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 625, 170);
                 e.Graphics.DrawString("----", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 710, 170);
+                e.Graphics.DrawString("DETALLE", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 100, 200);
+                e.Graphics.DrawString("DEBE", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 450, 200);
+                e.Graphics.DrawString("HABER", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 575, 200);
+                int y = 210;
+                dibujarRayas(ref y, 10, 2);
+                e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
                 /////////////////////////
-                int y = 200;
+                y = 230;
                 for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
                 {
-                    if (Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[3].Value))
+                    if (Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[4].Value))
                     {
                         e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[0].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 100, y);
                         if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
-                            e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[1].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 350, y);
+                            e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[1].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 450, y);
                         else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
-                            e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[2].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 450, y);
+                            e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[2].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 575, y);
+                        y = y + 20;
                     }
                     if (Convert.ToString(dgvDetalleCP.Rows[i + 1].Cells[0].Value) == "")
-                        break;
-                    y = y + 20;
+                        break;                    
                 }
-
+                for (int i = 0; i < y - 200; i++)
+                {
+                    int yLineas = 200 + i;
+                    e.Graphics.DrawString("|", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 375, yLineas);
+                }
 
 
 
@@ -437,7 +447,7 @@ namespace Comisariato.Formularios.Cartera
                 //e.Graphics.DrawString(Funcion.reemplazarcaracter(Convert.ToString(Convert.ToSingle(Funcion.reemplazarcaracterViceversa(txtTotal.Text)) - Convert.ToSingle(sumaRetencion))), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 675, 150);
                 //e.Graphics.DrawString("Firma:", new Font("Verdana", 12, FontStyle.Bold), Brushes.Black, 500, y + 75);
             }
-            catch (Exception) { }
+            catch (Exception ex) { }
         }
     }
 }
