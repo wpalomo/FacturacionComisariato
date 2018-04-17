@@ -376,6 +376,11 @@ namespace Comisariato.Formularios.Cartera
                     int yLineas = 200 + i;
                     e.Graphics.DrawString("|", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 400, yLineas);
                 }
+                y = y + 50;
+                //dibujarRayas(ref y, 0, 2, 575, 700);
+                //e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
+                e.Graphics.DrawString("TOTAL A PAGAR $", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 450, y);
+                e.Graphics.DrawString(TxtTotalPagar.Text, new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 600, y);
                 y = y + 75;
                 dibujarRayas(ref y, 5, 2, 35, 215);
                 e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);

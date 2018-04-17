@@ -420,6 +420,7 @@ namespace Comisariato.Formularios.Transacciones
                                 if (Convert.ToString(dgvDatosRetencion.Rows[i+1].Cells[0].Value) == "")
                                     break;
                             }
+                            numeroOrden = idEncabezadoOrdenGiro;
                         }                        
                     }
                     //Fin Crear XML
