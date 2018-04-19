@@ -13,24 +13,26 @@ and open the template in the editor.
             <div class="panel-heading"><h3>Retenciones</h3></div>
             <div class="panel-body">
                 <p>Detalle de las retenciones realizadas:</p>
-                <form class="form-inline" role="form">
-                    <div class="form-group">
-                        <label  for="retencion_N">Nº de Retención:</label>
-                        <input type="text" class="form-control" id="NRetencion"
-                               placeholder="Nº de Retención">
-                    </div>
-                    <div class="form-group">
-                        <label  for="fechadesde">Desde:</label>
-                        <input type="date" class="form-control" id="FechaDesde" 
-                               placeholder="Desde">
-                    </div>
-                    <div class="form-group">
-                        <label  for="fechahasta">Hasta:</label>
-                        <input type="date" class="form-control" id="FechaHasta" 
-                               placeholder="Hasta">
-                    </div>
-                    <button type="submit" class="btn btn-default">Buscar</button>
-                </form>
+                <div id="divformulario"  >
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <label  for="retencion_N">Nº de Retención:</label>
+                            <input type="text" class="form-control" id="NRetencion"
+                                   placeholder="Nº de Retención">
+                        </div>
+                        <div class="form-group">
+                            <label  for="fechadesde">Desde:</label>
+                            <input type="date" class="form-control" id="FechaDesde" 
+                                   placeholder="Desde">
+                        </div>
+                        <div class="form-group">
+                            <label  for="fechahasta">Hasta:</label>
+                            <input type="date" class="form-control" id="FechaHasta" 
+                                   placeholder="Hasta">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                </div>
             </div>
             <div class="table-responsive" >
                 <div>
