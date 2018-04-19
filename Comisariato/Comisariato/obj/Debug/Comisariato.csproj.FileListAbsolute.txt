@@ -1123,7 +1123,6 @@ C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\o
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.pdb
-C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\BarcodeLib.dll
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WebForms.dll
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Microsoft.SqlServer.Types.dll
