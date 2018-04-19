@@ -16,8 +16,8 @@ and open the template in the editor.
                 <div id="divformulario"  >
                     <form class="form-inline" role="form">
                         <div class="form-group">
-                            <label  for="ejemplo_email_2">Nº de factura:</label>
-                            <input type="email" class="form-control" id="NFactura"
+                            <label  for="factura_N">Nº de factura:</label>
+                            <input type="text" class="form-control" id="NFactura"
                                    placeholder="Nº de factura">
                         </div>
                         <div class="form-group">

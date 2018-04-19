@@ -15,18 +15,18 @@ and open the template in the editor.
                 <p>Detalle de las retenciones realizadas:</p>
                 <form class="form-inline" role="form">
                     <div class="form-group">
-                        <label class="sr-only" for="ejemplo_email_2">Nº de factura:</label>
-                        <input type="email" class="form-control" id="ejemplo_email_2"
-                               placeholder="Nº de factura">
+                        <label  for="retencion_N">Nº de Retención:</label>
+                        <input type="text" class="form-control" id="NRetencion"
+                               placeholder="Nº de Retención">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="fechadesde">Desde:</label>
-                        <input type="date" class="form-control" id="ejemplo_password_2" 
+                        <label  for="fechadesde">Desde:</label>
+                        <input type="date" class="form-control" id="FechaDesde" 
                                placeholder="Desde">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="fechahasta">Hasta:</label>
-                        <input type="date" class="form-control" id="ejemplo_password_2" 
+                        <label  for="fechahasta">Hasta:</label>
+                        <input type="date" class="form-control" id="FechaHasta" 
                                placeholder="Hasta">
                     </div>
                     <button type="submit" class="btn btn-default">Buscar</button>
