@@ -1,6 +1,7 @@
 ﻿using Comisariato.Clases;
 using Comisariato.Formularios.Mantenimiento.Inventario;
 using Comisariato.Formularios.Transacciones.Venta;
+using Comisariato.Formularios.Informes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +67,13 @@ namespace Comisariato.Formularios.Transacciones
                         {
                             FrmCompra.CodigoBarraConsultaProducto = dgvProductos.CurrentRow.Cells[0].Value.ToString();
                             Program.banderaProductosCompras = false;
+                            this.Close();
+                        }
+
+                        else if (Program.banderaProductosConsultarKardex)
+                        {
+                            FrmKardex.CodigoBarraConsultaProducto = dgvProductos.CurrentRow.Cells[0].Value.ToString() + ";" + dgvProductos.CurrentRow.Cells[1].Value.ToString();
+                            Program.banderaProductosConsultarKardex = false;
                             this.Close();
                         }
                         else if(Program.banderaProductosConsultarPrecio)

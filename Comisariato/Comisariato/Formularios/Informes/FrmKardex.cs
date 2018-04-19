@@ -1,4 +1,5 @@
 ﻿using Comisariato.Clases;
+using Comisariato.Formularios.Transacciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace Comisariato.Formularios.Informes
         {
             InitializeComponent();
         }
+        public static string CodigoBarraConsultaProducto = "";
         public void inicializar()
         {
             //txtProducto.Text = "";
@@ -30,6 +32,7 @@ namespace Comisariato.Formularios.Informes
             //objConsulta.BoolLlenarComboBox(cbCategoria, "Select IDCATEGORIA as ID, Descripcion as Texto from TbCategoria");
             for (int i = 0; i < 17; i++)
                 dgvKardex.Rows.Add();
+            SendKeys.Send("{TAB}");
         }
         bool notaCredito = false;
         private void btnGenerarKardex_Click(object sender, EventArgs e)
@@ -38,7 +41,13 @@ namespace Comisariato.Formularios.Informes
             //string cantidadCompra = "sum(CANTIDAD) from TbDetalleCompra where CODIGOBARRAPRODUCTO = '" + txtProducto.Text + "'";
             //string cantidadVenta = "select sum(CANTIDAD) from TbDetalleFactura where CODIGOBARRAPRODUCTO = '" + txtProducto.Text + "'";           
             inicializar();
-             
+            if (consultoFormularioExterno)
+            {
+                LblNombreProducto.Visible = true; consultoFormularioExterno = false;
+            }
+            else
+                LblNombreProducto.Visible = false;
+
             if (txtProducto.Text != "")
             {
                 float cantProducto = Convert.ToSingle(objConsulta.ObtenerValorCampo("CANTIDAD", "TbProducto", " where CODIGOBARRA = '" + txtProducto.Text + "' OR NOMBREPRODUCTO = '" + txtProducto.Text + "'"));
@@ -102,7 +111,7 @@ namespace Comisariato.Formularios.Informes
                 {
                     for (int i = 0; i < datosVenta.Rows.Count; i++)
                     {
-                        int j =01;
+                        int j = 01;
                         bool banderaIngreso = false;
                         DataRow dtVenta = datosVenta.Rows[i];
                         for (j = 0; j < dgvKardex.RowCount - 1; j++)
@@ -169,7 +178,7 @@ namespace Comisariato.Formularios.Informes
                                     dgvKardex.Rows[j].Cells[6].Value = dtNotaCredito["PRECIOCOMRPA"];
                                     if (Convert.ToString(dtNotaCredito["PORCENTAJE"]) != "0")
                                     {
-                                        string porcentaje  = Convert.ToString(dtNotaCredito["PORCENTAJE"]);                                        
+                                        string porcentaje = Convert.ToString(dtNotaCredito["PORCENTAJE"]);
                                         dgvKardex.Rows[j].Cells[5].Value = dtNotaCredito["CANTCOMPRA"];
                                         float por = ((Convert.ToSingle(dgvKardex.Rows[j].Cells[6].Value) * Convert.ToSingle(dgvKardex.Rows[j].Cells[5].Value)) * Convert.ToSingle(porcentaje) / 100);
                                         dgvKardex.Rows[j].Cells[7].Value = por;
@@ -228,7 +237,7 @@ namespace Comisariato.Formularios.Informes
                 MessageBox.Show("Ingrese el producto.");
         }
         //calcular la existencia
-        public  void eliminaVacio()
+        public void eliminaVacio()
         {
             for (int i = 0; i < dgvKardex.RowCount - 1; i++)
             {
@@ -240,15 +249,15 @@ namespace Comisariato.Formularios.Informes
         }
         public void totales()
         {
-            float cantidadEntrada = 0, cantSalida=0, totalEntrada=0, totalSalida=0;
+            float cantidadEntrada = 0, cantSalida = 0, totalEntrada = 0, totalSalida = 0;
             for (int i = 0; i < dgvKardex.RowCount - 1; i++)
             {
-               // cantidadEntrada += Convert.toflo
+                // cantidadEntrada += Convert.toflo
             }
         }
         public void calculoExistecia()
         {
-            for (int i = 1; i < dgvKardex.RowCount -1; i++)
+            for (int i = 1; i < dgvKardex.RowCount - 1; i++)
             {
                 string[] tipo = Convert.ToString(dgvKardex.Rows[i].Cells[1].Value).Split(' ');
                 if (tipo[0] == "Compra")
@@ -273,7 +282,7 @@ namespace Comisariato.Formularios.Informes
                             dgvKardex.Rows[i].Cells[10].Value = Convert.ToSingle(dgvKardex.Rows[i].Cells[4].Value) + Convert.ToSingle(dgvKardex.Rows[i - 1].Cells[10].Value);
                             dgvKardex.Rows[i].Cells[9].Value = Convert.ToSingle(dgvKardex.Rows[i].Cells[10].Value) / Convert.ToSingle(dgvKardex.Rows[i].Cells[8].Value);
                         }
-                    }                   
+                    }
                 }
                 if (tipo[0] == "Venta")
                 {
@@ -327,7 +336,7 @@ namespace Comisariato.Formularios.Informes
                             dgvKardex.Rows[i].Cells[10].Value = Convert.ToSingle(dgvKardex.Rows[i - 1].Cells[10].Value) - Convert.ToSingle(dgvKardex.Rows[i].Cells[7].Value);
                             dgvKardex.Rows[i].Cells[9].Value = Convert.ToSingle(dgvKardex.Rows[i].Cells[10].Value) / Convert.ToSingle(dgvKardex.Rows[i].Cells[8].Value);
                         }
-                    }                    
+                    }
                 }
             }
         }
@@ -336,7 +345,7 @@ namespace Comisariato.Formularios.Informes
         {
             if (dgvKardex.Rows[0].Cells[0].Value != null)
             {
-                if (Funcion.ExportarDataGridViewExcel(dgvKardex,0))
+                if (Funcion.ExportarDataGridViewExcel(dgvKardex, 0))
                 {
                     MessageBox.Show("Reporte creado con exito.");
                 }
@@ -345,6 +354,33 @@ namespace Comisariato.Formularios.Informes
                     MessageBox.Show("Ocurrio un error al crear el reporte.");
                 }
 
+            }
+        }
+        bool consultoFormularioExterno = false;
+        private void FrmKardex_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F6:
+                    Program.banderaProductosConsultarKardex = true;
+                    FrmConsultarProducto FrmConsultarProduct = new FrmConsultarProducto();
+                    FrmConsultarProduct.ShowDialog();
+                    txtProducto.Focus();
+                    string[] detalleProductoBusq = CodigoBarraConsultaProducto.Split(';');
+                    txtProducto.Text = detalleProductoBusq[0];
+                    LblNombreProducto.Text = detalleProductoBusq[1];
+                    LblNombreProducto.Visible = true;
+                    consultoFormularioExterno = true;
+                    btnGenerarKardex_Click(null, null);
+                    break;
+            }
+        }
+
+        private void txtProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                btnGenerarKardex_Click(null, null);
             }
         }
     }

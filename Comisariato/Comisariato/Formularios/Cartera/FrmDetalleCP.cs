@@ -18,6 +18,8 @@ namespace Comisariato.Formularios.Cartera
         string FechaHasta = "";
         string FechaDesde = "";
         Consultas objConsulta = new Consultas();
+        Pen blackPen;
+        Point puntoInicio, puntoFinal;
 
         int FilaDESCUENTOSADICIONALES = 0;
 
@@ -61,7 +63,7 @@ namespace Comisariato.Formularios.Cartera
                     dgvDetalleCP.Rows[i].Cells[0].Value = "COMPRA - " + rowCompra[3].ToString() + rowCompra[4].ToString() + rowCompra[5].ToString(); //Detalle
                     dgvDetalleCP.Rows[i].Cells[1].Value = rowCompra[2]; //Debe
                     //dgvDetalleCP.Rows[i].Cells[2].Value = rowCompra[0]; // Haber
-                    dgvDetalleCP.Rows[i].Cells[3].Value = rowCompra[1]; //Fecha
+                    dgvDetalleCP.Rows[i].Cells[3].Value = Convert.ToDateTime(rowCompra[1]).ToShortDateString(); //Fecha
 
                 }
             }
@@ -80,7 +82,7 @@ namespace Comisariato.Formularios.Cartera
 
                     for (int j = 0; j < dgvDetalleCP.RowCount - 1; j++)
                     {
-                        if (Convert.ToDateTime(rowRetencion["FECHAORDENGIRO"]) < Convert.ToDateTime(dgvDetalleCP.Rows[j].Cells[3].Value))
+                        if (Convert.ToDateTime(Funcion.FormarFechaDiaMesAño(rowRetencion["FECHAORDENGIRO"].ToString())) < Convert.ToDateTime(dgvDetalleCP.Rows[j].Cells[3].Value))
                         {
                             ///Inicio Detalle OrdenGiro
                             int IDOrdenGiro = Convert.ToInt32(rowRetencion[3]);
@@ -101,7 +103,7 @@ namespace Comisariato.Formularios.Cartera
                             dgvDetalleCP.Rows[j].Cells[0].Value = "RETENCION - " + Convert.ToInt32(rowRetencion[4]).ToString("D3") + Convert.ToInt32(rowRetencion[5]).ToString("D3") + Convert.ToInt32(rowRetencion[6]).ToString("D9"); //Detalle
                             //dgvDetalleCP.Rows[j].Cells[1].Value = Monto; //Debe
                             dgvDetalleCP.Rows[j].Cells[2].Value = Monto; // Haber
-                            dgvDetalleCP.Rows[j].Cells[3].Value = rowRetencion[1]; //Fecha
+                            dgvDetalleCP.Rows[j].Cells[3].Value = Convert.ToDateTime(Funcion.FormarFechaDiaMesAño(rowRetencion[1].ToString())).ToShortDateString();//Fecha
                             break;
                         }
                     }
@@ -306,6 +308,94 @@ namespace Comisariato.Formularios.Cartera
                 else
                     CalcularDEBE_HABER_TOTAL(true);
             }
+        }
+
+        private void BtnPagar_Click(object sender, EventArgs e)
+        {
+            ElegirImpresero.AllowSomePages = true;
+            ElegirImpresero.ShowHelp = true;
+            ElegirImpresero.Document = ImpresionDetallePago;
+            DialogResult result = ElegirImpresero.ShowDialog();
+            if (result == DialogResult.OK)
+                ImpresionDetallePago.Print();
+        }
+        public void dibujarRayas(ref int y, int sumar, int grosor, int inicio, int fin)
+        {
+            blackPen = new Pen(Color.Black, grosor);
+            puntoInicio = new Point(inicio, y = y + sumar);
+            puntoFinal = new Point(fin, y);
+        }
+
+        private void ImpresionDetallePago_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                DataTable dte = objConsulta.BoolDataTable("SELECT CELULAR1, CELULAR2 FROM TbEmpresa where IDEMPRESA =" + Program.IDEMPRESA);
+                DataRow rowe = dte.Rows[0];
+                DataTable dtp = objConsulta.BoolDataTable("select CODIGO, NOMBRES from tbproveedor where IDPROVEEDOR = " + IDProveedor);
+                DataRow rowp = dtp.Rows[0];
+                //"EL EMPALME, VIA GUAYAS # 207 Y ABDON CALDERON, (04)2961661 - 0998108483
+                //imprimirRetencion(e);
+                e.Graphics.DrawString("ORDEN DE PAGO #:", new Font("Verdana", 14, FontStyle.Bold), Brushes.Black, 25, 25);
+                e.Graphics.DrawString("---", new Font("Verdana", 14, FontStyle.Italic), Brushes.Black, 300, 25);
+                e.Graphics.DrawString(DateTime.Now.ToString(), new Font("Verdana", 12, FontStyle.Regular), Brushes.Gray, 625, 25);
+                e.Graphics.DrawString(Program.nombreempresa.ToUpper(), new Font("Verdana", 14, FontStyle.Regular), Brushes.Black, 310, 70);
+                e.Graphics.DrawString(Program.razonsocialempresa.ToUpper(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 320, 90);
+                e.Graphics.DrawString("RUC: " + Program.rucempresa, new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 335, 110);
+                e.Graphics.DrawString("CIUDAD, DIRECCION, TELEFONO", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 305, 130);
+                e.Graphics.DrawString(Program.direccionempresa.ToUpper()+ ", " + rowe[0] +" - "+ rowe[1], new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 75, 150);
+                //string numeroFactura = txtSerie1.Text + '-' + txtSerie2.Text + '-' + txtNumero.Text;
+                //e.Graphics.DrawString(numeroFactura, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 175, 110);
+                e.Graphics.DrawString("PROVEEDOR: ", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 25, 170);
+                e.Graphics.DrawString(NombreProveedor.ToUpper(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 150, 170);
+                e.Graphics.DrawString("CODIGO: ", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 625, 170);
+                e.Graphics.DrawString(Convert.ToInt32(rowp[0]).ToString("D4"), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 710, 170);
+                e.Graphics.DrawString("DETALLE", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 100, 200);
+                e.Graphics.DrawString("DEBE", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 450, 200);
+                e.Graphics.DrawString("HABER", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 575, 200);
+                int y = 210;
+                dibujarRayas(ref y, 10, 2, 75, 735);
+                e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
+                y = 230;
+                for (int i = 0; i < dgvDetalleCP.RowCount - 1; i++)
+                {
+                    if (Convert.ToBoolean(dgvDetalleCP.Rows[i].Cells[4].Value))
+                    {
+                        e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[0].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 100, y);
+                        if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[1].Value) != "")
+                            e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[1].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 450, y);
+                        else if (Convert.ToString(dgvDetalleCP.Rows[i].Cells[2].Value) != "")
+                            e.Graphics.DrawString(dgvDetalleCP.Rows[i].Cells[2].Value.ToString(), new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 575, y);
+                        y = y + 20;
+                    }
+                    if (Convert.ToString(dgvDetalleCP.Rows[i + 1].Cells[0].Value) == "")
+                        break;                    
+                }
+                for (int i = 0; i < y - 200; i++)
+                {
+                    int yLineas = 200 + i;
+                    e.Graphics.DrawString("|", new Font("Verdana", 11, FontStyle.Regular), Brushes.Black, 400, yLineas);
+                }
+                y = y + 50;
+                //dibujarRayas(ref y, 0, 2, 575, 700);
+                //e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
+                e.Graphics.DrawString("TOTAL A PAGAR $", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 450, y);
+                e.Graphics.DrawString(TxtTotalPagar.Text, new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 600, y);
+                y = y + 75;
+                dibujarRayas(ref y, 5, 2, 35, 215);
+                e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
+                e.Graphics.DrawString("FIRMA RESPONSABLE", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 50, y);
+                e.Graphics.DrawString(Program.Usuario, new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 50, y+13);
+                dibujarRayas(ref y, 5, 2, 335, 515);
+                e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
+                e.Graphics.DrawString("FIRMA COBRADOR", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 355, y);
+                e.Graphics.DrawString("PERSONA A UBICAR", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 350, y + 13);
+                e.Graphics.DrawString("C.I.:", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 350, y + 26);
+                dibujarRayas(ref y, 5, 2, 610, 790);
+                e.Graphics.DrawLine(blackPen, puntoInicio, puntoFinal);
+                e.Graphics.DrawString("FIRMA SUPERVISOR", new Font("Verdana", 10, FontStyle.Regular), Brushes.Black, 625, y);
+            }
+            catch (Exception ex) { }
         }
     }
 }

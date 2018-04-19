@@ -234,18 +234,18 @@ namespace Comisariato.Formularios.Transacciones
         {
             try
             {
-                if (txtSerie1.Text != "" && txtSerie2.Text != "" && txtNumero.Text != "")
-                {
-                    string condicion = "where SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " AND SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " AND NUMERO = " + Convert.ToInt32(txtNumero.Text) + " AND IDPROVEEDOR = " + Convert.ToInt32(CmbProveedor.SelectedValue);
-                    string valor = ObjConsul.ObtenerValorCampo("IDEMCABEZADOCOMPRA", "TbEncabezadoyPieCompra", condicion);
-                    ObjConsul.BoolLlenarComboBox(cbSustentoTributario, "Select C.IDCODIGOSRI as ID,  C.DESCRIPCION as Texto from TbProveedor P, TbCodigoSRI C  where  P.CREDITO = C.IDCODIGOSRI and  P.IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
-                    if (valor != "")
+                    if (txtSerie1.Text != "" && txtSerie2.Text != "" && txtNumero.Text != "")
                     {
-                        int IDEncabezadoCompraOG = Convert.ToInt32(valor);
-                        llenarDatosOG(IDEncabezadoCompraOG);
+                        string condicion = "where SERIE1 = " + Convert.ToInt32(txtSerie1.Text) + " AND SERIE2 = " + Convert.ToInt32(txtSerie2.Text) + " AND NUMERO = " + Convert.ToInt32(txtNumero.Text) + " AND IDPROVEEDOR = " + Convert.ToInt32(CmbProveedor.SelectedValue);
+                        string valor = ObjConsul.ObtenerValorCampo("IDEMCABEZADOCOMPRA", "TbEncabezadoyPieCompra", condicion);
+                        ObjConsul.BoolLlenarComboBox(cbSustentoTributario, "Select C.IDCODIGOSRI as ID,  C.DESCRIPCION as Texto from TbProveedor P, TbCodigoSRI C  where  P.CREDITO = C.IDCODIGOSRI and  P.IDPROVEEDOR = " + CmbProveedor.SelectedValue + "");
+                        if (valor != "")
+                        {
+                            int IDEncabezadoCompraOG = Convert.ToInt32(valor);
+                            llenarDatosOG(IDEncabezadoCompraOG);
+                        }
+                        else { inicializar(); }
                     }
-                    else { inicializar(); }
-                }
             }
             catch (Exception ex) {}
         }
@@ -420,6 +420,7 @@ namespace Comisariato.Formularios.Transacciones
                                 if (Convert.ToString(dgvDatosRetencion.Rows[i+1].Cells[0].Value) == "")
                                     break;
                             }
+                            numeroOrden = idEncabezadoOrdenGiro;
                         }                        
                     }
                     //Fin Crear XML
@@ -605,7 +606,7 @@ namespace Comisariato.Formularios.Transacciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en enviar al SRI: No responde\n Intentelo más tarde en el formulario Corregir Errores");
+                MessageBox.Show("Error en enviar al SRI: No responde o el xml contiene errores\n Intentelo más tarde en el formulario Corregir Errores");
             }
         }
         private void CambiarProgreso(string nombreXml, string fecha, string contadorDevuelta, string contadorRecibida, string contadorautorizado, string contadornoautorizado, string contadorenviados, string contador, string archivosTotales)

@@ -51,6 +51,8 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             cbTerminoPago.SelectedIndex = 0;
             dgvProductosIngresos.Rows.Clear();
             Funcion.llenarDGV(ref dgvProductosIngresos, 8);
+            for (int i = 0; i < dgvProductosIngresos.ColumnCount - 1; i++)
+                dgvProductosIngresos.Columns[i].ReadOnly = true;
             dgvProductosIngresos.Rows[0].Cells[0].ReadOnly = false;
         }
         private void FrmCompra_Load(object sender, EventArgs e)
@@ -532,6 +534,41 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             if (datosProductoCompra.CurrentCell == datosProductoCompra.CurrentRow.Cells[1])
                 Funcion.validar_Num_Letras(e);
         }
+
+        private void txtNumero_Leave(object sender, EventArgs e)
+        {
+            if (txtNumero.Text.Length < 9)
+            {
+                MessageBox.Show("Ingrese los 9 dígitos correspondientes");
+                txtNumero.Focus();
+            }
+        }
+
+        private void FrmCompra_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            txtNumero.Text = "000000000";
+            txtSerie1.Text = "000";
+            txtSerie2.Text = "000";
+        }
+
+        private void txtSerie2_Leave(object sender, EventArgs e)
+        {
+            if (txtSerie2.Text.Length < 3)
+            {
+                MessageBox.Show("Ingrese los 3 dígitos correspondientes");
+                txtSerie2.Focus();
+            }
+        }
+
+        private void txtSerie1_Leave(object sender, EventArgs e)
+        {
+            if (txtSerie1.Text.Length < 3)
+            {
+                MessageBox.Show("Ingrese los 3 dígitos correspondientes");
+                txtSerie1.Focus();
+            }
+        }
+
         private void dgvProductosIngresos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (e.Control is TextBox)
