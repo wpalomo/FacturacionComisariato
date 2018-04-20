@@ -68,9 +68,6 @@ namespace Comisariato.Formularios.Cartera
                 }
             }
             //FIN AGREGAR LAS COMPRAS
-
-
-
             //AGREGAR LAS RETENCIONES
             if (dtRetencion.Rows.Count > 0)
             {
@@ -111,7 +108,6 @@ namespace Comisariato.Formularios.Cartera
                 }
             }
             //FIN AGREGAR LAS RETENCIONES
-
 
             //AGREGAR LAS NOTA CREDITO
 

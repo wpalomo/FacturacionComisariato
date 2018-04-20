@@ -1196,3 +1196,7 @@ C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\o
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
 C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
 >>>>>>> baf3258a13ba7979ccb723973e13a470981fa894
+C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
