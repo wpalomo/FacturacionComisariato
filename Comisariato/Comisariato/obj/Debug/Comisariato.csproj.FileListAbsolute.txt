@@ -1199,3 +1199,4 @@ C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\
 C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
 C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.exe
 C:\Users\Andres\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
+C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Comisariato\Comisariato\bin\Debug\es\Microsoft.ReportViewer.WebForms.resources.dll

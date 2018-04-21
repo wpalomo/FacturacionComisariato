@@ -67,7 +67,6 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(232, 25);
             this.txtContraseña.TabIndex = 1;
-            this.txtContraseña.Text = "tita";
             this.txtContraseña.UseSystemPasswordChar = true;
             this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
@@ -79,7 +78,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(232, 25);
             this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.Text = "ADMIN";
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 

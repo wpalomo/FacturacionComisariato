@@ -29,7 +29,7 @@ namespace Comisariato.Formularios.Transacciones
         Pen blackPen;
         Point puntoInicio, puntoFinal;
         string cadenaGeneral = "select NUMEROORDENGIRO, NOMBREDOCUMENTO, FECHAORDENGIRO, right('000' + Ltrim(Rtrim(SERIE1PROVEEDOR)),3)+''+right('000' + Ltrim(Rtrim(SERIE2PROVEEDOR)),3)+''+NUMERODOCUMENTOPROVEEDOR AS DOCUMENTO, "+
-            " FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, TOTALICE, TOTALIVA, TOTALIRBP SUBTOTAL, TOTAL, IDORDENGIRO from Vista_InformeOG", serie1 = "", serie2 = "", numeroDocumentoProveedor = "";
+            " FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, TOTALICE, TOTALIVA, TOTALIRBP, SUBTOTAL, TOTAL, IDORDENGIRO from Vista_InformeOG", serie1 = "", serie2 = "", numeroDocumentoProveedor = "";
         DateTime fechaEmisionRetencion, fechaEmisionFActura;
         DataGridView dtpTemporalRetencion = new DataGridView();
 

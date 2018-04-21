@@ -1257,3 +1257,7 @@ C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Sin facturacion El
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.GenerateResource.Cache
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\obj\Debug\RdlCompile.cache
 C:\Users\Programacion\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\obj\Debug\RdlCompile.compiled
+C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\bin\Debug\Comisariato.exe.config
+C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\obj\Debug\Comisariato.csproj.ResolveComReference.cache
+C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\obj\Debug\Comisariato.exe
+C:\Users\Byron\Documents\GitHub\FacturacionComisariato\Sin facturacion Electronica\Comisariato\Comisariato\obj\Debug\Comisariato.pdb
