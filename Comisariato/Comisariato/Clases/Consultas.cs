@@ -387,7 +387,7 @@ namespace Comisariato.Clases
             }
         }
 
-        public bool RegistrarArchivosXml(string nombrexml,string rutaxml,string fecha, string hora,String tipo)
+        public bool RegistrarArchivosXml(string nombrexml,string rutaxml,string fecha, string hora,String tipo,String identificacion)
         {
             try
             {
@@ -397,10 +397,10 @@ namespace Comisariato.Clases
                 {
                     case "Factura":
                         //Sentencia = new SqlCommand("INSERT INTO TbDocumentosGeneradosFact (NombreXML, RutaXML, FechaEmision, EstadoAutorizacion, RecepcionSRI, AutorizadoSRI, RutaRide) VALUES ( '" + nombrexml + "','" + rutaxml + "','" + Funcion.reemplazarcaracterFecha(fecha) + "','" + 0 + "','" + "F" + "','" + "F" + "','" + "F" + "')");
-                        Sentencia = new SqlCommand("INSERT INTO TbDocumentosGeneradosFact (NombreXML, Ruta, FechaEmision, EstadoAutorizacion, RecepcionSRI, AutorizadoSRI, RutaRide,Hora) VALUES ( '" + nombrexml + "','" + rutaxml + "','" + Funcion.reemplazarcaracterFecha(fecha) + "','" + 0 + "','" + "F" + "','" + "F" + "','" + " " + "','" + hora + "')");
+                        Sentencia = new SqlCommand("INSERT INTO TbDocumentosGeneradosFact (NombreXML, Ruta, FechaEmision, EstadoAutorizacion, RecepcionSRI, AutorizadoSRI, RutaRide,Hora,IndetificacionCliente) VALUES ( '" + nombrexml + "','" + rutaxml + "','" + Funcion.reemplazarcaracterFecha(fecha) + "','" + 0 + "','" + "F" + "','" + "F" + "','" + " " + "','" + hora + "','"+ identificacion + "')");
                         break;
                     case "OrdenGiro":
-                        Sentencia = new SqlCommand("INSERT INTO TbDocumentosGeneradosRect (NombreXML, Ruta, FechaEmision, EstadoAutorizacion, RecepcionSRI, AutorizadoSRI, RutaRide,Hora,EstadodeBaja) VALUES ( '" + nombrexml + "','" + rutaxml + "','" + fecha + "','" + 0 + "','" + "F" + "','" + "F" + "','" + " " + "','" + hora + "','0')");
+                        Sentencia = new SqlCommand("INSERT INTO TbDocumentosGeneradosRect (NombreXML, Ruta, FechaEmision, EstadoAutorizacion, RecepcionSRI, AutorizadoSRI, RutaRide,Hora,EstadodeBaja,IndetificacionProveedor) VALUES ( '" + nombrexml + "','" + rutaxml + "','" + fecha + "','" + 0 + "','" + "F" + "','" + "F" + "','" + " " + "','" + hora + "','0','"+identificacion+"')");
                         break;
                     case "NotaDebito":
                         break;

@@ -164,11 +164,13 @@ namespace ModuloFacturacionElectronica.Class
                         out streams,
                         out warnings);
 
-                        if (!Directory.Exists(PathServer + @"\Ride\Factura\"))
+                        string año = sClaveAcceso.Substring(4, 4);
+
+                        if (!Directory.Exists(PathServer + @"\Ride\Factura\" + año + @"\"))
                         {
-                            Directory.CreateDirectory(PathServer + @"\Ride\Factura\");
+                            Directory.CreateDirectory(PathServer + @"\Ride\Factura\" + año + @"\");
                         }
-                        FileStream fs = new FileStream(PathServer + @"\Ride\Factura\" + sClaveAcceso + ".pdf", FileMode.Create);
+                        FileStream fs = new FileStream(PathServer + @"\Ride\Factura\" + año + @"\" + sClaveAcceso + ".pdf", FileMode.Create);
                         fs.Write(bytes, 0, bytes.Length);
                         fs.Close();
 
