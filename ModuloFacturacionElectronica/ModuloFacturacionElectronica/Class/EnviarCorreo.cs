@@ -18,43 +18,43 @@ namespace ModuloFacturacionElectronica.Class
         {
             try
             {
-                correos.To.Clear();
-                correos.Body = "";
-                correos.Subject = "";
-                correos.Body = mensaje;
-                correos.BodyEncoding = System.Text.Encoding.UTF8;
+                //correos.To.Clear();
+                //correos.Body = "";
+                //correos.Subject = "";
+                //correos.Body = mensaje;
+                //correos.BodyEncoding = System.Text.Encoding.UTF8;
 
-                correos.Subject = asunto;
-                correos.SubjectEncoding = System.Text.Encoding.UTF8;
-                //correos.IsBodyHtml = true;
-                correos.IsBodyHtml = false;
-                correos.To.Add(destinatario.Trim());
+                //correos.Subject = asunto;
+                //correos.SubjectEncoding = System.Text.Encoding.UTF8;
+                ////correos.IsBodyHtml = true;
+                //correos.IsBodyHtml = false;
+                //correos.To.Add(destinatario.Trim());
 
 
-                if (rutaXML.Equals("") == false)
-                {
-                    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(rutaXML);
-                    correos.Attachments.Add(archivo);
-                }
-                if (rutaRide.Equals("") == false)
-                {
-                    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(rutaRide);
-                    correos.Attachments.Add(archivo);
-                }
+                //if (rutaXML.Equals("") == false)
+                //{
+                //    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(rutaXML);
+                //    correos.Attachments.Add(archivo);
+                //}
+                //if (rutaRide.Equals("") == false)
+                //{
+                //    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(rutaRide);
+                //    correos.Attachments.Add(archivo);
+                //}
 
-                correos.From = new MailAddress(emisor);
-                envios.Credentials = new NetworkCredential(emisor, password);
+                //correos.From = new MailAddress(emisor);
+                //envios.Credentials = new NetworkCredential(emisor, password);
 
-                //Datos importantes no modificables para tener acceso a las cuentas
+                ////Datos importantes no modificables para tener acceso a las cuentas
 
-                //envios.Host = "smtp.gmail.com";
-                envios.Host = "smtp.live.com";
-                envios.Port = 587;
+                ////envios.Host = "smtp.gmail.com";
+                //envios.Host = "smtp.live.com";
                 //envios.Port = 587;
-                envios.EnableSsl = true;
+                ////envios.Port = 587;
+                //envios.EnableSsl = true;
 
-                envios.Send(correos);
-                //MessageBox.Show("Documentos enviados correctamente", "Notificación de Envió por Correo");
+                //envios.Send(correos);
+                ////MessageBox.Show("Documentos enviados correctamente", "Notificación de Envió por Correo");
             }
             catch (Exception ex)
             {

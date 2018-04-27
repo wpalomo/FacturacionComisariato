@@ -974,7 +974,10 @@ namespace Comisariato.Formularios.Transacciones
                         {
                             var PathServer = ConfigurationManager.AppSettings["XmlServidor"];
                             //DESABILITAR VILLACIS
-                            c.RegistrarArchivosXml(claveacceso, PathServer, fecha, hora, "Factura");
+                            if (DatosCliente.Count != 0)
+                                c.RegistrarArchivosXml(claveacceso, PathServer, fecha, hora, "Factura", DatosCliente[0]);
+                            else
+                                c.RegistrarArchivosXml(claveacceso, PathServer, fecha, hora, "Factura", "9999999999999");
                             FormarXml(sucursal, caja, numfactbd, claveacceso, serie);
                             //FIN DESABILITAR VILLACIS
                             string condicion = " where CAJA = '" + caja + "' and SUCURSAL= '" + sucursal + "' and IDEMPRESA='" + Program.IDEMPRESA + "';";
@@ -1077,7 +1080,7 @@ namespace Comisariato.Formularios.Transacciones
 
 
                     InfoFactura objcif = new InfoFactura();
-                    objcif.FechaEmision = DateTime.Now.Date.ToShortDateString();
+                    objcif.FechaEmision = Funcion.FormarFecha(DateTime.Now.Date.ToShortDateString());
                     if (identificacion != "9999999999999")
                     {
                         if (identificacion.Length == 10)
