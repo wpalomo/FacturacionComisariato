@@ -126,7 +126,6 @@
             this.BtnReimprimirRide.Text = "ReImprimir Ride";
             this.BtnReimprimirRide.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnReimprimirRide.UseVisualStyleBackColor = true;
-            this.BtnReimprimirRide.Visible = false;
             this.BtnReimprimirRide.Click += new System.EventHandler(this.BtnReimprimirRide_Click);
             // 
             // label4

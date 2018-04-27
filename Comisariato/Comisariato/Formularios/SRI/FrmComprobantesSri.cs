@@ -155,14 +155,14 @@ namespace Comisariato.Formularios.SRI
             rTxtVistaXML.Text = "";
             TxtMensajeError.Text = "";
             TxtCantComprobantesPendientes.Text = "";
-            if (CmbTipoComprobante.Text == "Retención")
-            {
-                BtnReimprimirRide.Visible = true;
-            }
-            else
-            {
-                BtnReimprimirRide.Visible = false;
-            }
+            //if (CmbTipoComprobante.Text == "Retención")
+            //{
+            //    BtnReimprimirRide.Visible = true;
+            //}
+            //else
+            //{
+            //    BtnReimprimirRide.Visible = false;
+            //}
         }
         string tipocomprobante = "";
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -430,7 +430,13 @@ namespace Comisariato.Formularios.SRI
 
         private void BtnReimprimirRide_Click(object sender, EventArgs e)
         {
-            FrmReimprimirComprobante f = new FrmReimprimirComprobante();
+            string tipodoc = "";
+            if (CmbTipoComprobante.Text == "Factura")
+                tipodoc = "Factura";
+            else
+                tipodoc = "Retencion";
+
+            FrmReimprimirComprobante f = new FrmReimprimirComprobante(tipodoc);
             f.ShowDialog();
         }
 

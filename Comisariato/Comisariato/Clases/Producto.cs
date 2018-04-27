@@ -512,18 +512,21 @@ namespace Comisariato.Clases
         public string ModificarProducto(string CodigoBarra)
         {
             ObjConsulta = new Consultas();
-
-            if (ObjConsulta.EjecutarSQL("UPDATE [dbo].[TbProducto] SET[NOMBREPRODUCTO] = '"+nombreproducto+ "',[ACTIVO] = '"+activo+ "' ,[CODIGOBARRA] = '"+codigobarra+ "',[TIPOPRODUCTO] ='"+tipoproducto+"'"
-                + " ,[UNIDAMEDIDA] = '"+unidamedida+ "'  ,[PESO] = '"+peso+ "' ,[STOCKMAXIMO] = "+stockmaximo+ " ,[STOCKMINIMO] = "+stockminimo+ " ,[CAJA] = "+caja+ " ,[UNIDAD] = "+unidad+ " ,[PRECIOPUBLICO_IVA] = "+ Funcion.reemplazarcaracter(preciopublico_iva.ToString()) +""
-                + " ,[PRECIOPUBLICO_SIN_IVA] = "+ Funcion.reemplazarcaracter(preciopublico_sin_iva.ToString()) + " ,[PRECIOALMAYOR_IVA] = "+ Funcion.reemplazarcaracter(precioalmayor_iva.ToString()) + " ,[PRECIOALMAYOR_SIN_IVA] = "+ Funcion.reemplazarcaracter(precioalmayor_sin_iva.ToString()) + ",[PRECIOPORCAJA_IVA] = "+ Funcion.reemplazarcaracter(precioporcaja_iva.ToString()) +""
-                + " ,[PRECIOPORCAJA_SIN_IVA] = "+ Funcion.reemplazarcaracter(precioporcaja_sin_iva.ToString()) + " ,[IVAESTADO] = '"+ivaestado+ "'"
-                + " ,[OBSERVACIONES] = '"+observaciones+ "' ,[IDCATEGORIA] = "+idcategoria+ ",[DISPLAY] = "+display+ ", [ICE] = " + Funcion.reemplazarcaracter(ice.ToString()) + " , [IRBP] = " + Funcion.reemplazarcaracter(irbp.ToString()) +", [LIBREIMPUESTO] = '"+libreImpuesto+"',[CANTIDAD] = '"+cantidad+"' "
-                + " WHERE CODIGOBARRA ='"+ CodigoBarra + "' "))
-            {
-                ObjConsulta.EditarFoto(Imagenproducto, CodigoBarra, "[TbProducto]", "IMAGENPRODUCTO", "CODIGOBARRA");
-                return "Correcto";
-            }
-            else { return "Error al Modificar"; }
+            //if (!ObjConsulta.Existe("CODIGOBARRA", CodigoBarra, "TbProducto"))
+            //{
+                if (ObjConsulta.EjecutarSQL("UPDATE [dbo].[TbProducto] SET[NOMBREPRODUCTO] = '" + nombreproducto + "',[ACTIVO] = '" + activo + "' ,[CODIGOBARRA] = '" + codigobarra + "',[TIPOPRODUCTO] ='" + tipoproducto + "'"
+                + " ,[UNIDAMEDIDA] = '" + unidamedida + "'  ,[PESO] = '" + peso + "' ,[STOCKMAXIMO] = " + stockmaximo + " ,[STOCKMINIMO] = " + stockminimo + " ,[CAJA] = " + caja + " ,[UNIDAD] = " + unidad + " ,[PRECIOPUBLICO_IVA] = " + Funcion.reemplazarcaracter(preciopublico_iva.ToString()) + ""
+                + " ,[PRECIOPUBLICO_SIN_IVA] = " + Funcion.reemplazarcaracter(preciopublico_sin_iva.ToString()) + " ,[PRECIOALMAYOR_IVA] = " + Funcion.reemplazarcaracter(precioalmayor_iva.ToString()) + " ,[PRECIOALMAYOR_SIN_IVA] = " + Funcion.reemplazarcaracter(precioalmayor_sin_iva.ToString()) + ",[PRECIOPORCAJA_IVA] = " + Funcion.reemplazarcaracter(precioporcaja_iva.ToString()) + ""
+                + " ,[PRECIOPORCAJA_SIN_IVA] = " + Funcion.reemplazarcaracter(precioporcaja_sin_iva.ToString()) + " ,[IVAESTADO] = '" + ivaestado + "'"
+                + " ,[OBSERVACIONES] = '" + observaciones + "' ,[IDCATEGORIA] = " + idcategoria + ",[DISPLAY] = " + display + ", [ICE] = " + Funcion.reemplazarcaracter(ice.ToString()) + " , [IRBP] = " + Funcion.reemplazarcaracter(irbp.ToString()) + ", [LIBREIMPUESTO] = '" + libreImpuesto + "',[CANTIDAD] = '" + cantidad + "' "
+                + " WHERE CODIGOBARRA ='" + CodigoBarra + "' "))
+                {
+                    ObjConsulta.EditarFoto(Imagenproducto, CodigoBarra, "[TbProducto]", "IMAGENPRODUCTO", "CODIGOBARRA");
+                    return "Correcto";
+                }
+                else { return "Error al Modificar"; }
+            //}
+            //else { return "Existe"; }
         }
 
         public string EstadoProducto(string Identificacion, int estado)
