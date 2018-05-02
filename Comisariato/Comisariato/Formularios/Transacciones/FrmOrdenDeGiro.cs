@@ -641,7 +641,7 @@ namespace Comisariato.Formularios.Transacciones
                     objeformularioReporte.Show();
                     //Fin Llamar Reporte
                     //Eviar Correo
-                    //ObjConsul.enviarCorreoRideRetencion(numeroRetencion2, cmbAñoRetencionHechaVariable, claveacceso);
+                    ObjConsul.enviarCorreoRideRetencion(numeroRetencion2, cmbAñoRetencionHechaVariable, claveacceso);
                     //Fin Eviar Correo
                 }
             }

@@ -29,8 +29,8 @@ namespace ModuloFacturacionElectronica
         //C:\Users\Public\Documents\ArchivosXml
         string RutaPathServer = @"C:\ArchivosXml";
         string ContraseñaCertificado = "Sonna1967";
-        string LinkSRIrecepcion= "https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl";
-        string LinkSRIautorizacion= "https://celcer.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl";
+        string LinkSRIrecepcion= "https://cel.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl";
+        string LinkSRIautorizacion= "https://cel.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl";
 
         DataTable DtDocuemtosXML;
         delegate void CambiarProgresoDelegado(string nombreXml, string fecha, string contadordevuelta, string contadorRecivida,string contadorautorizado,string contadornoautorizado,string contadorenviados,string contador,string contadorne,string contadorAr,bool termina);

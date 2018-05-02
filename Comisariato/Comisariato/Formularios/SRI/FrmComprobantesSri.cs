@@ -357,17 +357,36 @@ namespace Comisariato.Formularios.SRI
 
                     if (tipocomprobante == "Factura")
                     {
-
                         string rutaXMl = ConfigurationManager.AppSettings["XmlServidor"].ToString() + @"\Generados\" + nombreXml + ".xml";
+
                         XmlDocument docxml = new XmlDocument();
                         docxml.Load(rutaXMl);
                         string fechaemisionfactura = Convert.ToString(docxml.GetElementsByTagName("fechaEmision")[0].InnerText);
+                        string nombreCliente = Convert.ToString(docxml.GetElementsByTagName("razonSocialComprador")[0].InnerText);
+                        string IdentificacionCliente = Convert.ToString(docxml.GetElementsByTagName("identificacionComprador")[0].InnerText);
                         string[] partesfecha = fechaemisionfactura.Split('/');
                         string año = partesfecha[2];
+                        string rutaRide = ConfigurationManager.AppSettings["XmlServidor"].ToString() + @"\Ride\Factura\" + año + @"\" + nombreXml + ".pdf";
 
                         Comisariato.Ride.Factura.ReporteFacturaRide ObjformularioRepoteFactura = null;
                         ObjformularioRepoteFactura = new Ride.Factura.ReporteFacturaRide(nombrexml, fechaAutorizacion, ambiente, año);
                         ObjformularioRepoteFactura.Show();
+
+                        String emailCliente = "";
+
+                        //ObtenerEmaailComprador-Cliente
+                        DataTable dt = objconsul.BoolDataTable("SELECT EMAIL FROM TBCLIENTE WHERE IDENTIFICACION = '" + IdentificacionCliente + "'");
+                        if (dt.Rows.Count > 0)
+                        {
+                            DataRow myRow = dt.Rows[0];
+                            emailCliente = myRow["EMAIL"].ToString();
+                        }
+                        if (emailCliente != "")
+                        {
+                            //Eviar Correo
+                            objconsul.enviarCorreoFactura(emailCliente, rutaXMl, rutaRide, nombrexml, nombreCliente);
+                            //Fin Eviar Correo
+                        }
                     }
                     else
                     {
@@ -378,7 +397,7 @@ namespace Comisariato.Formularios.SRI
                         objconsul.EjecutarSQL("UPDATE [dbo].[TbEncabezadoOrdenGiro] SET [AUTORIZACIONSRICLAVEACCESO] = '" + nombreXml + "' ,[FECHAAUTORIZACIONSRI] = '" + fechaAutorizacion + "'	WHERE NUMERORETECION =" + numeroRetencion2 + "; ");
 
                         string numeroOrdengiro = objconsul.ObtenerValorEntero("SELECT *  FROM [BDComiSuper2].[dbo].[TbEncabezadoOrdenGiro] where NUMERORETECION =" + numeroRetencion2 + "").ToString();
-                        
+
 
                         string fechaemision = docxml.GetElementsByTagName("fechaEmision")[0].InnerText;
                         string[] fechaseparada = fechaemision.Split('/');
@@ -389,7 +408,7 @@ namespace Comisariato.Formularios.SRI
                         //Fin Llamar Reporte
 
                         //Eviar Correo
-                        //objconsul.enviarCorreoRideRetencion(numeroOrdengiro.ToString(), cmbAñoRetencionHechaVariable, nombrexml);
+                        objconsul.enviarCorreoRideRetencion(numeroOrdengiro.ToString(), cmbAñoRetencionHechaVariable, nombrexml);
                         //Fin Eviar Correo
 
                     }
@@ -397,7 +416,8 @@ namespace Comisariato.Formularios.SRI
                 nombrexml = "";
                 rTxtVistaXML.Text = "";
                 TxtMensajeError.Text = "";
-                procesarComprobantesPendientes();
+                //procesarComprobantesPendientes();
+                btnBuscar_Click(null, null);
             }
         }
 
@@ -409,18 +429,18 @@ namespace Comisariato.Formularios.SRI
             {
                 dtComprobantes = null;
                 dtComprobantes = objconsul.BoolDataTable("");
-                int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from VistaComprobantesFactura where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "'; ");
+                int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from VistaComprobantesFactura where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "' AND Xml LIKE '%"+TxtClaveAcceso.Text+"%' ; ");
                 TxtCantComprobantesPendientes.Text = cantidadComprobanrt.ToString();
-                objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesFactura] where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "';");
+                objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesFactura] where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "' AND Xml LIKE '%" + TxtClaveAcceso.Text + "%' ; ");
 
                 modificarDatagridviweDiseño();
             }
             else
             {
                 dtComprobantes = null;
-                int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from [BDFacturacionElectronica].[dbo].VistaComprobantesRetencion where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "';");
+                int cantidadComprobanrt = objconsul.ObtenerValorEntero("SELECT COUNT(*) as TotalComprobantes from [BDFacturacionElectronica].[dbo].VistaComprobantesRetencion where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "' AND Xml LIKE '%" + TxtClaveAcceso.Text + "%' ; ");
                 TxtCantComprobantesPendientes.Text = cantidadComprobanrt.ToString();
-                objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesRetencion] where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "';");
+                objconsul.BoolCrearDateTableComprobantesErroneos(dgvComprobantesErroneos, "SELECT *  FROM [BDFacturacionElectronica].[dbo].[VistaComprobantesRetencion] where fecha BETWEEN '" + DtpFechaInicial.Value.ToShortDateString() + "' AND '" + DtpFechaFinal.Value.ToShortDateString() + "' AND Xml LIKE '%" + TxtClaveAcceso.Text + "%' ; ");
 
                 modificarDatagridviweDiseño();
 
