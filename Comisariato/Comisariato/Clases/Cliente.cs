@@ -362,6 +362,16 @@ namespace Comisariato.Clases
                     "," + condicionesComerDescuento + ","+IDCuentaContable+");");
                 if (resultInsertCliente)
                 {
+                    if (!ObjConsulta.Existe("IDENTIFICACION", identificacion, "TbUsuariosWeb"))
+                    {
+                        ObjConsulta.EjecutarSQL("INSERT INTO[TbUsuariosWeb]([IDENTIFICACION],[PASSWORD],[TIPOUSUARIO],[PRIMERINGRESO],[CORREO],[NOMBRES]) " +
+                                            " VALUES('" + identificacion + "','" + identificacion + "',1,'True' " +
+                                            " ,'" + email + "','" + nombres.ToUpper() + " " + apellidos.ToUpper() + "') ");
+                    }
+                    else if (ObjConsulta.Existe("IDENTIFICACION", identificacion, "TbUsuariosWeb") && Convert.ToInt32(ObjConsulta.ObtenerValorCampo("TIPOUSUARIO", "TbUsuariosWeb", " where IDENTIFICACION = " + identificacion)) == 2)
+                    {
+                        ObjConsulta.EjecutarSQL("UPDATE[TbUsuariosWeb] SET[TIPOUSUARIO] = 3 WHERE IDENTIFICACION = " + identificacion);
+                    }
                     return "Datos Guardados";
                 }
                 else { return "Error al Registrar"; }
@@ -386,6 +396,7 @@ namespace Comisariato.Clases
 
             if (ObjConsulta.EjecutarSQL("UPDATE [dbo].[TbOtraInformacionCliente] SET [TIPO] ='"+ tipo + "' ,[IDENTIFICACION] = '"+ identificacion + "' ,[NOMBRE] ='"+ nombre + "' ,[EMAIL] = '"+ email + "' ,[CELULAR] =  '"+ celular + "'  WHERE [IDCLIENTE] = " + idcliente + " "))
             {
+                
                 return "Datos Guardados";
             }
             else { return "Error al Registrar"; }
@@ -403,6 +414,8 @@ namespace Comisariato.Clases
                 ",[CONDICIONES_COMERC_DESCUENTO] = "+condicionesComerDescuento+ ", [IDCuentaContable]= "+IDCuentaContable+"  WHERE IDENTIFICACION = '" + Identificacion + "';");
             if (ModificarCliente)
             {
+                ObjConsulta.EjecutarSQL("UPDATE [TbUsuariosWeb] SET[IDENTIFICACION] = '" + identificacion + "',[PASSWORD] = '" + identificacion + "',[NOMBRES] = '" + nombres.ToUpper() + " " + apellidos.ToUpper() + "' "+
+                                        ", [CORREO] = '" + email + "' WHERE IDENTIFICACION = '" + identificacion + "'");
                 return "Correcto";
             }
             else { return "Error al Modificar"; }

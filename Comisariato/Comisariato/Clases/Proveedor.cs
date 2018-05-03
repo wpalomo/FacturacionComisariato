@@ -383,6 +383,17 @@ namespace Comisariato.Clases
             {
                 if (ObjConsulta.EjecutarPROCEDUREProveedor(ObjProvee))
                 {
+                    if (!ObjConsulta.Existe("IDENTIFICACION", identificacion, "TbUsuariosWeb"))
+                    {
+                        ObjConsulta.EjecutarSQL("INSERT INTO[TbUsuariosWeb]([IDENTIFICACION],[PASSWORD],[TIPOUSUARIO],[PRIMERINGRESO],[CORREO],[NOMBRES]) " +
+                                            " VALUES('" + identificacion + "','" + identificacion + "',2,'True' " +
+                                            " ,'" + email + "','" + nombres.ToUpper() + "') ");
+                    }
+                    else if(ObjConsulta.Existe("IDENTIFICACION", identificacion, "TbUsuariosWeb") && Convert.ToInt32(ObjConsulta.ObtenerValorCampo("TIPOUSUARIO", "TbUsuariosWeb", " where IDENTIFICACION = " + identificacion)) == 1)
+                    {
+                        ObjConsulta.EjecutarSQL("UPDATE[TbUsuariosWeb] SET[TIPOUSUARIO] = 3 WHERE IDENTIFICACION = " + identificacion);
+                    }
+                    
                     return "Datos Guardados";
                 }
                 else { return "Error al Registrar"; }
@@ -398,6 +409,8 @@ namespace Comisariato.Clases
                 "[NATURALEZA] = '"+naturaleza+ "',[DIRECCION] = '"+direccion.ToUpper() + "',[RAZONSOCIAL] = '"+razosocial.ToUpper() + "',[EMAIL] = '"+email+ "',[TELEFONO] = '"+telefono+ "',[CELULAR] = '"+celular+"' ," +
                 "[GIRACHEQUEA] = '"+giracheque.ToUpper() + "',[RESPONSABLE] = '"+responsable.ToUpper() + "' ,[CELULAR_RESPONSABLE] = '"+celularResponsable+"',[TIPOGASTO] = '" + tipogasto+ "',[TIPOSERVICIO] = '"+tiposervicio+ "',[IDPARROQUIA] = "+idparroquia+ " , [PROVEEDORRISE] = '"+ riseproveedor + "' , [IDCuentaContable] = "+IDCuentaContable+ " ,[CREDITO] = "+credito+" ,[ICE] = "+ice+" ,[CODIGO_101] = "+codigo_101+" WHERE IDENTIFICACION = '" + Identificacion + "';"))
             {
+                ObjConsulta.EjecutarSQL("UPDATE [TbUsuariosWeb] SET[IDENTIFICACION] = '" + identificacion + "',[PASSWORD] = '" + identificacion + "',[NOMBRES] = '" + nombres.ToUpper() + "' " +
+                                       ", [CORREO] = '" + email + "' WHERE IDENTIFICACION = '" + identificacion + "'");
                 return "Correcto";
             }
             else { return "Error al Modificar"; }
