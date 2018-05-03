@@ -111,6 +111,7 @@
             this.Name = "FrmReimprimirComprobante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reimprimir Comprobante";
+            this.Load += new System.EventHandler(this.FrmReimprimirComprobante_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

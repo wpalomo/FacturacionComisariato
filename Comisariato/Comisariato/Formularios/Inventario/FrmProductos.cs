@@ -218,8 +218,8 @@ namespace Comisariato.Formularios.Mantenimiento.Inventario
             SendKeys.Send("{TAB}");
             Objconsul.BoolLlenarComboBox(cbTipoProducto, "Select IDCATEGORIA as ID , DESCRIPCION AS TEXTO from TbCategoria where DESCRIPCION != 'COMBO' ;");
             Objconsul.BoolLlenarComboBox(CmbConsultarCategoria, "Select IDCATEGORIA as ID , DESCRIPCION AS TEXTO from TbCategoria where DESCRIPCION != 'COMBO' ;");
-            int cantidaditemcombocategoria = CmbConsultarCategoria.Items.Count;
-            CmbConsultarCategoria.SelectedIndex = cantidaditemcombocategoria - 1;
+            //int cantidaditemcombocategoria = CmbConsultarCategoria.Items.Count;
+            CmbConsultarCategoria.SelectedValue = 36;
             cbUnidadMedidaProducto.SelectedIndex = 0;
             txtPeso.Text = "";
             inicializarDatos();

@@ -19,7 +19,7 @@ namespace ModuloFacturacionElectronica.Class
                 // BDFacturacionElectronica
                 //"Data Source=DJSERATO\\SQLEXPRESS;Initial Catalog=BDFacturacionElectronica;Integrated Security=True"
                 //"data source = SAIRCONTROL, 1433; initial catalog = BDFacturacionElectronica; user id = COMI; password = Server@aircontrol@1"
-                connection = new SqlConnection("data source = AIRCONTROL, 1433; initial catalog = BDFacturacionElectronica; user id = COMI; password = server@1");
+                connection = new SqlConnection("data source = SAIRCONTROL, 1433; initial catalog = BDFacturacionElectronica; user id = COMI; password = Server@aircontrol@1");
                
                 connection.Open();
 
@@ -33,7 +33,7 @@ namespace ModuloFacturacionElectronica.Class
 
         public void Cerrar()
         {
-            connection = new SqlConnection("data source = AIRCONTROL, 1433; initial catalog = BDFacturacionElectronica; user id = COMI; password = server@1");
+            connection = new SqlConnection("data source = SAIRCONTROL, 1433; initial catalog = BDFacturacionElectronica; user id = COMI; password = Server@aircontrol@1");
             
             connection.Close();
         }
@@ -49,7 +49,7 @@ namespace ModuloFacturacionElectronica.Class
                 //"Data Source=DJSERATO\\SQLEXPRESS;Initial Catalog=BDComiSuper2;Integrated Security=True"
                 //"data source = SAIRCONTROL, 1433; initial catalog = BDComiSuper2; user id = COMI; password = Server@aircontrol@1"
                 //BDComiSuper2
-                connection = new SqlConnection("data source = AIRCONTROL, 1433; initial catalog = BDComiSuper2; user id = COMI; password = server@1");
+                connection = new SqlConnection("data source = SAIRCONTROL, 1433; initial catalog = BDComiSuper2; user id = COMI; password = Server@aircontrol@1");
 
                 connection.Open();
 
@@ -63,7 +63,7 @@ namespace ModuloFacturacionElectronica.Class
 
         public void CerrarComi()
         {
-            connection = new SqlConnection("data source = AIRCONTROL, 1433; initial catalog = BDComiSuper2; user id = COMI; password = server@1");
+            connection = new SqlConnection("data source = SAIRCONTROL, 1433; initial catalog = BDComiSuper2; user id = COMI; password = Server@aircontrol@1");
 
             connection.Close();
         }

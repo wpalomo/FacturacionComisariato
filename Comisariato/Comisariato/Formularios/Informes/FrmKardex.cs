@@ -359,20 +359,28 @@ namespace Comisariato.Formularios.Informes
         bool consultoFormularioExterno = false;
         private void FrmKardex_KeyUp(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            try
             {
-                case Keys.F6:
-                    Program.banderaProductosConsultarKardex = true;
-                    FrmConsultarProducto FrmConsultarProduct = new FrmConsultarProducto();
-                    FrmConsultarProduct.ShowDialog();
-                    txtProducto.Focus();
-                    string[] detalleProductoBusq = CodigoBarraConsultaProducto.Split(';');
-                    txtProducto.Text = detalleProductoBusq[0];
-                    LblNombreProducto.Text = detalleProductoBusq[1];
-                    LblNombreProducto.Visible = true;
-                    consultoFormularioExterno = true;
-                    btnGenerarKardex_Click(null, null);
-                    break;
+
+                switch (e.KeyCode)
+                {
+                    case Keys.F6:
+                        Program.banderaProductosConsultarKardex = true;
+                        FrmConsultarProducto FrmConsultarProduct = new FrmConsultarProducto();
+                        FrmConsultarProduct.ShowDialog();
+                        txtProducto.Focus();
+                        string[] detalleProductoBusq = CodigoBarraConsultaProducto.Split(';');
+                        txtProducto.Text = detalleProductoBusq[0];
+                        LblNombreProducto.Text = detalleProductoBusq[1];
+                        LblNombreProducto.Visible = true;
+                        consultoFormularioExterno = true;
+                        btnGenerarKardex_Click(null, null);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

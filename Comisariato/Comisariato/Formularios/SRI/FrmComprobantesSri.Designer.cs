@@ -47,6 +47,8 @@
             this.DtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.CmbTipoComprobante = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.TxtClaveAcceso = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobantesErroneos)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.TxtClaveAcceso);
             this.groupBox1.Controls.Add(this.BtnReimprimirRide);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TxtMensajeError);
@@ -126,7 +130,6 @@
             this.BtnReimprimirRide.Text = "ReImprimir Ride";
             this.BtnReimprimirRide.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnReimprimirRide.UseVisualStyleBackColor = true;
-            this.BtnReimprimirRide.Visible = false;
             this.BtnReimprimirRide.Click += new System.EventHandler(this.BtnReimprimirRide_Click);
             // 
             // label4
@@ -229,7 +232,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(337, 27);
+            this.label2.Location = new System.Drawing.Point(310, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 16);
             this.label2.TabIndex = 63;
@@ -248,7 +251,7 @@
             // DtpFechaInicial
             // 
             this.DtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaInicial.Location = new System.Drawing.Point(145, 25);
+            this.DtpFechaInicial.Location = new System.Drawing.Point(128, 25);
             this.DtpFechaInicial.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.DtpFechaInicial.Name = "DtpFechaInicial";
             this.DtpFechaInicial.Size = new System.Drawing.Size(165, 23);
@@ -257,7 +260,7 @@
             // DtpFechaFinal
             // 
             this.DtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaFinal.Location = new System.Drawing.Point(450, 25);
+            this.DtpFechaFinal.Location = new System.Drawing.Point(408, 25);
             this.DtpFechaFinal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.DtpFechaFinal.Name = "DtpFechaFinal";
             this.DtpFechaFinal.Size = new System.Drawing.Size(165, 23);
@@ -289,6 +292,23 @@
             this.label6.Size = new System.Drawing.Size(94, 16);
             this.label6.TabIndex = 72;
             this.label6.Text = "Comprobante";
+            // 
+            // TxtClaveAcceso
+            // 
+            this.TxtClaveAcceso.Location = new System.Drawing.Point(696, 25);
+            this.TxtClaveAcceso.Name = "TxtClaveAcceso";
+            this.TxtClaveAcceso.Size = new System.Drawing.Size(202, 23);
+            this.TxtClaveAcceso.TabIndex = 71;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Teal;
+            this.label5.Location = new System.Drawing.Point(595, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 16);
+            this.label5.TabIndex = 72;
+            this.label5.Text = "Clave Acceso:";
             // 
             // FrmComprobantesSri
             // 
@@ -340,5 +360,7 @@
         private System.Windows.Forms.ComboBox CmbTipoComprobante;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BtnReimprimirRide;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtClaveAcceso;
     }
 }

@@ -29,7 +29,7 @@ namespace Comisariato.Formularios.Transacciones
         Pen blackPen;
         Point puntoInicio, puntoFinal;
         string cadenaGeneral = "select NUMEROORDENGIRO, NOMBREDOCUMENTO, FECHAORDENGIRO, right('000' + Ltrim(Rtrim(SERIE1PROVEEDOR)),3)+''+right('000' + Ltrim(Rtrim(SERIE2PROVEEDOR)),3)+''+NUMERODOCUMENTOPROVEEDOR AS DOCUMENTO, "+
-            " FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, TOTALICE, TOTALIVA, TOTALIRBP SUBTOTAL, TOTAL, IDORDENGIRO from Vista_InformeOG", serie1 = "", serie2 = "", numeroDocumentoProveedor = "";
+            " FECHADOCUMENTO, NOMBRES, SUBTOTALIVA, SUBTOTAL0, TOTALICE, TOTALIVA, TOTALIRBP, SUBTOTAL, TOTAL, IDORDENGIRO from Vista_InformeOG", serie1 = "", serie2 = "", numeroDocumentoProveedor = "";
         DateTime fechaEmisionRetencion, fechaEmisionFActura;
         DataGridView dtpTemporalRetencion = new DataGridView();
 
@@ -533,7 +533,7 @@ namespace Comisariato.Formularios.Transacciones
                 Directory.CreateDirectory(PathLocal);
             File.Copy(pathfinal, PathServer + @"\Generados\" + @"\" + @claveacceso + ".xml", true);
             //Insertar BDFactuElec
-            ObjConsul.RegistrarArchivosXml(claveacceso, PathServer + @"\Generados", fecha, hora, "OrdenGiro");
+            ObjConsul.RegistrarArchivosXml(claveacceso, PathServer + @"\Generados", fecha, hora, "OrdenGiro", myRow["IDENTIFICACION"].ToString());
             //Creamos el delegado 
             ThreadStart h1 = new ThreadStart(Procesar);
             //Creamos la instancia del hilo 
@@ -635,7 +635,7 @@ namespace Comisariato.Formularios.Transacciones
                             break;
                     }
                     string numeroRetencion2 = (Convert.ToInt32(txtOrdenGiro.Text) - 1).ToString();
-                    ObjConsul.EjecutarSQL("UPDATE [dbo].[TbEncabezadoOrdenGiro] SET [AUTORIZACIONSRICLAVEACCESO] = '"+ claveacceso + "' ,[FECHAAUTORIZACIONSRI] = '"+ fechaAutorizacion + "'	WHERE NUMERORETECION =" + numeroRetencion2 + "; ");
+                    ObjConsul.EjecutarSQL("UPDATE [dbo].[TbEncabezadoOrdenGiro] SET [AUTORIZACIONSRICLAVEACCESO] = '"+ claveacceso + "' ,[FECHAAUTORIZACIONSRI] = '"+ fechaAutorizacion + "'	WHERE NUMEROORDENGIRO =" + numeroRetencion2 + "; ");
                     ReporteRetencion objeformularioReporte = null;
                     objeformularioReporte = new ReporteRetencion(claveacceso, fechaAutorizacion, numeroRetencion2, ambiente, CbTipoAutorizacionVariable, cmbAñoRetencionHechaVariable);
                     objeformularioReporte.Show();
@@ -654,6 +654,9 @@ namespace Comisariato.Formularios.Transacciones
                 SendKeys.Send("{TAB}");
             }
         }
+
+
+
         private void btnSalirCompra_Click(object sender, EventArgs e)
         {
             this.Close();
