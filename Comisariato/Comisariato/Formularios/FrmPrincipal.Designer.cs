@@ -343,7 +343,7 @@
             // ventanaToolStripMenuItem
             // 
             this.ventanaToolStripMenuItem.Name = "ventanaToolStripMenuItem";
-            this.ventanaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.ventanaToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.ventanaToolStripMenuItem.Text = "Ventana";
             // 
             // ayudaToolStripMenuItem1
